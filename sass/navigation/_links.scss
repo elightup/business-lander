@@ -1,0 +1,19 @@
+a {
+	color: $color__link;
+	text-decoration: none;
+	-webkit-transition: all .3s ease 0s;
+	transition: all .3s ease 0s;
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__link-hover;
+		text-decoration: underline;
+	}
+	&:focus {
+		outline: none;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}

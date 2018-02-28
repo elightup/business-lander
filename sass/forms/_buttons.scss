@@ -1,0 +1,49 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 2px solid;
+	border-color: $color__border-button;
+	border-radius: 3px;
+	background: $color__background-button;
+	@include font-size(1.6);
+	line-height: 1;
+	padding: 16px 50px;
+	color: $color__main;
+	transition: all .3s ease 0s;
+	font-weight: 600;
+
+	&:hover {
+		border-color: $color__border-button-hover;
+		background: $color__border-button-hover;
+		color: $color__white;
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__border-button-focus;
+		color: $color__white;
+	}
+}
+.btn {
+	display: inline-block;
+	font-weight: 600;
+	border-radius: 99px;
+	white-space: nowrap;
+	text-align: center;
+	padding: 18px 30px;
+	transition: all .3s ease 0s;
+	text-transform: uppercase;
+}
+
+.btn-primary {
+	color: $color__white;
+	background-color: $color__main;
+	display: inline-block;
+	&:hover,
+	&:active,
+	&:focus {
+		color: $color__white;
+		background: $color__main-hover;
+	}
+}

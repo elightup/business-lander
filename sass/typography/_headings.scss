@@ -1,0 +1,38 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font__heading;
+	word-wrap: break-word;
+}
+
+h1 {
+	@include font-size(5);
+}
+
+h2 {
+	@include font-size(4);
+	line-height: 48px;
+}
+
+h3 {
+	@include font-size(3);
+	line-height: 42px;
+}
+
+h4 {
+	@include font-size(2);
+	line-height: 32px;
+}
+
+h5 {
+	@include font-size(1.6);
+	line-height: 24px;
+}
+
+h6 {
+	@include font-size(1.4);
+	line-height: 24px;
+}
