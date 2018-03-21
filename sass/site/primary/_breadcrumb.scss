@@ -15,7 +15,6 @@
 	flex-flow: column;
 	justify-content: center;
 	position: relative;
-	overflow: hidden;
 	word-break: break-word;
 	background: #f2fcfe;
 	max-height: 430px;
@@ -32,34 +31,46 @@
 		&:before {
 			position: absolute;
 			content: '';
-			top: 50%;
+			top: 53%;
 			left: 0.5%;
 			right: 0;
 			bottom: 55px;
-			background: red;
+			background: $color__white;
 			width: 99%;
 			height: 75%;
 			z-index: -1;
-			opacity: 0.8;
+			opacity: 0.12;
+		}
+	}
+	.title-black {
+		color: $color__black;
+		&:before {
+			position: absolute;
+			content: '';
+			top: 53%;
+			left: 0.5%;
+			right: 0;
+			bottom: 55px;
+			background: #30d1f9;
+			width: 99%;
+			height: 75%;
+			z-index: -1;
+		}
+	}
+}
+span a:hover,
+a:hover {
+	color: $color__link-hover;
+}
+.post-thumbnail {
+	width: 100%;
+	img {
+		height: 360px;
+		object-fit: cover;
+		width: 100%;
+	}
+}
 
-		}
-		.title-black {
-			color: $color__black;
-		}
-	}
-		span a:hover,
-		a:hover {
-			color: $color__link-hover;
-		}
-		.post-thumbnail {
-			width: 100%;
-			img {
-				height: 360px;
-				object-fit: cover;
-				width: 100%;
-			}
-		}
-	}
 
 
 .breadcrumb-item {
@@ -80,9 +91,9 @@
 	border-radius: 100px;
 	background:  $color__white;
 	padding: 0px 25px;
-	margin-top: -15px;
 	width: 300px;
-	margin-left: 37%;
+	position: absolute;
+	bottom: -18px;
 }
 .entry-meta span,
 .entry-meta a {

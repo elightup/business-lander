@@ -100,12 +100,13 @@
 <?php if ( ! is_front_page() && !is_home() && !is_archive() && !is_404() && !is_search() ) : ?>
 	<div class="page-header">
 		<?php bussiness_lander_breadcrumb();?>
-	</div>
-	<?php if ( is_single() && 'post' === get_post_type() ) : ?>
+		<?php if ( is_single() && 'post' === get_post_type() ) : ?>
 			<div class="entry-meta">
 				<?php bussiness_lander_posted_on(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
+	</div>
+
 <?php endif; ?>
 
 <?php if ( ! is_home() && is_front_page() ) : ?>

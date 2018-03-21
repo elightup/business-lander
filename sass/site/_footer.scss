@@ -23,6 +23,21 @@
 		text-transform: uppercase;
 		margin-bottom: 25px;
 		margin-top: 15px;
+		position: relative;
+		display: inline-block;
+		&:before {
+			position: absolute;
+			content: '';
+			top: 53%;
+			left: 0.5%;
+			right: 0;
+			bottom: 55px;
+			background: #30d1f9;
+			width: 99%;
+			height: 30%;
+			z-index: -1;
+			opacity: 0.12;
+		}
 	}
 	ul {
 		padding-left: 0;
@@ -51,7 +66,7 @@
 }
 .jetpack_subscription_widget {
 	.widget-title {
-		text-align: center;
+		margin-left: 35%;
 	}
 	div > p {
 		text-align: center;
