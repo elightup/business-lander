@@ -11,20 +11,25 @@
 
 ?>
 
-	</div><!-- #content -->
-
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'bussiness-lander' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'bussiness-lander' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'bussiness-lander' ), 'bussiness-lander', '<a href="http://underscores.me/">Underscores.me</a>' );
-			?>
-		</div><!-- .site-info -->
+		<div class="footer-widgets">
+			<div class="container">
+				<div class="row">
+					<?php dynamic_sidebar( 'sidebar-2' ); ?>
+				</div>
+			</div>
+		</div>
+		<div class="bottombar">
+			<div class="container">
+				<span>greta business pro. designed by tung do</span>
+				<div class="share">
+					<a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+					<a href="https://www.facebook.com/"><i class="fa fa-twitter"></i></a>
+					<a href="https://www.facebook.com/"><i class="fa fa-google-plus"></i></a>
+				</div>
+			</div>
+		</div>
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

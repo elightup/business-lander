@@ -19,23 +19,25 @@ if ( ! function_exists( 'bussiness_lander_posted_on' ) ) :
 
 		$time_string = sprintf( $time_string,
 			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() ),
+			esc_html( get_the_date( 'F j Y' ) ),
 			esc_attr( get_the_modified_date( 'c' ) ),
 			esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'bussiness-lander' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
+
+		$byline = sprintf(
+			/* translators: %s: post author. */
+			esc_html_x( '%s', 'post author', 'bussiness-lander' ),
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+			echo '<span class="byline"> ' . $byline . '</span><span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
-	}
-endif;
+		}
+	endif;
 
-if ( ! function_exists( 'bussiness_lander_posted_by' ) ) :
+	if ( ! function_exists( 'bussiness_lander_posted_by' ) ) :
 	/**
 	 * Prints HTML with meta information for the current author.
 	 */
@@ -48,6 +50,33 @@ if ( ! function_exists( 'bussiness_lander_posted_by' ) ) :
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
+	}
+endif;
+
+if ( ! function_exists( 'bussiness_lander_category_tag' ) ) :
+	/**
+	 * Prints HTML with meta information for the category and tag.
+	 */
+	function bussiness_lander_category_tag() {
+		$category_detail = get_the_category();//$post->ID
+		foreach( $category_detail as $cd ) {
+			$category_name = $cd->cat_name . ', ';
+			$category_link .= '<a href="' . esc_url(get_category_link($cd->cat_ID)) . '">'.$category_name .'</a>';
+		}
+
+		$category = '<span class="post-category"> ' .$category_link. '</span>';
+
+		$post_tags = get_the_tags();
+
+		if ($post_tags) {
+			foreach($post_tags as $tag) {
+				$tags = $tag->name . ', ';
+				$tags_link .= '<a href="' . esc_url(get_tag_link($tag->term_id)) . '">'.$tags .'</a>';
+			}
+
+			$category .= '<span class="post-tag"> ' . $tags_link . '</span>';
+		}
+		return $category;
 	}
 endif;
 
@@ -124,23 +153,23 @@ function bussiness_lander_post_thumbnail() {
 	}
 
 	if ( is_singular() ) :
-	?>
+		?>
 
-	<div class="post-thumbnail">
-		<?php the_post_thumbnail(); ?>
-	</div><!-- .post-thumbnail -->
+		<div class="post-thumbnail">
+			<?php the_post_thumbnail(); ?>
+		</div><!-- .post-thumbnail -->
 
 	<?php else : ?>
 
-	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
-		<?php
+		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+			<?php
 			the_post_thumbnail( 'post-thumbnail', array(
 				'alt' => the_title_attribute( array(
 					'echo' => false,
 				) ),
 			) );
-		?>
-	</a>
+			?>
+		</a>
 
 	<?php endif; // End is_singular().
 }

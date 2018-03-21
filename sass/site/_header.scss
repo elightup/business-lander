@@ -7,7 +7,7 @@
 		padding-top: 68px;
 		padding-bottom: 68px;
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
 		flex-flow: row wrap;
 		position: relative;
 		transition: all 0.3s ease;
@@ -15,8 +15,8 @@
 }
 
 .site-branding {
-	flex: 1;
 	align-self: center;
+
 	img {
 		transition: all 0.3s;
 	}
@@ -52,7 +52,6 @@
 }
 
 .custom-logo-link {
-	@include font-size(0);
 	margin-bottom: 0;
 	margin-right: 60px;
 }
@@ -62,6 +61,47 @@
 	line-height: 1.2;
 }
 
+.site-address {
+	width: 200px;
+    padding-left: 50px;
+    border-left: 1px solid #ebebeb;
+	position: relative;
+
+
+}
+.header-info {
+	i {
+		margin-left: -35px;
+		top: 17px;
+		position: absolute;
+		font-size: 24px;
+		color: $color__main;
+	}
+	.address{
+		font-weight: 600;
+		@include font-size(1.1);
+		font-size: 0.6875rem;
+		text-transform: uppercase;
+		width: 170px;
+		margin-top: 0px;
+		color: $color__black;
+		position: absolute;
+		top: 20px;
+	}
+}
+.site-info {
+	width: 200px;
+    padding-left: 57px;
+    border-left: 1px solid #ebebeb;
+	.site-phone {
+		position: absolute;
+		top: 68px;
+	}
+	.site-email {
+		position: absolute;
+		top: 100px;
+	}
+}
 
 .collapse {
 	display: none;
@@ -73,18 +113,32 @@
 	left: 0;
 	width: 100%;
 	z-index: 9999;
+	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
 
 }
 
-.is-sticky {
-	.site-title {
-		margin: 0;
-	}
-	.topbar {
+@media(max-width: 991px) {
+	.main-navigation {
 		display: none;
 	}
-	.header-content {
-		position: fixed;
+	.site-address {
+		display: none;
+	}
+	.site-info {
+		display: none;
+	}
+	.menu-toggle {
+		display: block;
+		border-radius: 100px;
+		padding: 0px 20px;
+		background-color: $color__main;
+		color: $color__white;
+		&:hover {
+			background-color: $color__main;
+		}
+		&:focus {
+			background-color: $color__main;
+		}
 	}
 }
 

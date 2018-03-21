@@ -110,6 +110,17 @@ function bussiness_lander_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer', 'bussiness-lander' ),
+		'id'            => 'sidebar-2',
+		'description'   => esc_html__( 'Add widgets here.', 'bussiness-lander' ),
+		'before_widget' => '<section id="%1$s" class="widget-footer %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+	require_once get_template_directory() . '/inc/widgets/class-business-lander-recent-posts-widget.php';
+	register_widget( 'Business_Lander_Recent_Posts_Widget' );
 }
 add_action( 'widgets_init', 'bussiness_lander_widgets_init' );
 
@@ -124,6 +135,12 @@ function bussiness_lander_scripts() {
 	wp_enqueue_script( 'bussiness-lander-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'bussiness-lander-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	if ( is_front_page() && ! is_home() ) {
+		wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/js/slick.js', array( 'jquery' ), '1.8.0', true );
+	}
+
+	wp_enqueue_script( 'bussiness-lander-script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -141,9 +158,9 @@ function business_lander_fonts_url() {
 	$subsets = 'latin,latin-ext';
 
 	if ( 'off' !== _x( 'on', 'Poppins font: on or off', 'business-lander' ) ) {
-		$fonts[] = 'Poppins:400,700';
+		$fonts[] = 'Poppins:100,200,300,400,600,700';
 	}
-	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'greentech' ) ) {
+	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'business-lander' ) ) {
 		$fonts[] = 'Open Sans:400,600,700';
 	}
 
@@ -155,15 +172,89 @@ function business_lander_fonts_url() {
 	return $fonts_url;
 }
 
+
+function wpb_author_info_box( $content ) {
+
+	global $post;
+
+// Detect if it is a single post with a post author
+	if ( is_single() && isset( $post->post_author ) ) {
+
+// Get author's display name
+		$display_name = get_the_author_meta( 'display_name', $post->post_author );
+
+// If display name is not available then use nickname as display name
+		if ( empty( $display_name ) )
+			$display_name = get_the_author_meta( 'nickname', $post->post_author );
+
+// Get author's biographical information or description
+		$user_description = get_the_author_meta( 'user_description', $post->post_author );
+
+// Get author's website URL
+		$user_website = get_the_author_meta('url', $post->post_author);
+
+// Get link to the author archive page
+		$user_posts = get_author_posts_url( get_the_author_meta( 'ID' , $post->post_author));
+
+		if ( ! empty( $display_name ) )
+
+			$author_details = '<div class="author-info"><p class="author_name">Published by  ' . $display_name . '</p>';
+
+		if ( ! empty( $user_description ) )
+// Author avatar and bio
+
+			$author_details .= '<p class="author_details">' . get_avatar( get_the_author_meta('user_email') , 90 ) . nl2br( $user_description ). '</p>';
+
+		$author_details .= '<p class="author_links"><a href="'. $user_posts .'">View all posts by ' . $display_name . '</a></p></div>';
+
+		$author_details .= '<div class="post-tags">'.bussiness_lander_category_tag().'</div>';
+
+
+
+
+// Pass all this info to post content
+			$content = $content .'</div></article></main></div></div>' .'<footer class="author_bio_section" ><div id="content" class="site-content container">
+			<div id="primary" class="content-area">' . $author_details . '</div></div></footer>';
+
+		}
+		return $content;
+	}
+
+// Add our function to the post content filter
+	add_action( 'the_content', 'wpb_author_info_box' );
+
+// Allow HTML in author bio section
+	remove_filter('pre_user_description', 'wp_filter_kses');
+
+
+/**
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function wpdocs_custom_excerpt_length( $length ) {
+    return 25;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+/**
+ * Filter the excerpt "read more" string.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function wpdocs_excerpt_more( $more ) {
+    return '';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
 /**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
 
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
+
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
@@ -176,9 +267,20 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Load Breadcrumb
+ */
+require get_template_directory() . '/inc/breadcrumb.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
 

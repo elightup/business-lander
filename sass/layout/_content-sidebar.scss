@@ -1,11 +1,8 @@
 .content-area {
 	float: left;
-	margin: 0 (-$size__site-sidebar) 0 0;
-	width: $size__site-main;
-}
-
-.site-main {
-	margin: 0 $size__site-sidebar 0 0;
+	width: 70%;
+	margin-left: 15%;
+    margin-right: 15%;
 }
 
 .site-content .widget-area {
@@ -17,4 +14,6 @@
 .site-footer {
 	clear: both;
 	width: $size__site-main;
+	padding-bottom: 80px;
+
 }

@@ -2,4 +2,25 @@
 	max-width: 1200px;
 	width: 100%;
 	margin: 0 auto;
+	.row {
+		display: flex;
+		flex-flow: row wrap;
+	}
+	.col-3 > * {
+		width: 30%;
+		margin-left: 1.5%;
+		margin-right: 1.5%;
+	}
+	.col-2 > * {
+		width: 45%;
+		margin-right: 5%;
+	}
+	.col-1 > * {
+		width: 100%;
+	}
+}
+@media(max-width: 1199px) {
+	.container {
+		padding: 0 25px;
+	}
 }

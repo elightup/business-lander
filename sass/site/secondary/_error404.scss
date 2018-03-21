@@ -1,0 +1,12 @@
+.error-404 {
+	h2 {
+		font-weight: 400;
+	}
+	.go-back-home {
+		padding: 11px 30px;
+		margin-top: 50px;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

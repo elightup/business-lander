@@ -1,0 +1,30 @@
+.section--cta {
+	text-align: center;
+	clear: both;
+	background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+.section-cta__title {
+	font-weight: 400;
+	@include font-size(1.6);
+	text-transform: uppercase;
+	color: $color__text-gray;
+	padding-top: 99px;
+	padding-bottom: 15px;
+}
+.section-cta__text {
+	font-weight: 200;
+	@include font-size(4.2);
+	padding-bottom: 40px;
+	display: inline-block;
+}
+.section-cta__link {
+	padding-bottom: 120px;
+	a {
+		@include font-size(1.6);
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

@@ -163,6 +163,7 @@
 	line-height: 48px;
 	color: $color__main;
 	float: right;
+	display: none;
 	&::before {
 		content: "\f0c9";
 		@include fa-icon();
@@ -175,11 +176,12 @@
 .mobile-navigation {
 	position: absolute;
 	z-index: 1;
-	top: 100%;
+	top: 70%;
 	right: 0;
 	width: 50%;
 	display: none;
 	z-index: 9;
+	background-color: #f5f5f5;
 	li {
 		position: relative;
 	}
@@ -249,33 +251,8 @@ span.is-toggled  {
 	transform: scaleY(-1)
 }
 
-@media (min-width: 992px) {
-	.main-navigation {
-		flex: 2;
-
-		ul {
-			display: block;
-		}
-		& > div > ul {
-			display: flex;
-			justify-content: flex-end;
-			flex-flow: row wrap;
-		}
-	}
-	.menu-toggle {
-		display: none;
-	}
-}
 @media (max-width: 575px) {
 	.mobile-navigation {
 		width: 100%;
-	}
-}
-
-@media (max-width: 1199px) {
-	.main-navigation ul.menu {
-		> li {
-			margin-left: 10px;
-		}
 	}
 }

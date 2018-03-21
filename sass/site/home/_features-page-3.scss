@@ -1,0 +1,70 @@
+.features-page-3 {
+	position: relative;
+	padding-bottom: 103px;
+	.page-3 {
+		width: 45%;
+		display: inline-block;
+		margin-left: 85px;
+		float: right;
+		p {
+			font-weight: 400;
+			@include font-size(1.7);
+			display: inline;
+		}
+	}
+	.page-3__continue {
+		text-transform: uppercase;
+		font-weight: 600;
+		@include font-size(1.7);
+		margin-left: 10px;
+		&:after {
+			content: '\f0da';
+			@include fa-icon();
+			margin-left: 8px;
+		}
+	}
+	.page-3__name {
+		font-weight: 200;
+		@include font-size(4.2);
+		padding-top: 160px;
+	}
+	img {
+		width: 47%;
+		max-height: 357px;
+		object-fit: cover;
+		border: 7px solid #fff;
+		box-shadow: 0 0 25px grey;
+		margin-top: 100px;
+	}
+}
+@media (max-width: 1279px) {
+	.features-page-3 {
+		img {
+			width: 45%;
+		}
+	}
+}
+@media (max-width: 1023px) {
+	.features-page-3 {
+		.page-3__name {
+			padding-top: 90px;
+		}
+	}
+}
+@media (max-width: 991px) {
+	.features-page-3 {
+		.page-3 {
+			width: 97%;
+			display: block;
+			margin-bottom: 40px;
+
+		}
+		.page-3__name {
+			padding-top: 40px;
+		}
+		img {
+			width: 94%;
+			margin-left: 3%;
+		}
+	}
+}

@@ -9,22 +9,19 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
 
-		<?php
-		if ( have_posts() ) : ?>
+<main id="main" class="site-main">
 
-			<header class="page-header">
-				<h1 class="page-title"><?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'bussiness-lander' ), '<span>' . get_search_query() . '</span>' );
-				?></h1>
-			</header><!-- .page-header -->
-
+	<div class="section--archive-posts sidebar">
+		<div id="main" class="row col-1">
+			<h2 class="blog-title"><?php
+				/* translators: search query */
+				printf( esc_html__( 'Search Results for: %s', 'bussiness-lander' ), esc_html( get_search_query() ) ); ?></h2>
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			if ( have_posts() ) :
+
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
 
 				/**
 				 * Run the loop for the search to output the results.
@@ -41,11 +38,13 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif; ?>
+			endif; ?>
+		</div>
+	</div>
+	<?php get_sidebar();?>
+</main><!-- #main -->
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
 
 <?php
-get_sidebar();
+
 get_footer();

@@ -1,0 +1,138 @@
+.footer-widgets {
+	.container {
+		.widget-footer {
+			width: 25%;
+			margin: 40px 0 60px;
+			padding-right: 25px;
+		}
+	}
+}
+.widget-footer {
+	float: left;
+	select {
+		width: 100%;
+	}
+	.logo {
+		display: inline-block;
+		margin-bottom: 20px;
+	}
+	.widget-title {
+		@include font-size(1.4);
+		font-weight: 400;
+		color: $color__black;
+		text-transform: uppercase;
+		margin-bottom: 25px;
+		margin-top: 15px;
+	}
+	ul {
+		padding-left: 0;
+		list-style: none;
+		margin-left: 0px;
+		li {
+			a {
+				text-transform: uppercase;
+				font-weight: 400;
+				@include font-size(1.4);
+			}
+		}
+	}
+	.textwidget {
+		p {
+			color: $color__black;
+			font-weight: 400;
+			@include font-size(1.4);
+		}
+		span {
+			color: $color__main;
+			font-weight: 400;
+			@include font-size(1.4);
+		}
+	}
+}
+.jetpack_subscription_widget {
+	.widget-title {
+		text-align: center;
+	}
+	div > p {
+		text-align: center;
+		font-weight: 400;
+		@include font-size(1.4);
+		color: $color__black;
+		margin-bottom: 24px;
+	}
+	input[type="email"] {
+		width: 88% !important;
+		padding: 6px 60px;
+		margin-left: 7%;
+		font-weight: 400;
+		@include font-size(1.4);
+	}
+	input[type="submit"] {
+		border-radius: 100px;
+		padding: 11px 27px;
+		margin-left: 26%;
+		text-transform: uppercase;
+		margin-top: -10px;
+		@include font-size(1.4);
+	}
+}
+.bottombar {
+	text-align: center;
+	span {
+		font-weight: 400;
+		@include font-size(1.4);
+		text-transform: uppercase;
+		color: $color__black;
+		background: #f2fcfe;
+	}
+	.share {
+		margin-top: 38px;
+		i {
+			border: 1px solid #00bff3;
+			padding: 10px 10px;
+			border-radius: 100%;
+			color: #00bff3;
+			margin-right: 14px;
+			width: 41px;
+			height: 39px;
+			&:hover {
+				background-color: $color__border-button-hover;
+				border-color: $color__border-button-hover;
+				color: $color__white;
+			}
+		}
+	}
+}
+@media (max-width: 991px) {
+	.footer-widgets {
+		padding-bottom: 40px;
+		.container .widget-footer {
+			width: 50%;
+			margin-bottom: 0;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.footer-widgets .container .widget-footer {
+		width: 100%;
+		margin-top: 20px;
+	}
+	.jetpack_subscription_widget {
+		.widget-title {
+			text-align: inherit;
+		}
+		div > p {
+			text-align: inherit;
+		}
+		input[type="email"] {
+			width: 100% !important;
+			margin-left: 0;
+			padding: 6px 20px;
+		}
+		input[type="submit"] {
+			width: 100%;
+			margin-left: 0;
+		}
+	}
+}

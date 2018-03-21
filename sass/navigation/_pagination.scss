@@ -1,0 +1,31 @@
+.pagination {
+	text-align: center;
+	margin-top: 55px;
+	margin-bottom: 170px;
+	.nav-links > * {
+		border: 2px solid $color__border;
+		padding: 12px 30px;
+		border-radius: 50px;
+		text-transform: uppercase;
+		font-weight: 600;
+		@include font-size(1.6);
+		color: $color__black;
+		margin-right: 5px;
+	}
+	.current {
+		color: $color__main !important;
+		border-color: $color__main !important;
+	}
+	a:hover {
+		color: $color__link-hover;
+		text-decoration: none;
+		border-color: $color__main;
+	}
+}
+@media (max-width: 574px) {
+	.pagination {
+		.nav-links > * {
+			padding: 5px 13px;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+.wpcf7-form {
+	p {
+		margin-bottom: 0;
+	}
+	.contact-name,
+	.contact-phone,
+	.contact-message {
+		width: 100%;
+		padding: 8px 17px !important;
+		margin-bottom: 15px;
+		font-weight: 400;
+		@include font-size(1.4);
+	}
+	.contact-message {
+		max-height: 110px;
+	}
+	.contact-submit {
+		width: 100%;
+		border-radius: 100px !important;
+		text-transform: uppercase;
+		font-weight: 600;
+		@include font-size(1.4);
+		margin-top: 10px;
+	}
+}

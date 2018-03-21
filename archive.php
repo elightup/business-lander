@@ -9,43 +9,71 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<main class="site-main" role="main">
+		<div class="section--archive-posts sidebar">
+			<div id="main" class="row col-1">
+				<h2 class="blog-title"><?php the_archive_title(); ?></h2>
+				<?php if ( have_posts() ) :
+				while ( have_posts() ) : the_post(); ?>
+				<span class="line"></span>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<header class="entry-header">
+						<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">','</a></h3>' );?>
+						<?php if ( 'post' === get_post_type() ) : ?>
+							<div class="entry-meta">
+								<?php bussiness_lander_posted_on(); ?>
+							</div><!-- .entry-meta -->
+						<?php endif; ?>
+					</header><!-- .entry-header -->
 
-		<?php
-		if ( have_posts() ) : ?>
+					<?php
+					$main_content = apply_filters( 'the_content', get_the_content() );
+					?>
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+					<?php if ( strpos( $main_content, 'link-more' ) ) : ?>
+						<div class="entry-content has-link-more">
+						<?php else : ?>
+							<div class="entry-content">
+							<?php endif; ?>
 
+							<?php
+							if ( in_array( get_post_format(), array( 'audio', 'video' ), true ) ) {
+								$media = get_media_embedded_in_content( $main_content, array(
+									'audio',
+									'video',
+									'object',
+									'embed',
+									'iframe',
+								) );
+								$main_content = str_replace( $media, '', $main_content );
+							}
+
+							echo $main_content; /* WPCS: xss ok. */
+
+							wp_link_pages( array(
+								'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bussiness-lander' ),
+								'after'  => '</div>',
+							) );
+							?>
+						</div><!-- .entry-content -->
+						<?php echo bussiness_lander_category_tag(); ?>
+					</article><!-- #post-## -->
+				<?php endwhile; ?>
+			</div>
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
+			the_posts_pagination( array(
+				'prev_text' => __('older posts'),
+				'next_text' => __('newer posts'),
+			) );
+			?>
+		<?php else :
 			get_template_part( 'template-parts/content', 'none' );
+		?>
+	</div>
+		<?php endif; ?>
 
-		endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
+	</div>
+	<?php get_sidebar(); ?>
+</main>
 <?php
-get_sidebar();
 get_footer();

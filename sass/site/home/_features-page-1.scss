@@ -1,0 +1,42 @@
+.features-page-1 {
+	background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+	.page-1 {
+		max-width: 470px;
+		display: inline-block;
+		margin-left: 55%;
+		padding-bottom: 115px;
+	}
+	.page-1__name {
+		font-weight: 200;
+		@include font-size(4.2);
+		padding-top: 70px;
+		margin-bottom: 25px;
+	}
+	p {
+		font-weight: 400;
+		@include font-size(1.7);
+		display: inline;
+	}
+	.page-1__continue {
+		text-transform: uppercase;
+		font-weight: 600;
+		@include font-size(1.7);
+		margin-left: 10px;
+		&:after {
+			content: '\f0da';
+			@include fa-icon();
+			margin-left: 8px;
+		}
+	}
+}
+@media (max-width: 991px) {
+	.features-page-1 {
+		.page-1 {
+			max-width: 100%;
+			text-align: center;
+			margin-left: 0;
+		}
+	}
+}
