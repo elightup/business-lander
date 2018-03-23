@@ -9,10 +9,10 @@
 	font-weight: 400;
 	@include font-size(1.6);
 	text-transform: uppercase;
-	color: $color__text-gray;
 	padding-top: 99px;
 	padding-bottom: 15px;
 	letter-spacing: 0.05em;
+	opacity: 0.5;
 }
 .section-cta__text {
 	font-weight: 200;

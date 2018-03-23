@@ -22,12 +22,13 @@
 	.widget-title {
 		@include font-size(1.4);
 		font-weight: 400;
-		color: $color__black;
 		text-transform: uppercase;
 		margin-bottom: 25px;
 		margin-top: 15px;
 		position: relative;
 		display: inline-block;
+		opacity: 0.8;
+		letter-spacing: 0.05em;
 		&:before {
 			position: absolute;
 			content: '';
@@ -57,9 +58,9 @@
 	}
 	.textwidget {
 		p {
-			color: $color__black;
 			font-weight: 400;
 			@include font-size(1.4);
+			opacity: 0.8;
 		}
 		span {
 			color: $color__main;
@@ -76,8 +77,8 @@
 		text-align: center;
 		font-weight: 400;
 		@include font-size(1.4);
-		color: $color__black;
 		margin-bottom: 24px;
+		opacity: 0.8;
 	}
 	input[type="email"] {
 		width: 88% !important;
@@ -101,9 +102,10 @@
 		font-weight: 400;
 		@include font-size(1.4);
 		text-transform: uppercase;
-		color: $color__black;
 		background: #f2fcfe;
 		padding: 5px 10px;
+		opacity: 0.8;
+		letter-spacing: 0.05em;
 	}
 	.share {
 		margin-top: 30px;

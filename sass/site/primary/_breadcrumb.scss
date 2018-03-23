@@ -94,15 +94,41 @@ a:hover {
 	width: 300px;
 	position: absolute;
 	bottom: -18px;
-}
-.entry-meta span,
-.entry-meta a {
-	color: $color__black;
+	text-align: center;
+	a {
+		font-weight: 400;
+		@include font-size(1.4);
+		text-transform: uppercase;
+		opacity: 0.6;
+		letter-spacing: 0.05em;
+		color: $color__black;
+		&:hover {
+			color: $color__link-hover;
+		}
+	}
+	.byline {
+		margin-right: 25px;
+		&::before {
+			content: '\f007';
+			@include fa-icon();
+			color: $color__main;
+			@include font-size(1.4);
+			margin-right: 3px;
+		}
+	}
+	.posted-on {
+		&::before {
+			content: '\f017';
+			@include fa-icon();
+			color: $color__main;
+			@include font-size(1.4);
+			margin-right: 5px;
+		}
+	}
 }
 
 @media(max-width: 767px) {
 	.page-header {
-
 		.page-title {
 			@include font-size(3);
 		}
