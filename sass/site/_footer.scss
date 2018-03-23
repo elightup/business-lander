@@ -2,8 +2,11 @@
 	.container {
 		.widget-footer {
 			width: 25%;
-			margin: 40px 0 60px;
+			margin: 70px 0 70px;
 			padding-right: 25px;
+			&:nth-child(4) {
+				padding-right: 0;
+			}
 		}
 	}
 }
@@ -48,6 +51,7 @@
 				text-transform: uppercase;
 				font-weight: 400;
 				@include font-size(1.4);
+				letter-spacing: 0.05em;
 			}
 		}
 	}
@@ -99,9 +103,10 @@
 		text-transform: uppercase;
 		color: $color__black;
 		background: #f2fcfe;
+		padding: 5px 10px;
 	}
 	.share {
-		margin-top: 38px;
+		margin-top: 30px;
 		i {
 			border: 1px solid #00bff3;
 			padding: 10px 10px;

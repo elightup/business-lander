@@ -66,8 +66,8 @@
 			</div>
 			<?php
 			the_posts_pagination( array(
-				'prev_text' => __('older posts'),
-				'next_text' => __('newer posts'),
+				'prev_text' => __('newer posts'),
+				'next_text' => __('older posts'),
 			) );
 			?>
 		<?php else :

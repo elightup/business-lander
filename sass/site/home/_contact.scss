@@ -1,8 +1,24 @@
 .section--contact {
 	background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    padding-bottom: 50px;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	padding-bottom: 50px;
+	position: relative;
+	z-index: 3;
+	&:before {
+		content: '';
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 50%;
+		width: 50%;
+		height: 100%;
+		background: $color__white;
+		opacity: 0.1;
+		position: absolute;
+		z-index: -1;
+	}
+
 	.container {
 		display: flex;
 		flex-flow: row wrap;
@@ -27,10 +43,24 @@
 		@include font-size(1.7);
 		color: $color__white;
 		text-align: right;
+	}
+	p:nth-child(2) {
 		margin-top: 40px;
-		padding-bottom: 140px;
+		margin-bottom: 55px;
+	}
+	p:nth-child(n+3) {
+		margin-top: 0;
+		margin-bottom: 10px;
+		&:after {
+			content: '\f058';
+			@include fa-icon();
+			@include font-size(2.4);
+			margin-left: 17px;
+			color: $color__main;
+		}
 	}
 }
+
 .section-contact__right {
 	float: right;
 	width: 44%;

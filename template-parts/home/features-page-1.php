@@ -31,7 +31,10 @@ if ( ! $query->have_posts() ) {
 	<section class="features-page-1" style="background-image: url( <?php the_post_thumbnail_url(); ?> )">
 		<div class="container">
 			<div class="page-1">
-				<h3 class="page-1__name"><?php the_title();?></h3>
+				<div>
+					<h3 class="page-1__name"><?php the_title();?></h3>
+				</div>
+
 				<?php the_excerpt(); ?>
 				<a href="<?php the_permalink();?>" class="page-1__continue">learn more</a>
 			</div>

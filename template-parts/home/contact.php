@@ -30,8 +30,8 @@ if ( ! $query->have_posts() ) {
 }
 
 $query1 = new WP_Query( array(
-	'post_type'      => 'post',
-	'p'       => 148,
+	'post_type' => 'post',
+	'p'         => 148,
 
 ) );
 
@@ -40,8 +40,10 @@ $query1 = new WP_Query( array(
 	<div class="container">
 		<div class="section-contact__left">
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+				<div>
 					<h2 class="name"><?php the_title();?></h2>
-					<?php the_excerpt(); ?>
+				</div>
+					<?php the_content(); ?>
 			<?php endwhile; ?>
 		</div>
 		<div class="section-contact__right">

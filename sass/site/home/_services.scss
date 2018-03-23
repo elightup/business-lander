@@ -3,6 +3,15 @@
 	.section--title {
 		text-align: center;
 		padding-top: 50px;
+		padding-bottom: 16px;
+	}
+	.row {
+		justify-content: space-between;
+	}
+	.col-3 > * {
+		width: 32%;
+		margin-left: 0;
+		margin-right: 0;
 	}
 }
 .section-service__item {
@@ -22,12 +31,14 @@
 	}
 }
 .section-service__info {
-	padding-left: 45px;
-	padding-right: 45px;
+	padding-left: 41px;
+	padding-right: 41px;
 	p {
 		font-weight: 400;
 		@include font-size(1.6);
 		margin-bottom: 16px;
+		margin-top: 0;
+		line-height: 24px;
 	}
 }
 .section-service__title {
@@ -35,9 +46,10 @@
 	@include font-size(1.6);
 	text-transform: uppercase;
 	margin-top: 20px;
-	margin-bottom: 10px;
+	margin-bottom: 0px;
 	a {
 		color: $color__black;
+		letter-spacing: 0.05em;
 		&:hover {
 			text-decoration: none;
 			color: $color__link-hover;
@@ -48,6 +60,7 @@
 	text-transform: uppercase;
 	font-weight: 600;
 	@include font-size(1.4);
+	letter-spacing: 0.05em;
 }
 
 @media (max-width: 991px) {

@@ -16,7 +16,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 	<?php wp_head(); ?>
 </head>
 
@@ -73,26 +73,16 @@
 				</div>
 			</div><!-- .site-branding -->
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'bussiness-lander' ); ?></button>
-			<div class="site-address">
-				<div class="header-info">
-					<i aria-hidden="true" class="fa fa-map-marker"></i>
-					<p class="address">1234 internet street virtual city, statename 54321</p>
+			<?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
+				<div class="site-address">
+					<?php dynamic_sidebar( 'sidebar-3' ); ?>
 				</div>
-			</div>
-			<div class="site-info">
-				<div class="site-phone">
-					<div class="header-info">
-						<i aria-hidden="true" class="fa fa-phone"></i>
-						<p class="address">+84 987-248-558</p>
-					</div>
+			<?php endif; ?>
+			<?php if ( is_active_sidebar( 'sidebar-4' ) ) : ?>
+				<div class="site-info">
+					<?php dynamic_sidebar( 'sidebar-4' ); ?>
 				</div>
-				<div class="site-email">
-					<div class="header-info">
-						<i aria-hidden="true" class="fa fa-envelope"></i>
-						<p class="address">info@elightup.com</p>
-					</div>
-				</div>
-			</div>
+			<?php endif; ?>
 		</div>
 	</div>
 </header><!-- #masthead -->

@@ -110,11 +110,32 @@ function bussiness_lander_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer', 'bussiness-lander' ),
 		'id'            => 'sidebar-2',
 		'description'   => esc_html__( 'Add widgets here.', 'bussiness-lander' ),
 		'before_widget' => '<section id="%1$s" class="widget-footer %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Site address', 'bussiness-lander' ),
+		'id'            => 'sidebar-3',
+		'description'   => esc_html__( 'Add widgets here.', 'bussiness-lander' ),
+		'before_widget' => '<section id="%1$s" class="%2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Site info', 'bussiness-lander' ),
+		'id'            => 'sidebar-4',
+		'description'   => esc_html__( 'Add widgets here.', 'bussiness-lander' ),
+		'before_widget' => '<section id="%1$s" class="%2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',

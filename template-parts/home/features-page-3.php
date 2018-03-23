@@ -32,7 +32,9 @@ if ( ! $query->have_posts() ) {
 		<div class="container">
 			<?php the_post_thumbnail();?>
 			<div class="page-3">
-				<h3 class="page-3__name"><?php the_title();?></h3>
+				<div>
+					<h3 class="page-3__name"><?php the_title();?></h3>
+				</div>
 				<?php the_excerpt(); ?>
 				<a href="<?php the_permalink();?>" class="page-3__continue">learn more</a>
 			</div>
