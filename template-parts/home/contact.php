@@ -31,7 +31,7 @@ if ( ! $query->have_posts() ) {
 
 $query1 = new WP_Query( array(
 	'post_type' => 'post',
-	'p'         => 148,
+	'p'         => 52,
 
 ) );
 
