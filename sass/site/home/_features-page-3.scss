@@ -6,6 +6,7 @@
 		display: inline-block;
 		margin-left: 60px;
 		float: right;
+		position: relative;
 		p {
 			font-weight: 400;
 			@include font-size(1.7);
@@ -13,12 +14,29 @@
 			line-height: 32px;
 			opacity: 0.8;
 		}
+		&:before {
+			content: 'O';
+			position: absolute;
+			top: -41px;
+			left: 75px;
+			right: 0;
+			bottom: 0;
+			width: 0;
+			height: 0;
+			z-index: -1;
+			opacity: 0.05;
+			@include font-size(40);
+			font-weight: 100;
+			color: $color__black;
+
+		}
 	}
 	.page-3__continue {
 		text-transform: uppercase;
 		font-weight: 600;
 		@include font-size(1.7);
 		letter-spacing: 0.05em;
+		margin-left: 10px;
 		&:after {
 			content: '\f0da';
 			@include fa-icon();
@@ -76,7 +94,9 @@
 			width: 97%;
 			display: block;
 			margin-bottom: 40px;
-
+			&:before {
+				display: none;
+			}
 		}
 		.page-3__name {
 			padding-top: 40px;

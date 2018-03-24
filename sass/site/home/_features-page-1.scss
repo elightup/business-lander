@@ -7,6 +7,24 @@
 		display: inline-block;
 		margin-left: 55%;
 		padding-bottom: 105px;
+		position: relative;
+		z-index: 1;
+		&:before {
+			content: 'D';
+			position: absolute;
+			top: -147px;
+			left: 156px;
+			right: 0;
+			bottom: 0;
+			width: 0;
+			height: 0;
+			z-index: -1;
+			opacity: 0.05;
+			@include font-size(40);
+			font-weight: 100;
+			color: $color__black;
+
+		}
 	}
 	.page-1__name {
 		font-weight: 200;
@@ -56,6 +74,9 @@
 			max-width: 100%;
 			text-align: center;
 			margin-left: 0;
+			&:before {
+				display: none;
+			}
 		}
 	}
 }

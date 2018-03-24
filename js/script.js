@@ -59,6 +59,23 @@ jQuery( function ( $ ) {
 		} );
 	}
 
+	/**
+	 * Scroll to top
+	 */
+	function scrollToTop() {
+		var $window = $( window ),
+			$button = $( '.scroll-to-top' );
+		$window.on( 'scroll', function () {
+			$button[$window.scrollTop() > 100 ? 'removeClass' : 'addClass']( 'hidden' );
+		} );
+		$button.on( 'click', function ( e ) {
+			e.preventDefault();
+			$( 'body, html' ).animate( {
+				scrollTop: 0
+			}, 500 );
+		} );
+	}
+
 	if ( $().slick ) {
 		initTestimonialSlider();
 
@@ -66,5 +83,6 @@ jQuery( function ( $ ) {
 
 	toggleCollapse();
 	menuClick();
-	hideMobileMenuOnDesktops()
+	hideMobileMenuOnDesktops();
+	scrollToTop()
 } );

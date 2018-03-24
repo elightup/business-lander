@@ -88,10 +88,10 @@
 	}
 	input[type="text"] {
 		width: 100% !important;
-		max-width: 100%;
+		max-width: 100% !important;
 		padding: 8px 17px;
 		margin-bottom: 13px;
-		font-size: 17px;
+		@include font-size(1.7);
 		font-weight: 400;
 	}
 	.contact-form textarea {
@@ -99,7 +99,7 @@
 		width: 100%;
 		float: none;
 		margin-bottom: 13px;
-		font-size: 17px;
+		@include font-size(1.7);
 		font-weight: 400;
 	}
 }
@@ -117,10 +117,10 @@
 		}
 		.section-contact__right {
 			width: 100%;
-			.name {
+			.title {
 				text-align: center;
 			}
-			.contact-submit {
+			.contact-submit .pushbutton-wide {
 				width: 100%;
 			}
 		}

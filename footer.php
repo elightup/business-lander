@@ -32,7 +32,7 @@
 
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-
+<a href="" class="scroll-to-top hidden"><i class="fa fa-angle-up"></i></a>
 <?php wp_footer(); ?>
 
 </body>

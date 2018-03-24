@@ -5,12 +5,29 @@
 		display: inline-block;
 		margin-right: 114px;
 		padding-bottom: 180px;
+		position: relative;
 		p {
 			font-weight: 400;
 			@include font-size(1.7);
 			display: inline;
 			line-height: 32px;
 			opacity: 0.8;
+		}
+		&:before {
+			content: 'W';
+			position: absolute;
+			top: -41px;
+			left: 75px;
+			right: 0;
+			bottom: 0;
+			width: 0;
+			height: 0;
+			z-index: -1;
+			opacity: 0.05;
+			@include font-size(40);
+			font-weight: 100;
+			color: $color__black;
+
 		}
 	}
 	.page-2__continue {
@@ -44,7 +61,7 @@
 			width: 100%;
 			height: 12%;
 			z-index: 2;
-			opacity: 0.12;
+			opacity: 0.05;
 		}
 	}
 	img {
@@ -70,6 +87,9 @@
 			margin-left: 2%;
 			display: block;
 			margin-bottom: 40px;
+			&:before {
+				display: none;
+			}
 		}
 		.page-2__name {
 			padding-top: 40px;
