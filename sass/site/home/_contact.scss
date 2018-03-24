@@ -65,37 +65,62 @@
 	float: right;
 	width: 44%;
 	margin-top: 56px;
-	.name {
+	.title {
 		font-weight: 200;
 		@include font-size(3.2);
 		color: $color__white;
 		text-transform: uppercase;
 	}
 	.contact-submit {
-		width: 192px;
-		background-color: $color__main;
-		color: $color__white;
+		.pushbutton-wide {
+			text-transform: uppercase;
+			font-size: 16px;
+			letter-spacing: 0.05em;
+			padding: 14px 33px;
+			border-radius: 100px;
+			background-color: $color__main;
+			color: $color__white;
+			&:hover {
+				background-color: $color__black;
+				color: $color__white;
+			}
+		}
 	}
-}
+	input[type="text"] {
+		width: 100% !important;
+		max-width: 100%;
+		padding: 8px 17px;
+		margin-bottom: 13px;
+		font-size: 17px;
+		font-weight: 400;
+	}
+	.contact-form textarea {
+		height: 144px;
+		width: 100%;
+		float: none;
+		margin-bottom: 13px;
+		font-size: 17px;
+		font-weight: 400;
+	}
 
-@media (max-width: 991px) {
-	.section-contact__left {
-		width: 100%;
-		.name {
-			text-align: center;
-		}
-		p {
-			text-align: center;
-			padding-bottom: 0;
-		}
-	}
-	.section-contact__right {
-		width: 100%;
-		.name {
-			text-align: center;
-		}
-		.contact-submit {
+	@media (max-width: 991px) {
+		.section-contact__left {
 			width: 100%;
+			.name {
+				text-align: center;
+			}
+			p {
+				text-align: center;
+				padding-bottom: 0;
+			}
+		}
+		.section-contact__right {
+			width: 100%;
+			.name {
+				text-align: center;
+			}
+			.contact-submit {
+				width: 100%;
+			}
 		}
 	}
-}

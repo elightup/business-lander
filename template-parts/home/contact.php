@@ -48,7 +48,7 @@ $query1 = new WP_Query( array(
 		</div>
 		<div class="section-contact__right">
 			<?php while ( $query1->have_posts() ) : $query1->the_post(); ?>
-					<h3 class="name"><?php the_title();?></h3>
+					<h3 class="title"><?php the_title();?></h3>
 					<?php the_content(); ?>
 			<?php endwhile; ?>
 		</div>
