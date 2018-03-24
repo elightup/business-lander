@@ -2,7 +2,6 @@
 	margin-top: 90px;
 }
 .widget {
-	margin-bottom: 10px;
 	background: $color__background-widget;
 	word-wrap: break-word;
 	/* Make sure select elements fit in widgets. */
@@ -77,8 +76,35 @@
 		padding: 20px 25px;
 	}
 }
+.widget_text {
+	.contact-form {
+		input[type="text"],
+		textarea {
+			width: 100%;
+			padding: 10px 13px;
+			margin-bottom: 10px;
+			font-weight: 400;
+			@include font-size(1.4);
+		}
+		textarea {
+			height: 113px;
+		}
+		.contact-submit {
+			.pushbutton-wide {
+				width: 100%;
+				border-radius: 100px;
+				text-transform: uppercase;
+				@include font-size(1.4);
+				letter-spacing: 0.05em;
+				padding-top: 11px;
+				padding-bottom: 11px;
+			}
+		}
+	}
+}
 
 .aside-post {
+	margin-bottom: 30px;
 	.image {
 		float: left;
 		width: 74px;
@@ -133,7 +159,7 @@
 		}
 	}
 	.name {
-		margin-bottom: 8px;
+		margin-bottom: 0;
 		margin-top: 0;
 		line-height: (18/13);
 		font-family: $font__main;
