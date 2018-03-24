@@ -11,6 +11,8 @@
 		@include font-size(1.6);
 		color: $color__black;
 		margin-right: 5px;
+		opacity: 0.8;
+		letter-spacing: 0.05em;
 	}
 	.current {
 		color: $color__main !important;
