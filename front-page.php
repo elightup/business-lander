@@ -15,4 +15,5 @@ get_header();
 	get_template_part( 'template-parts/home/testimonial' );
 	get_template_part( 'template-parts/home/features-page-3');
 	get_template_part( 'template-parts/home/cta');
+
 get_footer();

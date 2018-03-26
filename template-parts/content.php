@@ -17,17 +17,12 @@
 				/* translators: %s: Name of current post. Only visible to screen readers */
 				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'bussiness-lander' ),
 				array(
-					'span' => array(
-						'class' => array(),
+						'span' => array(
+							'class' => array(),
 					),
 				)
 			),
 			get_the_title()
-		) );
-
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bussiness-lander' ),
-			'after'  => '</div>',
 		) );
 		?>
 
@@ -35,8 +30,7 @@
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main">
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 					<div class="entry-content">
 						<div class="pagelink"><?php wp_link_pages('pagelink=<span>%</span>'); ?></div>
-
-					</article><!-- #post-<?php the_ID(); ?> -->
+					</div>
+				</article><!-- #post-<?php the_ID(); ?> -->

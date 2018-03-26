@@ -67,7 +67,9 @@ function bussiness_lander_breadcrumb() {
 		} elseif ( is_page() ) {
 
 				echo '<h2 class="page-title title-black">' . get_the_title() . '</h2>';
-				bussiness_lander_post_thumbnail();
+				if ( bussiness_lander_jetpack_featured_image_display() ) {
+					bussiness_lander_post_thumbnail();
+				}
 
 		} elseif ( is_tag() ) {
 

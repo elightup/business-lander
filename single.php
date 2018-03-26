@@ -25,29 +25,23 @@ get_header();
 				comments_template();
 			endif;
 
-
-
 		endwhile; // End of the loop.
 
 		?>
-
-
-
 	</main><!-- #main -->
-
 </div><!-- #primary -->
 </div>
+
 <div class="post-nav">
 	<div class="container">
 		<div class="content-area">
 			<?php
-			the_post_navigation(array(
-
-				'screen_reader_text' => __( 'Continue Reading' ),
-			));
+				the_post_navigation(array(
+					'screen_reader_text' => __( 'Continue Reading' ),
+				));
 			?>
 		</div>
 	</div>
-</div>
+</div><!-- .post-nav -->
 <?php
 get_footer();

@@ -33,9 +33,10 @@ get_header(); ?>
 	<?php if ( $sidebar == 1) :
 			get_sidebar();
 		endif; ?>
-	</main>
+	</main><!-- .site-main -->
+
 <?php if ( $sidebar == 0 && $blog_style == 1) : ?>
-	</div>
+	</div><!-- .content-area -->
 <?php endif; ?>
 
 <?php
