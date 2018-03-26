@@ -736,7 +736,7 @@ a {
 .mobile-navigation {
   position: absolute;
   z-index: 1;
-  top: 70%;
+  top: 100%;
   right: 0;
   width: 50%;
   display: none;
@@ -1479,7 +1479,7 @@ ol.children {
     font-weight: 200;
     margin-bottom: .625rem;
     margin-top: -8px;
-    z-index: 3;
+    z-index: 0;
     color: #fff;
     position: absolute;
     max-width: 70%; }
@@ -1989,7 +1989,7 @@ a:hover {
   background-repeat: no-repeat;
   padding-bottom: 50px;
   position: relative;
-  z-index: 3; }
+  z-index: 0; }
   .section--contact:before {
     content: '';
     top: 0;
@@ -2244,7 +2244,7 @@ a:hover {
       width: 100%;
       height: 12%;
       z-index: 2;
-      opacity: 0.05; }
+      opacity: 0.12; }
   .features-page-2 img {
     width: 49%;
     object-fit: cover;

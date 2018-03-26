@@ -30,7 +30,7 @@ get_header();
 		?>
 	</main><!-- #main -->
 </div><!-- #primary -->
-</div>
+</div><!-- .container -->
 
 <div class="post-nav">
 	<div class="container">
