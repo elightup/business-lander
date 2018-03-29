@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package bussiness-lander
+ * @package business-lander
  */
 
 ?>
@@ -15,7 +15,7 @@
 		the_content( sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'bussiness-lander' ),
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'business-lander' ),
 				array(
 						'span' => array(
 							'class' => array(),

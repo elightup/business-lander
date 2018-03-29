@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package bussiness-lander
+ * @package business-lander
  */
 
 get_header(); ?>
@@ -14,17 +14,17 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header>
-					<h2><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'bussiness-lander' ); ?></h2>
+					<h2><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'business-lander' ); ?></h2>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'bussiness-lander' ); ?></p>
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'business-lander' ); ?></p>
 
 					<?php
 						get_search_form();
 					?>
 					<a class="go-back-home btn btn-primary" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<?php esc_html_e( 'Back to Home Page', 'bussiness-lander' ); ?>
+						<?php esc_html_e( 'Back to Home Page', 'business-lander' ); ?>
 					</a>
 
 				</div><!-- .page-content -->

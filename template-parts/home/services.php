@@ -2,7 +2,7 @@
 /**
  * Template part for displaying services.
  *
- * @package bussiness-lander
+ * @package business-lander
  */
 
 ?>
@@ -34,21 +34,21 @@ $services_image = get_the_post_thumbnail( get_the_ID() );
 ?>
 <section class="section--services">
 	<div class="container">
-		<h2 class="section--title"><?php echo esc_html( get_theme_mod( 'services_section_title', __( 'Services', 'bussiness-lander' ) ) ); ?></h2>
+		<h2 class="section--title"><?php echo esc_html( get_theme_mod( 'services_section_title', __( 'Services', 'business-lander' ) ) ); ?></h2>
 		<div class="row col-3">
 			<?php while ( $query->have_posts() ) : $query->the_post();?>
 				<div class="section-service__item">
 					<?php if ( has_post_thumbnail() ) : ?>
 						<div class="section-service__thumbnails">
-							<a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_post_thumbnail( '' ); ?></a>
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( '' ); ?></a>
 						</div>
 						<div class="section-service__info">
-							<h3 class="section-service__title"><a href="<?php echo esc_url( the_permalink() ) ?>" alt="<?php echo esc_attr( the_title() ); ?>"><?php the_title(); ?></a></h3>
+							<h3 class="section-service__title"><a href="<?php the_permalink(); ?>" alt="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 							<?php the_excerpt() ?>
-							<a class="section-service__continue" href="<?php echo esc_url( the_permalink() ) ?>">learn more</a>
+							<a class="section-service__continue" href="<?php the_permalink(); ?>"><?php echo esc_html('learn more');?></a>
 						</div>
 					<?php else : ?>
-						<h3 class="section-blog__title"><a href="<?php echo esc_url( the_permalink() ) ?>" alt="<?php echo esc_attr( the_title() ); ?>"><?php the_title(); ?></a></h3>
+						<h3 class="section-blog__title"><a href="<?php the_permalink();?>" alt="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 						<?php the_excerpt() ?>
 					<?php endif; ?>
 				</div>

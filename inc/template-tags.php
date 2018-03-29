@@ -4,63 +4,44 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package bussiness-lander
+ * @package business-lander
  */
 
-if ( ! function_exists( 'bussiness_lander_posted_on' ) ) :
-	/**
-	 * Prints HTML with meta information for the current post-date/time.
-	 */
-	function bussiness_lander_posted_on() {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-		}
+/**
+* Prints HTML with meta information for the current post-date/time.
+*/
+function business_lander_posted_on() {
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	}
 
-		$time_string = sprintf( $time_string,
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date( 'F j Y' ) ),
-			esc_attr( get_the_modified_date( 'c' ) ),
-			esc_html( get_the_modified_date() )
-		);
+	$time_string = sprintf( $time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date( 'F j Y' ) ),
+		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_html( get_the_modified_date() )
+	);
 
-		$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
+	$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
-		$byline = sprintf(
-			/* translators: %s: post author. */
-			esc_html_x( '%s', 'post author', 'bussiness-lander' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-		);
+	$byline = sprintf(
+		/* translators: %s: post author. */
+		esc_html_x( '%s', 'post author', 'business-lander' ),
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+	);
 
 			echo '<span class="byline"> ' . $byline . '</span><span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
 		}
-	endif;
 
-	if ( ! function_exists( 'bussiness_lander_posted_by' ) ) :
-	/**
-	 * Prints HTML with meta information for the current author.
-	 */
-	function bussiness_lander_posted_by() {
-		$byline = sprintf(
-			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'bussiness-lander' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-		);
-
-		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-
-	}
-endif;
-
-if ( ! function_exists( 'bussiness_lander_category_tag' ) ) :
-	/**
-	 * Prints HTML with meta information for the category and tag.
-	 */
-	function bussiness_lander_category_tag() {
+/**
+* Prints HTML with meta information for the category and tag.
+*/
+function business_lander_category_tag() {
 		$category_detail = get_the_category();//$post->ID
 		foreach( $category_detail as $cd ) {
-			$category_name = $cd->cat_name . ', ';
+			$category_name = $cd->cat_name;
 			$category_link .= '<a href="' . esc_url(get_category_link($cd->cat_ID)) . '">'.$category_name .'</a>';
 		}
 
@@ -70,7 +51,7 @@ if ( ! function_exists( 'bussiness_lander_category_tag' ) ) :
 
 		if ($post_tags) {
 			foreach($post_tags as $tag) {
-				$tags = $tag->name . ', ';
+				$tags = $tag->name;
 				$tags_link .= '<a href="' . esc_url(get_tag_link($tag->term_id)) . '">'.$tags .'</a>';
 			}
 
@@ -78,27 +59,25 @@ if ( ! function_exists( 'bussiness_lander_category_tag' ) ) :
 		}
 		return $category;
 	}
-endif;
 
-if ( ! function_exists( 'bussiness_lander_entry_footer' ) ) :
-	/**
-	 * Prints HTML with meta information for the categories, tags and comments.
-	 */
-	function bussiness_lander_entry_footer() {
+/**
+* Prints HTML with meta information for the categories, tags and comments.
+*/
+function business_lander_entry_footer() {
 		// Hide category and tag text for pages.
-		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'bussiness-lander' ) );
-			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'bussiness-lander' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+	if ( 'post' === get_post_type() ) {
+		/* translators: used between list items, there is a space after the comma */
+		$categories_list = get_the_category_list( esc_html__( ', ', 'business-lander' ) );
+		if ( $categories_list ) {
+			/* translators: 1: list of categories. */
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'business-lander' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'bussiness-lander' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'business-lander' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'bussiness-lander' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'business-lander' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 
@@ -108,7 +87,7 @@ if ( ! function_exists( 'bussiness_lander_entry_footer' ) ) :
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'bussiness-lander' ),
+						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'business-lander' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -125,7 +104,7 @@ if ( ! function_exists( 'bussiness_lander_entry_footer' ) ) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'bussiness-lander' ),
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'business-lander' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -138,39 +117,29 @@ if ( ! function_exists( 'bussiness_lander_entry_footer' ) ) :
 			'</span>'
 		);
 	}
-endif;
 
-if ( ! function_exists( 'bussiness_lander_post_thumbnail' ) ) :
 /**
  * Displays an optional post thumbnail.
  *
  * Wraps the post thumbnail in an anchor element on index views, or a div
  * element when on single views.
  */
-function bussiness_lander_post_thumbnail() {
+function business_lander_post_thumbnail() {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
 	}
 
 	if ( is_singular() ) :
 		?>
-
 		<div class="post-thumbnail">
-			<?php the_post_thumbnail(); ?>
-		</div><!-- .post-thumbnail -->
-
+			<?php the_post_thumbnail('full'); ?>
+		</div>
 	<?php else : ?>
-
-		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+		<a class="post-thumbnail" href="<?php the_permalink(); ?>">
 			<?php
-			the_post_thumbnail( 'post-thumbnail', array(
-				'alt' => the_title_attribute( array(
-					'echo' => false,
-				) ),
-			) );
+			the_post_thumbnail( 'post-thumbnail');
 			?>
 		</a>
-
 	<?php endif; // End is_singular().
 }
-endif;
+

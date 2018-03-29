@@ -1,6 +1,7 @@
 .main-navigation {
-	height: 62px;
-	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+	height: 55px;
+	border-bottom: 1px solid $color__border;
+	box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.1);
 	ul {
 		display: block;
 		list-style: none;
@@ -16,7 +17,7 @@
 			display: none;
 			position: absolute;
 			z-index: 10;
-			top: 100%;
+			top: 95%;
 			left: 0;
 			background: $color__white;
 			-webkit-box-shadow: -6px 6px 20px rgba(0, 0, 0, .15);
@@ -52,7 +53,9 @@
 			color: $color__text-main;
 			border-radius: 20px;
 			display: inline-block;
-			line-height: 1.5;
+			line-height: 24px;
+			letter-spacing: 0.05em;
+			opacity: 0.6;
 			padding: 4px 15px;
 			-webkit-transition: all .3s ease 0s;
 			-o-transition: all .3s ease 0s;
@@ -68,7 +71,8 @@
 		@include fa-icon();
 		font-weight: 400;
 		margin-left: 8px;
-		color: $color__link-hover;
+		color: $color__main;
+		@include font-size(1.2);
 	}
 	div > ul > .current_page_item > a,
 	div > ul > .current-menu-item > a,
@@ -79,7 +83,7 @@
 	ul.menu {
 		> li {
 			margin-left: 8px;
-			padding-top: 15px;
+			padding-top: 8px;
 			padding-bottom: 15px;
 		}
 		.sub-menu {
@@ -94,7 +98,7 @@
 				margin-left: -10px;
 				a {
 					@include font-size(1.3);
-					color: #9e9e9e;
+					color: $color__black;
 					font-weight: 400;
 					display: block;
 					line-height: 1.5;

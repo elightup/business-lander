@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package bussiness-lander
+ * @package business-lander
  */
 
 get_header(); ?>
@@ -16,7 +16,7 @@ get_header(); ?>
 		<div id="main" class="row col-1">
 			<h2 class="blog-title"><?php
 				/* translators: search query */
-				printf( esc_html__( 'Search Results for: %s', 'bussiness-lander' ), esc_html( get_search_query() ) ); ?></h2>
+				printf( esc_html__( 'Search Results for: %s', 'business-lander' ), esc_html( get_search_query() ) ); ?></h2>
 			<?php
 			if ( have_posts() ) :
 

@@ -1,5 +1,5 @@
 .section--services {
-	margin-bottom: 60px;
+	margin-bottom: 90px;
 	.section--title {
 		text-align: center;
 		padding-top: 50px;
@@ -17,7 +17,6 @@
 .section-service__item {
 	border: 1px solid #ebebeb;
 	text-align: center;
-	margin-bottom: 30px;
 	position: relative;
 	border-radius: 5px;
 	box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
@@ -40,6 +39,7 @@
 		margin-top: 0;
 		line-height: 24px;
 		opacity: 0.8;
+		font-family: $font__content-services;
 	}
 }
 .section-service__title {

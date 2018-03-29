@@ -3,7 +3,7 @@
  * Recent posts widget
  * Get recent posts and display in widget
  *
- * @package bussiness-lander
+ * @package business-lander
  */
 
 /**
@@ -22,15 +22,15 @@ class Business_Lander_Recent_Posts_Widget extends WP_Widget {
 	 */
 	public function __construct() {
 		$this->defaults = array(
-			'title'       => esc_html__( 'Recent Posts', 'bussiness-lander' ),
+			'title'       => esc_html__( 'Recent Posts', 'business-lander' ),
 			'number'      => 3,
 			'show_date'   => true,
 		);
 		parent::__construct(
-			'bussiness-lander-recent-posts',
-			esc_html__( 'Business lander: Recent Posts', 'bussiness-lander' ),
+			'business-lander-recent-posts',
+			esc_html__( 'Business lander: Recent Posts', 'business-lander' ),
 			array(
-				'description' => esc_html__( 'A widget that displays your recent posts from all categories or a category', 'bussiness-lander' ),
+				'description' => esc_html__( 'A widget that displays your recent posts from all categories or a category', 'business-lander' ),
 			)
 		);
 	}
@@ -72,7 +72,7 @@ class Business_Lander_Recent_Posts_Widget extends WP_Widget {
 					<?php endif; ?>
 					<div class="info">
 						<h5 class="name"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-						<time class="time" datetime="<?php echo esc_attr( get_the_time( 'j F Y' ) ); ?>"><?php bussiness_lander_posted_on();?></time>
+						<time class="time" datetime="<?php echo esc_attr( get_the_time( 'j F Y' ) ); ?>"><?php business_lander_posted_on();?></time>
 					</div>
 				</article>
 
@@ -113,11 +113,11 @@ class Business_Lander_Recent_Posts_Widget extends WP_Widget {
 		$instance  = wp_parse_args( $instance, $this->defaults ); ?>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'bussiness-lander' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'business-lander' ); ?></label>
 			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>">
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php esc_html_e( 'Number of posts to show:', 'bussiness-lander' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php esc_html_e( 'Number of posts to show:', 'business-lander' ); ?></label>
 			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" value="<?php echo absint( $instance['number'] ); ?>" size="3">
 		</p>
 		<?php

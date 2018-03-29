@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package bussiness-lander
+ * @package business-lander
  */
 
 ?>
@@ -21,7 +21,19 @@
 		</div>
 		<div class="bottombar">
 			<div class="container">
-				<span>greta business pro. designed by tung do</span>
+				<span>
+					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'business-lander' ) ); ?>">
+						<?php
+							/* translators: placeholder replaced with string */
+							printf( esc_html__( 'Proudly powered by %s. ', 'business-lander' ), 'WordPress' );
+						?>
+					</a>
+					<?php
+						/* translators: placeholder replaced with string */
+						printf( esc_html__( 'Theme: %1$s by %2$s.', 'business-lander' ), 'Business Lander', '<a href="https://gretathemes.com/" rel="designer">GretaThemes</a>' );
+					?>
+				</span>
+
 				<div class="share">
 					<a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
 					<a href="https://www.facebook.com/"><i class="fa fa-twitter"></i></a>

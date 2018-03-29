@@ -1,13 +1,12 @@
 <?php
 /**
- * bussiness-lander functions and definitions
+ * business-lander functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package bussiness-lander
+ * @package business-lander
  */
 
-if ( ! function_exists( 'bussiness_lander_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -15,14 +14,14 @@ if ( ! function_exists( 'bussiness_lander_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function bussiness_lander_setup() {
+	function business_lander_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on bussiness-lander, use a find and replace
-		 * to change 'bussiness-lander' to the name of your theme in all the template files.
+		 * If you're building a theme based on business-lander, use a find and replace
+		 * to change 'business-lander' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'bussiness-lander', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'business-lander', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -44,7 +43,7 @@ if ( ! function_exists( 'bussiness_lander_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'bussiness-lander' ),
+			'menu-1' => esc_html__( 'Primary', 'business-lander' ),
 		) );
 
 		/*
@@ -60,7 +59,7 @@ if ( ! function_exists( 'bussiness_lander_setup' ) ) :
 		) );
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'bussiness_lander_custom_background_args', array(
+		add_theme_support( 'custom-background', apply_filters( 'business_lander_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
@@ -80,8 +79,8 @@ if ( ! function_exists( 'bussiness_lander_setup' ) ) :
 			'flex-height' => true,
 		) );
 	}
-endif;
-add_action( 'after_setup_theme', 'bussiness_lander_setup' );
+
+add_action( 'after_setup_theme', 'business_lander_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -90,21 +89,21 @@ add_action( 'after_setup_theme', 'bussiness_lander_setup' );
  *
  * @global int $content_width
  */
-function bussiness_lander_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'bussiness_lander_content_width', 640 );
+function business_lander_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'business_lander_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'bussiness_lander_content_width', 0 );
+add_action( 'after_setup_theme', 'business_lander_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function bussiness_lander_widgets_init() {
+function business_lander_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'bussiness-lander' ),
+		'name'          => esc_html__( 'Sidebar', 'business-lander' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'bussiness-lander' ),
+		'description'   => esc_html__( 'Add widgets here.', 'business-lander' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -112,9 +111,9 @@ function bussiness_lander_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'bussiness-lander' ),
+		'name'          => esc_html__( 'Footer', 'business-lander' ),
 		'id'            => 'sidebar-2',
-		'description'   => esc_html__( 'Add widgets here.', 'bussiness-lander' ),
+		'description'   => esc_html__( 'Add widgets here.', 'business-lander' ),
 		'before_widget' => '<section id="%1$s" class="widget-footer %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h4 class="widget-title">',
@@ -122,9 +121,9 @@ function bussiness_lander_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Site address', 'bussiness-lander' ),
+		'name'          => esc_html__( 'Site address', 'business-lander' ),
 		'id'            => 'sidebar-3',
-		'description'   => esc_html__( 'Add widgets here.', 'bussiness-lander' ),
+		'description'   => esc_html__( 'Add widgets here.', 'business-lander' ),
 		'before_widget' => '<section id="%1$s" class="%2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h4 class="widget-title">',
@@ -132,9 +131,9 @@ function bussiness_lander_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Site info', 'bussiness-lander' ),
+		'name'          => esc_html__( 'Site info', 'business-lander' ),
 		'id'            => 'sidebar-4',
-		'description'   => esc_html__( 'Add widgets here.', 'bussiness-lander' ),
+		'description'   => esc_html__( 'Add widgets here.', 'business-lander' ),
 		'before_widget' => '<section id="%1$s" class="%2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h4 class="widget-title">',
@@ -143,31 +142,31 @@ function bussiness_lander_widgets_init() {
 	require_once get_template_directory() . '/inc/widgets/class-business-lander-recent-posts-widget.php';
 	register_widget( 'Business_Lander_Recent_Posts_Widget' );
 }
-add_action( 'widgets_init', 'bussiness_lander_widgets_init' );
+add_action( 'widgets_init', 'business_lander_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function bussiness_lander_scripts() {
+function business_lander_scripts() {
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css', '', '4.7.0' );
-	wp_enqueue_style( 'bussiness-lander-fonts', business_lander_fonts_url() );
-	wp_enqueue_style( 'bussiness-lander-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'business-lander-fonts', business_lander_fonts_url() );
+	wp_enqueue_style( 'business-lander-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'bussiness-lander-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'business-lander-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'bussiness-lander-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'business-lander-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_front_page() && ! is_home() ) {
 		wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/js/slick.js', array( 'jquery' ), '1.8.0', true );
 	}
 
-	wp_enqueue_script( 'bussiness-lander-script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'business-lander-script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'bussiness_lander_scripts' );
+add_action( 'wp_enqueue_scripts', 'business_lander_scripts' );
 
 /**
  * Get Google fonts URL for the theme.
@@ -183,6 +182,9 @@ function business_lander_fonts_url() {
 	}
 	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'business-lander' ) ) {
 		$fonts[] = 'Open Sans:400,600,700';
+	}
+	if ( 'off' !== _x( 'on', 'Cormorant Garamond font: on or off', 'business-lander' ) ) {
+		$fonts[] = 'Cormorant Garamond:400,600,700';
 	}
 
 	$fonts_url = add_query_arg( array(
@@ -228,7 +230,7 @@ function wpb_author_info_box( $content ) {
 
 		$author_details .= '<p class="author_links"><a href="'. $user_posts .'">View all posts by ' . $display_name . '</a></p></div>';
 
-		$author_details .= '<div class="post-tags">'.bussiness_lander_category_tag().'</div>';
+		$author_details .= '<div class="post-tags">'.business_lander_category_tag().'</div>';
 
 
 
@@ -255,7 +257,7 @@ function wpb_author_info_box( $content ) {
  * @return int (Maybe) modified excerpt length.
  */
 function wpdocs_custom_excerpt_length( $length ) {
-    return 25;
+    return 24;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
@@ -266,7 +268,7 @@ add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
  * @return string (Maybe) modified "read more" excerpt string.
  */
 function wpdocs_excerpt_more( $more ) {
-    return '';
+    return '...';
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 

@@ -2,7 +2,7 @@
 /**
  * Template part for displaying testimonials.
  *
- * @package GreenTech
+ * @package business-lander
  */
 
 $testimonial_bg_default = get_template_directory_uri() . '/images/bg-tess.png';
@@ -11,7 +11,8 @@ if ( ! post_type_exists( 'jetpack-testimonial' ) ) {
 }
 
 $args = array(
-	'post_type' => 'jetpack-testimonial',
+	'post_type'      => 'jetpack-testimonial',
+	'posts_per_page' => 3,
 );
 
 $image = get_theme_mod( 'testimonial_section_img', $testimonial_bg_default );
@@ -23,7 +24,7 @@ if ( ! $query->have_posts() ) {
 ?>
 <section class="section--testimonial" style="background-image: url( <?php echo esc_url( $image ) ?> )">
 	<div class="container">
-		<h3 class="section--testimonial__title">testimonials</h3>
+		<h3 class="section--testimonial__title"><?php echo esc_html('testimonials');?></h3>
 		<div class="testimonial">
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 				<div class="testimonial-item">

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package bussiness-lander
+ * @package business-lander
  */
 
 ?>
@@ -40,10 +40,10 @@
 			echo $main_content; /* WPCS: xss ok. */
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bussiness-lander' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'business-lander' ),
 				'after'  => '</div>',
 			) );
 			?>
 		</div><!-- .entry-content -->
-		<?php echo bussiness_lander_category_tag(); ?>
+		<?php echo business_lander_category_tag(); ?>
 </article><!-- #post-## -->

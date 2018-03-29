@@ -4,28 +4,38 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package bussiness-lander
+ * @package business-lander
  */
 
 ?>
 
-<?php if ( $sidebar == 1 ) : ?>
+<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 	<div class="section--archive-posts sidebar">
 		<div id="main" class="row col-1">
 <?php else : ?>
 	<div class="section--archive-posts">
 		<div id="main" class="row col-1">
 <?php endif; ?>
-			<h2 class="blog-title">Blog</h2>
+			<h2 class="blog-title"><?php echo esc_html('Blog');?></h2>
 				<?php if ( have_posts() ) :
 				while ( have_posts() ) : the_post(); ?>
-				<span class="line"></span>
+
+				<?php
+					if ( business_lander_jetpack_featured_image_archive_display() ) {
+						business_lander_post_thumbnail();
+					}
+					else {
+				?>
+					<span class="line"></span>
+				<?php
+					}
+				?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header class="entry-header">
 						<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">','</a></h3>' );?>
 						<?php if ( 'post' === get_post_type() ) : ?>
 							<div class="entry-meta-blog">
-								<?php bussiness_lander_posted_on(); ?>
+								<?php business_lander_posted_on(); ?>
 							</div><!-- .entry-meta -->
 						<?php endif; ?>
 					</header><!-- .entry-header -->
@@ -60,7 +70,7 @@
 							) );
 							?>
 						</div><!-- .entry-content -->
-						<?php echo bussiness_lander_category_tag(); ?>
+						<?php echo business_lander_category_tag(); ?>
 					</article><!-- #post-## -->
 				<?php endwhile; ?>
 			</div>

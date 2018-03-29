@@ -1,4 +1,4 @@
-.features-page-2 {
+.featured-page-2 {
 	position: relative;
 	.page-2 {
 		width: 41%;
@@ -17,7 +17,7 @@
 			content: 'W';
 			position: absolute;
 			top: -41px;
-			left: 75px;
+			left: 83px;
 			right: 0;
 			bottom: 0;
 			width: 0;
@@ -74,14 +74,14 @@
 	}
 }
 @media (max-width: 1279px) {
-	.features-page-2 {
+	.featured-page-2 {
 		img {
 			width: 42%;
 		}
 	}
 }
 @media (max-width: 991px) {
-	.features-page-2 {
+	.featured-page-2 {
 		.page-2 {
 			width: 98%;
 			margin-left: 2%;

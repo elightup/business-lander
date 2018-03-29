@@ -2,13 +2,13 @@
 /**
  * The template part for displaying cta section on front page
  *
- * @package bussiness-lander
+ * @package business-lander
  */
 
-$cta_title = get_theme_mod( 'cta_title', __( 'Expect the extraordinary', 'bussiness-lander' ) );
-$cta_text = get_theme_mod( 'cta_text', __( 'We are A Team of Experts', 'bussiness-lander' ) );
+$cta_title = get_theme_mod( 'cta_title', __( 'Expect the extraordinary', 'business-lander' ) );
+$cta_text = get_theme_mod( 'cta_text', __( 'We are A Team of Experts', 'business-lander' ) );
 $cta_button_url = get_theme_mod( 'cta_button_url', 'https://gretathemes.com/' );
-$cta_button_text = get_theme_mod( 'cta_button_text', __( 'contact us', 'bussiness-lander' ) );
+$cta_button_text = get_theme_mod( 'cta_button_text', __( 'contact us', 'business-lander' ) );
 $cta_bg = get_theme_mod( 'cta_background', get_template_directory_uri() . '/images/cta-bg.png' );
 ?>
 

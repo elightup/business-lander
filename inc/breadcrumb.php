@@ -2,13 +2,13 @@
 /**
  * Business lander breadcrumbs
  *
- * @package bussiness-lander
+ * @package business-lander
  */
 
 /**
  * Breadcrumb at the header
  */
-function bussiness_lander_breadcrumb() {
+function business_lander_breadcrumb() {
 
 	if ( ! is_front_page() ) {
 		?>
@@ -53,9 +53,13 @@ function bussiness_lander_breadcrumb() {
 			echo '<h1 class="page-title">' . $custom_tax_name . '</h1>'; // WPCS: XSS OK.
 
 		} elseif ( is_single() ) {
-
-			echo '<h2 class="page-title">' . get_the_title() . '</h2>';
-			bussiness_lander_post_thumbnail();
+			if ( business_lander_jetpack_featured_image_display() ) {
+				echo '<h2 class="page-title">' . get_the_title() . '</h2>';
+				business_lander_post_thumbnail();
+			}
+			else {
+				echo '<h2 class="page-title title-black">' . get_the_title() . '</h2>';
+			}
 		} elseif ( is_category() ) {
 			// Category page.
 			echo $breadcrumb; // WPCS: XSS OK.
@@ -65,11 +69,13 @@ function bussiness_lander_breadcrumb() {
 			echo '<h1 class="page-title">' . single_cat_title( '', false ) . '</h1>';
 
 		} elseif ( is_page() ) {
-
+			if ( business_lander_jetpack_featured_image_display() ) {
+				echo '<h2 class="page-title">' . get_the_title() . '</h2>';
+				business_lander_post_thumbnail();
+			}
+			else {
 				echo '<h2 class="page-title title-black">' . get_the_title() . '</h2>';
-				if ( bussiness_lander_jetpack_featured_image_display() ) {
-					bussiness_lander_post_thumbnail();
-				}
+			}
 
 		} elseif ( is_tag() ) {
 
@@ -105,7 +111,7 @@ function bussiness_lander_breadcrumb() {
 				<a href="<?php echo esc_html( get_month_link( get_the_time( 'Y' ) ), get_the_time( 'm' ) ); ?>" title="<?php echo esc_attr( get_the_time( 'M' ) ); ?>"><?php echo get_the_time( 'M' ); // WPCS: XSS OK. ?></a>
 			</li>
 			<li class="breadcrumb-item active"><?php echo get_the_time( 'jS' ) . ' ' . get_the_time( 'M' ); // WPCS: XSS OK. ?></li><ul>
-			<?php
+				<?php
 			echo '<h1 class="page-title">' . get_the_time( 'jS' ) . ' ' . get_the_time( 'M' ) . '</h1>'; // WPCS: XSS OK.
 
 		} elseif ( is_month() ) {

@@ -4,13 +4,13 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package bussiness-lander
+ * @package business-lander
  */
 
 ?>
-<h2 class="blog-title">Archive</h2>
-<p class="blog-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
-	<?php if ( $sidebar == 1 ) : ?>
+<h2 class="blog-title"><?php echo esc_html( get_theme_mod( 'blog_grid_title', __( 'Archive', 'business-lander' ) ) ); ?></h2>
+<p class="blog-description"><?php echo esc_html( get_theme_mod( 'blog_grid_text', __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.', 'business-lander' ) ) ); ?></p>
+	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 		<div class="section--archive-posts sidebar">
 			<div id="main" class="row col-2">
 	<?php else : ?>
@@ -27,10 +27,10 @@
 						<div class="post-info">
 							<?php the_title( '<h3 class="post-info-name"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">','</a></h3>' );?>
 							<?php
-							bussiness_lander_posted_on();
+							business_lander_posted_on();
 							the_excerpt();
 							?>
-							<a class="post-continue" href="<?php the_permalink();?>">Continue Reading</a>
+							<a class="post-continue" href="<?php the_permalink();?>"><?php echo esc_html('Continue Reading');?></a>
 						</div>
 					</div>
 				<?php endwhile; ?>

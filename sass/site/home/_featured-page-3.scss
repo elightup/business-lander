@@ -1,4 +1,4 @@
-.features-page-3 {
+.featured-page-3 {
 	position: relative;
 	padding-bottom: 103px;
 	.page-3 {
@@ -18,7 +18,7 @@
 			content: 'O';
 			position: absolute;
 			top: -41px;
-			left: 75px;
+			left: 105px;
 			right: 0;
 			bottom: 0;
 			width: 0;
@@ -75,21 +75,21 @@
 	}
 }
 @media (max-width: 1279px) {
-	.features-page-3 {
+	.featured-page-3 {
 		img {
 			width: 45%;
 		}
 	}
 }
 @media (max-width: 1023px) {
-	.features-page-3 {
+	.featured-page-3 {
 		.page-3__name {
 			padding-top: 90px;
 		}
 	}
 }
 @media (max-width: 991px) {
-	.features-page-3 {
+	.featured-page-3 {
 		.page-3 {
 			width: 97%;
 			display: block;

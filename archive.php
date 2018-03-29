@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package bussiness-lander
+ * @package business-lander
  */
 
 get_header(); ?>

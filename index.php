@@ -9,13 +9,18 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package bussiness-lander
+ * @package business-lander
  */
 
 get_header(); ?>
 <?php
-	$sidebar = get_theme_mod( 'sidebar',0);
-	$blog_style = get_theme_mod( 'blog_style',0);
+	if ( is_active_sidebar( 'sidebar-1' ) ) {
+		$sidebar = 1;
+	}
+	else {
+		$sidebar = 0;
+	}
+	$blog_style = get_theme_mod( 'blog_style',0 );
 ?>
 <?php if ( $sidebar == 0 && $blog_style == 1) : ?>
 	<div id="primary" class="content-area">
@@ -24,9 +29,9 @@ get_header(); ?>
 	<main class="site-main" role="main">
 		<?php
 			if ( $blog_style == 1) :
-				include( locate_template('template-parts/content-blogfull.php'));
+				get_template_part( 'template-parts/content', 'blogfull' );
 			else :
-				include( locate_template('template-parts/content-blog.php'));
+				get_template_part( 'template-parts/content', 'blog' );
 			endif;
 		?>
 

@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package bussiness-lander
+ * @package business-lander
  */
 
 /**
@@ -14,11 +14,11 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function bussiness_lander_jetpack_setup() {
+function business_lander_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
-		'render'    => 'bussiness_lander_infinite_scroll_render',
+		'render'    => 'business_lander_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
@@ -31,7 +31,7 @@ function bussiness_lander_jetpack_setup() {
 		// the default setting of the theme: 'content', 'excerpt' or array( 'content', 'excerpt' ) for themes mixing both display.
 
 		'post-details'    => array(
-			'stylesheet' => 'bussiness-lander-style',
+			'stylesheet' => 'business-lander-style',
 			'date'       => '.posted-on',
 			'categories' => '.post-category',
 			'tags'       => '.post-tag',
@@ -39,18 +39,18 @@ function bussiness_lander_jetpack_setup() {
 			'comment'    => '.comments-link',
 		),
 		'featured-images' => array(
-			'archive'    => false,
+			'archive'    => true,
 			'post'       => true,
 			'page'       => true,
 		),
 	) );
 }
-add_action( 'after_setup_theme', 'bussiness_lander_jetpack_setup' );
+add_action( 'after_setup_theme', 'business_lander_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function bussiness_lander_infinite_scroll_render() {
+function business_lander_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :
@@ -64,7 +64,7 @@ function bussiness_lander_infinite_scroll_render() {
 /**
  * Show/Hide Featured Image outside of the loop.
  */
-function bussiness_lander_jetpack_featured_image_display() {
+function business_lander_jetpack_featured_image_display() {
 	if ( ! function_exists( 'jetpack_featured_images_remove_post_thumbnail' ) ) {
 		return true;
 	}
@@ -87,4 +87,27 @@ function bussiness_lander_jetpack_featured_image_display() {
 	}
 
 	return true;
+}
+
+
+/**
+ * Display a Featured Image on archive pages if option is ticked.
+ */
+function business_lander_jetpack_featured_image_archive_display() {
+	if ( ! function_exists( 'jetpack_featured_images_remove_post_thumbnail' ) ) {
+		return false;
+	}
+
+	$options         = get_theme_support( 'jetpack-content-options' );
+	$featured_images = ( ! empty( $options[0]['featured-images'] ) ) ? $options[0]['featured-images'] : null;
+
+	$settings = array(
+		'archive-default' => ( isset( $featured_images['archive-default'] ) && false === $featured_images['archive-default'] ) ? '' : 1,
+	);
+
+	$settings = array_merge( $settings, array(
+		'archive-option' => get_option( 'jetpack_content_featured_images_archive', $settings['archive-default'] ),
+	) );
+
+	return $settings['archive-option'];
 }
