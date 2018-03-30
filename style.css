@@ -2131,9 +2131,11 @@ a:hover {
 
   .section-contact__right {
     width: 100%;
-    margin-top: 50px; }
+    margin-top: 50px;
+    margin-bottom: 50px; }
     .section-contact__right .contact__right {
-      width: 100%; }
+      width: 100%;
+      margin-left: 0; }
     .section-contact__right .title {
       text-align: center; }
     .section-contact__right .contact-submit .pushbutton-wide {
