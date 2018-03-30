@@ -1853,7 +1853,6 @@ a:hover {
     font-weight: 400;
     font-size: 14px;
     font-size: 0.875rem;
-    text-transform: uppercase;
     background: #f2fcfe;
     padding: 5px 10px;
     opacity: 0.8;
@@ -1947,11 +1946,10 @@ a:hover {
     margin-right: 0; }
 
 .section-service__item {
-  border: 1px solid #ebebeb;
   text-align: center;
   position: relative;
   border-radius: 5px;
-  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
   padding-bottom: 30px; }
 
 .section-service__thumbnails img {
@@ -1995,7 +1993,10 @@ a:hover {
 
 @media (max-width: 991px) {
   .section-service__thumbnails img {
-    width: 100%; } }
+    width: 100%; }
+
+  .section-service__item {
+    margin-bottom: 30px; } }
 /* Contact */
 .section--contact {
   background-size: cover;
@@ -2035,7 +2036,7 @@ a:hover {
   justify-content: center; }
 
 .contact__left {
-  width: 90%;
+  width: 87%;
   display: inline-block; }
   .contact__left .name {
     margin: 0;
@@ -2074,9 +2075,9 @@ a:hover {
 
 .contact__right {
   float: right;
-  width: 90%;
+  width: 87%;
   /* margin-top: 56px; */
-  margin-left: 10%; }
+  margin-left: 13%; }
   .contact__right .title {
     font-weight: 200;
     font-size: 32px;
@@ -2227,7 +2228,7 @@ a:hover {
       content: 'W';
       position: absolute;
       top: -41px;
-      left: 83px;
+      left: 65px;
       right: 0;
       bottom: 0;
       width: 0;
@@ -2279,7 +2280,7 @@ a:hover {
     width: 49%;
     object-fit: cover;
     border: 7px solid #fff;
-    box-shadow: 0 0 25px grey;
+    box-shadow: 1px 0 36px rgba(0, 0, 0, 0.15);
     margin-top: -170px; }
 
 @media (max-width: 1279px) {
@@ -2337,14 +2338,16 @@ a:hover {
     -moz-border-radius: 50%;
     border-radius: 50%;
     display: block;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     padding: 0;
     background-color: #a3a3a3;
     -webkit-transition: all .3s ease 0s;
     -moz-transition: all .3s ease 0s;
     transition: all .3s ease 0s;
     border: none; }
+    .testimonial .slick-dots button:focus {
+      outline: none; }
   .testimonial .slick-dots li.slick-active button {
     background-color: #000; }
 
@@ -2364,7 +2367,7 @@ a:hover {
   width: 65px;
   margin-left: 47%; }
   .testimonial-item .image img {
-    border-radius: 50%;
+    border-radius: 100%;
     width: 65px;
     height: 65px;
     object-fit: cover; }
@@ -2390,7 +2393,7 @@ a:hover {
       content: 'O';
       position: absolute;
       top: -41px;
-      left: 105px;
+      left: 75px;
       right: 0;
       bottom: 0;
       width: 0;
@@ -2443,7 +2446,7 @@ a:hover {
     max-height: 357px;
     object-fit: cover;
     border: 7px solid #fff;
-    box-shadow: 0 0 25px grey;
+    box-shadow: 1px 0 36px rgba(0, 0, 0, 0.15);
     margin-top: 100px; }
 
 @media (max-width: 1279px) {
@@ -2678,7 +2681,7 @@ a:hover {
     margin-bottom: 27px; }
   .entry-content img {
     border: 9px solid #fff;
-    box-shadow: 0 0 25px grey; }
+    box-shadow: 1px 0 36px rgba(0, 0, 0, 0.15); }
 
 .post-category {
   font-weight: 400;

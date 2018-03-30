@@ -15,11 +15,10 @@
 	}
 }
 .section-service__item {
-	border: 1px solid #ebebeb;
 	text-align: center;
 	position: relative;
 	border-radius: 5px;
-	box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
 	padding-bottom: 30px;
 }
 .section-service__thumbnails {
@@ -69,5 +68,8 @@
 		img {
 			width: 100%;
 		}
+	}
+	.section-service__item {
+		margin-bottom: 30px;
 	}
 }

@@ -39,7 +39,7 @@
     justify-content: center;
 }
 .contact__left {
-	width: 90%;
+	width: 87%;
 	display: inline-block;
 	.name {
 		margin: 0;
@@ -76,9 +76,9 @@
 
 .contact__right {
 	float: right;
-	width: 90%;
+	width: 87%;
 	/* margin-top: 56px; */
-	margin-left: 10%;
+	margin-left: 13%;
 	.title {
 		font-weight: 200;
 		@include font-size(3.2);
