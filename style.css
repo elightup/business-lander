@@ -2059,7 +2059,7 @@ a:hover {
     margin-bottom: 55px; }
   .contact__left p:nth-child(n+3) {
     margin-top: 0;
-    margin-bottom: 10px; }
+    margin-bottom: 5px; }
     .contact__left p:nth-child(n+3):after {
       content: '\f058';
       display: inline-block;

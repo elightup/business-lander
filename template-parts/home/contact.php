@@ -29,11 +29,17 @@ if ( ! $query->have_posts() ) {
 	return;
 }
 
+$post  = get_theme_mod( 'contact_form' );
+
 $query1 = new WP_Query( array(
-	'post_type' => 'post',
-	'p'         => 148,
+	'post_type' => 'page',
+	'page_id'   => $post,
 
 ) );
+
+if ( ! $query1->have_posts() ) {
+	return;
+}
 
 ?>
 <section class="section--contact" style="background-image: url( <?php echo esc_url( $image ) ?> )">

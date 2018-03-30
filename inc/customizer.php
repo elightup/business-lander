@@ -115,6 +115,17 @@ function business_lander_customize_register( $wp_customize ) {
 		)
 	) );
 
+	$wp_customize->add_setting( 'contact_form', array(
+		'sanitize_callback' => 'absint',
+		'transport'         => 'postMessage',
+	) );
+	$wp_customize->add_control( 'contact_form', array(
+		'label'           => esc_html__( 'Contact Form ', 'business-lander' ),
+		'section'         => 'contact_section',
+		'type'            => 'dropdown-pages',
+		'active_callback' => 'is_front_page',
+	) );
+
 
 	/**
 	 * Services section.

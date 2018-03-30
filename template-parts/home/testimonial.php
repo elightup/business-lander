@@ -18,6 +18,8 @@ $args = array(
 $image = get_theme_mod( 'testimonial_section_img', $testimonial_bg_default );
 
 $query = new WP_Query( $args );
+
+// Don't output anything if no testimonial are created.
 if ( ! $query->have_posts() ) {
 	return;
 }
