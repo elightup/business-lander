@@ -204,6 +204,12 @@
 }
 
 @media ( max-width: 480px ) {
+	.site-header {
+	.header-content > .container {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+}
 	.site-logo {
 		flex-direction: column;
 	}

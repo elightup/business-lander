@@ -8,21 +8,11 @@
 ?>
 
 <?php
-
-$contact_bg_default = get_template_directory_uri() . '/images/contact-bg.png';
-
-$contact_pages = get_theme_mod( 'front_page_contact');
-
-if ( ! $contact_pages ) {
-	return;
-}
-
-$image = get_theme_mod( 'contact_section_img', $contact_bg_default );
-
+$frontpage_id = get_option( 'page_on_front' );
+$bg_contact = get_the_post_thumbnail_url($frontpage_id);
 $query = new WP_Query( array(
 	'post_type' => 'page',
-	'page_id'   => $contact_pages,
-
+	'page_id'   => $frontpage_id,
 ) );
 
 if ( ! $query->have_posts() ) {
@@ -30,11 +20,9 @@ if ( ! $query->have_posts() ) {
 }
 
 $post  = get_theme_mod( 'contact_form' );
-
 $query1 = new WP_Query( array(
 	'post_type' => 'page',
 	'page_id'   => $post,
-
 ) );
 
 if ( ! $query1->have_posts() ) {
@@ -42,7 +30,7 @@ if ( ! $query1->have_posts() ) {
 }
 
 ?>
-<section class="section--contact" style="background-image: url( <?php echo esc_url( $image ) ?> )">
+<section class="section--contact" style="background-image: url( <?php echo esc_url( $bg_contact ) ?> )">
 	<div class="container">
 		<div class="section-contact__left">
 			<div class="contact__left">

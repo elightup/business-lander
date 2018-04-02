@@ -31,8 +31,8 @@ if ( ! $query->have_posts() ) {
 	<section class="featured-page-2">
 		<div class="container">
 			<div class="page-2">
-				<div>
-					<h3 class="page-2__name"><?php the_title();?></h3>
+				<div class="page-2__name">
+					<h3><?php the_title();?></h3>
 				</div>
 				<?php the_excerpt(); ?>
 				<a href="<?php the_permalink();?>" class="page-2__continue"><?php echo esc_html('learn more');?></a>

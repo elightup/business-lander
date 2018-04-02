@@ -21,15 +21,16 @@
 				while ( have_posts() ) : the_post(); ?>
 
 				<?php
-					if ( business_lander_jetpack_featured_image_archive_display() ) {
-						business_lander_post_thumbnail();
-					}
-					else {
+				if ( !business_lander_jetpack_featured_image_archive_display() || !has_post_thumbnail()) {
 				?>
 					<span class="line"></span>
 				<?php
 					}
+					else {
+						business_lander_post_thumbnail();
+					}
 				?>
+
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header class="entry-header">
 						<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">','</a></h3>' );?>

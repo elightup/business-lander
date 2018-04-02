@@ -42,7 +42,7 @@
 			margin-left: 8px;
 		}
 	}
-	.page-2__name {
+	h3 {
 		font-weight: 200;
 		@include font-size(4.2);
 		padding-top: 170px;
@@ -93,11 +93,33 @@
 		}
 		.page-2__name {
 			padding-top: 40px;
+			h3 {
+				padding-top: 0px;
+			}
 		}
 		img {
 			width: 94%;
 			margin-left: 2%;
 			margin-bottom: 60px;
 		}
+	}
+}
+
+@media (max-width: 480px) {
+	.featured-page-2 {
+		h3 {
+			padding-top: 0;
+			@include font-size(3.2);
+		}
+		p {
+			font-size: 14px !important;
+		}
+		.page-2__name {
+			padding-top: 10px;
+		}
+		.page-2__continue {
+			@include font-size(1.5);
+		}
+
 	}
 }

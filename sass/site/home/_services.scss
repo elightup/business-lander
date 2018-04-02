@@ -73,3 +73,17 @@
 		margin-bottom: 30px;
 	}
 }
+
+@media (max-width: 480px) {
+	.section--services {
+		margin-bottom: 20px;
+		.section--title {
+			@include font-size(3.2);
+			padding-top: 0;
+		}
+		.section-service__info {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
+}

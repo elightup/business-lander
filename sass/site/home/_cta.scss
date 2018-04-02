@@ -47,3 +47,15 @@
 		}
 	}
 }
+
+@media (max-width: 480px) {
+	.section-cta__title {
+		padding-top: 40px;
+	}
+	.section-cta__text {
+		@include font-size(3.2);
+	}
+	.section-cta__link {
+		padding-bottom: 50px;
+	}
+}

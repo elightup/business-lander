@@ -18,27 +18,31 @@ function business_lander_customize_register( $wp_customize ) {
 	// Add theme options panel.
 	$wp_customize->add_panel( 'business-lander', array(
 		'title'           => esc_html__( 'Theme Options', 'business-lander' ),
-		'active_callback' => 'is_front_page',
 	) );
 
 	/**
-	 * Header.
+	 * Contact Info.
 	 */
 	$wp_customize->add_section( 'header_contact', array(
-		'title' => esc_html__( 'Header contact', 'business-lander' ),
-		'panel' => 'business-lander',
+		'title'       => esc_html__( 'Contact Info', 'business-lander' ),
+		'panel'       => 'business-lander',
+		'description' =>'Display your location, phone and email.',
+	) );
+
+	$wp_customize->add_control( 'header_address', array(
+		'label'           => esc_html__( 'Address', 'business-lander' ),
+		'section'         => 'header_contact',
 	) );
 	$wp_customize->add_setting( 'header_address', array(
-		'default'           => esc_html__( '1234 INTERNET STREET VIRTUAL CITY, STATENAME 54321', 'business-lander' ),
+		'default'           => esc_html__( '1234 internet street virtual city, statename 54321', 'business-lander' ),
 		'sanitize_callback' => 'sanitize_text_field',
 		'transport'         => 'postMessage',
 	) );
 
 	$wp_customize->add_control( 'header_address', array(
-		'label'           => esc_html__( 'Header address', 'business-lander' ),
+		'label'           => esc_html__( 'Address', 'business-lander' ),
 		'section'         => 'header_contact',
 		'type'            => 'textarea',
-		'active_callback' => 'is_front_page',
 	) );
 	$wp_customize->add_setting( 'header_phone', array(
 		'default'           => esc_html__( '+84 987-248-558', 'business-lander' ),
@@ -47,10 +51,9 @@ function business_lander_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'header_phone', array(
-		'label'           => esc_html__( 'Header phone', 'business-lander' ),
+		'label'           => esc_html__( 'Phone', 'business-lander' ),
 		'section'         => 'header_contact',
 		'type'            => 'text',
-		'active_callback' => 'is_front_page',
 	) );
 	$wp_customize->add_setting( 'header_email', array(
 		'default'           => esc_html__( 'info@elightup.com', 'business-lander' ),
@@ -59,10 +62,9 @@ function business_lander_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'header_email', array(
-		'label'           => esc_html__( 'Header email', 'business-lander' ),
+		'label'           => esc_html__( 'Email', 'business-lander' ),
 		'section'         => 'header_contact',
 		'type'            => 'text',
-		'active_callback' => 'is_front_page',
 	) );
 
 
@@ -70,50 +72,11 @@ function business_lander_customize_register( $wp_customize ) {
 	 * Contact section.
 	 */
 	$wp_customize->add_section( 'contact_section', array(
-		'title' => esc_html__( 'Contact Section', 'business-lander' ),
-		'panel' => 'business-lander',
+		'title'       => esc_html__( 'Contact', 'business-lander' ),
+		'panel'       => 'business-lander',
+		'description' =>'Display your contact form.',
 	) );
 
-	// Default Setting Services Section.
-	$contact_bg_default = get_template_directory_uri() . '/images/contact-bg.png';
-
-	$wp_customize->add_setting( 'front_page_contact', array(
-		'sanitize_callback' => 'absint',
-		'transport'         => 'postMessage',
-	) );
-	$wp_customize->add_control( 'front_page_contact', array(
-		'label'           => esc_html__( 'Contact Page ', 'business-lander' ),
-		'section'         => 'contact_section',
-		'type'            => 'dropdown-pages',
-		'active_callback' => 'is_front_page',
-	) );
-
-	$wp_customize->selective_refresh->add_partial(
-		'front_page_services_',
-		array(
-			'selector'            => '.section--contact',
-			'container_inclusive' => true,
-			'render_callback'     => 'business-lander_refresh_services_section',
-		)
-	);
-
-		// Upload image to add background image.
-	$wp_customize->add_setting( 'contact_section_img', array(
-		'sanitize_callback' => 'business-lander_sanitize_image',
-		'default'           => $contact_bg_default,
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Image_Control(
-		$wp_customize,
-		'services_section',
-		array(
-			'label'           => esc_html__( 'Centered Image', 'business-lander' ),
-			'section'         => 'contact_section',
-			'description'     => esc_html__( 'Choose the contact section background', 'business-lander' ),
-			'settings'        => 'contact_section_img',
-			'active_callback' => 'is_front_page',
-		)
-	) );
 
 	$wp_customize->add_setting( 'contact_form', array(
 		'sanitize_callback' => 'absint',
@@ -123,7 +86,6 @@ function business_lander_customize_register( $wp_customize ) {
 		'label'           => esc_html__( 'Contact Form ', 'business-lander' ),
 		'section'         => 'contact_section',
 		'type'            => 'dropdown-pages',
-		'active_callback' => 'is_front_page',
 	) );
 
 
@@ -131,8 +93,9 @@ function business_lander_customize_register( $wp_customize ) {
 	 * Services section.
 	 */
 	$wp_customize->add_section( 'service_section', array(
-		'title' => esc_html__( 'Service Section', 'business-lander' ),
-		'panel' => 'business-lander',
+		'title'       => esc_html__( 'Service', 'business-lander' ),
+		'panel'       => 'business-lander',
+		'description' =>'Display service title and service page.',
 	) );
 
 	$wp_customize->add_setting( 'services_section_title', array(
@@ -142,10 +105,9 @@ function business_lander_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'services_section_title', array(
-		'label'           => esc_html__( 'Services Section Title', 'business-lander' ),
+		'label'           => esc_html__( 'Services Title', 'business-lander' ),
 		'section'         => 'service_section',
 		'type'            => 'text',
-		'active_callback' => 'is_front_page',
 	) );
 
 	for ( $i = 1; $i <= 3; $i ++ ) {
@@ -157,7 +119,6 @@ function business_lander_customize_register( $wp_customize ) {
 			'label'           => esc_html__( 'Service Page ', 'business-lander' ) . $i,
 			'section'         => 'service_section',
 			'type'            => 'dropdown-pages',
-			'active_callback' => 'is_front_page',
 		) );
 
 		$wp_customize->selective_refresh->add_partial(
@@ -174,8 +135,9 @@ function business_lander_customize_register( $wp_customize ) {
 	 * Featured page 1 section.
 	 */
 	$wp_customize->add_section( 'featured_page_1_section', array(
-		'title' => esc_html__( 'Featured page 1 Section', 'business-lander' ),
-		'panel' => 'business-lander',
+		'title'       => esc_html__( 'Featured Page 1', 'business-lander' ),
+		'panel'       => 'business-lander',
+		'description' =>'Display featured page 1',
 	) );
 
 	$wp_customize->add_setting( 'featured_page_1', array(
@@ -183,10 +145,9 @@ function business_lander_customize_register( $wp_customize ) {
 		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_control( 'featured_page_1', array(
-		'label'           => esc_html__( 'Featured page 1 ', 'business-lander' ),
+		'label'           => esc_html__( 'Featured Page', 'business-lander' ),
 		'section'         => 'featured_page_1_section',
 		'type'            => 'dropdown-pages',
-		'active_callback' => 'is_front_page',
 	) );
 
 	$wp_customize->selective_refresh->add_partial(
@@ -203,8 +164,9 @@ function business_lander_customize_register( $wp_customize ) {
 	 * Feature page 2 section.
 	 */
 	$wp_customize->add_section( 'featured_page_2_section', array(
-		'title' => esc_html__( 'Featured page 2 Section', 'business-lander' ),
-		'panel' => 'business-lander',
+		'title'       => esc_html__( 'Featured Page 2', 'business-lander' ),
+		'panel'       => 'business-lander',
+		'description' =>'Display featured page 2',
 	) );
 
 	$wp_customize->add_setting( 'featured_page_2', array(
@@ -212,10 +174,9 @@ function business_lander_customize_register( $wp_customize ) {
 		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_control( 'featured_page_2', array(
-		'label'           => esc_html__( 'Featured page 2 ', 'business-lander' ),
+		'label'           => esc_html__( 'Featured Page', 'business-lander' ),
 		'section'         => 'featured_page_2_section',
 		'type'            => 'dropdown-pages',
-		'active_callback' => 'is_front_page',
 	) );
 
 	$wp_customize->selective_refresh->add_partial(
@@ -233,8 +194,9 @@ function business_lander_customize_register( $wp_customize ) {
 	$testimonial_bg_default = get_template_directory_uri() . '/images/bg-tess.png';
 
 	$wp_customize->add_section( 'testimonial_section', array(
-		'title' => esc_html__( 'Testimonial Section', 'business-lander' ),
-		'panel' => 'business-lander',
+		'title'       => esc_html__( 'Testimonial', 'business-lander' ),
+		'panel'       => 'business-lander',
+		'description' =>'Display testimonial background.',
 	) );
 
 	$wp_customize->add_setting( 'testimonial_section_img', array(
@@ -250,7 +212,6 @@ function business_lander_customize_register( $wp_customize ) {
 			'section'         => 'testimonial_section',
 			'description'     => esc_html__( 'Choose the testimonial section background', 'business-lander' ),
 			'settings'        => 'testimonial_section_img',
-			'active_callback' => 'is_front_page',
 		)
 	) );
 
@@ -258,8 +219,9 @@ function business_lander_customize_register( $wp_customize ) {
 	 * Featured page 3 section.
 	 */
 	$wp_customize->add_section( 'featured_page_3_section', array(
-		'title' => esc_html__( 'Featured page 3 Section', 'business-lander' ),
-		'panel' => 'business-lander',
+		'title'       => esc_html__( 'Featured Page 3', 'business-lander' ),
+		'panel'       => 'business-lander',
+		'description' =>'Display featured page 3.',
 	) );
 
 	$wp_customize->add_setting( 'featured_page_3', array(
@@ -267,10 +229,9 @@ function business_lander_customize_register( $wp_customize ) {
 		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_control( 'featured_page_3', array(
-		'label'           => esc_html__( 'Featured page 3 ', 'business-lander' ),
+		'label'           => esc_html__( 'Featured Page', 'business-lander' ),
 		'section'         => 'featured_page_3_section',
 		'type'            => 'dropdown-pages',
-		'active_callback' => 'is_front_page',
 	) );
 
 	$wp_customize->selective_refresh->add_partial(
@@ -286,7 +247,7 @@ function business_lander_customize_register( $wp_customize ) {
 	 * CTA section.
 	 */
 	$wp_customize->add_section( 'cta_section', array(
-		'title' => esc_html__( 'Call To Action Section', 'business-lander' ),
+		'title' => esc_html__( 'Call To Action', 'business-lander' ),
 		'panel' => 'business-lander',
 	) );
 
@@ -301,7 +262,6 @@ function business_lander_customize_register( $wp_customize ) {
 		'label'           => esc_html__( 'Call To Action Title', 'business-lander' ),
 		'section'         => 'cta_section',
 		'type'            => 'textarea',
-		'active_callback' => 'is_front_page',
 	) );
 
 	// Call to action text.
@@ -315,7 +275,6 @@ function business_lander_customize_register( $wp_customize ) {
 		'label'           => esc_html__( 'Call To Action Text', 'business-lander' ),
 		'section'         => 'cta_section',
 		'type'            => 'textarea',
-		'active_callback' => 'is_front_page',
 	) );
 
 	// Call to action links.
@@ -329,7 +288,6 @@ function business_lander_customize_register( $wp_customize ) {
 		'label'           => esc_html__( 'Call To Action Link Text', 'business-lander' ),
 		'section'         => 'cta_section',
 		'type'            => 'text',
-		'active_callback' => 'is_front_page',
 	) );
 
 	$wp_customize->add_setting( 'cta_button_url', array(
@@ -342,7 +300,6 @@ function business_lander_customize_register( $wp_customize ) {
 		'label'           => esc_html__( 'Call To Action Link URL', 'business-lander' ),
 		'section'         => 'cta_section',
 		'type'            => 'text',
-		'active_callback' => 'is_front_page',
 	) );
 
 	// Call to action background.
@@ -358,7 +315,7 @@ function business_lander_customize_register( $wp_customize ) {
 			'label'           => esc_html__( 'Call To Action Backround Image', 'business-lander' ),
 			'section'         => 'cta_section',
 			'settings'        => 'cta_background',
-			'active_callback' => 'is_front_page',
+
 		)
 	) );
 
@@ -366,8 +323,9 @@ function business_lander_customize_register( $wp_customize ) {
 	 * Blog.
 	 */
 	$wp_customize->add_section( 'blog', array(
-		'title' => esc_html__( 'Blog', 'business-lander' ),
-		'panel' => 'business-lander',
+		'title'       => esc_html__( 'Blog', 'business-lander' ),
+		'panel'       => 'business-lander',
+		'description' =>'Display blog style.',
 	) );
 
 	$wp_customize->add_setting( 'blog_style', array(
@@ -378,7 +336,7 @@ function business_lander_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'blog_style', array(
 		'type'        => 'radio',
 		'section'     => 'blog', // Add a default or your own section
-		'label'       => __( 'Blog style' ),
+		'label'       => __( 'Blog Style' ),
 		'description' => __( 'Choose the style of the blog' ),
 		'choices'     => array(
 			'0' => __( 'Grid' ),
@@ -396,7 +354,6 @@ function business_lander_customize_register( $wp_customize ) {
 		'label'           => esc_html__( 'Blog grid title', 'business-lander' ),
 		'section'         => 'blog',
 		'type'            => 'text',
-		'active_callback' => 'is_front_page',
 	) );
 
 	$wp_customize->add_setting( 'blog_grid_text', array(
@@ -409,7 +366,6 @@ function business_lander_customize_register( $wp_customize ) {
 		'label'           => esc_html__( 'Blog grid text ', 'business-lander' ),
 		'section'         => 'blog',
 		'type'            => 'textarea',
-		'active_callback' => 'is_front_page',
 	) );
 
 
