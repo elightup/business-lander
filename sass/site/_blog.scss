@@ -27,10 +27,21 @@
 	border-radius: 5px;
 	box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
 	.image {
+		position: relative;
 		img {
 			height: 240px;
 			object-fit: cover;
 			border-radius: 5px 5px 0px 0px;
+		}
+		i {
+			position: absolute;
+			bottom: -17px;
+			left: 46%;
+			padding: 6px;
+			border: 1px solid #fff;
+			border-radius: 100%;
+			background: #fff;
+			font-size: 18px;
 		}
 	}
 }
@@ -84,6 +95,11 @@
 .sidebar {
 	width: 68%;
 	float: left;
+}
+.blog-grid {
+	.widget-area {
+		margin-top: 194px;
+	}
 }
 @media (max-width: 991px) {
 	.container .col-3 > * {

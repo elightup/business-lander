@@ -16,7 +16,7 @@
 	<div class="section--archive-posts">
 		<div id="main" class="row col-1">
 <?php endif; ?>
-			<h2 class="blog-title"><?php echo esc_html('Blog');?></h2>
+			<h2 class="blog-title"><?php single_post_title(); ?></h2>
 				<?php if ( have_posts() ) :
 				while ( have_posts() ) : the_post(); ?>
 

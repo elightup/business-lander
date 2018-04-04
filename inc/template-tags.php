@@ -36,6 +36,17 @@ function business_lander_posted_on() {
 		}
 
 /**
+ * Prints HTML with meta information for author
+ */
+function business_lander_show_author() {
+	$author_name = get_the_author();
+	echo '<span class="by-author"><i class="fa fa-user"></i>by <a class="url fn n" href="'
+	. esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="bookmark">'
+	. esc_html( $author_name )
+	. '</a></span>';
+}
+
+/**
 * Prints HTML with meta information for the category and tag.
 */
 function business_lander_category_tag() {
@@ -57,7 +68,7 @@ function business_lander_category_tag() {
 
 			$category .= '<span class="post-tag"> ' . $tags_link . '</span>';
 		}
-		return $category;
+		echo $category;
 	}
 
 /**

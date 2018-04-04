@@ -26,7 +26,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 <?php endif; ?>
 
-	<main class="site-main" role="main">
+	<main class="site-main <?php if ($blog_style!=1): echo 'blog-grid'; endif;?>" role="main">
 		<?php
 			if ( $blog_style == 1) :
 				get_template_part( 'template-parts/content', 'blogfull' );

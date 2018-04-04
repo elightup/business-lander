@@ -195,61 +195,6 @@ function business_lander_fonts_url() {
 	return $fonts_url;
 }
 
-
-function wpb_author_info_box( $content ) {
-
-	global $post;
-
-// Detect if it is a single post with a post author
-	if ( is_single() && isset( $post->post_author ) ) {
-
-// Get author's display name
-		$display_name = get_the_author_meta( 'display_name', $post->post_author );
-
-// If display name is not available then use nickname as display name
-		if ( empty( $display_name ) )
-			$display_name = get_the_author_meta( 'nickname', $post->post_author );
-
-// Get author's biographical information or description
-		$user_description = get_the_author_meta( 'user_description', $post->post_author );
-
-// Get author's website URL
-		$user_website = get_the_author_meta('url', $post->post_author);
-
-// Get link to the author archive page
-		$user_posts = get_author_posts_url( get_the_author_meta( 'ID' , $post->post_author));
-
-		if ( ! empty( $display_name ) )
-
-			$author_details = '<div class="author-info"><p class="author_name">Published by  ' . $display_name . '</p>';
-
-		if ( ! empty( $user_description ) )
-// Author avatar and bio
-
-			$author_details .= '<p class="author_details">' . get_avatar( get_the_author_meta('user_email') , 90 ) . nl2br( $user_description ). '</p>';
-
-		$author_details .= '<p class="author_links"><a href="'. $user_posts .'">View all posts by ' . $display_name . '</a></p></div>';
-
-		$author_details .= '<div class="post-tags">'.business_lander_category_tag().'</div>';
-
-
-
-
-// Pass all this info to post content
-			$content = $content .'</div></article></main></div></div>' .'<footer class="author_bio_section" ><div id="content" class="site-content container">
-			<div id="primary" class="content-area">' . $author_details . '</div></div></footer>';
-
-		}
-		return $content;
-	}
-
-// Add our function to the post content filter
-	add_action( 'the_content', 'wpb_author_info_box' );
-
-// Allow HTML in author bio section
-	remove_filter('pre_user_description', 'wp_filter_kses');
-
-
 /**
  * Filter the except length to 20 words.
  *

@@ -30,6 +30,8 @@ function business_lander_jetpack_setup() {
 
 	// Add theme support for Content Options.
 	add_theme_support( 'jetpack-content-options', array(
+		'author-bio'         => true, // display or not the author bio: true or false.
+
 		'blog-display'       => 'content',
 		// the default setting of the theme: 'content', 'excerpt' or array( 'content', 'excerpt' ) for themes mixing both display.
 

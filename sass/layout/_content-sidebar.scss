@@ -17,3 +17,9 @@
 	padding-bottom: 80px;
 
 }
+@media(max-width: 767px){
+	.content-area {
+		width: 100%;
+		margin: 0;
+	}
+}

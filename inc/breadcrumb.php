@@ -53,12 +53,12 @@ function business_lander_breadcrumb() {
 			echo '<h1 class="page-title">' . $custom_tax_name . '</h1>'; // WPCS: XSS OK.
 
 		} elseif ( is_single() ) {
-			if ( business_lander_jetpack_featured_image_display() ) {
-				echo '<h2 class="page-title">' . get_the_title() . '</h2>';
-				business_lander_post_thumbnail();
+			if ( !business_lander_jetpack_featured_image_display() || !has_post_thumbnail() ) {
+				echo '<h2 class="page-title title-black">' . get_the_title() . '</h2>';
 			}
 			else {
-				echo '<h2 class="page-title title-black">' . get_the_title() . '</h2>';
+				echo '<h2 class="page-title">' . get_the_title() . '</h2>';
+				business_lander_post_thumbnail();
 			}
 		} elseif ( is_category() ) {
 			// Category page.
