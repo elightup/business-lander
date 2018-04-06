@@ -45,7 +45,7 @@
 					</header><!-- .entry-header -->
 
 					<?php
-						$main_content = apply_filters( 'the_content', get_the_content() );
+						$main_content = apply_filters( 'the_excerpt', get_the_excerpt() );
 					?>
 
 					<?php if ( strpos( $main_content, 'link-more' ) ) : ?>

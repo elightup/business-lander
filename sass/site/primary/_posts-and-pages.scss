@@ -18,7 +18,7 @@
 .post-content {
 	p {
 		opacity: 0.8 !important;
-		margin-bottom: 40px !important;
+		margin-bottom: 35px !important;
 	}
 }
 .page-links {
@@ -114,6 +114,11 @@
 	margin-top: 30px;
 	.post-category {
 		display: block;
+	}
+}
+.entry-content {
+	li {
+		opacity: 0.8;
 	}
 }
 

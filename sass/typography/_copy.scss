@@ -8,13 +8,13 @@ dfn, cite, em, i {
 
 blockquote {
 	margin: 0;
-	padding: 57px 27px;
 	background: $color__white;
 	color: $color__text-main;
 	font-family: $font__heading;
 	font-style: italic;
-	line-height: 20px;
+	line-height: 32px;
 	@include font-size(2);
+	opacity: 0.8;
 	a {
 		color: $color__main;
 		&:hover {

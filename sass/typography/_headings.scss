@@ -15,24 +15,29 @@ h1 {
 h2 {
 	@include font-size(4);
 	line-height: 48px;
+	font-weight: 200;
 }
 
 h3 {
 	@include font-size(3);
 	line-height: 42px;
+	font-weight: 200;
 }
 
 h4 {
 	@include font-size(2);
 	line-height: 32px;
+	font-weight: 200;
 }
 
 h5 {
 	@include font-size(1.6);
 	line-height: 24px;
+	font-weight: 400;
 }
 
 h6 {
 	@include font-size(1.4);
 	line-height: 24px;
+	font-weight: 400;
 }

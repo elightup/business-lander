@@ -247,27 +247,32 @@ h1 {
 h2 {
   font-size: 40px;
   font-size: 2.5rem;
-  line-height: 48px; }
+  line-height: 48px;
+  font-weight: 200; }
 
 h3 {
   font-size: 30px;
   font-size: 1.875rem;
-  line-height: 42px; }
+  line-height: 42px;
+  font-weight: 200; }
 
 h4 {
   font-size: 20px;
   font-size: 1.25rem;
-  line-height: 32px; }
+  line-height: 32px;
+  font-weight: 200; }
 
 h5 {
   font-size: 16px;
   font-size: 1rem;
-  line-height: 24px; }
+  line-height: 24px;
+  font-weight: 400; }
 
 h6 {
   font-size: 14px;
   font-size: 0.875rem;
-  line-height: 24px; }
+  line-height: 24px;
+  font-weight: 400; }
 
 p {
   margin-bottom: 35px; }
@@ -277,14 +282,14 @@ dfn, cite, em, i {
 
 blockquote {
   margin: 0;
-  padding: 57px 27px;
   background: #fff;
   color: #000000;
   font-family: "Poppins", sans-serif;
   font-style: italic;
-  line-height: 20px;
+  line-height: 32px;
   font-size: 20px;
-  font-size: 1.25rem; }
+  font-size: 1.25rem;
+  opacity: 0.8; }
   blockquote a {
     color: #00bff3; }
     blockquote a:hover {
@@ -343,11 +348,18 @@ body {
 
 blockquote,
 q {
-  quotes: "" ""; }
+  quotes: "" "";
+  position: relative; }
   blockquote:before, blockquote:after,
   q:before,
   q:after {
-    content: ''; }
+    content: '';
+    border-left: 4px solid #00bff3;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -24px;
+    position: absolute; }
 
 hr {
   background-color: #ccc;
@@ -1250,7 +1262,7 @@ span.is-toggled {
 
 .post-content p {
   opacity: 0.8 !important;
-  margin-bottom: 40px !important; }
+  margin-bottom: 35px !important; }
 
 .page-links {
   clear: both;
@@ -1338,6 +1350,9 @@ span.is-toggled {
   margin-top: 30px; }
   .category-tag .post-category {
     display: block; }
+
+.entry-content li {
+  opacity: 0.8; }
 
 @media (max-width: 991px) {
   .author_bio_section .site-main {
