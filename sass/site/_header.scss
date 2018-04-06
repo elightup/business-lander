@@ -102,7 +102,7 @@
 }
 .header-info {
 	margin-left: 16px;
-	margin-top: 10px;
+	margin-top: 8px;
 	i {
 		font-size: 24px;
 		color: $color__main;
@@ -123,8 +123,9 @@
 .site-info {
 	width: 200px;
 	border-left: 1px solid #ebebeb;
+	height: 73px;
 	.site-phone {
-		height: 33px;
+		height: 29px;
 		border-bottom: 1px solid #ebebeb;
 	}
 	.site-email {

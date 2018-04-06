@@ -110,7 +110,7 @@
 </header><!-- #masthead -->
 
 <?php if ( is_singular() && !is_front_page() ) : ?>
-	<div class="page-header">
+	<div class="page-header <?php if(is_page()): echo 'page-header-page'; endif;?>">
 		<?php business_lander_breadcrumb();?>
 		<?php if ( is_single() && 'post' === get_post_type() ) : ?>
 			<div class="entry-meta">

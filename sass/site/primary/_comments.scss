@@ -261,6 +261,20 @@ ol.children {
 	}
 }
 @media(max-width: 574px) {
+	.comments-area {
+		.comments-title {
+			@include font-size(3.2);
+		}
+		.avatar {
+			margin-bottom: 30px;
+		}
+		.reply {
+			position: relative !important;
+			right: 30px;
+			text-align: right;
+			top: 0 !important;
+		}
+	}
 	.comment-respond {
 		padding-left: 10px;
 		padding-right: 10px;

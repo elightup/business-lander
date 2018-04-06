@@ -339,8 +339,8 @@ function business_lander_customize_register( $wp_customize ) {
 		'label'       => __( 'Blog Style' ),
 		'description' => __( 'Choose the style of the blog' ),
 		'choices'     => array(
-			'0' => __( 'Grid' ),
-			'1' => __( 'List' ),
+			'grid' => __( 'Grid' ),
+			'list' => __( 'List' ),
 	  		),
 	) );
 

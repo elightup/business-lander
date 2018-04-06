@@ -65,6 +65,9 @@
 	}
 }
 @media (max-width: 991px) {
+	.pagination {
+		margin-bottom: 70px;
+	}
 	.nav-previous,
 	.nav-next {
 		width: 100% !important;

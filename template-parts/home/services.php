@@ -15,7 +15,7 @@ for ( $i = 1; $i <= 3; $i ++ ) {
 	$service_pages[] = $mod;
 }
 
-if ( ! $service_pages ) {
+if ( empty($service_pages) ) {
 	return;
 }
 

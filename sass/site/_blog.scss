@@ -112,6 +112,11 @@
 			}
 		}
 	}
+	.blog-grid {
+		.widget-area {
+			margin-top: 0px !important;
+		}
+	}
 }
 @media (max-width: 574px) {
 	.container .col-3 > * {
@@ -252,5 +257,20 @@
 	}
 	.site-content .widget-area {
 		width: 100%;
+		margin-top: 0;
+	}
+}
+@media (max-width: 767px) {
+	.section--archive-posts {
+		.entry-title {
+			a {
+				@include font-size(2.7);
+			}
+		}
+		.entry-content {
+			p {
+				@include font-size(1.5);
+			}
+		}
 	}
 }

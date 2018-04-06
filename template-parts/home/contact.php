@@ -35,8 +35,8 @@ if ( ! $query1->have_posts() ) {
 		<div class="section-contact__left">
 			<div class="contact__left">
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-					<div>
-						<h2 class="name"><?php the_title();?></h2>
+					<div class="title">
+						<h2><?php the_title();?></h2>
 					</div>
 					<?php the_content(); ?>
 				<?php endwhile; ?>

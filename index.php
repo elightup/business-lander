@@ -12,37 +12,15 @@
  * @package business-lander
  */
 
-get_header(); ?>
-<?php
-	if ( is_active_sidebar( 'sidebar-1' ) ) {
-		$sidebar = 1;
-	}
-	else {
-		$sidebar = 0;
-	}
-	$blog_style = get_theme_mod( 'blog_style',0 );
-?>
-<?php if ( $sidebar == 0 && $blog_style == 1) : ?>
-	<div id="primary" class="content-area">
-<?php endif; ?>
+get_header();
 
-	<main class="site-main <?php if ($blog_style!=1): echo 'blog-grid'; endif;?>" role="main">
-		<?php
-			if ( $blog_style == 1) :
-				get_template_part( 'template-parts/content', 'blogfull' );
-			else :
-				get_template_part( 'template-parts/content', 'blog' );
-			endif;
-		?>
+/*$blog_style_option = get_theme_mod( 'blog_style','grid' );*/
+$blog_style_show = $_GET['blog_style'];
 
-	<?php if ( $sidebar == 1) :
-			get_sidebar();
-		endif; ?>
-	</main><!-- .site-main -->
+	if ( $blog_style_show == 'list' ) :
+		get_template_part( 'template-parts/content', 'blogfull' );
+	else :
+		get_template_part( 'template-parts/content', 'blog' );
+	endif;
 
-<?php if ( $sidebar == 0 && $blog_style == 1) : ?>
-	</div><!-- .content-area -->
-<?php endif; ?>
-
-<?php
-get_footer();
+get_footer(); ?>

@@ -206,6 +206,15 @@
 		margin-top: 7px;
 	}
 }
+
+
+@media(max-width: 320px) {
+	.widget {
+		.widget-content {
+			padding: 25px 0px;
+		}
+	}
+}
 @import "contact";
 @import "error404";
 @import "searchform";

@@ -14,12 +14,12 @@ $cta_bg = get_theme_mod( 'cta_background', get_template_directory_uri() . '/imag
 
 <section class="section--cta" style="background-image: url( <?php echo esc_url( $cta_bg ); ?> )">
 	<div class="container">
-		<div class="section-cta__title">
+		<h3 class="section-cta__title">
 			<?php echo esc_html( $cta_title ); ?>
-		</div>
-		<div class="section-cta__text">
+		</h3>
+		<p class="section-cta__text">
 			<?php echo esc_html( $cta_text ); ?>
-		</div>
+		</p>
 		<div class="section-cta__link">
 			<a href="<?php echo esc_url( $cta_button_url ); ?>" alt="<?php echo esc_html( $cta_button_text ) ?>"  class="btn btn-primary">
 				<?php echo esc_html( $cta_button_text ); ?>

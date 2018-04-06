@@ -41,7 +41,10 @@
 .contact__left {
 	width: 87%;
 	display: inline-block;
-	.name {
+	.title {
+		text-align: right;
+	}
+	h2 {
 		margin: 0;
 		font-weight: 100;
 		@include font-size(4.8);
@@ -50,6 +53,8 @@
 		line-height: 64px;
 		color: $color__white;
 		letter-spacing: 0.025em;
+		display: inline;
+		box-shadow: inset 0 -31px 0 rgba(255, 255, 255, 0.08);
 	}
 	p {
 		font-weight: 400;
@@ -61,6 +66,7 @@
 	}
 	ul {
 		position: relative;
+		margin-bottom: 0;
 		li {
 			font-weight: 400;
 			@include font-size(1.7);
@@ -138,7 +144,7 @@
 			width: 100%;
 			margin-top: 50px;
 		}
-		.name {
+		.title {
 			text-align: center;
 		}
 		p {
@@ -172,13 +178,19 @@
 
 @media (max-width: 574px) {
 	.section-contact__left {
-		.name {
-			@include font-size(3);
+		h2 {
+			@include font-size(2.8);
+			box-shadow: inset 0 -18px 0 rgba(255, 255, 255, 0.08);
 		}
 		.contact__left {
 			li,
 			p {
 				@include font-size(1.4);
+			}
+			li {
+				&:after {
+					@include font-size(2);
+				}
 			}
 		}
 	}

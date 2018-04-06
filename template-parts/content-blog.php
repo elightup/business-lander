@@ -8,7 +8,7 @@
  */
 
 ?>
-
+	<main class="site-main blog-grid" role="main">
 	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 		<div class="section--archive-posts sidebar">
 			<h2 class="blog-title"><?php single_post_title(); ?></h2>
@@ -52,3 +52,8 @@
 		get_template_part( 'template-parts/content', 'none' );
 		endif; ?>
 	</div>
+<?php if ( is_active_sidebar( 'sidebar-1' ) ) :
+			get_sidebar();
+	endif; ?>
+</main><!-- .site-main -->
+</div>

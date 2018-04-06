@@ -10,11 +10,14 @@
 ?>
 
 <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-	<div class="section--archive-posts sidebar">
-		<div id="main" class="row col-1">
+	<main class="site-main" role="main">
+		<div class="section--archive-posts sidebar">
+			<div id="main" class="row col-1">
 <?php else : ?>
-	<div class="section--archive-posts">
-		<div id="main" class="row col-1">
+	<div id="primary" class="content-area">
+		<main class="site-main" role="main">
+			<div class="section--archive-posts">
+				<div id="main" class="row col-1">
 <?php endif; ?>
 			<h2 class="blog-title"><?php single_post_title(); ?></h2>
 				<?php if ( have_posts() ) :
@@ -66,7 +69,7 @@
 							echo $main_content; /* WPCS: xss ok. */
 
 							wp_link_pages( array(
-								'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'greentech' ),
+								'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'business-lander' ),
 								'after'  => '</div>',
 							) );
 							?>
@@ -85,3 +88,13 @@
 		get_template_part( 'template-parts/content', 'none' );
 		endif; ?>
 	</div>
+
+<?php if ( is_active_sidebar( 'sidebar-1' ) ) :
+			get_sidebar(); ?>
+	</main><!-- .site-main -->
+<?php
+	else: ?>
+	</main><!-- .site-main -->
+	</div><!-- .content-area -->
+<?php endif; ?>
+</div>
