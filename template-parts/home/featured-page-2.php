@@ -10,7 +10,7 @@
 <?php
 
 
-$featured_page_2 = get_theme_mod( 'featured_page_2');
+$featured_page_2 = get_theme_mod( 'featured_page_2' );
 
 if ( ! $featured_page_2 ) {
 	return;
@@ -32,12 +32,12 @@ if ( ! $query->have_posts() ) {
 		<div class="container">
 			<div class="page-2">
 				<div class="page-2__name">
-					<h3><?php the_title();?></h3>
+					<h3><?php the_title(); ?></h3>
 				</div>
 				<?php the_excerpt(); ?>
-				<a href="<?php the_permalink();?>" class="page-2__continue"><?php echo esc_html('learn more');?></a>
+				<a href="<?php the_permalink(); ?>" class="page-2__continue"><?php echo esc_html( 'learn more' ); ?></a>
 			</div>
-			<?php the_post_thumbnail();?>
+			<?php the_post_thumbnail(); ?>
 		</div>
 	</section>
 <?php endwhile; ?>

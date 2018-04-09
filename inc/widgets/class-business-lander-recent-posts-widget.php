@@ -60,24 +60,27 @@ class Business_Lander_Recent_Posts_Widget extends WP_Widget {
 		<div class="widget-content">
 			<?php
 			$i = 1;
-			while ( $query->have_posts() ) : $query->the_post(); ?>
+			while ( $query->have_posts() ) : $query->the_post();
+			?>
 			<?php
 			if ( $i > absint( $instance['number'] ) ) {
 				break;
-			} ?>
+			}
+			?>
 				<article class="aside-post">
-
 					<?php if ( has_post_thumbnail() ) : ?>
 						<a class="image" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 					<?php endif; ?>
 					<div class="info">
 						<h5 class="name"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-						<time class="time" datetime="<?php echo esc_attr( get_the_time( 'j F Y' ) ); ?>"><?php business_lander_posted_on();?></time>
+						<time class="time" datetime="<?php echo esc_attr( get_the_time( 'j F Y' ) ); ?>"><?php business_lander_posted_on(); ?></time>
 					</div>
 				</article>
 
-			<?php $i++;
-			endwhile; ?>
+			<?php
+			$i++;
+			endwhile;
+			?>
 		</div>
 		<?php
 		wp_reset_postdata();
@@ -110,8 +113,8 @@ class Business_Lander_Recent_Posts_Widget extends WP_Widget {
 	 * @return void
 	 */
 	public function form( $instance ) {
-		$instance  = wp_parse_args( $instance, $this->defaults ); ?>
-
+		$instance  = wp_parse_args( $instance, $this->defaults );
+		?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'business-lander' ); ?></label>
 			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>">

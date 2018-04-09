@@ -9,7 +9,7 @@ $cta_title = get_theme_mod( 'cta_title', __( 'Expect the extraordinary', 'busine
 $cta_text = get_theme_mod( 'cta_text', __( 'We are A Team of Experts', 'business-lander' ) );
 $cta_button_url = get_theme_mod( 'cta_button_url', 'https://gretathemes.com/' );
 $cta_button_text = get_theme_mod( 'cta_button_text', __( 'contact us', 'business-lander' ) );
-$cta_bg = get_theme_mod( 'cta_background', get_template_directory_uri() . '/images/cta-bg.png' );
+$cta_bg = get_theme_mod( 'cta_background', get_template_directory_uri() . '/images/bg-cta.jpg' );
 ?>
 
 <section class="section--cta" style="background-image: url( <?php echo esc_url( $cta_bg ); ?> )">
@@ -21,7 +21,7 @@ $cta_bg = get_theme_mod( 'cta_background', get_template_directory_uri() . '/imag
 			<?php echo esc_html( $cta_text ); ?>
 		</p>
 		<div class="section-cta__link">
-			<a href="<?php echo esc_url( $cta_button_url ); ?>" alt="<?php echo esc_html( $cta_button_text ) ?>"  class="btn btn-primary">
+			<a href="<?php echo esc_url( $cta_button_url ); ?>" alt="<?php echo esc_html( $cta_button_text ); ?>"  class="btn btn-primary">
 				<?php echo esc_html( $cta_button_text ); ?>
 			</a>
 		</div>

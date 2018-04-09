@@ -78,7 +78,7 @@
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
-	}
+}
 
 add_action( 'after_setup_theme', 'business_lander_setup' );
 
@@ -115,26 +115,6 @@ function business_lander_widgets_init() {
 		'id'            => 'sidebar-2',
 		'description'   => esc_html__( 'Add widgets here.', 'business-lander' ),
 		'before_widget' => '<section id="%1$s" class="widget-footer %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Site address', 'business-lander' ),
-		'id'            => 'sidebar-3',
-		'description'   => esc_html__( 'Add widgets here.', 'business-lander' ),
-		'before_widget' => '<section id="%1$s" class="%2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Site info', 'business-lander' ),
-		'id'            => 'sidebar-4',
-		'description'   => esc_html__( 'Add widgets here.', 'business-lander' ),
-		'before_widget' => '<section id="%1$s" class="%2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
@@ -202,7 +182,7 @@ function business_lander_fonts_url() {
  * @return int (Maybe) modified excerpt length.
  */
 function wpdocs_custom_excerpt_length( $length ) {
-    return 24;
+	return 24;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
@@ -213,7 +193,7 @@ add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
  * @return string (Maybe) modified "read more" excerpt string.
  */
 function wpdocs_excerpt_more( $more ) {
-    return '...';
+	return '...';
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 

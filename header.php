@@ -16,7 +16,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-
 	<?php wp_head(); ?>
 </head>
 
@@ -26,10 +25,8 @@
 
 		<header id="masthead" class="site-header">
 			<div class="header-content">
-
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<div class="container">
-
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'menu-1',
@@ -38,16 +35,6 @@
 						?>
 					</div>
 				</nav><!-- #site-navigation -->
-
-				<nav class="mobile-navigation" role="navigation">
-					<?php
-					wp_nav_menu( array(
-						'container_class' => 'mobile-menu container',
-						'menu_class'      => 'mobile-menu clearfix',
-						'theme_location'  => 'menu-1',
-					) );
-					?>
-				</nav>
 
 				<div class="container">
 					<div class="site-branding">
@@ -59,60 +46,67 @@
 							?>
 							<div class="site-identify">
 								<?php
-								if ( is_front_page() && is_home() ) : ?>
+								if ( is_front_page() && is_home() ) :
+								?>
 								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 							<?php else : ?>
 								<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-							<?php endif; ?>
 							<?php
+							endif;
+
 							$description = get_bloginfo( 'description', 'display' );
-							if ( $description || is_customize_preview() ) : ?>
+							if ( $description || is_customize_preview() ) :
+							?>
 							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 						<?php endif; ?>
 					</div>
 				</div>
 			</div><!-- .site-branding -->
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'business-lander' ); ?></button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" ><?php esc_html_e( 'Menu', 'business-lander' ); ?></button>
 
-		<!-- header-address -->
-		<?php if ( get_theme_mod( 'header_address') ) : ?>
-			<div class="site-address">
-				<i class="fa fa-map-marker"></i>
-				<p class="address"><?php echo esc_html( get_theme_mod( 'header_address', __( '1234 internet street virtual city, statename 54321', 'business-lander' ) ) );?></p>
-			</div>
-		<?php endif; ?>
-
-		<!-- header-phone & header-email -->
-		<?php if ( get_theme_mod( 'header_phone') || get_theme_mod( 'header_email')  ) : ?>
-
-			<div class="site-info">
-		<?php if ( get_theme_mod( 'header_phone') ) : ?>
-				<div class="site-phone">
-					<div class="header-info">
-						<i class="fa fa-phone"></i>
-						<p class="address"><?php echo esc_html( get_theme_mod( 'header_phone', __( '+84 987-248-558', 'business-lander' ) ) );?></p>
-					</div>
+			<!-- header-address -->
+			<?php if ( get_theme_mod( 'header_address' ) ) : ?>
+				<div class="site-address">
+					<i class="fa fa-map-marker"></i>
+					<p class="address"><?php echo esc_html( get_theme_mod( 'header_address', __( '1234 internet street virtual city, statename 54321', 'business-lander' ) ) ); ?></p>
 				</div>
-		<?php endif; ?>
+			<?php endif; ?>
 
-		<?php if ( get_theme_mod( 'header_email') ) : ?>
-				<div class="site-email">
-					<div class="header-info">
-						<i class="fa fa-envelope"></i>
-						<p class="address"><?php echo esc_html( get_theme_mod( 'header_email', __( 'info@elightup.com', 'business-lander' ) ) );?></p>
-					</div>
+			<!-- header-phone & header-email -->
+			<?php if ( get_theme_mod( 'header_phone' ) || get_theme_mod( 'header_email' ) ) : ?>
+
+				<div class="site-info">
+					<?php if ( get_theme_mod( 'header_phone' ) ) : ?>
+						<div class="site-phone">
+							<div class="header-info">
+								<i class="fa fa-phone"></i>
+								<p class="address"><?php echo esc_html( get_theme_mod( 'header_phone', __( '+84 987-248-558', 'business-lander' ) ) ); ?></p>
+							</div>
+						</div>
+					<?php endif; ?>
+
+					<?php if ( get_theme_mod( 'header_email' ) ) : ?>
+						<div class="site-email">
+							<div class="header-info">
+								<i class="fa fa-envelope"></i>
+								<p class="address"><?php echo esc_html( get_theme_mod( 'header_email', __( 'info@elightup.com', 'business-lander' ) ) ); ?></p>
+							</div>
+						</div>
+					<?php endif; ?>
 				</div>
-		<?php endif; ?>
-			</div>
-		<?php endif; ?>
+			<?php endif; ?>
 		</div>
 	</div>
 </header><!-- #masthead -->
-
-<?php if ( is_singular() && !is_front_page() ) : ?>
-	<div class="page-header <?php if(is_page()): echo 'page-header-page'; endif;?>">
-		<?php business_lander_breadcrumb();?>
-		<?php if ( is_single() && 'post' === get_post_type() ) : ?>
+<?php
+if ( is_page() ) :
+	$page_class = 'page-header-page';
+endif;
+if ( is_singular() && ! is_front_page() ) :
+?>
+	<div class="page-header <?php echo esc_html( $page_class ); ?> ">
+		<?php business_lander_breadcrumb(); ?>
+		<?php if ( is_single() ) : ?>
 			<div class="entry-meta">
 				<?php business_lander_posted_on(); ?>
 			</div><!-- .entry-meta -->

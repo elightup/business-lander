@@ -24,11 +24,12 @@ if ( post_password_required() ) {
 
 	<?php
 	// You can start editing here -- including this comment!
-	if ( have_comments() ) : ?>
+	if ( have_comments() ) :
+	?>
 		<?php
 			$comment_count = get_comments_number();
 		?>
-		<h2 class="comments-title"><?php echo $comment_count." Comments";?></h2><!-- .comments-title -->
+		<h2 class="comments-title"><?php echo $comment_count . 'Comments'; ?></h2><!-- .comments-title -->
 
 		<ol class="comment-list">
 			<?php
@@ -40,10 +41,12 @@ if ( post_password_required() ) {
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php the_comments_navigation();
+		<?php
+		the_comments_navigation();
 
 		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) : ?>
+		if ( ! comments_open() ) :
+		?>
 			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'business-lander' ); ?></p>
 		<?php
 		endif;

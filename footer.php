@@ -14,9 +14,7 @@
 <footer id="colophon" class="site-footer">
 	<div class="footer-widgets">
 		<div class="container">
-			<div class="row">
-				<?php dynamic_sidebar( 'sidebar-2' ); ?>
-			</div>
+			<?php dynamic_sidebar( 'sidebar-2' ); ?>
 		</div>
 	</div>
 	<div class="bottombar">
@@ -35,9 +33,9 @@
 			</span>
 
 				<?php
-					if ( function_exists( 'jetpack_social_menu' ) ) {
-						jetpack_social_menu();
-					}
+				if ( function_exists( 'jetpack_social_menu' ) ) {
+					jetpack_social_menu();
+				}
 				?>
 
 		</div>

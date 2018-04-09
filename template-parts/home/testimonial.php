@@ -24,11 +24,14 @@ if ( ! $query->have_posts() ) {
 	return;
 }
 ?>
-<section class="section--testimonial" style="background-image: url( <?php echo esc_url( $image ) ?> )">
+<section class="section--testimonial" style="background-image: url( <?php echo esc_url( $image ); ?> )">
 	<div class="container">
-		<h3 class="section--testimonial__title"><?php echo esc_html('testimonials');?></h3>
+		<h3 class="section--testimonial__title"><?php echo esc_html( 'testimonials' ); ?></h3>
 		<div class="testimonial">
-			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+			<?php
+			while ( $query->have_posts() ) :
+				$query->the_post();
+				?>
 				<div class="testimonial-item">
 					<div class="content"><?php the_content(); ?></div>
 					<div class="image"><?php the_post_thumbnail(); ?></div>

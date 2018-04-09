@@ -46,16 +46,6 @@ span a:hover,
 a:hover {
 	color: $color__link-hover;
 }
-.post-thumbnail {
-	width: 100%;
-	img {
-		height: 360px;
-		object-fit: cover;
-		width: 100%;
-	}
-}
-
-
 
 .breadcrumb-item {
 	display: inline;
@@ -69,48 +59,6 @@ a:hover {
 
 .breadcrumb * {
 	color: $color__white;
-}
-.entry-meta {
-	border:1px solid #ebebeb;
-	border-radius: 100px;
-	background:  $color__white;
-	padding: 0px 30px;
-	padding-bottom: 5px;
-	position: absolute;
-	bottom: -21px;
-	text-align: center;
-	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
-	a {
-		font-weight: 400;
-		@include font-size(1.4);
-		text-transform: uppercase;
-		opacity: 0.6;
-		letter-spacing: 0.05em;
-		color: $color__black;
-		line-height: 24px;
-		&:hover {
-			color: $color__link-hover;
-		}
-	}
-	.byline {
-		margin-right: 25px;
-		&::before {
-			content: '\f007';
-			@include fa-icon();
-			color: $color__main;
-			@include font-size(1.4);
-			margin-right: 3px;
-		}
-	}
-	.posted-on {
-		&::before {
-			content: '\f017';
-			@include fa-icon();
-			color: $color__main;
-			@include font-size(1.4);
-			margin-right: 5px;
-		}
-	}
 }
 
 @media(max-width: 767px) {

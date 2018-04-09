@@ -17,10 +17,20 @@ get_header();
 /*$blog_style_option = get_theme_mod( 'blog_style','grid' );*/
 $blog_style_show = $_GET['blog_style'];
 
-	if ( $blog_style_show == 'list' ) :
-		get_template_part( 'template-parts/content', 'blogfull' );
-	else :
-		get_template_part( 'template-parts/content', 'blog' );
-	endif;
+switch ( $blog_style_show ) {
+	case 'grid':
+		get_template_part( 'template-parts/blog/grid' );
+		break;
+	case 'grid-sidebar':
+		get_template_part( 'template-parts/blog/grid-sidebar' );
+		break;
+	case 'list':
+		get_template_part( 'template-parts/blog/list' );
+		break;
+	default:
+		get_template_part( 'template-parts/blog/list-sidebar' );
+		break;
+}
 
-get_footer(); ?>
+get_footer();
+

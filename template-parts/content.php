@@ -25,23 +25,23 @@
 			get_the_title()
 		) );
 		?>
-		<div class="pagelink"><?php wp_link_pages('pagelink=<span>%</span>'); ?></div>
+		<div class="pagelink"><?php wp_link_pages( 'pagelink=<span>%</span>' ); ?></div>
 	</div>
+
 	<div class="author_bio_section">
-		<div id="content" class="site-content container">
-			<div id="primary" class="content-area">
-				<main id="main" class="site-main">
-					<?php if ( get_the_author_meta( 'description' ) ) : ?>
-						<?php if ( function_exists( 'jetpack_author_bio' ) ) { jetpack_author_bio();} ?>
-					<?php endif; ?>
-					<div class="category-tag">
-						<?php
-							business_lander_category_tag();
-						?>
-					</div>
-				</main>
+		<div class="container">
+			<?php if ( get_the_author_meta( 'description' ) ) : ?>
+				<?php
+				if ( function_exists( 'jetpack_author_bio' ) ) {
+					jetpack_author_bio();
+				}
+				?>
+			<?php endif; ?>
+			<div class="category-tag">
+				<?php
+					business_lander_category_tag();
+				?>
 			</div>
 		</div>
-
 	</div>
 </article><!-- #post-<?php the_ID(); ?> -->

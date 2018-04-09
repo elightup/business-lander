@@ -1,0 +1,148 @@
+/* bloglist */
+
+.section--archive-posts {
+	article {
+		margin-bottom: 75px;
+	}
+	.entry-title {
+		text-align: center;
+		margin-bottom: 15px;
+		a {
+			font-weight: 200;
+			@include font-size(3.6);
+			color: $color__black;
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+			line-height: 48px;
+			&:hover {
+				color: $color__link-hover;
+				text-decoration: none;
+			}
+		}
+	}
+	.line {
+		width: 30px;
+		height: 2px;
+		background: $color__main;
+		margin-left: 48%;
+		margin-bottom: 10px;
+	}
+	.entry-content {
+	margin-top: 30px;
+	p {
+		opacity: 0.7;
+		margin-bottom: 22px;
+	}
+	img {
+		border: 9px solid #fff;
+		box-shadow: 1px 0 36px rgba(0,0,0,0.15);
+	}
+}
+
+}
+.entry-meta-blog {
+	text-align: center;
+	a {
+		font-weight: 400;
+		@include font-size(1.4);
+		text-transform: uppercase;
+		opacity: 0.6;
+		letter-spacing: 0.05em;
+		color: $color__black;
+		&:hover {
+			color: $color__link-hover;
+		}
+	}
+	.byline {
+		margin-right: 25px;
+		&::before {
+			content: '\f007';
+			@include fa-icon();
+			color: $color__main;
+			@include font-size(1.4);
+			margin-right: 3px;
+		}
+	}
+	.posted-on {
+		&::before {
+			content: '\f017';
+			@include fa-icon();
+			color: $color__main;
+			@include font-size(1.4);
+			margin-right: 5px;
+		}
+	}
+}
+
+.post-category {
+	font-weight: 400;
+	@include font-size(1.4);
+	margin-right: 15px;
+	a {
+		margin-right: 5px;
+		color: $color__black;
+		opacity: 0.7;
+		text-decoration: underline;
+		&:hover {
+			color: $color__link-hover;
+		}
+		&:after {
+			content: ',';
+		}
+	}
+	&::before {
+		content: '\f07c';
+		@include fa-icon();
+		color: $color__main;
+		@include font-size(1.6);
+		margin-right: 15px;
+	}
+}
+.post-tag {
+	font-weight: 400;
+	@include font-size(1.4);
+	color: $color__text-gray;
+	a {
+		margin-right: 5px;
+		color: $color__black;
+		opacity: 0.7;
+		text-decoration: underline;
+		&:hover {
+			color: $color__link-hover;
+		}
+		&:after {
+			content: ',';
+		}
+
+	}
+	&::before {
+		content: '\f292';
+		@include fa-icon();
+		color: $color__main;
+		@include font-size(1.6);
+		margin-right: 15px;
+	}
+}
+@media (max-width: 991px) {
+	.sidebar {
+		width: 100%;
+	}
+	.site-content .widget-area {
+		width: 100%;
+		margin-top: 0;
+	}
+}
+@media (max-width: 767px) {
+	.section--archive-posts {
+		.entry-title {
+			a {
+				@include font-size(2.7);
+			}
+		}
+		.entry-content {
+			p {
+				@include font-size(1.5);
+			}
+		}
+	}
+}

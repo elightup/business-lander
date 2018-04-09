@@ -9,7 +9,7 @@
 
 <?php
 
-$featured_page_1 = get_theme_mod( 'featured_page_1');
+$featured_page_1 = get_theme_mod( 'featured_page_1' );
 
 if ( ! $featured_page_1 ) {
 	return;
@@ -31,11 +31,13 @@ if ( ! $query->have_posts() ) {
 		<div class="container">
 			<div class="page-1">
 				<div class="page-1__name">
-					<h3><?php the_title();?></h3>
+					<h3><?php the_title(); ?></h3>
 				</div>
 				<?php the_excerpt(); ?>
-				<a href="<?php the_permalink();?>" class="page-1__continue"><?php echo esc_html('learn more');?></a>
+				<a href="<?php the_permalink(); ?>" class="page-1__continue"><?php echo esc_html( 'learn more' ); ?></a>
 			</div>
 		</div>
 	</section>
-<?php endwhile; ?>
+<?php
+endwhile;
+?>

@@ -10,7 +10,7 @@
 <?php
 
 
-$featured_page_3 = get_theme_mod( 'featured_page_3');
+$featured_page_3 = get_theme_mod( 'featured_page_3' );
 
 if ( ! $featured_page_3 ) {
 	return;
@@ -30,14 +30,15 @@ if ( ! $query->have_posts() ) {
 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
 	<section class="featured-page-3">
 		<div class="container">
-			<?php the_post_thumbnail();?>
+			<?php the_post_thumbnail(); ?>
 			<div class="page-3">
 				<div class="page-3__name">
-					<h3><?php the_title();?></h3>
+					<h3><?php the_title(); ?></h3>
 				</div>
 				<?php the_excerpt(); ?>
-				<a href="<?php the_permalink();?>" class="page-3__continue"><?php echo esc_html('learn more');?></a>
+				<a href="<?php the_permalink(); ?>" class="page-3__continue"><?php echo esc_html( 'learn more' ); ?></a>
 			</div>
 		</div>
 	</section>
-<?php endwhile; ?>
+<?php
+endwhile;

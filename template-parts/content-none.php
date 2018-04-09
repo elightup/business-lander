@@ -13,15 +13,18 @@
 	<h2><?php esc_html_e( 'Nothing Found', 'business-lander' ); ?></h2>
 	<div class="page-content">
 		<?php
-		if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
-
-			<p><?php
+		if ( is_home() && current_user_can( 'publish_posts' ) ) :
+		?>
+			<p>
+			<?php
 			/* translators: creat post page url */
 			printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'business-lander' ), array(
-				'a' => array(
+				'a'    => array(
 				'href' => array(),
 				),
-			) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+			) ), esc_url( admin_url( 'post-new.php' ) ) );
+			?>
+			</p>
 
 		<?php elseif ( is_search() ) : ?>
 
@@ -29,12 +32,14 @@
 			<?php
 				get_search_form();
 
-		else : ?>
+		else :
+		?>
 
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'business-lander' ); ?></p>
 			<?php
 				get_search_form();
 
-		endif; ?>
+		endif;
+		?>
 	</div><!-- .page-content -->
 </section><!-- .no-results -->

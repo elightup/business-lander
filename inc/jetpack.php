@@ -40,7 +40,7 @@ function business_lander_jetpack_setup() {
 			'date'       => '.posted-on',
 			'categories' => '.post-category',
 			'tags'       => '.post-tag',
-			'author'     => '.author_name',
+			'author'     => '.byline',
 			'comment'    => '.comments-link',
 		),
 		'featured-images' => array(

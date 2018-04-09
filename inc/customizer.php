@@ -305,7 +305,7 @@ function business_lander_customize_register( $wp_customize ) {
 	// Call to action background.
 	$wp_customize->add_setting( 'cta_background', array(
 		'sanitize_callback' => 'business-lander_sanitize_image',
-		'default'           => get_template_directory_uri() . '/images/cta-bg.png',
+		'default'           => get_template_directory_uri() . '/images/bg-cta.jpg',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control(

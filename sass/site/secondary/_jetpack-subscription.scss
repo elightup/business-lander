@@ -1,0 +1,50 @@
+.jetpack_subscription_widget {
+	.widget-title {
+		margin-left: 35%;
+	}
+	form {
+		margin-top: 26px;
+	}
+	div > p {
+		text-align: center;
+		font-weight: 400;
+		@include font-size(1.4);
+		margin-bottom: 24px;
+		opacity: 0.8;
+	}
+	input[type="email"] {
+		width: 88% !important;
+		padding: 6px 60px;
+		margin-left: 7%;
+		font-weight: 400;
+		@include font-size(1.4);
+	}
+	input[type="submit"] {
+		border-radius: 100px;
+		padding: 11px 27px;
+		margin-left: 26%;
+		text-transform: uppercase;
+		margin-top: -10px;
+		@include font-size(1.4);
+		box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.1);
+	}
+}
+@media (max-width: 767px) {
+	.jetpack_subscription_widget {
+		.widget-title {
+			margin-left: 0;
+		}
+		div > p {
+			text-align: inherit;
+		}
+		input[type="email"] {
+			width: 100% !important;
+			margin-left: 0;
+			padding: 6px 20px;
+		}
+		input[type="submit"] {
+			width: 100%;
+			margin-left: 0;
+		}
+	}
+}

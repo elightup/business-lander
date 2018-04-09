@@ -53,7 +53,7 @@ function business_lander_breadcrumb() {
 			echo '<h1 class="page-title">' . $custom_tax_name . '</h1>'; // WPCS: XSS OK.
 
 		} elseif ( is_single() ) {
-			if ( !business_lander_jetpack_featured_image_display() || !has_post_thumbnail() ) {
+			if ( ! business_lander_jetpack_featured_image_display() || ! has_post_thumbnail() ) {
 				echo '<h2 class="page-title title-black">' . get_the_title() . '</h2>';
 			}
 			else {
@@ -93,11 +93,11 @@ function business_lander_breadcrumb() {
 			<li class="breadcrumb-item active">
 				<?php
 				/* translators: tag name */
-				printf( esc_html__( 'Tag: %s', 'greentech' ), esc_html( $get_term_name ) ); // WPCS: XSS OK.
+				printf( esc_html__( 'Tag: %s', 'business-lander' ), esc_html( $get_term_name ) ); // WPCS: XSS OK.
 				?>
 			</li></ul>
 			<?php
-			echo '<h1 class="page-title">' . esc_html__( 'Tag', 'greentech' ) . '</h1>';
+			echo '<h1 class="page-title">' . esc_html__( 'Tag', 'business-lander' ) . '</h1>';
 
 		} elseif ( is_day() ) {
 
@@ -112,7 +112,7 @@ function business_lander_breadcrumb() {
 			</li>
 			<li class="breadcrumb-item active"><?php echo get_the_time( 'jS' ) . ' ' . get_the_time( 'M' ); // WPCS: XSS OK. ?></li><ul>
 				<?php
-			echo '<h1 class="page-title">' . get_the_time( 'jS' ) . ' ' . get_the_time( 'M' ) . '</h1>'; // WPCS: XSS OK.
+				echo '<h1 class="page-title">' . get_the_time( 'jS' ) . ' ' . get_the_time( 'M' ) . '</h1>'; // WPCS: XSS OK.
 
 		} elseif ( is_month() ) {
 
@@ -141,7 +141,7 @@ function business_lander_breadcrumb() {
 			?>
 			<li class="breadcrumb-item active"><?php the_archive_title(); ?></li></ul>
 			<?php
-			echo '<h1 class="page-title">' . esc_html__( 'Author', 'greentech' ) . '</h1>';
+			echo '<h1 class="page-title">' . esc_html__( 'Author', 'business-lander' ) . '</h1>';
 
 		} elseif ( is_search() ) {
 
@@ -151,19 +151,20 @@ function business_lander_breadcrumb() {
 			<li class="breadcrumb-item active">
 				<?php
 				/* translators: search query */
-				printf( esc_html__( 'Search Results for: %s', 'greentech' ), esc_html( get_search_query() ) ); ?>
+				printf( esc_html__( 'Search Results for: %s', 'business-lander' ), esc_html( get_search_query() ) );
+				?>
 			</li></ul>
 			<?php
-			echo '<h1 class="page-title">' . esc_html__( 'Search', 'greentech' ) . '</h1>';
+			echo '<h1 class="page-title">' . esc_html__( 'Search', 'business-lander' ) . '</h1>';
 
 		} elseif ( is_404() ) {
 
 			// 404 page.
 			echo $breadcrumb; // WPCS: XSS OK.
 			?>
-			<li class="breadcrumb-item active"><?php echo esc_html__( 'Error 404', 'greentech' ); ?></li></ul>
+			<li class="breadcrumb-item active"><?php echo esc_html__( 'Error 404', 'business-lander' ); ?></li></ul>
 			<?php
-			echo '<h1 class="page-title">' . esc_html__( 'Error 404', 'greentech' ) . '</h1>';
+			echo '<h1 class="page-title">' . esc_html__( 'Error 404', 'business-lander' ) . '</h1>';
 
 		}// End if().
 	}// End if().

@@ -1,9 +1,11 @@
 .section--services {
 	margin-bottom: 90px;
-	.section--title {
+	.services--title {
 		text-align: center;
 		padding-top: 50px;
 		padding-bottom: 16px;
+		font-weight: 200;
+		@include font-size(4.2);
 	}
 	.row {
 		justify-content: space-between;

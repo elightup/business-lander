@@ -15,7 +15,8 @@ get_header(); ?>
 				<h2 class="blog-title"><?php the_archive_title(); ?></h2>
 
 				<?php
-				if ( have_posts() ) : ?>
+				if ( have_posts() ) :
+				?>
 
 					<?php
 					/* Start the Loop */
@@ -28,20 +29,22 @@ get_header(); ?>
 						 */
 						get_template_part( 'template-parts/content', 'archive' );
 
-					endwhile; ?>
+					endwhile;
+					?>
 
 
 					<?php
 					the_posts_pagination( array(
-						'prev_text' => __('newer posts'),
-						'next_text' => __('older posts'),
+						'prev_text' => __( 'newer posts' ),
+						'next_text' => __( 'older posts' ),
 					) );
 
-		 		else :
+				else :
 					get_template_part( 'template-parts/content', 'none' );
 
-		 		endif; ?>
-		 	</div><!-- #main -->
+				endif;
+				?>
+			</div><!-- #main -->
 		</div><!-- .section-archive-posts -->
 	<?php get_sidebar(); ?>
 	</main><!-- .site-main -->
