@@ -31,12 +31,12 @@ if ( ! $query->have_posts() ) {
 	<section class="featured-page-3">
 		<div class="container">
 			<?php the_post_thumbnail(); ?>
-			<div class="page-3">
-				<div class="page-3__name">
+			<div class="featured-page">
+				<div class="featured-page__title">
 					<h3><?php the_title(); ?></h3>
 				</div>
 				<?php the_excerpt(); ?>
-				<a href="<?php the_permalink(); ?>" class="page-3__continue"><?php echo esc_html( 'learn more' ); ?></a>
+				<a href="<?php the_permalink(); ?>" class="featured-page__continue"><?php echo esc_html( 'learn more' ); ?></a>
 			</div>
 		</div>
 	</section>

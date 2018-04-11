@@ -1,15 +1,8 @@
 .breadcrumb {
 	padding: 0;
 }
-
 .page-header {
-	background-repeat: no-repeat;
-	background-position: top center;
-	background-size: cover;
-	background-attachment: fixed;
 	text-align: center;
-	height: 360px;
-	margin-bottom: 25px;
 	display: flex;
 	align-items: center;
 	flex-flow: column;
@@ -17,26 +10,26 @@
 	position: relative;
 	word-break: break-word;
 	background: #f2fcfe;
-	max-height: 430px;
 
 	.page-title {
 		@include font-size(6);
 		font-weight: 200;
-		margin-bottom: .625rem;
-		margin-top: -8px;
+		line-height: 90px;
 		z-index: 0;
 		color: $color__white;
-		position: absolute;
 		max-width: 70%;
-		padding-bottom: 20px;
+		margin-top: 190px;
+		margin-bottom: 190px;
 		display: inline;
 		box-shadow: inset 0 -41px 0 rgba(255, 255, 255, 0.12);
-
+		z-index: 1;
 	}
 	.title-black {
 		color: $color__black;
 		display: inline;
 		box-shadow: inset 0 -41px 0 rgba(0, 191, 243, 0.12);
+		margin-top: 80px;
+		margin-bottom: 80px;
 	}
 }
 .page-header-page {

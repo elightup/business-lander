@@ -7,6 +7,21 @@
  * @package business-lander
  */
 
+
+/**
+ * Auto add more links.
+ *
+ * @return string 'Continue reading' link prepended with an ellipsis.
+ */
+function business_lander_content_more() {
+	/* translators: string replaced with the html */
+	$text = wp_kses_post( sprintf( __( 'Read more %s', 'business-lander' ), '<span class="screen-reader-text">' . get_the_title() . '</span>' ) );
+	$more = sprintf( '<p class="link-more"><a href="%s#more-%d" class="more-link btn btn-primary">%s</a></p>', esc_url( get_permalink() ), get_the_ID(), $text );
+
+	return $more;
+}
+add_filter( 'the_content_more_link', 'business_lander_content_more' );
+
 /**
 * Prints HTML with meta information for the current post-date/time.
 */

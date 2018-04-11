@@ -1,25 +1,73 @@
-.wpcf7-form {
-	p {
-		margin-bottom: 0;
-	}
-	.contact-name,
-	.contact-phone,
-	.contact-message {
-		width: 100%;
-		padding: 8px 17px !important;
-		margin-bottom: 15px;
-		font-weight: 400;
-		@include font-size(1.4);
-	}
-	.contact-message {
-		max-height: 110px;
+.contact__right.contact__right input[type="text"] {
+	width: 100%;
+	max-width: 100%;
+}
+
+.contact__right {
+	float: right;
+	width: 87%;
+	/* margin-top: 56px; */
+	margin-left: 13%;
+	.title {
+		font-weight: 200;
+		@include font-size(3.2);
+		color: $color__white;
+		text-transform: uppercase;
+		margin-top: 0;
+		margin-bottom: 30px;
 	}
 	.contact-submit {
+		margin-bottom: 0;
+		.pushbutton-wide {
+			text-transform: uppercase;
+			font-size: 16px;
+			letter-spacing: 0.05em;
+			padding: 14px 33px;
+			border-radius: 100px;
+			background-color: $color__main;
+			color: $color__white;
+			text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+			&:hover {
+				background-color: $color__black;
+				color: $color__white;
+			}
+			&:focus,
+			&:active {
+				outline: none;
+				background-color: $color__main;
+			}
+		}
+	}
+	input[type="text"] {
+		padding: 8px 17px;
+		margin-bottom: 7px;
+		@include font-size(1.7);
+		font-weight: 400;
+	}
+	.contact-form textarea {
+		height: 144px;
 		width: 100%;
-		border-radius: 100px !important;
-		text-transform: uppercase;
-		font-weight: 600;
-		@include font-size(1.4);
-		margin-top: 10px;
+		float: none;
+		margin-bottom: 0;
+		@include font-size(1.7);
+		font-weight: 400;
+	}
+}
+
+@media (max-width: 991px) {
+	.section-contact__right {
+		width: 100%;
+		margin-top: 50px;
+		margin-bottom: 50px;
+		.contact__right {
+			width: 100%;
+			margin-left: 0;
+		}
+		.title {
+			text-align: center;
+		}
+		.contact-submit .pushbutton-wide {
+			width: 100%;
+		}
 	}
 }

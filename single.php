@@ -29,17 +29,13 @@ get_header();
 		?>
 
 		<div class="post-nav">
-			<div id="content" class="site-content container">
-				<div id="primary" class="content-area">
-
-						<?php
-						the_post_navigation( array(
-							'next_text' => '<span class="meta-nav">' . esc_html__( 'Next Post', 'business-lander' ) . '</span> <span class="post-title">%title</span>',
-							'prev_text' => '<span class="meta-nav">' . esc_html__( 'Previous Post', 'business-lander' ) . '</span> <span class="post-title">%title</span>',
-						) );
-						?>
-
-				</div>
+			<div class="container">
+				<?php
+				the_post_navigation( array(
+					'next_text' => '<span class="meta-nav">' . esc_html__( 'Next Post', 'business-lander' ) . '</span> <span class="post-title">%title</span>',
+					'prev_text' => '<span class="meta-nav">' . esc_html__( 'Previous Post', 'business-lander' ) . '</span> <span class="post-title">%title</span>',
+				) );
+				?>
 			</div>
 		</div><!-- .post-nav -->
 	</main><!-- #main -->

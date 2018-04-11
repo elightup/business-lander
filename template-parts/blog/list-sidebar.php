@@ -6,8 +6,9 @@
  */
 
 ?>
-<main class="site-main" role="main">
-	<div class="section--archive-posts sidebar">
+
+<main class="site-main sidebar" role="main">
+	<div class="section--archive-posts">
 		<div id="main" class="row col-1">
 			<h2 class="blog-title"><?php single_post_title(); ?></h2>
 			<?php
@@ -19,6 +20,7 @@
 		</div>
 			<?php
 			the_posts_pagination( array(
+				'mid_size' => 1,
 				'prev_text' => __( 'newer posts' ),
 				'next_text' => __( 'older posts' ),
 			) );
@@ -29,6 +31,6 @@
 			endif;
 			?>
 	</div>
-<?php get_sidebar(); ?>
 </main><!-- .site-main -->
+<?php get_sidebar(); ?>
 </div>

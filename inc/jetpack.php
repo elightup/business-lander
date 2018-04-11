@@ -19,7 +19,7 @@ function business_lander_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
 		'render'    => 'business_lander_infinite_scroll_render',
-		'footer'    => 'page',
+		'footer'    => 'site-content',
 	) );
 
 	// Add theme support for Responsive Videos.
@@ -60,8 +60,17 @@ function business_lander_infinite_scroll_render() {
 		the_post();
 		if ( is_search() ) :
 			get_template_part( 'template-parts/content', 'search' );
-		else :
-			get_template_part( 'template-parts/content', get_post_format() );
+		endif;
+
+
+
+		$loader_effect = filter_input( INPUT_GET, 'grid-no-sidebar' );
+		var_dump($loader_effect);
+		if (in_array( 'grid-sidebar',$class_body )  || in_array( 'grid-no-sidebar',$class_body )) :
+			get_template_part( 'template-parts/content', 'bloggrid' );
+		endif;
+		if ( in_array( 'list-sidebar',$class_body ) || in_array('list-no-sidebar',$class_body )) :
+			get_template_part( 'template-parts/content', 'bloglist' );
 		endif;
 	}
 }

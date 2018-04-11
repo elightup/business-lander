@@ -64,6 +64,7 @@
 	margin-bottom: 0;
 	word-wrap: break-word;
 	padding-left: 70px;
+	padding-right: 70px;
 	>:first-child {
 		margin-top: 0;
 	}
@@ -182,6 +183,11 @@ ol.children {
 		@include font-size(1.6);
 		line-height: 49px;
 		letter-spacing: 0.05em;
+		&:focus,
+		&:active {
+			outline: none;
+			background-color: $color__main;
+		}
 	}
 	.comment-subscription-form {
 		display: none;
@@ -215,16 +221,19 @@ ol.children {
 }
 
 .comment-navigation {
-	margin-top: 50px !important;
+	margin-top: 50px;
 	padding-left: 30px;
 	padding-right: 30px;
 	padding-top: 3px;
 	padding-bottom: 7px;
-	margin-left: 28% !important;
+	margin-left: 28%;
 	border-radius: 100px;
 	width: 45%;
 	background: #ebfafe;
 	.nav-links {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
 		.nav-previous {
 			a::before {
 				content: '\f0d9';
@@ -258,7 +267,7 @@ ol.children {
 @media(max-width: 991px) {
 	.comment-navigation {
 		width: 100%;
-		margin-left: 0 !important;
+		margin-left: 0;
 	}
 }
 @media(max-width: 574px) {
@@ -270,11 +279,13 @@ ol.children {
 			margin-bottom: 30px;
 		}
 		.reply {
-			position: relative !important;
 			right: 30px;
 			text-align: right;
-			top: 0 !important;
 		}
+	}
+	.comments-area.comments-area .reply {
+		position: relative;
+		top: 0;
 	}
 	.comment-respond {
 		padding-left: 10px;
@@ -288,13 +299,10 @@ ol.children {
 				@include font-size(1.7);
 			}
 		}
-		.submit {
-			font-size: 14px !important;
-		}
-		input,
-		textarea {
-			font-size: 14px !important;
-		}
+	}
+	.comment-respond.comment-respond input,
+	.comment-respond.comment-respond textarea {
+		@include font-size(1.4);
 	}
 }
 @media(max-width: 767px) {

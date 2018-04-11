@@ -14,23 +14,13 @@
 
 get_header();
 
-/*$blog_style_option = get_theme_mod( 'blog_style','grid' );*/
-$blog_style_show = $_GET['blog_style'];
-
-switch ( $blog_style_show ) {
-	case 'grid':
-		get_template_part( 'template-parts/blog/grid' );
-		break;
-	case 'grid-sidebar':
-		get_template_part( 'template-parts/blog/grid-sidebar' );
-		break;
-	case 'list':
-		get_template_part( 'template-parts/blog/list' );
-		break;
-	default:
-		get_template_part( 'template-parts/blog/list-sidebar' );
-		break;
-}
+$blog_style_option = get_theme_mod( 'blog_style','list' );
+if ( $blog_style_option == 'grid-no-sidebar' || $blog_style_option == 'grid-sidebar' ) :
+	$blog_style_option = 'grid-sidebar';
+endif;
+if ( $blog_style_option == 'list-sidebar' || $blog_style_option == 'list-no-sidebar' ) :
+	$blog_style_option = 'list-sidebar';
+endif;
+get_template_part( 'template-parts/blog/' . $blog_style_option );
 
 get_footer();
-

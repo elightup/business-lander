@@ -30,13 +30,13 @@
 
 	<div class="author_bio_section">
 		<div class="container">
-			<?php if ( get_the_author_meta( 'description' ) ) : ?>
+
 				<?php
 				if ( function_exists( 'jetpack_author_bio' ) ) {
 					jetpack_author_bio();
 				}
 				?>
-			<?php endif; ?>
+
 			<div class="category-tag">
 				<?php
 					business_lander_category_tag();

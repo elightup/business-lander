@@ -338,37 +338,14 @@ function business_lander_customize_register( $wp_customize ) {
 		'section'     => 'blog', // Add a default or your own section
 		'label'       => __( 'Blog Style' ),
 		'description' => __( 'Choose the style of the blog' ),
+		'active_callback' => 'is_home',
 		'choices'     => array(
-			'grid' => __( 'Grid' ),
-			'list' => __( 'List' ),
-	  		),
+			'grid-no-sidebar' => __( 'Grid No Sidebar' ),
+			'list-no-sidebar' => __( 'List No Sidebar' ),
+			'list-sidebar'    => __( 'List Sidebar' ),
+			'grid-sidebar'    => __( 'Grid  Sidebar' ),
+			),
 	) );
-
-	$wp_customize->add_setting( 'blog_grid_title', array(
-		'default'           => wp_kses_post( __( 'Archive', 'business-lander' ) ),
-		'sanitize_callback' => 'wp_kses_post',
-		'transport'         => 'postMessage',
-	) );
-
-	$wp_customize->add_control( 'blog_grid_title', array(
-		'label'           => esc_html__( 'Blog grid title', 'business-lander' ),
-		'section'         => 'blog',
-		'type'            => 'text',
-	) );
-
-	$wp_customize->add_setting( 'blog_grid_text', array(
-		'default'           => wp_kses_post( __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.', 'business-lander' ) ),
-		'sanitize_callback' => 'wp_kses_post',
-		'transport'         => 'postMessage',
-	) );
-
-	$wp_customize->add_control( 'blog_grid_text', array(
-		'label'           => esc_html__( 'Blog grid text ', 'business-lander' ),
-		'section'         => 'blog',
-		'type'            => 'textarea',
-	) );
-
-
 }
 add_action( 'customize_register', 'business_lander_customize_register' );
 

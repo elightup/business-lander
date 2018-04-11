@@ -17,6 +17,10 @@ function business_lander_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+	if ( is_home() || is_archive() || is_search() ) {
+		$classes[] = get_theme_mod( 'blog_style' );
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'business_lander_body_classes' );

@@ -29,7 +29,7 @@ if ( post_password_required() ) {
 		<?php
 			$comment_count = get_comments_number();
 		?>
-		<h2 class="comments-title"><?php echo $comment_count . 'Comments'; ?></h2><!-- .comments-title -->
+		<h2 class="comments-title"><?php echo $comment_count . ' Comments'; ?></h2><!-- .comments-title -->
 
 		<ol class="comment-list">
 			<?php

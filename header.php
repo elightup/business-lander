@@ -99,12 +99,9 @@
 	</div>
 </header><!-- #masthead -->
 <?php
-if ( is_page() ) :
-	$page_class = 'page-header-page';
-endif;
 if ( is_singular() && ! is_front_page() ) :
 ?>
-	<div class="page-header <?php echo esc_html( $page_class ); ?> ">
+	<div class="page-header">
 		<?php business_lander_breadcrumb(); ?>
 		<?php if ( is_single() ) : ?>
 			<div class="entry-meta">
