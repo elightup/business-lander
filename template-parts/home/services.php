@@ -19,12 +19,14 @@ if ( empty( $service_pages ) ) {
 	return;
 }
 
-$query = new WP_Query( array(
-	'post_type'      => 'page',
-	'posts_per_page' => 3,
-	'post__in'       => $service_pages,
-	'orderby'        => 'post__in',
-) );
+$query = new WP_Query(
+	array(
+		'post_type'      => 'page',
+		'posts_per_page' => 3,
+		'post__in'       => $service_pages,
+		'orderby'        => 'post__in',
+	)
+);
 
 if ( ! $query->have_posts() ) {
 	return;
@@ -38,7 +40,10 @@ $services_image = get_the_post_thumbnail( get_the_ID() );
 			<?php echo esc_html( get_theme_mod( 'services_section_title', __( 'Services', 'business-lander' ) ) ); ?>
 		</h2>
 		<div class="row col-3">
-			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+			<?php
+			while ( $query->have_posts() ) :
+				$query->the_post();
+?>
 				<div class="section-service__item">
 					<?php if ( has_post_thumbnail() ) : ?>
 						<div class="section-service__thumbnails">

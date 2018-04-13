@@ -29,15 +29,17 @@ if ( post_password_required() ) {
 		<?php
 			$comment_count = get_comments_number();
 		?>
-		<h2 class="comments-title"><?php echo $comment_count . ' Comments'; ?></h2><!-- .comments-title -->
+		<h2 class="comments-title"><?php echo esc_html( $comment_count ) . ' Comments'; ?></h2><!-- .comments-title -->
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-					'reply_text' => '<i class="fa fa-reply"></i>',
-				) );
+				wp_list_comments(
+					array(
+						'style'      => 'ol',
+						'short_ping' => true,
+						'reply_text' => '<i class="fa fa-reply"></i>',
+					)
+				);
 			?>
 		</ol><!-- .comment-list -->
 

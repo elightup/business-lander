@@ -195,10 +195,8 @@
 }
 
 @media ( max-width: 575px) {
-	.site-title {
-		a {
-			font-size: 25px !important;
-		}
+	.site-title.site-title a {
+		@include font-size(2.5);
 	}
 }
 

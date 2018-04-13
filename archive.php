@@ -10,7 +10,7 @@
 get_header(); ?>
 
 	<main class="site-main" role="main">
-		<div class="section--archive-posts sidebar">
+		<div class="section--archive-posts">
 			<div id="main" class="row col-1">
 				<h2 class="blog-title"><?php the_archive_title(); ?></h2>
 
@@ -20,7 +20,8 @@ get_header(); ?>
 
 					<?php
 					/* Start the Loop */
-					while ( have_posts() ) : the_post();
+					while ( have_posts() ) :
+						the_post();
 
 						/*
 						 * Include the Post-Format-specific template for the content.
@@ -34,10 +35,12 @@ get_header(); ?>
 
 
 					<?php
-					the_posts_pagination( array(
-						'prev_text' => __( 'newer posts' ),
-						'next_text' => __( 'older posts' ),
-					) );
+					the_posts_pagination(
+						array(
+							'prev_text' => __( 'newer posts' ),
+							'next_text' => __( 'older posts' ),
+						)
+					);
 
 				else :
 					get_template_part( 'template-parts/content', 'none' );
@@ -46,7 +49,7 @@ get_header(); ?>
 				?>
 			</div><!-- #main -->
 		</div><!-- .section-archive-posts -->
-	<?php get_sidebar(); ?>
 	</main><!-- .site-main -->
 <?php
+get_sidebar();
 get_footer();

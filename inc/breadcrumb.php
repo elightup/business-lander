@@ -55,8 +55,7 @@ function business_lander_breadcrumb() {
 		} elseif ( is_single() ) {
 			if ( ! business_lander_jetpack_featured_image_display() || ! has_post_thumbnail() ) {
 				echo '<h2 class="page-title title-black">' . get_the_title() . '</h2>';
-			}
-			else {
+			} else {
 				echo '<h2 class="page-title">' . get_the_title() . '</h2>';
 				business_lander_post_thumbnail();
 			}
@@ -69,14 +68,12 @@ function business_lander_breadcrumb() {
 			echo '<h1 class="page-title">' . single_cat_title( '', false ) . '</h1>';
 
 		} elseif ( is_page() ) {
-			if ( business_lander_jetpack_featured_image_display() ) {
+			if ( ! business_lander_jetpack_featured_image_display() || ! has_post_thumbnail() ) {
+				echo '<h2 class="page-title title-black">' . get_the_title() . '</h2>';
+			} else {
 				echo '<h2 class="page-title">' . get_the_title() . '</h2>';
 				business_lander_post_thumbnail();
 			}
-			else {
-				echo '<h2 class="page-title title-black">' . get_the_title() . '</h2>';
-			}
-
 		} elseif ( is_tag() ) {
 
 			// Tag page.
@@ -95,9 +92,9 @@ function business_lander_breadcrumb() {
 				/* translators: tag name */
 				printf( esc_html__( 'Tag: %s', 'business-lander' ), esc_html( $get_term_name ) ); // WPCS: XSS OK.
 				?>
-			</li></ul>
-			<?php
-			echo '<h1 class="page-title">' . esc_html__( 'Tag', 'business-lander' ) . '</h1>';
+					</li></ul>
+					<?php
+					echo '<h1 class="page-title">' . esc_html__( 'Tag', 'business-lander' ) . '</h1>';
 
 		} elseif ( is_day() ) {
 

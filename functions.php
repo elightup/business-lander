@@ -1,6 +1,6 @@
 <?php
 /**
- * business-lander functions and definitions
+ * Business-lander functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -14,70 +14,80 @@
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function business_lander_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on business-lander, use a find and replace
-		 * to change 'business-lander' to the name of your theme in all the template files.
-		 */
-		load_theme_textdomain( 'business-lander', get_template_directory() . '/languages' );
+function business_lander_setup() {
+	/*
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
+	 * If you're building a theme based on business-lander, use a find and replace
+	 * to change 'business-lander' to the name of your theme in all the template files.
+	 */
+	load_theme_textdomain( 'business-lander', get_template_directory() . '/languages' );
 
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
 
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
-		add_theme_support( 'title-tag' );
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
 
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
-		add_theme_support( 'post-thumbnails' );
+	/*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 */
+	add_theme_support( 'post-thumbnails' );
 
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
+	// This theme uses wp_nav_menu() in one location.
+	register_nav_menus(
+		array(
 			'menu-1' => esc_html__( 'Primary', 'business-lander' ),
-		) );
+		)
+	);
 
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
-		add_theme_support( 'html5', array(
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support(
+		'html5', array(
 			'search-form',
 			'comment-form',
 			'comment-list',
 			'gallery',
 			'caption',
-		) );
+		)
+	);
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'business_lander_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+	// Set up the WordPress core custom background feature.
+	add_theme_support(
+		'custom-background', apply_filters(
+			'business_lander_custom_background_args', array(
+				'default-color' => 'ffffff',
+				'default-image' => '',
+			)
+		)
+	);
 
-		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
 
-		/**
+	/**
 		 * Add support for core custom logo.
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
-		add_theme_support( 'custom-logo', array(
+	add_theme_support(
+		'custom-logo', array(
 			'height'      => 250,
 			'width'       => 250,
 			'flex-width'  => true,
 			'flex-height' => true,
-		) );
+		)
+	);
 }
 
 add_action( 'after_setup_theme', 'business_lander_setup' );
@@ -100,25 +110,29 @@ add_action( 'after_setup_theme', 'business_lander_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function business_lander_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'business-lander' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'business-lander' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'business-lander' ),
+			'id'            => 'sidebar-1',
+			'description'   => esc_html__( 'Add widgets here.', 'business-lander' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'business-lander' ),
-		'id'            => 'sidebar-2',
-		'description'   => esc_html__( 'Add widgets here.', 'business-lander' ),
-		'before_widget' => '<section id="%1$s" class="widget-footer %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer', 'business-lander' ),
+			'id'            => 'sidebar-2',
+			'description'   => esc_html__( 'Add widgets here.', 'business-lander' ),
+			'before_widget' => '<section id="%1$s" class="widget-footer %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		)
+	);
 	require_once get_template_directory() . '/inc/widgets/class-business-lander-recent-posts-widget.php';
 	register_widget( 'Business_Lander_Recent_Posts_Widget' );
 }
@@ -128,7 +142,10 @@ add_action( 'widgets_init', 'business_lander_widgets_init' );
  * Enqueue scripts and styles.
  */
 function business_lander_scripts() {
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css', '', '4.7.0' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/fontawesome.css', '', '5.0.0' );
+	wp_enqueue_style( 'font-awesome-solid', get_template_directory_uri() . '/css/fa-solid.css', '', '5.0.0' );
+	wp_enqueue_style( 'font-awesome-solid', get_template_directory_uri() . '/css/fa-brands.css', '', '5.0.0' );
+	wp_enqueue_style( 'font-awesome-solid', get_template_directory_uri() . '/css/fa-regular.css', '', '5.0.0' );
 	wp_enqueue_style( 'business-lander-fonts', business_lander_fonts_url() );
 	wp_enqueue_style( 'business-lander-style', get_stylesheet_uri() );
 
@@ -167,10 +184,12 @@ function business_lander_fonts_url() {
 		$fonts[] = 'Cormorant Garamond:400,600,700';
 	}
 
-	$fonts_url = add_query_arg( array(
-		'family' => rawurlencode( implode( '|', $fonts ) ),
-		'subset' => rawurlencode( $subsets ),
-	), 'https://fonts.googleapis.com/css' );
+	$fonts_url = add_query_arg(
+		array(
+			'family' => rawurlencode( implode( '|', $fonts ) ),
+			'subset' => rawurlencode( $subsets ),
+		), 'https://fonts.googleapis.com/css'
+	);
 
 	return $fonts_url;
 }
@@ -225,4 +244,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+if ( is_admin() ) {
+	require_once get_template_directory() . '/inc/admin/class-tgm-plugin-activation.php';
+	require_once get_template_directory() . '/inc/admin/plugins.php';
+}
 
+/**
+ * Load dashboard
+ */
+require get_template_directory() . '/inc/dashboard/class-business-lander-dashboard.php';
+$dashboard = new Business_lander_Dashboard();

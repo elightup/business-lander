@@ -2,6 +2,11 @@
 	text-align: center;
 	margin-top: 55px;
 	margin-bottom: 170px;
+	.nav-links {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+	}
 	.nav-links > * {
 		border: 2px solid $color__border;
 		padding: 12px 22px;
@@ -13,16 +18,17 @@
 		margin-right: 5px;
 		opacity: 0.8;
 		letter-spacing: 0.05em;
-	}
-	.current {
-		color: $color__main !important;
-		border-color: $color__main !important;
+		margin-bottom: 15px;
 	}
 	a:hover {
 		color: $color__link-hover;
 		text-decoration: none;
 		border-color: $color__main;
 	}
+}
+.pagination.pagination .current {
+	color: $color__main;
+	border-color: $color__main;
 }
 .posts-navigation,
 .post-navigation {
@@ -68,11 +74,11 @@
 	.pagination {
 		margin-bottom: 70px;
 	}
-	.nav-previous,
-	.nav-next {
-		width: 100% !important;
+	.nav-previous.nav-previous,
+	.nav-next.nav-next {
+		width: 100%;
 		padding: 0;
-		text-align: center !important;
+		text-align: center;
 	}
 	.nav-previous + .nav-next {
 		padding-top: 20px;

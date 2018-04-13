@@ -12,4 +12,7 @@
 			text-decoration: none;
 		}
 	}
+	p {
+		@include font-size(1.8);
+	}
 }

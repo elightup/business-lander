@@ -270,6 +270,13 @@ ol.children {
 		margin-left: 0;
 	}
 }
+
+@media(max-width: 767px) {
+	ol.children, ul.children, .comment-list {
+		padding: 0;
+	}
+}
+
 @media(max-width: 574px) {
 	.comments-area {
 		.comments-title {
@@ -305,8 +312,9 @@ ol.children {
 		@include font-size(1.4);
 	}
 }
-@media(max-width: 767px) {
-	ol.children, ul.children, .comment-list {
-		padding: 0;
+
+@media(max-width: 320px) {
+	.comment-content {
+		padding-right: 15px;
 	}
 }

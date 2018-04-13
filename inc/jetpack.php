@@ -16,11 +16,13 @@
  */
 function business_lander_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
-	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
-		'render'    => 'business_lander_infinite_scroll_render',
-		'footer'    => 'site-content',
-	) );
+	add_theme_support(
+		'infinite-scroll', array(
+			'container' => 'main',
+			'render'    => 'business_lander_infinite_scroll_render',
+			'footer'    => 'site-content',
+		)
+	);
 
 	// Add theme support for Responsive Videos.
 	add_theme_support( 'jetpack-responsive-videos' );
@@ -29,26 +31,27 @@ function business_lander_jetpack_setup() {
 	add_theme_support( 'jetpack-social-menu' );
 
 	// Add theme support for Content Options.
-	add_theme_support( 'jetpack-content-options', array(
-		'author-bio'         => true, // display or not the author bio: true or false.
+	add_theme_support(
+		'jetpack-content-options', array(
+			'author-bio'      => true, // display or not the author bio: true or false.
 
-		'blog-display'       => 'content',
-		// the default setting of the theme: 'content', 'excerpt' or array( 'content', 'excerpt' ) for themes mixing both display.
-
-		'post-details'    => array(
-			'stylesheet' => 'business-lander-style',
-			'date'       => '.posted-on',
-			'categories' => '.post-category',
-			'tags'       => '.post-tag',
-			'author'     => '.byline',
-			'comment'    => '.comments-link',
-		),
-		'featured-images' => array(
-			'archive'    => true,
-			'post'       => true,
-			'page'       => true,
-		),
-	) );
+			'blog-display'    => 'content',
+			// the default setting of the theme: 'content', 'excerpt' or array( 'content', 'excerpt' ) for themes mixing both display.
+			'post-details'    => array(
+				'stylesheet' => 'business-lander-style',
+				'date'       => '.posted-on',
+				'categories' => '.post-category',
+				'tags'       => '.post-tag',
+				'author'     => '.byline',
+				'comment'    => '.comments-link',
+			),
+			'featured-images' => array(
+				'archive' => true,
+				'post'    => true,
+				'page'    => true,
+			),
+		)
+	);
 }
 add_action( 'after_setup_theme', 'business_lander_jetpack_setup' );
 
@@ -61,15 +64,10 @@ function business_lander_infinite_scroll_render() {
 		if ( is_search() ) :
 			get_template_part( 'template-parts/content', 'search' );
 		endif;
-
-
-
-		$loader_effect = filter_input( INPUT_GET, 'grid-no-sidebar' );
-		var_dump($loader_effect);
-		if (in_array( 'grid-sidebar',$class_body )  || in_array( 'grid-no-sidebar',$class_body )) :
+		if ( get_theme_mod( 'blog_style' ) === 'grid-sidebar' ) :
 			get_template_part( 'template-parts/content', 'bloggrid' );
 		endif;
-		if ( in_array( 'list-sidebar',$class_body ) || in_array('list-no-sidebar',$class_body )) :
+		if ( get_theme_mod( 'blog_style' ) === 'list-sidebar' ) :
 			get_template_part( 'template-parts/content', 'bloglist' );
 		endif;
 	}
@@ -91,10 +89,12 @@ function business_lander_jetpack_featured_image_display() {
 		'page-default' => ( isset( $featured_images['page-default'] ) && false === $featured_images['page-default'] ) ? '' : 1,
 	);
 
-	$settings = array_merge( $settings, array(
-		'post-option' => get_option( 'jetpack_content_featured_images_post', $settings['post-default'] ),
-		'page-option' => get_option( 'jetpack_content_featured_images_page', $settings['page-default'] ),
-	) );
+	$settings = array_merge(
+		$settings, array(
+			'post-option' => get_option( 'jetpack_content_featured_images_post', $settings['post-default'] ),
+			'page-option' => get_option( 'jetpack_content_featured_images_page', $settings['page-default'] ),
+		)
+	);
 
 	if ( ( ! $settings['post-option'] && is_single() ) || ( ! $settings['page-option'] && is_page() ) ) {
 		return false;
@@ -119,9 +119,11 @@ function business_lander_jetpack_featured_image_archive_display() {
 		'archive-default' => ( isset( $featured_images['archive-default'] ) && false === $featured_images['archive-default'] ) ? '' : 1,
 	);
 
-	$settings = array_merge( $settings, array(
-		'archive-option' => get_option( 'jetpack_content_featured_images_archive', $settings['archive-default'] ),
-	) );
+	$settings = array_merge(
+		$settings, array(
+			'archive-option' => get_option( 'jetpack_content_featured_images_archive', $settings['archive-default'] ),
+		)
+	);
 
 	return $settings['archive-option'];
 }

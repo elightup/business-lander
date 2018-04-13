@@ -14,7 +14,7 @@
 <footer id="colophon" class="site-footer">
 	<div class="footer-widgets">
 		<div class="container">
-			<?php dynamic_sidebar( 'sidebar-2' ); ?>
+				<?php dynamic_sidebar( 'sidebar-2' ); ?>
 		</div>
 	</div>
 	<div class="bottombar">

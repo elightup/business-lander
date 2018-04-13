@@ -28,10 +28,12 @@
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<div class="container">
 						<?php
-						wp_nav_menu( array(
-							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
-						) );
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-1',
+								'menu_id'        => 'primary-menu',
+							)
+						);
 						?>
 					</div>
 				</nav><!-- #site-navigation -->
@@ -55,9 +57,9 @@
 							endif;
 
 							$description = get_bloginfo( 'description', 'display' );
-							if ( $description || is_customize_preview() ) :
-							?>
-							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+if ( $description || is_customize_preview() ) :
+?>
+<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 						<?php endif; ?>
 					</div>
 				</div>
@@ -67,7 +69,7 @@
 			<!-- header-address -->
 			<?php if ( get_theme_mod( 'header_address' ) ) : ?>
 				<div class="site-address">
-					<i class="fa fa-map-marker"></i>
+					<i class="fas fa-map-marker-alt"></i>
 					<p class="address"><?php echo esc_html( get_theme_mod( 'header_address', __( '1234 internet street virtual city, statename 54321', 'business-lander' ) ) ); ?></p>
 				</div>
 			<?php endif; ?>

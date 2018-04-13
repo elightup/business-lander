@@ -1,3 +1,9 @@
+.footer-widgets {
+	.container {
+		display: flex;
+		flex-flow: row wrap;
+	}
+}
 .widget-footer {
 	float: left;
 	width: 25%;
@@ -92,7 +98,7 @@
 		}
 
 		.menu a[href*="facebook.com"]:before {
-			content: "\f09a";
+			content: "\f39e";
 			@include fa-icon();
 			@include font-size(1.8);
 		}

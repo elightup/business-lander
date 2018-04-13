@@ -22,9 +22,9 @@ class Business_Lander_Recent_Posts_Widget extends WP_Widget {
 	 */
 	public function __construct() {
 		$this->defaults = array(
-			'title'       => esc_html__( 'Recent Posts', 'business-lander' ),
-			'number'      => 3,
-			'show_date'   => true,
+			'title'     => esc_html__( 'Recent Posts', 'business-lander' ),
+			'number'    => 3,
+			'show_date' => true,
 		);
 		parent::__construct(
 			'business-lander-recent-posts',
@@ -43,9 +43,11 @@ class Business_Lander_Recent_Posts_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		$instance = wp_parse_args( $instance, $this->defaults );
-		$query    = new WP_Query( array(
-			'posts_per_page' => absint( $instance['number'] ),
-		) );
+		$query    = new WP_Query(
+			array(
+				'posts_per_page' => absint( $instance['number'] ),
+			)
+		);
 		if ( ! $query->have_posts() ) {
 			return;
 		}
@@ -60,7 +62,8 @@ class Business_Lander_Recent_Posts_Widget extends WP_Widget {
 		<div class="widget-content">
 			<?php
 			$i = 1;
-			while ( $query->have_posts() ) : $query->the_post();
+			while ( $query->have_posts() ) :
+				$query->the_post();
 			?>
 			<?php
 			if ( $i > absint( $instance['number'] ) ) {
@@ -113,7 +116,7 @@ class Business_Lander_Recent_Posts_Widget extends WP_Widget {
 	 * @return void
 	 */
 	public function form( $instance ) {
-		$instance  = wp_parse_args( $instance, $this->defaults );
+		$instance = wp_parse_args( $instance, $this->defaults );
 		?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'business-lander' ); ?></label>

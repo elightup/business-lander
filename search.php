@@ -24,7 +24,8 @@ get_header(); ?>
 			if ( have_posts() ) :
 
 				/* Start the Loop */
-				while ( have_posts() ) : the_post();
+				while ( have_posts() ) :
+					the_post();
 
 					/**
 				 * Run the loop for the search to output the results.

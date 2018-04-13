@@ -16,18 +16,23 @@ if ( ! $featured_page_3 ) {
 	return;
 }
 
-$query = new WP_Query( array(
-	'post_type' => 'page',
-	'page_id'   => $featured_page_3,
+$query = new WP_Query(
+	array(
+		'post_type' => 'page',
+		'page_id'   => $featured_page_3,
 
-) );
+	)
+);
 
 if ( ! $query->have_posts() ) {
 	return;
 }
 
 ?>
-<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+<?php
+while ( $query->have_posts() ) :
+	$query->the_post();
+?>
 	<section class="featured-page-3">
 		<div class="container">
 			<?php the_post_thumbnail(); ?>
