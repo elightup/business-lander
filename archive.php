@@ -7,21 +7,26 @@
  * @package business-lander
  */
 
-get_header(); ?>
+get_header();
+if ( ! is_active_sidebar( 'sidebar-1' ) ) :
+	$no_sidebar = 'no-sidebar';
+endif;
 
-	<main class="site-main" role="main">
-		<div class="section--archive-posts">
-			<div id="main" class="row col-1">
-				<h2 class="blog-title"><?php the_archive_title(); ?></h2>
+?>
 
-				<?php
-				if ( have_posts() ) :
+<main class="site-main <?php echo esc_html( $no_sidebar ); ?>" role="main">
+	<div class="section--archive-posts">
+		<div id="main" class="row col-1">
+			<h2 class="blog-title"><?php the_archive_title(); ?></h2>
+
+			<?php
+			if ( have_posts() ) :
 				?>
 
-					<?php
-					/* Start the Loop */
-					while ( have_posts() ) :
-						the_post();
+				<?php
+				/* Start the Loop */
+				while ( have_posts() ) :
+					the_post();
 
 						/*
 						 * Include the Post-Format-specific template for the content.
@@ -37,8 +42,8 @@ get_header(); ?>
 					<?php
 					the_posts_pagination(
 						array(
-							'prev_text' => __( 'newer posts' ),
-							'next_text' => __( 'older posts' ),
+							'prev_text' => __( 'newer posts', 'business-lander' ),
+							'next_text' => __( 'older posts', 'business-lander' ),
 						)
 					);
 
@@ -50,6 +55,6 @@ get_header(); ?>
 			</div><!-- #main -->
 		</div><!-- .section-archive-posts -->
 	</main><!-- .site-main -->
-<?php
-get_sidebar();
-get_footer();
+	<?php
+	get_sidebar();
+	get_footer();

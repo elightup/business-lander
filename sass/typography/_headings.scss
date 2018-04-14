@@ -41,3 +41,11 @@ h6 {
 	line-height: 24px;
 	font-weight: 400;
 }
+@media (max-width: 767px) {
+	h2 {
+		@include font-size(3);
+	}
+	h3 {
+		@include font-size(2);
+	}
+}

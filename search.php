@@ -15,10 +15,10 @@ get_header(); ?>
 	<div class="section--archive-posts sidebar">
 		<div id="main" class="row col-1">
 			<h2 class="blog-title">
-			<?php
+				<?php
 				/* translators: search query */
 				printf( esc_html__( 'Search Results for: %s', 'business-lander' ), esc_html( get_search_query() ) );
-			?>
+				?>
 			</h2>
 			<?php
 			if ( have_posts() ) :
@@ -36,11 +36,16 @@ get_header(); ?>
 
 				endwhile;
 
-				the_posts_navigation();
+				the_posts_pagination(
+					array(
+						'prev_text' => __( 'newer posts', 'business-lander' ),
+						'next_text' => __( 'older posts', 'business-lander' ),
+					)
+				);
 
-		else :
+			else :
 
-			get_template_part( 'template-parts/content', 'none' );
+				get_template_part( 'template-parts/content', 'none' );
 
 			endif;
 			?>

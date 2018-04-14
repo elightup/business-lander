@@ -408,8 +408,9 @@ function business_lander_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting(
 		'blog_style', array(
-			'capability' => 'edit_theme_options',
-			'default'    => '0',
+			'capability'        => 'edit_theme_options',
+			'default'           => '0',
+			'sanitize_callback' => 'business_lander_sanitize_radio',
 		)
 	);
 
@@ -417,12 +418,12 @@ function business_lander_customize_register( $wp_customize ) {
 		'blog_style', array(
 			'type'            => 'radio',
 			'section'         => 'blog', // Add a default or your own section.
-			'label'           => __( 'Blog Style' ),
-			'description'     => __( 'Choose the style of the blog' ),
+			'label'           => __( 'Blog Style', 'business-lander' ),
+			'description'     => __( 'Choose the style of the blog', 'business-lander' ),
 			'active_callback' => 'is_home',
 			'choices'         => array(
-				'list-sidebar' => __( 'List' ),
-				'grid-sidebar' => __( 'Grid' ),
+				'list-sidebar' => __( 'List', 'business-lander' ),
+				'grid-sidebar' => __( 'Grid', 'business-lander' ),
 			),
 		)
 	);
@@ -468,4 +469,23 @@ function business_lander_sanitize_image( $input ) {
 		return esc_url( $input );
 	}
 	return '';
+}
+
+/**
+ * Sanitize radio choices.
+ *
+ * @param string               $input   choice slug.
+ * @param WP_Customize_Setting $setting Setting instance.
+ *
+ * @return string User choices; otherwise, the setting default.
+ */
+function business_lander_sanitize_radio( $input, $setting ) {
+	// Ensure input is a slug.
+	$input = sanitize_key( $input );
+
+	// Get list of choices from the control associated with the setting.
+	$choices = $setting->manager->get_control( $setting->id )->choices;
+
+	// If the input is a valid key, return it; otherwise, return the default.
+	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }

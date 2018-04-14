@@ -104,6 +104,11 @@
 				letter-spacing: 0.05em;
 				padding-top: 11px;
 				padding-bottom: 11px;
+				&:focus,
+				&:active {
+					outline: none;
+					background-color: $color__main;
+				}
 			}
 		}
 	}

@@ -27,8 +27,8 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) :
 			the_posts_pagination(
 				array(
 					'mid_size'  => 1,
-					'prev_text' => __( 'newer posts' ),
-					'next_text' => __( 'older posts' ),
+					'prev_text' => __( 'newer posts', 'business-lander' ),
+					'next_text' => __( 'older posts', 'business-lander' ),
 				)
 			);
 			?>
@@ -40,4 +40,4 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) :
 	</div>
 </main><!-- .site-main -->
 <?php get_sidebar(); ?>
-</div>
+

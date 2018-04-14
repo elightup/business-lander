@@ -44,6 +44,5 @@ get_header();
 		</div><!-- .post-nav -->
 	</main><!-- #main -->
 </div><!-- #primary -->
-</div><!-- .container -->
 <?php
 get_footer();
