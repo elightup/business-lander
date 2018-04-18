@@ -10,8 +10,10 @@
 ?>
 
 <?php
-if ( business_lander_jetpack_featured_image_archive_display() || has_post_thumbnail() ) :
-	business_lander_post_thumbnail();
+if ( function_exists( 'business_lander_jetpack_featured_image_archive_display' ) ) :
+	if ( business_lander_jetpack_featured_image_archive_display() || has_post_thumbnail() ) :
+		business_lander_post_thumbnail();
+	endif;
 endif;
 
 ?>

@@ -12,6 +12,8 @@ input[type="submit"] {
 	color: $color__main;
 	transition: all .3s ease 0s;
 	font-weight: 600;
+	position: relative;
+	top: -2px;
 
 	&:hover {
 		border-color: $color__border-button-hover;

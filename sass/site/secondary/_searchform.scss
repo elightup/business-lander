@@ -1,8 +1,30 @@
+.search-form {
+	position: relative;
+}
 .search-field {
 	padding: 6px 54px;
 }
 .search-submit.search-submit {
-	padding: 14px 50px;
-	position: relative;
-	top: -2px;
+	padding: 15px 16px;
+	border: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: transparent;
+	color: $color__black;
+	opacity: 0.7;
+	&:hover {
+		color: $color__main;
+	}
+}
+.widget-area {
+	.search-form {
+		input[type='text'] {
+			width: 100%;
+			margin-bottom: 15px;
+		}
+		input[type='submit'] {
+			margin-bottom: 15px;
+		}
+	}
 }

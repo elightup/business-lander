@@ -18,7 +18,7 @@ endif;
 	<div class="section--archive-posts">
 		<div id="main" class="row col-1">
 			<h2 class="blog-title"><?php the_archive_title(); ?></h2>
-
+			<?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
 			<?php
 			if ( have_posts() ) :
 				?>

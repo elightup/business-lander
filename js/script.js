@@ -27,10 +27,10 @@ jQuery( function ( $ ) {
 	 */
 	 function menuClick() {
 		//Add arrow icon to the li.
-		var $dropdownToggle = $( '<span class="dropToggle fa fa-angle-down"></span>' );
+		var $dropdownToggle = $( '<span class="dropToggle fas fa-caret-down"></span>' );
 		$( '.mobile-menu' ).find( 'li' ).has( 'ul' )
-		.children( 'a' )
-		.after( $dropdownToggle );
+										.children( 'a' )
+										.after( $dropdownToggle );
 
 		$( '.dropToggle' ).on( 'click', function( e ) {
 			$( this ).toggleClass( 'is-toggled' )

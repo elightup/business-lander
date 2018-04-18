@@ -1,3 +1,29 @@
-a:4:{s:8:"template";s:9:"greentech";s:4:"mods";a:45:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:6:"menu-1";i:16;s:19:"jetpack-social-menu";i:18;}s:18:"custom_css_post_id";i:361;s:16:"header_textcolor";s:3:"fff";s:12:"header_image";s:94:"https://demo.gretathemes.com/greentech/wp-content/uploads/sites/18/2017/08/bg_breadcrumb-1.jpg";s:17:"header_image_data";O:8:"stdClass":5:{s:13:"attachment_id";i:575;s:3:"url";s:94:"https://demo.gretathemes.com/greentech/wp-content/uploads/sites/18/2017/08/bg_breadcrumb-1.jpg";s:13:"thumbnail_url";s:102:"https://demo.gretathemes.com/greentech/wp-content/uploads/sites/18/2017/08/bg_breadcrumb-1-150x150.jpg";s:6:"height";i:500;s:5:"width";i:1920;}s:21:"front_page_services_1";i:27;s:21:"front_page_services_2";i:17;s:21:"front_page_services_3";i:24;s:21:"front_page_services_4";i:25;s:21:"front_page_services_5";i:26;s:21:"front_page_services_6";i:28;s:23:"projects_section_layout";s:6:"slider";s:21:"featured_block_text_1";s:33:"HOW TO <br> SAVE THE PLANET EARTH";s:21:"featured_block_text_2";s:43:"THE IMPORTANCE <br> OF RECYCLING ENVIROMENT";s:21:"featured_block_text_3";s:43:"MANY ALTERNATIVE <br> GREEN  ENERGY SOURCES";s:19:"featured_block_url1";s:1:"#";s:21:"featured_block_icon_1";s:87:"https://demo.gretathemes.com/greentech/wp-content/uploads/sites/18/2017/08/globe-64.png";s:19:"featured_block_url2";s:1:"#";s:21:"featured_block_icon_2";s:91:"https://demo.gretathemes.com/greentech/wp-content/uploads/sites/18/2017/08/recycle-2-64.png";s:19:"featured_block_url3";s:1:"#";s:21:"featured_block_icon_3";s:91:"https://demo.gretathemes.com/greentech/wp-content/uploads/sites/18/2017/08/greentech-64.png";s:11:"custom_logo";i:431;s:24:"services_section_img_url";s:88:"https://demo.gretathemes.com/greentech/wp-content/uploads/sites/18/2017/08/JHePOEA-3.png";s:14:"cta_background";s:84:"https://demo.gretathemes.com/greentech/wp-content/themes/greentech/images/cta-bg.jpg";s:16:"features_section";i:503;s:20:"services_section_img";s:89:"https://demo.gretathemes.com/greentech/wp-content/themes/greentech/images/services_bg.png";s:19:"statistics_textarea";s:226:"<h2>1500+</h2>
-								<h3>PEOPLE WORKING WITH US</h3>
-								Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.";s:13:"statistics_bg";s:91:"https://demo.gretathemes.com/greentech/wp-content/themes/greentech/images/statistics_bg.jpg";s:24:"statistics_item_number_3";s:3:"347";s:22:"statistics_item_text_3";s:19:"Volunteers Involved";s:24:"statistics_item_number_4";s:4:"485%";s:22:"statistics_item_text_4";s:13:"Animals Saved";s:22:"statistics_item_icon_1";s:83:"https://demo.gretathemes.com/greentech/wp-content/themes/greentech/images/icon1.png";s:22:"statistics_item_icon_2";s:83:"https://demo.gretathemes.com/greentech/wp-content/themes/greentech/images/icon2.png";s:22:"statistics_item_icon_3";s:83:"https://demo.gretathemes.com/greentech/wp-content/themes/greentech/images/icon3.png";s:22:"statistics_item_icon_4";s:83:"https://demo.gretathemes.com/greentech/wp-content/themes/greentech/images/icon4.png";s:12:"slider_speed";i:5000;s:8:"cta_text";s:33:"Create your business website now!";s:15:"cta_button_text";s:14:"Download Theme";s:14:"cta_button_url";s:51:"https://gretathemes.com/wordpress-themes/greentech/";s:24:"statistics_item_number_1";s:3:"30+";s:22:"statistics_item_text_1";s:18:"Year Of Experience";s:24:"statistics_item_number_2";s:6:"$34500";s:22:"statistics_item_text_2";s:15:"Funds Collected";}s:7:"options";a:23:{s:26:"featured-content[tag-name]";s:8:"featured";s:26:"featured-content[hide-tag]";i:0;s:26:"featured-content[show-all]";i:1;s:9:"site_icon";s:1:"0";s:29:"jetpack_relatedposts[enabled]";b:1;s:35:"jetpack_relatedposts[show_headline]";b:1;s:30:"jetpack_relatedposts[headline]";s:13:"Related Posts";s:37:"jetpack_relatedposts[show_thumbnails]";b:1;s:31:"jetpack_relatedposts[show_date]";b:0;s:34:"jetpack_relatedposts[show_context]";b:0;s:28:"jetpack_relatedposts[layout]";s:4:"grid";s:38:"jetpack_relatedposts[msg_go_to_single]";s:0:"";s:33:"jetpack_relatedposts[msg_example]";s:0:"";s:28:"jetpack_content_blog_display";s:7:"content";s:33:"jetpack_content_post_details_date";s:1:"1";s:39:"jetpack_content_post_details_categories";s:1:"1";s:33:"jetpack_content_post_details_tags";s:1:"1";s:35:"jetpack_content_post_details_author";s:1:"1";s:36:"jetpack_content_post_details_comment";s:1:"1";s:39:"jetpack_content_featured_images_archive";s:1:"1";s:36:"jetpack_content_featured_images_post";s:0:"";s:36:"jetpack_content_featured_images_page";s:0:"";s:23:"nav_menus_created_posts";a:0:{}}s:6:"wp_css";s:0:"";}
+a:4:{s:8:"template";s:15:"business-lander";s:4:"mods";a:23:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:6:"menu-1";i:2;s:19:"jetpack-social-menu";i:9;}s:18:"custom_css_post_id";i:181;s:11:"custom_logo";i:45;s:18:"front_page_contact";i:49;s:21:"front_page_services_1";i:143;s:21:"front_page_services_2";i:154;s:21:"front_page_services_3";i:155;s:22:"services_section_title";s:12:"Our Services";s:14:"feature_page_1";i:15;s:14:"feature_page_2";i:50;s:14:"feature_page_3";i:51;s:7:"sidebar";s:1:"1";s:10:"blog_style";s:12:"grid-sidebar";s:16:"sidebars_widgets";a:2:{s:4:"time";i:1522376169;s:4:"data";a:5:{s:19:"wp_inactive_widgets";a:0:{}s:9:"sidebar-1";a:2:{i:0;s:6:"text-5";i:1;s:31:"bussiness-lander-recent-posts-2";}s:9:"sidebar-2";a:4:{i:0;s:10:"nav_menu-2";i:1;s:10:"nav_menu-3";i:2;s:6:"text-4";i:3;s:19:"blog_subscription-2";}s:9:"sidebar-3";a:1:{i:0;s:6:"text-2";}s:9:"sidebar-4";a:1:{i:0;s:6:"text-3";}}}s:15:"featured_page_1";i:15;s:15:"featured_page_2";i:50;s:15:"featured_page_3";i:51;s:14:"header_address";s:50:"1234 INTERNET STREET VIRTUAL CITY, STATENAME 54321";s:12:"header_phone";s:15:"+84 987-248-558";s:12:"header_email";s:17:"info@elightup.com";s:12:"contact_form";i:14;s:23:"testimonial_section_img";s:99:"https://demo.gretathemes.com/business-lander/wp-content/uploads/sites/27/2018/04/bg-testimonial.jpg";}s:7:"options";a:2:{s:9:"site_icon";s:1:"0";s:23:"nav_menus_created_posts";a:0:{}}s:6:"wp_css";s:446:".grid-no-sidebar .widget-area {
+		display: none;
+}
+.grid-no-sidebar .col-2 > * {
+	width: 30%;
+	margin-left: 1.5%;
+	margin-right: 1.5%;
+}
+@media (max-width: 991px) {
+	.grid-no-sidebar .col-2 > * {
+			width: 45%;
+	} 
+}
+@media (max-width: 574px) { 
+	.grid-no-sidebar .col-2 > * {
+			width: 100%;
+	} 
+}
+
+.list-no-sidebar .site-content{
+	max-width: 840px;
+}
+.list-no-sidebar main {
+		width: 100%;
+}
+.list-no-sidebar .widget-area {
+		display: none;
+	}
+";}

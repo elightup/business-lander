@@ -44,27 +44,6 @@ function business_lander_pingback_header() {
 add_action( 'wp_head', 'business_lander_pingback_header' );
 
 /**
- * Demo files for importing.
- *
- * @return array List of demos configuration.
- */
-function business_lander_import_files() {
-
-	$greentech_demo_url = trailingslashit( get_template_directory_uri() ) . 'demo/';
-
-	return array(
-		array(
-			'import_file_name'                 => esc_html__( 'Demo 1', 'business-lander' ),
-			'local_import_file'                => $greentech_demo_url . 'content.xml',
-			'local_import_widget_file_url'     => $greentech_demo_url . 'widgets.wie',
-			'local_import_customizer_file_url' => $greentech_demo_url . 'theme-options.dat',
-			'import_preview_image_url'         => $greentech_demo_url . 'preview_image.jpg',
-		),
-	);
-}
-add_filter( 'pt-ocdi/import_files', 'business_lander_import_files' );
-
-/**
  * Change the Tag Cloud's Font Sizes
  *
  * @param array $args Widget area.
@@ -79,6 +58,29 @@ function business_lander_tag_cloud_fz( $args ) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'business_lander_tag_cloud_fz' );
+
+
+/**
+ * Demo files for importing.
+ *
+ * @return array List of demos configuration.
+ */
+function business_lander_import_files() {
+
+	$business_lander_demo_url = trailingslashit( get_template_directory_uri() ) . 'demo/';
+
+	return array(
+		array(
+			'import_file_name'                 => esc_html__( 'Demo 1', 'business-lander' ),
+			'local_import_file'                => $business_lander_demo_url . 'content.xml',
+			'local_import_widget_file_url'     => $business_lander_demo_url . 'widgets.wie',
+			'local_import_customizer_file_url' => $business_lander_demo_url . 'theme-options.dat',
+			'import_preview_image_url'         => $business_lander_demo_url . 'preview_image.jpg',
+		),
+	);
+}
+add_filter( 'pt-ocdi/import_files', 'business_lander_import_files' );
+
 
 /**
  * Setup the theme after importing demo.

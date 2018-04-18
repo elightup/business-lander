@@ -54,6 +54,7 @@
 .post-info {
 	padding-left: 20px;
 	padding-right: 20px;
+	min-height: 160px;
 	.post-info-name {
 		margin-bottom: 5px;
 		word-wrap : break-word;
@@ -138,7 +139,7 @@
 			}
 		}
 	}
-	.grid-sidebar {
+	.grid-sidebar.grid-sidebar {
 		main {
 			width: 100%;
 		}

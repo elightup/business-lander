@@ -5,6 +5,7 @@
  * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package business-lander
+
  */
 
 /**
@@ -12,7 +13,6 @@
  *
  * @return string 'Continue reading' link prepended with an ellipsis.
  */
-
 function business_lander_content_more() {
 	/* translators: string replaced with the html */
 	$text = wp_kses_post( sprintf( __( 'Read more %s', 'business-lander' ), '<span class="screen-reader-text">' . get_the_title() . '</span>' ) );
@@ -66,7 +66,7 @@ function business_lander_show_author() {
  * Prints HTML with meta information for the category and tag.
  */
 function business_lander_category_tag() {
-		$category_detail = get_the_category();// $post->ID
+	$category_detail = get_the_category();// $post->ID
 	foreach ( $category_detail as $cd ) {
 		$category_name  = $cd->cat_name;
 		$category_link .= '<a href="' . esc_url( get_category_link( $cd->cat_ID ) ) . '">' . $category_name . '</a>';

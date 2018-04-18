@@ -9,9 +9,108 @@ https://codex.wordpress.org/Right-to-Left_Language_Support
 
 */
 
-/*
+* {
+	direction: rtl !important;
+}
+
 body {
 	direction: rtl;
 	unicode-bidi: embed;
+	text-align: right;
 }
-*/
+.main-navigation li.menu-item-has-children > a::after,
+.main-navigation li.page_item_has_children > a::after {
+	margin-right: 8px;
+}
+ul li ul {
+	padding-right: 16px;
+}
+ul li ul li {
+	margin-left: 6px !important;
+}
+ul li ul li a::after {
+	position: absolute;
+	right: 0;
+}
+.section--contact li::after {
+	margin-right: 17px;
+}
+.section--contact .contact__right {
+	margin-right: 13%;
+	margin-left: 0;
+}
+.featured-page-2 .featured-page {
+	margin-left: 114px;
+	margin-right: 0;
+}
+.footer-widgets ul {
+	padding-right: 0;
+}
+.search-form .search-submit {
+	left: 0;
+}
+.author_bio_section .author-avatar {
+	float: right;
+	margin-left: 20px;
+}
+.author_bio_section .category-tag {
+	margin-right: 35px;
+}
+.author_bio_section .category-tag .post-category {
+	margin-right: 0;
+}
+.comments-area.comments-area .reply {
+	left: 30px;
+	right: unset;
+}
+.comment-author.comment-author img {
+	float: right;
+	margin-left: 20px;
+}
+.comment-content p {
+	margin-right: 20px;
+}
+.comment-navigation {
+	margin-right: 28%;
+}
+.comment-navigation .nav-next a::after {
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+	margin-right: 5px;
+}
+.comment-navigation .nav-previous a::before {
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+	margin-left: 5px;
+}
+.post-nav .nav-previous {
+	text-align: left;
+}
+.featured-page .featured-page__continue {
+	position: relative;
+}
+.featured-page .featured-page__continue::before {
+	content: '\f0da';
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-left: 8px;
+    position: absolute;
+    left: 108px;
+    top: 3px;
+}
+.featured-page .featured-page__continue::after {
+	content: '';
+}
+.section--testimonial .slick-dots {
+	padding-left: 40px;
+}
+.section--testimonial .testimonial-item .content {
+	margin-left: 0;
+	margin-right: 17.5%;
+}
