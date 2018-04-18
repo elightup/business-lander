@@ -56,11 +56,12 @@
 							<?php
 							endif;
 
-							$description = get_bloginfo( 'description', 'display' );
-if ( $description || is_customize_preview() ) :
-?>
-<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-						<?php endif; ?>
+$description = get_bloginfo( 'description', 'display' );
+if ( $description || is_customize_preview() ) : ?>
+	<p class="site-description">
+		<?php echo $description; /* WPCS: xss ok. */ ?>
+	</p>
+<?php endif; ?>
 					</div>
 				</div>
 			</div><!-- .site-branding -->
@@ -100,9 +101,8 @@ if ( $description || is_customize_preview() ) :
 		</div>
 	</div>
 </header><!-- #masthead -->
-<?php
-if ( is_singular() && ! is_front_page() ) :
-?>
+
+<?php if ( is_single() && ! is_front_page() ) : ?>
 	<div class="page-header">
 		<?php business_lander_breadcrumb(); ?>
 		<?php if ( is_single() ) : ?>

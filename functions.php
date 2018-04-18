@@ -218,9 +218,9 @@ add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
 
 /**
- * Functions which enhance the theme by hooking into WordPress.
+ * Custom functions that act independently of the theme templates.
  */
-require get_template_directory() . '/inc/template-functions.php';
+require get_template_directory() . '/inc/extras.php';
 
 /**
  * Customizer additions.

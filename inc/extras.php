@@ -14,19 +14,13 @@
  * @return array
  */
 function business_lander_body_classes( $classes ) {
-	// Adds a class of group-blog to blogs with more than 1 published author.
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
-	}
-
-	// Adds a class of no-sidebar if don't have sidebar.
-	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-		$classes[] = 'no-sidebar';
-	}
-
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
+	}
+
+	if ( is_home() || is_archive() || is_search() ) {
+		$classes[] = get_theme_mod( 'blog_style' );
 	}
 
 	return $classes;
@@ -43,22 +37,6 @@ function business_lander_pingback_header() {
 }
 add_action( 'wp_head', 'business_lander_pingback_header' );
 
-/**
- * Change the Tag Cloud's Font Sizes
- *
- * @param array $args Widget area.
- *
- * @return array.
- */
-function business_lander_tag_cloud_fz( $args ) {
-	$args['largest']  = 0.875;
-	$args['smallest'] = 0.875;
-	$args['unit']     = 'rem';
-
-	return $args;
-}
-add_filter( 'widget_tag_cloud_args', 'business_lander_tag_cloud_fz' );
-
 
 /**
  * Demo files for importing.
@@ -71,16 +49,15 @@ function business_lander_import_files() {
 
 	return array(
 		array(
-			'import_file_name'                 => esc_html__( 'Demo 1', 'business-lander' ),
-			'local_import_file'                => $business_lander_demo_url . 'content.xml',
-			'local_import_widget_file_url'     => $business_lander_demo_url . 'widgets.wie',
-			'local_import_customizer_file_url' => $business_lander_demo_url . 'theme-options.dat',
-			'import_preview_image_url'         => $business_lander_demo_url . 'preview_image.jpg',
+			'import_file_name'           => esc_html__( 'Demo 1', 'business_lander' ),
+			'import_file_url'            => $business_lander_demo_url . 'content.xml',
+			'import_widget_file_url'     => $business_lander_demo_url . 'widgets.wie',
+			'local_import_customizer_file' => $business_lander_demo_url . 'theme-options.dat',
+			'import_preview_image_url'   => $business_lander_demo_url . 'preview_image.jpg',
 		),
 	);
 }
 add_filter( 'pt-ocdi/import_files', 'business_lander_import_files' );
-
 
 /**
  * Setup the theme after importing demo.
