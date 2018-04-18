@@ -75,11 +75,31 @@ function business_lander_after_import_setup() {
 	);
 
 	// Setup static front page.
-	$front_page = get_page_by_title( 'Home' );
+	$front_page = get_page_by_title( 'We care about your business success' );
 	$blog       = get_page_by_title( 'Blog' );
+	$contact    = get_page_by_title( 'Contact' );
+
+	$front_page_services1 = get_page_by_title( 'Birthday Gifts' );
+	$front_page_services2 = get_page_by_title( 'Corporate Gifts' );
+	$front_page_services3 = get_page_by_title( 'Flowers Arrangements' );
+	$featured_page_1      = get_page_by_title( 'Difference Is Clear' );
+	$featured_page_2      = get_page_by_title( "We're Proud of Our Work" );
+	$featured_page_3      = get_page_by_title( 'Our Happy Customers' );
+
+	/**/
+
 	update_option( 'show_on_front', 'page' );
 	update_option( 'page_on_front', $front_page->ID );
 	update_option( 'page_for_posts', $blog->ID );
+
+	set_theme_mod( 'contact_form', $contact->ID );
+	set_theme_mod( 'front_page_services_1', $front_page_services1->ID );
+	set_theme_mod( 'front_page_services_2', $front_page_services2->ID );
+	set_theme_mod( 'front_page_services_3', $front_page_services3->ID );
+	set_theme_mod( 'featured_page_1', $featured_page_1->ID );
+	set_theme_mod( 'featured_page_2', $featured_page_2->ID );
+	set_theme_mod( 'featured_page_3', $featured_page_3->ID );
+
 	update_option( 'permalink_structure', '/%postname%/' );
 }
 add_action( 'pt-ocdi/after_import', 'business_lander_after_import_setup' );
