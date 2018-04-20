@@ -16,6 +16,8 @@
 		margin-top: 0;
 		margin-bottom: 30px;
 	}
+}
+.contact-form {
 	.contact-submit {
 		margin-bottom: 0;
 		.pushbutton-wide {
@@ -44,7 +46,7 @@
 		@include font-size(1.7);
 		font-weight: 400;
 	}
-	.contact-form textarea {
+	textarea {
 		height: 144px;
 		width: 100%;
 		float: none;
@@ -53,7 +55,6 @@
 		font-weight: 400;
 	}
 }
-
 @media (max-width: 991px) {
 	.section-contact__right {
 		width: 100%;

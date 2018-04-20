@@ -15,7 +15,6 @@ if ( function_exists( 'business_lander_jetpack_featured_image_archive_display' )
 		business_lander_post_thumbnail();
 	endif;
 endif;
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

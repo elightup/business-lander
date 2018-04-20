@@ -107,10 +107,6 @@ ul li ul li a::after {
 .featured-page .featured-page__continue::after {
 	content: '';
 }
-.section--testimonial .slick-dots {
-	padding-left: 40px;
-}
 .section--testimonial .testimonial-item .content {
-	margin-left: 0;
-	margin-right: 17.5%;
+	margin-left: 17.5%;
 }

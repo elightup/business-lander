@@ -27,6 +27,7 @@ if ( ! $query->have_posts() ) {
 <section class="section--testimonial" style="background-image: url( <?php echo esc_url( $image ); ?> )">
 	<div class="container">
 		<h3 class="section--testimonial__title"><?php echo esc_html( 'testimonials' ); ?></h3>
+		<div dir="rtl">
 		<div class="testimonial">
 			<?php
 			while ( $query->have_posts() ) :
@@ -39,5 +40,6 @@ if ( ! $query->have_posts() ) {
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>
 		</div>
+	</div>
 	</div>
 </section>

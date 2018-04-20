@@ -3,6 +3,9 @@
 }
 .search-field {
 	padding: 6px 54px;
+	&:focus {
+		outline: none;
+	}
 }
 .search-submit.search-submit {
 	padding: 15px 16px;
@@ -15,6 +18,9 @@
 	opacity: 0.7;
 	&:hover {
 		color: $color__main;
+	}
+	&:focus {
+		outline: none;
 	}
 }
 .widget-area {

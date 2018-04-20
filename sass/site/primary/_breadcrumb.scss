@@ -15,7 +15,7 @@
 	.page-title {
 		@include font-size(6);
 		font-weight: 200;
-		line-height: 90px;
+		line-height: 1.5;
 		z-index: 0;
 		color: $color__white;
 		max-width: 70%;

@@ -14,12 +14,16 @@
 		flex-flow: row wrap;
 		li {
 			&:hover > ul,
-			&.focus > ul {
+			&:focus > ul {
 				display: block;
+				visibility: visible;
+			    opacity: 1;
+			    transform: translateY(0) !important;
+			    -ms-transform: translateY(0);
+			    z-index: 10;
 			}
 		}
 		ul {
-			display: none;
 			position: absolute;
 			z-index: 10;
 			top: 95%;
@@ -27,6 +31,11 @@
 			background: $color__white;
 			-webkit-box-shadow: -6px 6px 20px rgba(0, 0, 0, .15);
 			box-shadow: -6px 6px 20px rgba(0, 0, 0, .15);
+			-ms-transform: translateY(10px);
+			transform: translateY(10px);
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.3s;
 			li {
 				&:hover > ul,
 				&.focus > ul {
@@ -67,13 +76,11 @@
 			color: $color__text-main;
 			border-radius: 20px;
 			display: inline-block;
-			line-height: 24px;
+			line-height: 1.7;
 			letter-spacing: 0.05em;
 			opacity: 0.6;
 			padding: 4px 15px;
-			-webkit-transition: all .3s ease 0s;
-			-o-transition: all .3s ease 0s;
-			transition: all .3s ease 0s;
+
 		}
 		&:hover > a,
 		&.focus > a {
@@ -107,9 +114,9 @@
 			background: #fff;
 			-webkit-box-shadow: -6px 6px 20px rgba(0, 0, 0, .15);
 			box-shadow: 0px 6px 20px rgba(0, 0, 0, .15);
-			margin-top: 3px;
+			margin-top: 1px;
+			padding-left: 20px;
 			li {
-				transition: all 3s ease;
 				width: 100%;
 				display: block;
 				margin-left: -10px;
@@ -119,7 +126,7 @@
 					font-weight: 400;
 					display: block;
 					line-height: 1.5;
-					padding: 7px 20px;
+					padding: 3px 20px;
 					margin-left: -15px;
 				}
 				&:hover > a {
@@ -180,7 +187,6 @@
 	border: none;
 	background: transparent;
 	text-transform: uppercase;
-	line-height: 48px;
 	color: $color__main;
 	float: right;
 	display: none;

@@ -91,7 +91,7 @@
 		text-transform: uppercase;
 		color: $color__black;
 		margin-left: 37px;
-		line-height: 20px;
+		line-height: 1.8;
 		letter-spacing: 0.05em;
 
 	}
@@ -117,7 +117,7 @@
 		margin: 0;
 		margin-left: 43px;
 		letter-spacing: 0.05em;
-		line-height: 20px;
+		line-height: 1.8;
 	}
 }
 .site-info {
@@ -162,6 +162,7 @@
 		&:focus {
 			background-color: $color__main;
 			outline: none;
+			color: $color__white;
 		}
 	}
 }
@@ -175,9 +176,10 @@
 
 	.site-logo .site-title {
 		margin: 0;
+		text-align: center;
 	}
 	.menu-toggle {
-		line-height: 38px;
+		line-height: 1.9;
 		margin-top: 10px;
 		margin-bottom: 10px;
 		padding: 0 12px;

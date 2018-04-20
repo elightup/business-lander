@@ -156,7 +156,7 @@ function business_lander_post_thumbnail() {
 		return;
 	}
 
-	if ( is_singular() ) :
+	if ( is_singular() || is_home() || is_archive() ) :
 		?>
 		<div class="post-thumbnail">
 			<?php the_post_thumbnail( 'full' ); ?>

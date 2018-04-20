@@ -15,4 +15,18 @@
 	p {
 		@include font-size(1.8);
 	}
+	.search-form {
+		max-width: 336px;
+		margin: 0 auto;
+	}
+	.search-field {
+		width: 100%;
+	}
+}
+@media (max-width: 575px) {
+	.error-404 {
+		.go-back-home {
+			@include font-size(1.5);
+		}
+	}
 }

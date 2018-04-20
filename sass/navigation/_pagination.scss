@@ -44,7 +44,7 @@
 		text-transform: uppercase;
 		font-weight: bold;
 		display: block;
-		line-height: 24px;
+		line-height: 1.7;
 		letter-spacing: 0.1em;
 		font-weight: 400;
 		color: $color__black;
@@ -57,7 +57,7 @@
 		font-weight: 400;
 		color: $color__main;
 		transition: all 0.3s;
-		line-height: 32px;
+		line-height: 1.5;
 	}
 	.infinite-scroll & {
 		display: none;

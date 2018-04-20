@@ -23,7 +23,7 @@
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'business-lander' ) ); ?>">
 					<?php
 					/* translators: placeholder replaced with string */
-					printf( esc_html__( 'Proudly powered by %s. ', 'business-lander' ), 'WordPress' );
+					printf( esc_html__( 'Proudly powered by %s.', 'business-lander' ), 'WordPress' );
 					?>
 				</a>
 				<?php

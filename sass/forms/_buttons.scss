@@ -24,7 +24,8 @@ input[type="submit"] {
 	&:active,
 	&:focus {
 		border-color: $color__border-button-focus;
-		color: $color__white;
+		color: $color__black;
+		outline: none;
 	}
 }
 .btn {

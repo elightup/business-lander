@@ -88,6 +88,7 @@ function business_lander_setup() {
 			'flex-height' => true,
 		)
 	);
+	add_theme_support( 'custom-header' );
 }
 
 add_action( 'after_setup_theme', 'business_lander_setup' );
@@ -216,7 +217,25 @@ function wpdocs_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
+add_filter( 'get_the_archive_title', function ( $title ) {
 
+	if ( is_category() ) {
+
+		$title = single_cat_title( '', false );
+
+	} elseif ( is_tag() ) {
+
+		$title = single_tag_title( '', false );
+
+	} elseif ( is_author() ) {
+
+		$title = '<span class="vcard">' . get_the_author() . '</span>';
+
+	}
+
+	return $title;
+
+});
 /**
  * Custom functions that act independently of the theme templates.
  */
@@ -236,6 +255,11 @@ require get_template_directory() . '/inc/breadcrumb.php';
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Load Jetpack compatibility file.

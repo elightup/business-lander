@@ -12,7 +12,7 @@ blockquote {
 	color: $color__text-main;
 	font-family: $font__heading;
 	font-style: italic;
-	line-height: 32px;
+	line-height: 1.6;
 	@include font-size(2);
 	opacity: 0.8;
 	a {
