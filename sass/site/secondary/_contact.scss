@@ -48,12 +48,18 @@
 	}
 	textarea {
 		height: 144px;
-		width: 100%;
 		float: none;
 		margin-bottom: 0;
 		@include font-size(1.7);
 		font-weight: 400;
 	}
+}
+.contact-form.contact-form textarea {
+	width: 100%;
+}
+.contact-form.contact-form input[type="text"] {
+	width: 100%;
+	max-width: 100%;
 }
 @media (max-width: 991px) {
 	.section-contact__right {
