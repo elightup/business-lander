@@ -1403,10 +1403,11 @@ span.is-toggled {
     margin-left: 0; } }
 .archive .blog-title {
   margin-bottom: 50px; }
-.archive .archive-description {
+
+.archive-description {
   text-align: center;
   margin-bottom: 40px; }
-  .archive .archive-description p {
+  .archive-description p {
     margin-top: 0;
     font-size: 20px;
     font-size: 1.25rem;
@@ -1600,7 +1601,8 @@ span.is-toggled {
     color: #000;
     line-height: 1.7; }
     .entry-meta a:hover {
-      color: #00bff3; }
+      color: #00bff3;
+      text-decoration: none; }
   .entry-meta .byline {
     margin-right: 25px; }
     .entry-meta .byline::before {
@@ -3166,6 +3168,16 @@ a:hover {
   .section--archive-posts .post-thumbnail img {
     height: auto;
     min-height: 400px; }
+
+.blog-description p {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 0;
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.5); }
 
 .entry-meta-blog {
   text-align: center; }

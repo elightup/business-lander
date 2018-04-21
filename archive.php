@@ -8,53 +8,19 @@
  */
 
 get_header();
-if ( ! is_active_sidebar( 'sidebar-1' ) ) :
-	$no_sidebar = 'no-sidebar';
-endif;
 
-?>
+	if ( is_home() && !is_front_page() || is_archive()) :
+		$blog_style_option = get_theme_mod( 'blog_style', 'list' );
+		if ( 'grid-no-sidebar' === $blog_style_option || 'grid-sidebar' === $blog_style_option ) :
+			$blog_style_option = 'grid-sidebar';
+		endif;
+		if ( 'list-sidebar' === $blog_style_option || 'list-no-sidebar' === $blog_style_option ) :
+			$blog_style_option = 'list-sidebar';
+		endif;
+		get_template_part( 'template-parts/blog/' . $blog_style_option );
 
-<main class="site-main <?php echo esc_html( $no_sidebar ); ?>" role="main">
-	<div class="section--archive-posts">
-		<div id="main" class="row col-1">
-			<h2 class="blog-title"><?php the_archive_title(); ?></h2>
-			<?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
-			<?php
-			if ( have_posts() ) :
-				?>
+	else :
+		get_template_part( 'template-parts/blog/list-sidebar' );
+	endif;
 
-				<?php
-				/* Start the Loop */
-				while ( have_posts() ) :
-					the_post();
-
-						/*
-						 * Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'template-parts/content', 'archive' );
-
-					endwhile;
-					?>
-
-
-					<?php
-					the_posts_pagination(
-						array(
-							'prev_text' => __( 'newer posts', 'business-lander' ),
-							'next_text' => __( 'older posts', 'business-lander' ),
-						)
-					);
-
-				else :
-					get_template_part( 'template-parts/content', 'none' );
-
-				endif;
-				?>
-			</div><!-- #main -->
-		</div><!-- .section-archive-posts -->
-	</main><!-- .site-main -->
-	<?php
-	get_sidebar();
-	get_footer();
+get_footer();
