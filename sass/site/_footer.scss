@@ -46,7 +46,7 @@
 		p {
 			font-weight: 400;
 			@include font-size(1.4);
-			opacity: 0.8;
+			color: rgba(0,0,0,0.8);
 			line-height: 1.7;
 			margin-bottom: 25px;
 		}

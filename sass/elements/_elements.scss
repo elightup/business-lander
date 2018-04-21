@@ -17,8 +17,7 @@ blockquote,
 q {
 	quotes: "" "";
 	position: relative;
-	&:before,
-	&:after {
+	&:before {
 		content: '';
 		border-left: 4px solid $color__main;
 		width: 100%;

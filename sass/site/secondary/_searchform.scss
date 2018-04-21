@@ -14,8 +14,7 @@
 	top: 0;
 	right: 0;
 	background: transparent;
-	color: $color__black;
-	opacity: 0.7;
+	color: rgba(0,0,0,0.7);
 	&:hover {
 		color: $color__main;
 	}

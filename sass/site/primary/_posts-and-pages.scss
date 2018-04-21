@@ -16,7 +16,7 @@
 	margin: 1.5em 0 0;
 }
 .post-content.post-content p {
-	opacity: 0.8;
+	color: rgba(0,0,0,0.7);
 	margin-bottom: 35px;
 }
 .page-links {
@@ -121,10 +121,10 @@
 	margin-top: 40px;
 	word-wrap: break-word;
 	li {
-		opacity: 0.8;
+		color: rgba(0,0,0,0.8);
 	}
 	p {
-		opacity: 0.7;
+		color: rgba(0,0,0,0.7);
 		margin-bottom: 27px;
 	}
 	img {

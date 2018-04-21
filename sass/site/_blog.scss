@@ -12,7 +12,7 @@
 		text-align: center;
 		line-height: 1.6;
 		letter-spacing: 0.01em;
-		opacity: 0.5;
+		color: rgba(0,0,0,0.5);
 	}
 }
 .blog-title {
@@ -52,7 +52,7 @@
 		}
 	}
 	&:hover {
-		transform: translateY(-6px);
+		transform: translate3d(0,-6px,0);
 		box-shadow: 0 12px 24px rgba(0,0,0,0.3), 0 10px 10px rgba(0,0,0,0.2);
 		transition: all 0.3s;
 	}
@@ -100,7 +100,7 @@
 		@include font-size(1.4);
 		margin-bottom: 75px;
 		word-wrap : break-word;
-		opacity: 0.8;
+		color: rgba(0,0,0,0.8);
 	}
 	.post-continue {
 		position: absolute;
