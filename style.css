@@ -1405,8 +1405,15 @@ span.is-toggled {
   margin-bottom: 50px; }
 
 .archive-description {
-  text-align: center;
-  margin-bottom: 40px; }
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  margin-top: 0;
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.5); }
   .archive-description p {
     margin-top: 0;
     font-size: 20px;
