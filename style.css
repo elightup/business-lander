@@ -1421,7 +1421,8 @@ span.is-toggled {
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 1.6;
-    color: rgba(0, 0, 0, 0.5); }
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 0; }
 
 /*--------------------------------------------------------------
 # Content
