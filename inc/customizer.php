@@ -13,7 +13,12 @@
 function business_lander_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+	// Remove header image section.
+	$wp_customize->remove_section( 'header_image' );
+
+	// Remove the core header textcolor control, as it shares the main text color.
+	$wp_customize->remove_control( 'header_textcolor' );
 
 	// Add theme options panel.
 	$wp_customize->add_panel(
