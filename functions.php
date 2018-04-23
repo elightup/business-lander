@@ -40,6 +40,8 @@ function business_lander_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'business-lander-grid-thumbnail', 384, 0 );
+	add_image_size( 'business-lander-list-thumbnail', 780, 0 );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(

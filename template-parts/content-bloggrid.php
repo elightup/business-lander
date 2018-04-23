@@ -13,7 +13,7 @@
 	<a href="<?php the_permalink(); ?>">
 		<div class="image">
 			<?php
-			the_post_thumbnail();
+			the_post_thumbnail('business-lander-grid-thumbnail');
 			if ( is_sticky() ) :
 			?>
 				<i class="fas fa-star"></i>
