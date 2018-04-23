@@ -105,7 +105,16 @@
 
 <?php if ( is_singular() && ! is_front_page() ) : ?>
 	<div class="page-header">
-		<?php business_lander_breadcrumb(); ?>
+		<?php
+		if ( ! has_post_thumbnail() ) {
+		    the_title( '<h2 class="page-title title-black">', '</h2>' );
+		} else {
+			the_title( '<h2 class="page-title">', '</h2>' );
+			echo '<div class="post-thumbnail">';
+			the_post_thumbnail( 'full' );
+			echo '</div>';
+		}
+        ?>
 		<?php if ( is_single() ) : ?>
 			<div class="entry-meta">
 				<?php business_lander_posted_on(); ?>
