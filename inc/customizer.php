@@ -11,8 +11,8 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function business_lander_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
 	// Remove header image section.
 	$wp_customize->remove_section( 'header_image' );
@@ -395,7 +395,6 @@ function business_lander_customize_register( $wp_customize ) {
 				'label'    => esc_html__( 'Call To Action Backround Image', 'business-lander' ),
 				'section'  => 'cta_section',
 				'settings' => 'cta_background',
-
 			)
 		)
 	);
@@ -405,34 +404,31 @@ function business_lander_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_section(
 		'blog', array(
-			'title'       => esc_html__( 'Blog', 'business-lander' ),
-			'panel'       => 'business-lander',
-			'description' => 'Display blog style.',
+			'title' => esc_html__( 'Blog', 'business-lander' ),
+			'panel' => 'business-lander',
 		)
 	);
 
-	$wp_customize->add_setting(
-		'blog_style', array(
-			'capability'        => 'edit_theme_options',
-			'default'           => '0',
-			'sanitize_callback' => 'business_lander_sanitize_radio',
-		)
-	);
+	$wp_customize->add_setting( 'blog_style', array(
+		'capability'        => 'edit_theme_options',
+		'default'           => 'grid',
+		'sanitize_callback' => 'business_lander_sanitize_radio',
+	) );
 
 	$wp_customize->add_control(
 		'blog_style', array(
-			'type'            => 'radio',
-			'section'         => 'blog', // Add a default or your own section.
-			'label'           => __( 'Blog Style', 'business-lander' ),
-			'description'     => __( 'Choose the style of the blog', 'business-lander' ),
-			'active_callback' => 'is_home',
-			'choices'         => array(
-				'list-sidebar' => __( 'List', 'business-lander' ),
-				'grid-sidebar' => __( 'Grid', 'business-lander' ),
+			'type'        => 'radio',
+			'section'     => 'blog',
+			'label'       => __( 'Blog Style', 'business-lander' ),
+			'description' => __( 'Choose how to display posts in the blog.', 'business-lander' ),
+			'choices'     => array(
+				'grid' => __( 'Grid', 'business-lander' ),
+				'list' => __( 'List', 'business-lander' ),
 			),
 		)
 	);
 }
+
 add_action( 'customize_register', 'business_lander_customize_register' );
 
 /**
@@ -459,6 +455,7 @@ function business_lander_customize_partial_blogdescription() {
 function business_lander_customize_preview_js() {
 	wp_enqueue_script( 'business-lander-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
+
 add_action( 'customize_preview_init', 'business_lander_customize_preview_js' );
 
 /**
@@ -473,13 +470,14 @@ function business_lander_sanitize_image( $input ) {
 	if ( $filetype['ext'] && wp_ext2type( $filetype['ext'] ) === 'image' ) {
 		return esc_url( $input );
 	}
+
 	return '';
 }
 
 /**
  * Sanitize radio choices.
  *
- * @param string               $input   choice slug.
+ * @param string $input choice slug.
  * @param WP_Customize_Setting $setting Setting instance.
  *
  * @return string User choices; otherwise, the setting default.

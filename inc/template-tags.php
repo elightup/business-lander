@@ -164,7 +164,7 @@ function business_lander_post_thumbnail() {
 	<?php else : ?>
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>">
 			<?php
-			the_post_thumbnail( 'medium' );
+			the_post_thumbnail( 'business-lander-list-thumbnail' );
 			?>
 		</a>
 	<?php
