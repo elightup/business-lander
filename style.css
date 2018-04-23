@@ -3066,7 +3066,7 @@ a:hover {
     bottom: 0;
     right: 0;
     padding: 13px 17px;
-    background-color: #f2fcfe;
+    background-color: rgba(0, 191, 243, 0.04);
     text-transform: uppercase;
     font-weight: 400;
     font-size: 12px;
