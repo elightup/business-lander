@@ -1,8 +1,11 @@
 /* bloglist */
-
-.section--archive-posts {
+.list-sidebar {
 	article {
 		margin-bottom: 75px;
+	}
+}
+.section--archive-posts {
+	article {
 		word-wrap: break-word;
 	}
 	.entry-title {

@@ -3129,8 +3129,10 @@ a:hover {
   .archive-post.archive-post i {
     left: 42%; } }
 /* bloglist */
+.list-sidebar article {
+  margin-bottom: 75px; }
+
 .section--archive-posts article {
-  margin-bottom: 75px;
   word-wrap: break-word; }
 .section--archive-posts .entry-title {
   text-align: center;
