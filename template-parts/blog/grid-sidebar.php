@@ -21,8 +21,8 @@ $blog_id = get_cat_ID( 'Blog' );
 
 			?>
 			<h2 class="blog-title"><?php single_post_title(); ?></h2>
+			<div class="blog-description"><?php echo category_description( $blog_id );?></div>
 			<?php
-				echo category_description( $blog_id );
 			else :
 			?>
 			<h2 class="blog-title"><?php the_archive_title(); ?></h2>

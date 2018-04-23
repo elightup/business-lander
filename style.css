@@ -1058,11 +1058,10 @@ span.is-toggled {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-.archive.archive .widget-area {
-  margin-top: 90px; }
-
 .widget-area {
   margin-top: 90px; }
+  .widget-area section {
+    margin-bottom: 35px; }
 
 .widget {
   background: #fff;
@@ -1400,14 +1399,11 @@ span.is-toggled {
   .jetpack_subscription_widget input[type="submit"] {
     width: 100%;
     margin-left: 0; } }
-.archive .blog-title {
-  margin-bottom: 50px; }
-
 .archive-description {
   display: flex;
   justify-content: center;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 75px;
   margin-top: 0;
   font-size: 20px;
   font-size: 1.25rem;
@@ -1433,8 +1429,7 @@ span.is-toggled {
 
 .site-content .widget-area {
   float: right;
-  overflow: hidden;
-  width: 30%; }
+  width: 31%; }
 
 .site-footer {
   clear: both;
@@ -2067,8 +2062,9 @@ a:hover {
       color: #000;
       font-weight: 300;
       font-size: 36px; }
-      .site-logo .site-title a:hover {
-        text-decoration: none; }
+      .site-logo .site-title a:hover, .site-logo .site-title a:focus, .site-logo .site-title a:active {
+        text-decoration: none;
+        outline: none; }
   .site-logo .site-description {
     margin: 0;
     word-wrap: break-word;
@@ -2402,8 +2398,7 @@ a:hover {
     margin-bottom: 16px;
     margin-top: 0;
     line-height: 1.5;
-    opacity: 0.8;
-    font-family: "Cormorant Garamond", sans-serif; }
+    opacity: 0.8; }
 
 .section-service__title {
   font-weight: 400;
@@ -2985,9 +2980,13 @@ a:hover {
   font-size: 42px;
   font-size: 2.625rem;
   color: #000;
-  margin-top: 95px;
+  margin-top: 90px;
   margin-bottom: 50px;
   text-align: center; }
+
+.blog-description {
+  display: flex;
+  justify-content: center; }
 
 .archive-post {
   border: 1px solid #ebebeb;
@@ -3072,24 +3071,26 @@ a:hover {
     font-size: 0.75rem;
     color: #00bff3; }
 
+.grid-sidebar .row {
+  justify-content: space-between; }
+.grid-sidebar .col-2 > * {
+  margin-right: 0; }
 .grid-sidebar main {
   float: left; }
 .grid-sidebar .blog-article {
-  width: 45%;
-  margin-right: 5%; }
+  width: 49%;
+  /* margin-right: 5%; */ }
 .grid-sidebar .no-sidebar .col-2 .blog-article {
-  width: 30%;
-  margin-left: 1.5%;
-  margin-right: 1.5%; }
+  width: 32%;
+  /* margin-left: 1.5%;
+  margin-right: 1.5%; */ }
 
 .grid-sidebar.grid-sidebar .no-sidebar {
-  max-width: 100%; }
+  max-width: 100%;
+  width: 100%; }
 
 .grid-sidebar.grid-sidebar main {
-  width: 69%; }
-
-.grid-sidebar .widget-area {
-  margin-top: 194px; }
+  width: 65%; }
 
 @media (max-width: 991px) {
   .container .col-3 > * {
@@ -3136,10 +3137,10 @@ a:hover {
   .section--archive-posts .entry-title:before {
     content: '';
     width: 30px;
-    height: 4%;
+    height: 2px;
     position: absolute;
     top: -40px;
-    left: 47%;
+    left: 48%;
     z-index: -1;
     background-color: #00bff3; }
   .section--archive-posts .entry-title a {
@@ -3178,7 +3179,7 @@ a:hover {
 
 .blog-description p {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
   margin-top: 0;
   font-size: 20px;
   font-size: 1.25rem;

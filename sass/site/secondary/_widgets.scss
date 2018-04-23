@@ -1,10 +1,9 @@
-.archive.archive {
-	.widget-area {
-		margin-top: 90px;
-	}
-}
+
 .widget-area {
 	margin-top: 90px;
+	section {
+		margin-bottom: 35px;
+	}
 }
 .widget {
 	background: $color__background-widget;
