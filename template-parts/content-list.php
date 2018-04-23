@@ -9,13 +9,7 @@
 
 ?>
 
-<?php
-if ( function_exists( 'business_lander_jetpack_featured_image_archive_display' ) ) :
-	if ( business_lander_jetpack_featured_image_archive_display() || has_post_thumbnail() ) :
-		business_lander_post_thumbnail();
-	endif;
-endif;
-?>
+<?php the_post_thumbnail( 'business-lander-list-thumbnail' ); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -29,12 +23,10 @@ endif;
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php
-		the_content();
-		?>
+		<?php the_content(); ?>
 		<div class="pagelink"><?php wp_link_pages( 'pagelink=<span>%</span>' ); ?></div>
 	</div><!-- .entry-content -->
 
-		<?php echo esc_html( business_lander_category_tag() ); ?>
+	<?php business_lander_category_tag(); ?>
 
 </article><!-- #post-## -->

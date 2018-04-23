@@ -40,9 +40,7 @@
 				?>
 
 			<div class="category-tag">
-				<?php
-					business_lander_category_tag();
-				?>
+				<?php business_lander_category_tag(); ?>
 			</div>
 		</div>
 	</div>
