@@ -52,22 +52,15 @@ function business_lander_breadcrumb() {
 			<?php
 			echo '<h1 class="page-title">' . $custom_tax_name . '</h1>'; // WPCS: XSS OK.
 
-		} elseif ( is_single() ) {
-			if ( function_exists( 'business_lander_jetpack_featured_image_archive_display' ) ) {
-				if ( ! business_lander_jetpack_featured_image_display() || ! has_post_thumbnail() ) {
-					echo '<h2 class="page-title title-black">' . get_the_title() . '</h2>';
-				} else {
-					echo '<h2 class="page-title">' . get_the_title() . '</h2>';
-					business_lander_post_thumbnail();
-				}
-			} else {
-				if ( ! has_post_thumbnail() ) {
-					echo '<h2 class="page-title title-black">' . get_the_title() . '</h2>';
-				} else {
-					echo '<h2 class="page-title">' . get_the_title() . '</h2>';
-					business_lander_post_thumbnail();
-				}
-			}
+		} elseif ( is_singular() ) {
+            if ( ! has_post_thumbnail() ) {
+                echo '<h2 class="page-title title-black">' . get_the_title() . '</h2>';
+            } else {
+                echo '<h2 class="page-title">' . get_the_title() . '</h2>';
+                echo '<div class="post-thumbnail">';
+	            the_post_thumbnail( 'full' );
+	            echo '</div>';
+            }
 		} elseif ( is_category() ) {
 			// Category page.
 			echo $breadcrumb; // WPCS: XSS OK.
@@ -76,22 +69,6 @@ function business_lander_breadcrumb() {
 			<?php
 			echo '<h1 class="page-title">' . single_cat_title( '', false ) . '</h1>';
 
-		} elseif ( is_page() ) {
-			if ( function_exists( 'business_lander_jetpack_featured_image_archive_display' ) ) {
-				if ( ! business_lander_jetpack_featured_image_display() || ! has_post_thumbnail() ) {
-					echo '<h2 class="page-title title-black">' . get_the_title() . '</h2>';
-				} else {
-					echo '<h2 class="page-title">' . get_the_title() . '</h2>';
-					business_lander_post_thumbnail();
-				}
-			} else {
-				if ( ! has_post_thumbnail() ) {
-					echo '<h2 class="page-title title-black">' . get_the_title() . '</h2>';
-				} else {
-					echo '<h2 class="page-title">' . get_the_title() . '</h2>';
-					business_lander_post_thumbnail();
-				}
-			}
 		} elseif ( is_tag() ) {
 
 			// Tag page.
