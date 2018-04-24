@@ -3152,8 +3152,7 @@ a:hover {
   position: inherit;
   z-index: 0; }
   .section--archive-posts .post-thumbnail img {
-    height: auto;
-    min-height: 400px; }
+    height: 300px; }
 
 .blog-description p {
   text-align: center;
