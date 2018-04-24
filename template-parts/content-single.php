@@ -27,7 +27,15 @@
 			)
 		);
 		?>
-		<div class="pagelink"><?php wp_link_pages( 'pagelink=<span>%</span>' ); ?></div>
+		<?php
+		wp_link_pages(
+				array(
+					'before'   => '<div class="page-links">' . esc_html__( 'PAGES:', 'business-lander' ),
+					'after'    => '</div>',
+					'pagelink' => '<span>%</span>',
+				)
+			);
+		?>
 	</div>
 
 	<div class="author_bio_section">
@@ -40,7 +48,7 @@
 				?>
 
 			<div class="category-tag">
-				<?php business_lander_category_tag(); ?>
+				<?php business_lander_entry_footer(); ?>
 			</div>
 		</div>
 	</div>

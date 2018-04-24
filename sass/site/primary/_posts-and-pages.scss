@@ -19,19 +19,16 @@
 	color: rgba(0,0,0,0.7);
 	margin-bottom: 35px;
 }
+
 .page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-	display: none;
-}
-.pagelink {
 	text-transform: uppercase;
+	color: rgba(0,0,0,0.8);
 	span {
 		color: $color__main;
 		margin-left: 15px;
 	}
 }
-.pagelink p > span {
+.page-links > span {
 	background: rgba(0,191,243,0.15);
 	padding: 5px 16px;
 	border-radius: 100%;
@@ -115,6 +112,13 @@
 	margin-top: 30px;
 	.post-category {
 		display: block;
+	}
+}
+.author_bio_section {
+	.post-tag {
+		&:before {
+			width: 18px;
+		}
 	}
 }
 .entry-content {

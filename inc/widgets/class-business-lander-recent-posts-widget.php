@@ -72,7 +72,7 @@ class Business_Lander_Recent_Posts_Widget extends WP_Widget {
 			?>
 				<article class="aside-post">
 					<?php if ( has_post_thumbnail() ) : ?>
-						<a class="image" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+						<a class="image" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('business-lander-widget-thumbnail'); ?></a>
 					<?php endif; ?>
 					<div class="info">
 						<h5 class="name"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>

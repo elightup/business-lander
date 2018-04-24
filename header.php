@@ -111,7 +111,7 @@
 		} else {
 			the_title( '<h2 class="page-title">', '</h2>' );
 			echo '<div class="post-thumbnail">';
-			the_post_thumbnail( 'full' );
+			the_post_thumbnail('business-lander-single-thumbnail');
 			echo '</div>';
 		}
         ?>

@@ -41,6 +41,8 @@ function business_lander_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'business-lander-list-thumbnail', 792, 300, true );
+	add_image_size( 'business-lander-widget-thumbnail', 70, 70, true );
+	add_image_size( 'business-lander-single-thumbnail', 1920, 430, true );
 	set_post_thumbnail_size( 384, 240, true );
 
 	// This theme uses wp_nav_menu() in one location.

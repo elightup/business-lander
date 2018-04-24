@@ -140,28 +140,6 @@
 			object-fit: cover;
 			border: 8px solid #fff;
 		}
-		&::before {
-			content: '\f0c1';
-			text-rendering: auto;
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
-			@include fa-icon();
-			color: $color__white;
-			z-index: 99;
-			opacity: 0;
-			-ms-transform: translate(-50%, -50%);
-			-o-transition: all .3s ease;
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background-color: $color__main;
-			-ms-transform: scale(3);
-			transform: scale(3);
-			transition: all .3s ease;
-		}
 	}
 	.name {
 		margin-bottom: 0;

@@ -10,7 +10,6 @@
 if ( ! is_active_sidebar( 'sidebar-1' ) ) :
 	$no_sidebar = 'no-sidebar';
 endif;
-$blog_id = get_cat_ID( 'Blog' );
 ?>
 
 <main class="site-main <?php echo esc_html( $no_sidebar ); ?>" role="main">
@@ -20,12 +19,11 @@ $blog_id = get_cat_ID( 'Blog' );
 			if ( is_home() && ! is_front_page() ) :
 
 			?>
-			<h2 class="blog-title"><?php single_post_title(); ?></h2>
-			<div class="blog-description"><?php echo category_description( $blog_id );?></div>
+			<h2 class="page-title"><?php single_post_title(); ?></h2>
 			<?php
 			else :
 			?>
-			<h2 class="blog-title"><?php the_archive_title(); ?></h2>
+			<h2 class="page-title"><?php the_archive_title(); ?></h2>
 			<?php
 			the_archive_description( '<div class="archive-description">', '</div>' );
 			endif;

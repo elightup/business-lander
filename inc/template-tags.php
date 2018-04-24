@@ -57,37 +57,11 @@ function business_lander_posted_on() {
 function business_lander_show_author() {
 	$author_name = get_the_author();
 	echo '<span class="by-author"><i class="fa fa-user"></i>by <a class="url fn n" href="'
-	     . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="bookmark">'
-	     . esc_html( $author_name )
-	     . '</a></span>';
+		.esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="bookmark">'
+		.esc_html( $author_name )
+		.'</a></span>';
 }
 
-/**
- * Prints HTML with meta information for the category and tag.
- */
-function business_lander_category_tag() {
-	$category_link = '';
-	$category_detail = get_the_category();// $post->ID
-	foreach ( $category_detail as $cd ) {
-		$category_name = $cd->cat_name;
-		$category_link .= '<a href="' . esc_url( get_category_link( $cd->cat_ID ) ) . '">' . $category_name . '</a>';
-	}
-
-	$output = '<span class="post-category"> ' . $category_link . '</span>';
-
-	$post_tags = get_the_tags();
-
-	if ( $post_tags ) {
-		$tags_link = '';
-		foreach ( $post_tags as $tag ) {
-			$tags      = $tag->name;
-			$tags_link .= '<a href="' . esc_url( get_tag_link( $tag->term_id ) ) . '">' . $tags . '</a>';
-		}
-
-		$output .= '<span class="post-tag"> ' . $tags_link . '</span>';
-	}
-	echo $output;
-}
 
 /**
  * Prints HTML with meta information for the categories, tags and comments.
@@ -99,51 +73,15 @@ function business_lander_entry_footer() {
 		$categories_list = get_the_category_list( esc_html__( ', ', 'business-lander' ) );
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'business-lander' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="post-category">' . esc_html__( '%1$s', 'business-lander' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'business-lander' ) );
 		if ( $tags_list ) {
 			/* translators: 1: list of tags. */
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'business-lander' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="post-tag">' . esc_html__( '%1$s', 'business-lander' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
-
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link(
-			sprintf(
-				wp_kses(
-				/* translators: %s: post title */
-					__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'business-lander' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			)
-		);
-		echo '</span>';
-	}
-
-	edit_post_link(
-		sprintf(
-			wp_kses(
-			/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Edit <span class="screen-reader-text">%s</span>', 'business-lander' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
-			),
-			get_the_title()
-		),
-		'<span class="edit-link">',
-		'</span>'
-	);
 }
 

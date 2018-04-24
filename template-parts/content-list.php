@@ -9,7 +9,7 @@
 
 ?>
 
-<?php the_post_thumbnail( 'business-lander-list-thumbnail' ); ?>
+<a href="<?php esc_url( the_permalink() );?>"><?php the_post_thumbnail( 'business-lander-list-thumbnail' ); ?></a>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -24,9 +24,18 @@
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<div class="pagelink"><?php wp_link_pages( 'pagelink=<span>%</span>' ); ?></div>
+
+		<?php
+		wp_link_pages(
+				array(
+					'before'   => '<div class="page-links">' . esc_html__( 'Pages:', 'business-lander' ),
+					'after'    => '</div>',
+					'pagelink' => '<span>%</span>',
+				)
+			);
+		?>
 	</div><!-- .entry-content -->
 
-	<?php business_lander_category_tag(); ?>
+	<?php business_lander_entry_footer(); ?>
 
 </article><!-- #post-## -->
