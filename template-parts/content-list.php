@@ -11,6 +11,7 @@
 <div class="post-thumbnail">
 	<a href="<?php esc_url( the_permalink() ); ?>"><?php the_post_thumbnail( 'business-lander-list-thumbnail' ); ?></a>
 </div>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header">

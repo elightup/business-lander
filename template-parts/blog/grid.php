@@ -17,9 +17,17 @@ endif;
 		<div class="grid-title">
 			<?php
 			if ( is_home() && ! is_front_page() ) :
-
 			?>
 			<h2 class="page-title"><?php single_post_title(); ?></h2>
+			<?php
+			elseif ( is_search() ) :
+			?>
+			<h2 class="page-title">
+				<?php
+				/* translators: search query */
+				printf( esc_html__( 'Search Results for: %s', 'business-lander' ), esc_html( get_search_query() ) );
+				?>
+			</h2>
 			<?php
 			else :
 			?>

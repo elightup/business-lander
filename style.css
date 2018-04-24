@@ -2518,7 +2518,10 @@ a:hover {
       padding: 0; }
       .section-contact__left ul li {
         text-align: center;
-        padding-bottom: 0; } }
+        padding-bottom: 0; }
+
+  .section-contact__right {
+    width: 100%; } }
 @media (max-width: 574px) {
   .section-contact__left h2 {
     font-size: 28px;
@@ -2951,7 +2954,8 @@ a:hover {
     color: rgba(0, 0, 0, 0.5); }
 
 .blog .page-title,
-.archive .page-title {
+.archive .page-title,
+.search .page-title {
   font-weight: 200;
   font-size: 42px;
   font-size: 2.625rem;
