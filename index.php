@@ -14,7 +14,18 @@
 
 get_header();
 
-	$style = get_theme_mod( 'blog_style', 'grid' );
-	get_template_part( 'template-parts/blog/' . $style );
+	if ( is_home() && !is_front_page() ) :
+		$blog_style_option = get_theme_mod( 'blog_style', 'list' );
+		if ( 'grid-no-sidebar' === $blog_style_option || 'grid' === $blog_style_option ) :
+			$blog_style_option = 'grid';
+		endif;
+		if ( 'list' === $blog_style_option || 'list-no-sidebar' === $blog_style_option ) :
+			$blog_style_option = 'list';
+		endif;
+		get_template_part( 'template-parts/blog/' . $blog_style_option );
+
+	else :
+		get_template_part( 'template-parts/blog/grid' );
+	endif;
 
 get_footer();
