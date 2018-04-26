@@ -301,7 +301,7 @@ function business_lander_sanitize_image( $input ) {
 /**
  * Sanitize radio choices.
  *
- * @param string $input choice slug.
+ * @param string               $input   Settings key.
  * @param WP_Customize_Setting $setting Setting instance.
  *
  * @return string User choices; otherwise, the setting default.

@@ -34,21 +34,14 @@ function business_lander_posted_on() {
 	$time_string = sprintf(
 		$time_string,
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date( 'F j Y' ) ),
+		esc_html( get_the_date() ),
 		esc_attr( get_the_modified_date( 'c' ) ),
 		esc_html( get_the_modified_date() )
 	);
 
 	$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
-
-	$byline = sprintf(
-	/* translators: %s: post author. */
-		esc_html_x( '%s', 'post author', 'business-lander' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
-
+	$byline    = '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 	echo '<span class="byline"> ' . $byline . '</span><span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
-
 }
 
 /**
@@ -57,9 +50,9 @@ function business_lander_posted_on() {
 function business_lander_show_author() {
 	$author_name = get_the_author();
 	echo '<span class="by-author"><i class="fa fa-user"></i>by <a class="url fn n" href="'
-		.esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="bookmark">'
-		.esc_html( $author_name )
-		.'</a></span>';
+		. esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="bookmark">'
+		. esc_html( $author_name )
+		. '</a></span>';
 }
 
 

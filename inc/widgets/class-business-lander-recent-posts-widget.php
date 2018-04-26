@@ -22,15 +22,14 @@ class Business_Lander_Recent_Posts_Widget extends WP_Widget {
 	 */
 	public function __construct() {
 		$this->defaults = array(
-			'title'     => esc_html__( 'Recent Posts', 'business-lander' ),
-			'number'    => 3,
-			'show_date' => true,
+			'title'  => esc_html__( 'Recent Posts', 'business-lander' ),
+			'number' => 3,
 		);
 		parent::__construct(
 			'business-lander-recent-posts',
-			esc_html__( 'Business lander: Recent Posts', 'business-lander' ),
+			esc_html__( 'Business Lander: Recent Posts', 'business-lander' ),
 			array(
-				'description' => esc_html__( 'A widget that displays your recent posts from all categories or a category', 'business-lander' ),
+				'description' => esc_html__( 'A widget that displays your recent posts.', 'business-lander' ),
 			)
 		);
 	}
@@ -43,18 +42,16 @@ class Business_Lander_Recent_Posts_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		$instance = wp_parse_args( $instance, $this->defaults );
-		$query    = new WP_Query(
-			array(
-				'posts_per_page' => absint( $instance['number'] ),
-			)
-		);
+		$query    = new WP_Query( array(
+			'posts_per_page' => absint( $instance['number'] ),
+		) );
 		if ( ! $query->have_posts() ) {
 			return;
 		}
 
 		echo $args['before_widget']; // WPCS: XSS OK.
 
-		$title = apply_filters( 'widget_title', $instance['title'] );
+		$title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
 		if ( $title ) {
 			echo $args['before_title'], $title , $args['after_title']; // WPCS: XSS OK.
 		}
@@ -72,14 +69,13 @@ class Business_Lander_Recent_Posts_Widget extends WP_Widget {
 			?>
 				<article class="aside-post">
 					<?php if ( has_post_thumbnail() ) : ?>
-						<a class="image" href="<?php the_permalink(); ?>"><?php the_post_thumbnail('business-lander-widget-thumbnail'); ?></a>
+						<a class="image" href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'business-lander-widget-thumbnail' ); ?></a>
 					<?php endif; ?>
 					<div class="info">
 						<h5 class="name"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-						<time class="time" datetime="<?php echo esc_attr( get_the_time( 'j F Y' ) ); ?>"><?php business_lander_posted_on(); ?></time>
+						<time class="time" datetime="<?php echo esc_attr( get_the_time() ); ?>"><?php business_lander_posted_on(); ?></time>
 					</div>
 				</article>
-
 			<?php
 			$i++;
 			endwhile;

@@ -12,8 +12,7 @@
  *
  * @uses business_lander_header_style()
  */
-
-	function business_lander_custom_header_setup() {
+function business_lander_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'business_lander_custom_header_args', array(
 		'default-text-color' => '#000000',
 		'width'              => 1920,
@@ -26,25 +25,19 @@
 
 add_action( 'after_setup_theme', 'business_lander_custom_header_setup' );
 
-if ( ! function_exists( 'business_lander_header_style' ) ) :
-	/**
-	 * Show the header image and optionally hide the site title, site description.
-	 */
-	function business_lander_header_style() {
-		$style = '';
-		if ( has_header_image() ) {
-			$style .= '.page-header { background: url(' . esc_url( get_header_image() ) . ') top center no-repeat; background-attachment: fixed; }';
-		}
-		if ( ! display_header_text() ) {
-			$style .= '.site-title, .site-description { clip: rect(1px, 1px, 1px, 1px); position: absolute; }';
-		}
-		if ( $style ) :
-			?>
-			<style id="business-lander-header-css">
-				<?php echo $style; // WPCS: XSS OK. ?>
-			</style>
-			<?php
-		endif;
+/**
+ * Show the header image and optionally hide the site title, site description.
+ */
+function business_lander_header_style() {
+	$style = '';
+	if ( ! display_header_text() ) {
+		$style .= '.site-title, .site-description { clip: rect(1px, 1px, 1px, 1px); position: absolute; }';
 	}
-endif;
-?>
+	if ( $style ) :
+		?>
+		<style id="business-lander-header-css">
+			<?php echo $style; // WPCS: XSS OK.                           ?>
+		</style>
+		<?php
+	endif;
+}
