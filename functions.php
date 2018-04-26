@@ -42,15 +42,12 @@ function business_lander_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'business-lander-list-thumbnail', 792, 300, true );
 	add_image_size( 'business-lander-widget-thumbnail', 70, 70, true );
-	add_image_size( 'business-lander-single-thumbnail', 1920, 430, true );
 	set_post_thumbnail_size( 384, 240, true );
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus(
-		array(
-			'menu-1' => esc_html__( 'Primary', 'business-lander' ),
-		)
-	);
+	register_nav_menus( array(
+		'menu-1' => esc_html__( 'Header', 'business-lander' ),
+	) );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -172,12 +169,6 @@ function business_lander_fonts_url() {
 	if ( 'off' !== _x( 'on', 'Poppins font: on or off', 'business-lander' ) ) {
 		$fonts[] = 'Poppins:100,200,300,400,600,700';
 	}
-	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'business-lander' ) ) {
-		$fonts[] = 'Open Sans:400,600,700';
-	}
-	if ( 'off' !== _x( 'on', 'Cormorant Garamond font: on or off', 'business-lander' ) ) {
-		$fonts[] = 'Cormorant Garamond:400,600,700';
-	}
 
 	$fonts_url = add_query_arg(
 		array(
@@ -189,47 +180,6 @@ function business_lander_fonts_url() {
 	return $fonts_url;
 }
 
-/**
- * Filter the except length to 20 words.
- *
- * @param int $length Excerpt length.
- * @return int (Maybe) modified excerpt length.
- */
-function wpdocs_custom_excerpt_length( $length ) {
-	return 24;
-}
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
-
-/**
- * Filter the excerpt "read more" string.
- *
- * @param string $more "Read more" excerpt string.
- * @return string (Maybe) modified "read more" excerpt string.
- */
-function wpdocs_excerpt_more( $more ) {
-	return '...';
-}
-add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
-
-add_filter( 'get_the_archive_title', function ( $title ) {
-
-	if ( is_category() ) {
-
-		$title = single_cat_title( '', false );
-
-	} elseif ( is_tag() ) {
-
-		$title = single_tag_title( '', false );
-
-	} elseif ( is_author() ) {
-
-		$title = '<span class="vcard">' . get_the_author() . '</span>';
-
-	}
-
-	return $title;
-
-});
 /**
  * Custom functions that act independently of the theme templates.
  */
@@ -260,10 +210,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( is_admin() ) {
 	require_once get_template_directory() . '/inc/admin/class-tgm-plugin-activation.php';
 	require_once get_template_directory() . '/inc/admin/plugins.php';
-}
 
-/**
- * Load dashboard
- */
-require get_template_directory() . '/inc/dashboard/class-business-lander-dashboard.php';
-$dashboard = new Business_lander_Dashboard();
+	/**
+	 * Load dashboard
+	 */
+	require get_template_directory() . '/inc/dashboard/class-business-lander-dashboard.php';
+	$dashboard = new Business_lander_Dashboard();
+}

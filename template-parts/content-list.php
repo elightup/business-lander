@@ -8,9 +8,11 @@
  */
 
 ?>
-<div class="post-thumbnail">
-	<a href="<?php esc_url( the_permalink() ); ?>"><?php the_post_thumbnail( 'business-lander-list-thumbnail' ); ?></a>
-</div>
+<?php if ( has_post_thumbnail() ) : ?>
+	<div class="post-thumbnail">
+		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'business-lander-list-thumbnail' ); ?></a>
+	</div>
+<?php endif; ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 

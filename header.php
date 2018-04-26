@@ -107,14 +107,14 @@
 	<div class="page-header">
 		<?php
 		if ( ! has_post_thumbnail() ) {
-		    the_title( '<h2 class="page-title title-black">', '</h2>' );
+			the_title( '<h2 class="page-title title-black">', '</h2>' );
 		} else {
 			the_title( '<h2 class="page-title">', '</h2>' );
 			echo '<div class="post-thumbnail">';
-			the_post_thumbnail('business-lander-single-thumbnail');
+			the_post_thumbnail( 'full' );
 			echo '</div>';
 		}
-        ?>
+		?>
 		<?php if ( is_single() ) : ?>
 			<div class="entry-meta">
 				<?php business_lander_posted_on(); ?>

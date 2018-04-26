@@ -10,14 +10,16 @@
 ?>
 <div class="blog-article">
 	<article class="archive-post">
-		<a href="<?php the_permalink(); ?>">
-			<div class="image">
-				<?php the_post_thumbnail(); ?>
-				<?php if ( is_sticky() ) : ?>
-					<i class="fas fa-star"></i>
-				<?php endif; ?>
-			</div>
-		</a>
+		<?php if ( has_post_thumbnail() ) : ?>
+			<a href="<?php the_permalink(); ?>">
+				<div class="image">
+					<?php the_post_thumbnail(); ?>
+					<?php if ( is_sticky() ) : ?>
+						<i class="fas fa-star"></i>
+					<?php endif; ?>
+				</div>
+			</a>
+		<?php endif; ?>
 		<div class="post-info">
 			<?php the_title( '<h3 class="post-info-name"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 			<?php
