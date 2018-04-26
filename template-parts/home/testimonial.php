@@ -5,29 +5,26 @@
  * @package business-lander
  */
 
-$testimonial_bg_default = get_template_directory_uri() . '/images/bg-tess.png';
 if ( ! post_type_exists( 'jetpack-testimonial' ) ) {
 	return;
 }
 
-$args = array(
+$query = new WP_Query( array(
 	'post_type'      => 'jetpack-testimonial',
 	'posts_per_page' => 3,
-);
-
-$image = get_theme_mod( 'testimonial_section_img', $testimonial_bg_default );
-
-$query = new WP_Query( $args );
-
-// Don't output anything if no testimonial are created.
+) );
 if ( ! $query->have_posts() ) {
 	return;
 }
+
+$image = get_theme_mod( 'testimonial_section_img' );
+if ( $image ) {
+	$image = ' style="background-image: url(' . esc_url( $image ) . ')"';
+}
 ?>
-<section class="section--testimonial" style="background-image: url( <?php echo esc_url( $image ); ?> )">
+<section class="section--testimonial"<?php echo $image; // WPCS: XSS OK. ?>>
 	<div class="container">
-		<h3 class="section--testimonial__title"><?php echo esc_html( 'testimonials' ); ?></h3>
-		<div dir="rtl">
+		<h3 class="section--testimonial__title"><?php esc_html_e( 'Testimonials', 'business-lander' ); ?></h3>
 		<div class="testimonial">
 			<?php
 			while ( $query->have_posts() ) :
@@ -40,6 +37,5 @@ if ( ! $query->have_posts() ) {
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>
 		</div>
-	</div>
 	</div>
 </section>

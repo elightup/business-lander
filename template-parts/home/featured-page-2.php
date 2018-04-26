@@ -33,4 +33,6 @@ while ( $query->have_posts() ) :
 			<?php the_post_thumbnail( 'full' ); ?>
 		</div>
 	</section>
-<?php endwhile; ?>
+<?php
+endwhile;
+wp_reset_postdata();

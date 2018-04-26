@@ -5,12 +5,17 @@
  * @package business-lander
  */
 
+the_post();
+
+$image = get_the_post_thumbnail_url( 'full' );
+if ( $image ) {
+	$image = ' style="background-image: url(' . esc_url( $image ) . ')"';
+}
 ?>
-<section class="section--contact" style="background-image: url(<?php the_post_thumbnail_url( 'full' ); ?> )">
+<section class="section--contact"<?php echo $image; // WPCS: XSS OK. ?>>
 	<div class="container">
 		<div class="section-contact__left">
 			<div class="contact__left">
-				<?php the_post(); ?>
 				<div class="title">
 					<h2><?php the_title(); ?></h2>
 				</div>
@@ -30,7 +35,10 @@
 					?>
 					<h3 class="title"><?php the_title(); ?></h3>
 					<?php the_content(); ?>
-				<?php endwhile; ?>
+				<?php
+				endwhile;
+				wp_reset_postdata();
+				?>
 			</div>
 		</div>
 	</div>

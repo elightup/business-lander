@@ -34,3 +34,4 @@ while ( $query->have_posts() ) :
 	</section>
 <?php
 endwhile;
+wp_reset_postdata();

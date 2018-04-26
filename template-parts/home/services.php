@@ -47,7 +47,10 @@ if ( ! $query->have_posts() ) {
 						<a class="section-service__continue" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Learn more', 'business-lander' ); ?></a>
 					</div>
 				</div>
-			<?php endwhile; ?>
+			<?php
+			endwhile;
+			wp_reset_postdata();
+			?>
 		</div>
 	</div>
 </section>
