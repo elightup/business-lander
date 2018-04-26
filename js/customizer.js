@@ -8,15 +8,25 @@
 
 ( function( $ ) {
 
-	// Site title and description.
-	wp.customize( 'blogname', function( value ) {
-		value.bind( function( to ) {
-			$( '.site-title a' ).text( to );
-		} );
-	} );
-	wp.customize( 'blogdescription', function( value ) {
-		value.bind( function( to ) {
-			$( '.site-description' ).text( to );
+		var options = {
+		'blogname': '.site-title a',
+		'blogdescription': '.site-description',
+		'header_address' : '.site-address p',
+		'header_phone' : '.site-phone p',
+		'header_email' : '.site-email p',
+		'services_section_title' : '.services--title',
+		'cta_title'  : '.section--cta .section-cta__title',
+		'cta_text'  : '.section--cta .section-cta__text',
+		'cta_button_text':'.section--cta .section-cta__link a',
+		'featured_page_1' : '.featured-page-1 .featured-page',
+	};
+
+	// Use each to resolve closure problem.
+	$.each( options, function ( setting, selector ) {
+		wp.customize( setting, function( value ) {
+			value.bind( function ( to ) {
+				$( selector ).html( to );
+			} );
 		} );
 	} );
 

@@ -72,7 +72,7 @@
 			<?php if ( get_theme_mod( 'header_address' ) ) : ?>
 				<div class="site-address">
 					<i class="fas fa-map-marker-alt"></i>
-					<p class="address"><?php echo esc_html( get_theme_mod( 'header_address', __( '1234 internet street virtual city, statename 54321', 'business-lander' ) ) ); ?></p>
+					<p class="address"><?php echo esc_html( get_theme_mod( 'header_address', __( '637 SW. Indian Summer Street West Orange, NJ 07052', 'business-lander' ) ) ); ?></p>
 				</div>
 			<?php endif; ?>
 
@@ -84,7 +84,7 @@
 						<div class="site-phone">
 							<div class="header-info">
 								<i class="fa fa-phone"></i>
-								<p class="address"><?php echo esc_html( get_theme_mod( 'header_phone', __( '+84 987-248-558', 'business-lander' ) ) ); ?></p>
+								<p class="address"><?php echo esc_html( get_theme_mod( 'header_phone', __( '+1-317-290-1883', 'business-lander' ) ) ); ?></p>
 							</div>
 						</div>
 					<?php endif; ?>
@@ -93,7 +93,7 @@
 						<div class="site-email">
 							<div class="header-info">
 								<i class="fa fa-envelope"></i>
-								<p class="address"><?php echo esc_html( get_theme_mod( 'header_email', __( 'info@elightup.com', 'business-lander' ) ) ); ?></p>
+								<p class="address"><?php echo esc_html( get_theme_mod( 'header_email', __( 'info@company.com', 'business-lander' ) ) ); ?></p>
 							</div>
 						</div>
 					<?php endif; ?>

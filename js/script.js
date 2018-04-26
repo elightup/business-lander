@@ -77,8 +77,7 @@ jQuery( function ( $ ) {
 	 		slidesToShow: 1,
 	 		slidesToScroll: 1,
 	 		autoplay: true,
-	 		autoplaySpeed: 3000,
-			rtl: true
+	 		autoplaySpeed: 3000
 	 	} );
 	 }
 
