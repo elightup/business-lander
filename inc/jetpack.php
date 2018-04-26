@@ -59,16 +59,9 @@ add_action( 'after_setup_theme', 'business_lander_jetpack_setup' );
  * Custom render function for Infinite Scroll.
  */
 function business_lander_infinite_scroll_render() {
+	$style = get_theme_mod( 'blog_style', 'grid' );
 	while ( have_posts() ) {
 		the_post();
-		if ( is_search() ) :
-			get_template_part( 'template-parts/content', 'search' );
-		endif;
-		if ( get_theme_mod( 'blog_style' ) === 'grid-sidebar' ) :
-			get_template_part( 'template-parts/content', 'bloggrid' );
-		endif;
-		if ( get_theme_mod( 'blog_style' ) === 'list-sidebar' ) :
-			get_template_part( 'template-parts/content', 'bloglist' );
-		endif;
+		get_template_part( 'template-parts/content', $style );
 	}
 }

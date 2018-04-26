@@ -20,7 +20,7 @@
 
 			printf(
 				wp_kses(
-					/* translators: creat post page url */
+					/* translators: create post page url */
 					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'business-lander' ), array(
 						'a' => array(
 							'href' => array(),
