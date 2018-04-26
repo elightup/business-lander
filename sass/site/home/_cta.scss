@@ -4,7 +4,7 @@
 	background: #666 url(images/bg-cta.jpg) center center no-repeat;
 	background-size: cover;
 }
-.section-cta__title {
+.section-cta__subtitle {
 	font-weight: 400;
 	@include font-size(1.6);
 	text-transform: uppercase;
@@ -14,7 +14,7 @@
 	opacity: 0.5;
 	margin: 0;
 }
-.section-cta__text {
+.section-cta__title {
 	@include box-shadow-title();
 }
 .section-cta__link {
@@ -30,10 +30,10 @@
 }
 
 @media (max-width: 480px) {
-	.section-cta__title {
+	.section-cta__subtitle {
 		padding-top: 40px;
 	}
-	.section-cta__text {
+	.section-cta__title {
 		@include font-size(2.9);
 	}
 	.section-cta__link {

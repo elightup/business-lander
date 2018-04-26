@@ -5,8 +5,8 @@
  * @package business-lander
  */
 
-$subtitle    = get_theme_mod( 'cta_title', __( 'Expect the extraordinary', 'business-lander' ) );
-$title       = get_theme_mod( 'cta_text', __( 'We are A Team of Experts', 'business-lander' ) );
+$subtitle    = get_theme_mod( 'cta_subtitle', __( 'Expect the extraordinary', 'business-lander' ) );
+$title       = get_theme_mod( 'cta_title', __( 'We are A Team of Experts', 'business-lander' ) );
 $button_url  = get_theme_mod( 'cta_button_url', 'https://gretathemes.com/' );
 $button_text = get_theme_mod( 'cta_button_text', __( 'contact us', 'business-lander' ) );
 
@@ -18,10 +18,10 @@ if ( $image ) {
 
 <section class="section--cta"<?php echo $image; // WPCS: XSS OK. ?>>
 	<div class="container">
-		<h3 class="section-cta__title">
+		<h3 class="section-cta__subtitle">
 			<?php echo esc_html( $subtitle ); ?>
 		</h3>
-		<p class="section-cta__text">
+		<p class="section-cta__title">
 			<?php echo esc_html( $title ); ?>
 		</p>
 		<div class="section-cta__link">

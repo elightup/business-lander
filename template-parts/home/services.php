@@ -7,7 +7,7 @@
 
 $service_pages = array();
 for ( $i = 1; $i <= 3; $i ++ ) {
-	$mod             = get_theme_mod( 'front_page_services_' . $i );
+	$mod             = get_theme_mod( 'service_page_' . $i );
 	$service_pages[] = $mod;
 }
 $service_pages = array_filter( $service_pages );

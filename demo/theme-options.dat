@@ -1,4 +1,4 @@
-a:4:{s:8:"template";s:15:"business-lander";s:4:"mods";a:23:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:6:"menu-1";i:2;s:19:"jetpack-social-menu";i:9;}s:18:"custom_css_post_id";i:181;s:11:"custom_logo";i:45;s:18:"front_page_contact";i:49;s:21:"front_page_services_1";i:143;s:21:"front_page_services_2";i:154;s:21:"front_page_services_3";i:155;s:22:"services_section_title";s:12:"Our Services";s:14:"feature_page_1";i:15;s:14:"feature_page_2";i:50;s:14:"feature_page_3";i:51;s:7:"sidebar";s:1:"1";s:10:"blog_style";s:12:"grid-sidebar";s:16:"sidebars_widgets";a:2:{s:4:"time";i:1522376169;s:4:"data";a:5:{s:19:"wp_inactive_widgets";a:0:{}s:9:"sidebar-1";a:2:{i:0;s:6:"text-5";i:1;s:31:"bussiness-lander-recent-posts-2";}s:9:"sidebar-2";a:4:{i:0;s:10:"nav_menu-2";i:1;s:10:"nav_menu-3";i:2;s:6:"text-4";i:3;s:19:"blog_subscription-2";}s:9:"sidebar-3";a:1:{i:0;s:6:"text-2";}s:9:"sidebar-4";a:1:{i:0;s:6:"text-3";}}}s:15:"featured_page_1";i:15;s:15:"featured_page_2";i:50;s:15:"featured_page_3";i:51;s:14:"header_address";s:50:"1234 INTERNET STREET VIRTUAL CITY, STATENAME 54321";s:12:"header_phone";s:15:"+84 987-248-558";s:12:"header_email";s:17:"info@elightup.com";s:12:"contact_form";i:14;s:23:"testimonial_section_img";s:99:"https://demo.gretathemes.com/business-lander/wp-content/uploads/sites/27/2018/04/bg-testimonial.jpg";}s:7:"options";a:2:{s:9:"site_icon";s:1:"0";s:23:"nav_menus_created_posts";a:0:{}}s:6:"wp_css";s:446:".grid-no-sidebar .widget-area {
+a:4:{s:8:"template";s:15:"business-lander";s:4:"mods";a:23:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:6:"menu-1";i:2;s:19:"jetpack-social-menu";i:9;}s:18:"custom_css_post_id";i:181;s:11:"custom_logo";i:45;s:18:"front_page_contact";i:49;s:21:"service_page_1";i:143;s:21:"service_page_2";i:154;s:21:"service_page_3";i:155;s:22:"services_section_title";s:12:"Our Services";s:14:"feature_page_1";i:15;s:14:"feature_page_2";i:50;s:14:"feature_page_3";i:51;s:7:"sidebar";s:1:"1";s:10:"blog_style";s:12:"grid-sidebar";s:16:"sidebars_widgets";a:2:{s:4:"time";i:1522376169;s:4:"data";a:5:{s:19:"wp_inactive_widgets";a:0:{}s:9:"sidebar-1";a:2:{i:0;s:6:"text-5";i:1;s:31:"bussiness-lander-recent-posts-2";}s:9:"sidebar-2";a:4:{i:0;s:10:"nav_menu-2";i:1;s:10:"nav_menu-3";i:2;s:6:"text-4";i:3;s:19:"blog_subscription-2";}s:9:"sidebar-3";a:1:{i:0;s:6:"text-2";}s:9:"sidebar-4";a:1:{i:0;s:6:"text-3";}}}s:15:"featured_page_1";i:15;s:15:"featured_page_2";i:50;s:15:"featured_page_3";i:51;s:14:"header_address";s:50:"1234 INTERNET STREET VIRTUAL CITY, STATENAME 54321";s:12:"header_phone";s:15:"+84 987-248-558";s:12:"header_email";s:17:"info@elightup.com";s:12:"contact_form";i:14;s:23:"testimonial_section_img";s:99:"https://demo.gretathemes.com/business-lander/wp-content/uploads/sites/27/2018/04/bg-testimonial.jpg";}s:7:"options";a:2:{s:9:"site_icon";s:1:"0";s:23:"nav_menus_created_posts";a:0:{}}s:6:"wp_css";s:446:".grid-no-sidebar .widget-area {
 		display: none;
 }
 .grid-no-sidebar .col-2 > * {
@@ -9,12 +9,12 @@ a:4:{s:8:"template";s:15:"business-lander";s:4:"mods";a:23:{i:0;b:0;s:18:"nav_me
 @media (max-width: 991px) {
 	.grid-no-sidebar .col-2 > * {
 			width: 45%;
-	} 
+	}
 }
-@media (max-width: 574px) { 
+@media (max-width: 574px) {
 	.grid-no-sidebar .col-2 > * {
 			width: 100%;
-	} 
+	}
 }
 
 .list-no-sidebar .site-content{

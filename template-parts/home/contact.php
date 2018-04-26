@@ -25,19 +25,16 @@ if ( $image ) {
 		<div class="section-contact__right">
 			<div class="contact__right">
 				<?php
-				$contact_page = get_theme_mod( 'contact_form' );
-				$query        = new WP_Query( array(
-					'post_type' => 'page',
-					'page_id'   => $contact_page,
-				) );
-				while ( $query->have_posts() ) :
-					$query->the_post();
-					?>
-					<h3 class="title"><?php the_title(); ?></h3>
-					<?php the_content(); ?>
-				<?php
-				endwhile;
-				wp_reset_postdata();
+				$contact_page = get_theme_mod( 'contact_page' );
+				if ( $contact_page ) {
+					$post = get_post( $contact_page );
+					setup_postdata( $post );
+						?>
+						<h3 class="title"><?php the_title(); ?></h3>
+						<?php the_content(); ?>
+					<?php
+					wp_reset_postdata();
+				}
 				?>
 			</div>
 		</div>

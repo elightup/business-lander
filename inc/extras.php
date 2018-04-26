@@ -120,10 +120,10 @@ function business_lander_after_import_setup() {
 	update_option( 'page_on_front', $front_page->ID );
 	update_option( 'page_for_posts', $blog->ID );
 
-	set_theme_mod( 'contact_form', $contact->ID );
-	set_theme_mod( 'front_page_services_1', $front_page_services1->ID );
-	set_theme_mod( 'front_page_services_2', $front_page_services2->ID );
-	set_theme_mod( 'front_page_services_3', $front_page_services3->ID );
+	set_theme_mod( 'contact_page', $contact->ID );
+	set_theme_mod( 'service_page_1', $front_page_services1->ID );
+	set_theme_mod( 'service_page_2', $front_page_services2->ID );
+	set_theme_mod( 'service_page_3', $front_page_services3->ID );
 	set_theme_mod( 'featured_page_1', $featured_page_1->ID );
 	set_theme_mod( 'featured_page_2', $featured_page_2->ID );
 	set_theme_mod( 'featured_page_3', $featured_page_3->ID );
