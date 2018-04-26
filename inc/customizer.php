@@ -21,74 +21,48 @@ function business_lander_customize_register( $wp_customize ) {
 	$wp_customize->remove_control( 'header_textcolor' );
 
 	// Add theme options panel.
-	$wp_customize->add_panel(
-		'business-lander', array(
-			'title' => esc_html__( 'Theme Options', 'business-lander' ),
-		)
-	);
+	$wp_customize->add_panel( 'business-lander', array(
+		'title' => esc_html__( 'Theme Options', 'business-lander' ),
+	) );
 
 	/**
 	 * Contact Info.
 	 */
-	$wp_customize->add_section(
-		'header_contact', array(
-			'title'       => esc_html__( 'Contact Info', 'business-lander' ),
-			'panel'       => 'business-lander',
-			'description' => 'Display your location, phone and email.',
-		)
-	);
+	$wp_customize->add_section( 'header_contact', array(
+		'title'       => esc_html__( 'Contact Info', 'business-lander' ),
+		'panel'       => 'business-lander',
+		'description' => esc_html__( 'Display your location, phone and email.', 'business-lander' ),
+	) );
 
-	$wp_customize->add_control(
-		'header_address', array(
-			'label'   => esc_html__( 'Address', 'business-lander' ),
-			'section' => 'header_contact',
-		)
-	);
-	$wp_customize->add_setting(
-		'header_address', array(
-			'default'           => esc_html__( '1234 internet street virtual city, statename 54321', 'business-lander' ),
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
-		)
-	);
+	$wp_customize->add_setting( 'header_address', array(
+		'sanitize_callback' => 'sanitize_text_field',
+		'transport'         => 'postMessage',
+	) );
+	$wp_customize->add_control( 'header_address', array(
+		'label'   => esc_html__( 'Address', 'business-lander' ),
+		'section' => 'header_contact',
+		'type'    => 'textarea',
+	) );
 
-	$wp_customize->add_control(
-		'header_address', array(
-			'label'   => esc_html__( 'Address', 'business-lander' ),
-			'section' => 'header_contact',
-			'type'    => 'textarea',
-		)
-	);
-	$wp_customize->add_setting(
-		'header_phone', array(
-			'default'           => esc_html__( '+84 987-248-558', 'business-lander' ),
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
-		)
-	);
+	$wp_customize->add_setting( 'header_phone', array(
+		'sanitize_callback' => 'sanitize_text_field',
+		'transport'         => 'postMessage',
+	) );
+	$wp_customize->add_control( 'header_phone', array(
+		'label'   => esc_html__( 'Phone', 'business-lander' ),
+		'section' => 'header_contact',
+		'type'    => 'text',
+	) );
 
-	$wp_customize->add_control(
-		'header_phone', array(
-			'label'   => esc_html__( 'Phone', 'business-lander' ),
-			'section' => 'header_contact',
-			'type'    => 'text',
-		)
-	);
-	$wp_customize->add_setting(
-		'header_email', array(
-			'default'           => esc_html__( 'info@elightup.com', 'business-lander' ),
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'         => 'postMessage',
-		)
-	);
-
-	$wp_customize->add_control(
-		'header_email', array(
-			'label'   => esc_html__( 'Email', 'business-lander' ),
-			'section' => 'header_contact',
-			'type'    => 'text',
-		)
-	);
+	$wp_customize->add_setting( 'header_email', array(
+		'sanitize_callback' => 'sanitize_text_field',
+		'transport'         => 'postMessage',
+	) );
+	$wp_customize->add_control( 'header_email', array(
+		'label'   => esc_html__( 'Email', 'business-lander' ),
+		'section' => 'header_contact',
+		'type'    => 'text',
+	) );
 
 	/**
 	 * Contact section.
@@ -382,7 +356,7 @@ function business_lander_customize_register( $wp_customize ) {
 	// Call to action background.
 	$wp_customize->add_setting(
 		'cta_background', array(
-			'sanitize_callback' => 'business-lander_sanitize_image',
+			'sanitize_callback' => 'business_lander_sanitize_image',
 			'default'           => get_template_directory_uri() . '/images/bg-cta.jpg',
 		)
 	);
