@@ -65,3 +65,4 @@ function business_lander_infinite_scroll_render() {
 		get_template_part( 'template-parts/content', $style );
 	}
 }
+

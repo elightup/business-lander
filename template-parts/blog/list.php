@@ -8,7 +8,7 @@
 ?>
 <?php
 if ( ! is_active_sidebar( 'sidebar-1' ) ) :
-	$no_sidebar = 'no-sidebar';
+	$no_sidebar = 'list-no-sidebar';
 endif;
 ?>
 <main class="site-main <?php echo esc_html( $no_sidebar ); ?>" role="main">

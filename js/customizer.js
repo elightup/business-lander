@@ -14,8 +14,8 @@
 		'header_phone': '.site-phone p',
 		'header_email': '.site-email p',
 		'services_section_title': '.services--title',
-		'cta_subtitle': '.section--cta .section-cta_subtitle',
-		'cta_title': '.section--cta .section-cta_title',
+		'cta_subtitle': '.section--cta .section-cta__subtitle',
+		'cta_title': '.section--cta .section-cta__title',
 		'cta_button_text': '.section--cta .section-cta__link a'
 	};
 

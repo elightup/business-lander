@@ -10,7 +10,7 @@
 		position: relative;
 		z-index: 1;
 		&:before {
-			content: 'D';
+			content: attr(data-line);
 			position: absolute;
 			top: -127px;
 			left: 116px;

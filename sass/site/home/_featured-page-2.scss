@@ -14,7 +14,7 @@
 			opacity: 0.8;
 		}
 		&:before {
-			content: 'W';
+			content: attr(data-line);
 			position: absolute;
 			top: -41px;
 			left: 65px;

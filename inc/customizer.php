@@ -77,6 +77,7 @@ function business_lander_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_setting( 'contact_page', array(
 		'sanitize_callback' => 'absint',
+		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_control( 'contact_page', array(
 		'label'       => esc_html__( 'Contact Page', 'business-lander' ),
@@ -84,6 +85,15 @@ function business_lander_customize_register( $wp_customize ) {
 		'type'        => 'dropdown-pages',
 		'description' => esc_html__( 'The content of this page will be displayed in the hero area of the homepage. This page must contains a contact form.', 'business-lander' ),
 	) );
+
+	$wp_customize->selective_refresh->add_partial(
+		'contact_page',
+		array(
+			'selector'            => '.section--contact',
+			'container_inclusive' => true,
+			'render_callback'     => 'business_lander_refresh_contact_page_section',
+		)
+	);
 
 	/**
 	 * Services section.
@@ -102,6 +112,7 @@ function business_lander_customize_register( $wp_customize ) {
 	for ( $i = 1; $i <= 3; $i ++ ) {
 		$wp_customize->add_setting( 'service_page_' . $i, array(
 			'sanitize_callback' => 'absint',
+			'transport'         => 'postMessage',
 		) );
 		$wp_customize->add_control( 'service_page_' . $i, array(
 			// translators: %d is the index of the service page.
@@ -109,6 +120,14 @@ function business_lander_customize_register( $wp_customize ) {
 			'section' => 'homepage',
 			'type'    => 'dropdown-pages',
 		) );
+		$wp_customize->selective_refresh->add_partial(
+		'service_page_' . $i,
+		array(
+			'selector'            => '.section--services',
+			'container_inclusive' => true,
+			'render_callback'     => 'business_lander_refresh_services_page_section',
+		)
+	);
 	}
 
 	/**
@@ -116,6 +135,7 @@ function business_lander_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_setting( 'featured_page_1', array(
 		'sanitize_callback' => 'absint',
+		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_control( 'featured_page_1', array(
 		'label'   => esc_html__( 'Featured Page 1', 'business-lander' ),
@@ -123,17 +143,36 @@ function business_lander_customize_register( $wp_customize ) {
 		'type'    => 'dropdown-pages',
 	) );
 
+	$wp_customize->selective_refresh->add_partial(
+		'featured_page_1',
+		array(
+			'selector'            => '.featured-page-1',
+			'container_inclusive' => true,
+			'render_callback'     => 'business_lander_refresh_featured_page_1_section',
+		)
+	);
+
 	/**
 	 * Feature page 2 section.
 	 */
 	$wp_customize->add_setting( 'featured_page_2', array(
 		'sanitize_callback' => 'absint',
+		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_control( 'featured_page_2', array(
 		'label'   => esc_html__( 'Featured Page 2', 'business-lander' ),
 		'section' => 'homepage',
 		'type'    => 'dropdown-pages',
 	) );
+
+	$wp_customize->selective_refresh->add_partial(
+		'featured_page_2',
+		array(
+			'selector'            => '.featured-page-2',
+			'container_inclusive' => true,
+			'render_callback'     => 'business_lander_refresh_featured_page_2_section',
+		)
+	);
 
 	/**
 	 * Testimonial section.
@@ -156,12 +195,22 @@ function business_lander_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_setting( 'featured_page_3', array(
 		'sanitize_callback' => 'absint',
+		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_control( 'featured_page_3', array(
 		'label'   => esc_html__( 'Featured Page 3', 'business-lander' ),
 		'section' => 'homepage',
 		'type'    => 'dropdown-pages',
 	) );
+
+	$wp_customize->selective_refresh->add_partial(
+		'featured_page_3',
+		array(
+			'selector'            => '.featured-page-3',
+			'container_inclusive' => true,
+			'render_callback'     => 'business_lander_refresh_featured_page_3_section',
+		)
+	);
 
 	/**
 	 * CTA section.
@@ -277,7 +326,7 @@ function business_lander_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function business_lander_customize_preview_js() {
-	wp_enqueue_script( 'business-lander-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'business-lander-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20180427', true );
 }
 
 add_action( 'customize_preview_init', 'business_lander_customize_preview_js' );
@@ -315,4 +364,39 @@ function business_lander_sanitize_radio( $input, $setting ) {
 
 	// If the input is a valid key, return it; otherwise, return the default.
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+}
+
+/**
+ * Live refresh contact page section.
+ */
+function business_lander_refresh_contact_page_section() {
+	get_template_part( 'template-parts/home/contact' );
+}
+
+/**
+ * Live refresh services page section.
+ */
+function business_lander_refresh_services_page_section() {
+	get_template_part( 'template-parts/home/services' );
+}
+
+/**
+ * Live refresh featured page 1 section.
+ */
+function business_lander_refresh_featured_page_1_section() {
+	get_template_part( 'template-parts/home/featured-page-1' );
+}
+
+/**
+ * Live refresh featured page 2 section.
+ */
+function business_lander_refresh_featured_page_2_section() {
+	get_template_part( 'template-parts/home/featured-page-2' );
+}
+
+/**
+ * Live refresh featured page 3 section.
+ */
+function business_lander_refresh_featured_page_3_section() {
+	get_template_part( 'template-parts/home/featured-page-3' );
 }

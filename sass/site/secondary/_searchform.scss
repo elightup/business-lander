@@ -27,6 +27,7 @@
 		input[type='text'] {
 			width: 100%;
 			margin-bottom: 15px;
+			@include font-size(1.4);
 		}
 		input[type='submit'] {
 			margin-bottom: 15px;
