@@ -58,15 +58,9 @@ class Business_Lander_Recent_Posts_Widget extends WP_Widget {
 		?>
 		<div class="widget-content">
 			<?php
-			$i = 1;
 			while ( $query->have_posts() ) :
 				$query->the_post();
-			?>
-			<?php
-			if ( $i > absint( $instance['number'] ) ) {
-				break;
-			}
-			?>
+				?>
 				<article class="aside-post">
 					<?php if ( has_post_thumbnail() ) : ?>
 						<a class="image" href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'business-lander-widget-thumbnail' ); ?></a>
@@ -76,8 +70,7 @@ class Business_Lander_Recent_Posts_Widget extends WP_Widget {
 						<time class="time" datetime="<?php echo esc_attr( get_the_time() ); ?>"><?php business_lander_posted_on(); ?></time>
 					</div>
 				</article>
-			<?php
-			$i++;
+				<?php
 			endwhile;
 			?>
 		</div>

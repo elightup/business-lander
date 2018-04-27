@@ -6,15 +6,21 @@
  */
 
 $featured_page_1 = get_theme_mod( 'featured_page_1' );
-if ( $featured_page_1 ) {
-	$post = get_post( $featured_page_1 );
-	setup_postdata( $post );
+if ( ! $featured_page_1 ) {
+	return;
 }
-$before_title = get_the_title();
+$post = get_post( $featured_page_1 );
+setup_postdata( $post );
+
+$char = '';
+$title = get_the_title();
+if ( $title ) {
+	$char = $title[0];
+}
 ?>
 <section class="featured-page-1" style="background-image: url(<?php the_post_thumbnail_url( 'full' ); ?>)">
 	<div class="container">
-		<div class="featured-page" data-line="<?php echo $before_title[0];?>">
+		<div class="featured-page" data-line="<?php echo esc_attr( $char );?>">
 			<div class="featured-page__title">
 				<h3><?php the_title(); ?></h3>
 			</div>
