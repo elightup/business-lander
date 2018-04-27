@@ -123,7 +123,9 @@
 		color: $color__main;
 	}
 }
-.blog {
+.blog,
+.search,
+.archive {
 	.row {
 		justify-content: space-between;
 	}
@@ -132,6 +134,7 @@
 	}
 	main {
 		float: left;
+		width: 66%;
 		max-width: 792px;
 	}
 	.blog-article {
@@ -139,6 +142,7 @@
 		/* margin-right: 5%; */
 	}
 	.no-sidebar {
+		width: 100%;
 		max-width: 100%;
 		.col-2  .blog-article {
 			width: 32%;
@@ -167,12 +171,16 @@
 			}
 		}
 	}
-	.blog {
+	.blog,
+	.search,
+	.archive {
 		main {
 			width: 100%;
 		}
 	}
-	.grid {
+	.blog,
+	.search,
+	.archive {
 		.no-sidebar {
 			.col-2 .blog-article {
 				width: 45%;
@@ -189,7 +197,9 @@
 	.container .col-2 > * {
 		width: 97%;
 	}
-	.grid {
+	.blog,
+	.search,
+	.archive {
 		.no-sidebar {
 			.col-2 .blog-article {
 				width: 100%;
