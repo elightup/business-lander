@@ -14,7 +14,7 @@
  *
  * @return array
  */
-function business_lander_body_classes( $classes ) {
+/*function business_lander_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -27,7 +27,7 @@ function business_lander_body_classes( $classes ) {
 	return $classes;
 }
 
-add_filter( 'body_class', 'business_lander_body_classes' );
+add_filter( 'body_class', 'business_lander_body_classes' );*/
 
 /**
  * Filter the except length to 20 words.

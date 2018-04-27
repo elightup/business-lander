@@ -8,7 +8,7 @@
 ?>
 <?php
 if ( ! is_active_sidebar( 'sidebar-1' ) ) :
-	$no_sidebar = 'grid-no-sidebar';
+	$no_sidebar = 'no-sidebar';
 endif;
 ?>
 

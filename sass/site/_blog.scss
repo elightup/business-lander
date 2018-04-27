@@ -132,20 +132,24 @@
 	}
 	main {
 		float: left;
+		max-width: 792px;
 	}
 	.blog-article {
 		width: 49%;
 		/* margin-right: 5%; */
 	}
-	.grid-no-sidebar {
+	.no-sidebar {
+		max-width: 100%;
 		.col-2  .blog-article {
 			width: 32%;
+			margin-left: 0;
+			margin-right: 0;
 			/* margin-left: 1.5%;
 			margin-right: 1.5%; */
 		}
 	}
 }
-.grid.grid .grid-no-sidebar {
+.grid.grid .no-sidebar {
 	max-width: 100%;
 	width: 100%;
 }
@@ -163,13 +167,13 @@
 			}
 		}
 	}
-	.grid.grid {
+	.blog {
 		main {
 			width: 100%;
 		}
 	}
 	.grid {
-		.grid-no-sidebar {
+		.no-sidebar {
 			.col-2 .blog-article {
 				width: 45%;
 				margin-right: 5%;
@@ -186,7 +190,7 @@
 		width: 97%;
 	}
 	.grid {
-		.grid-no-sidebar {
+		.no-sidebar {
 			.col-2 .blog-article {
 				width: 100%;
 				margin-right: 0;
