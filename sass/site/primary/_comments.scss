@@ -187,6 +187,7 @@ ol.children {
 		&:active {
 			outline: none;
 			background-color: $color__main;
+			color: $color__white;
 		}
 	}
 	.comment-subscription-form {

@@ -517,7 +517,8 @@ input[type="submit"] {
   input[type="submit"]:active,
   input[type="submit"]:focus {
     border-color: #00bff3;
-    color: #000;
+    color: #fff;
+    background-color: #00bff3;
     outline: none; }
 
 .btn {
@@ -577,7 +578,25 @@ textarea {
   input[type="color"]:focus,
   textarea:focus {
     color: #585858;
-    border: 1px solid #666666; }
+    border: 1px solid #666666;
+    outline: none; }
+  input[type="text"]:active,
+  input[type="email"]:active,
+  input[type="url"]:active,
+  input[type="password"]:active,
+  input[type="search"]:active,
+  input[type="number"]:active,
+  input[type="tel"]:active,
+  input[type="range"]:active,
+  input[type="date"]:active,
+  input[type="month"]:active,
+  input[type="week"]:active,
+  input[type="time"]:active,
+  input[type="datetime"]:active,
+  input[type="datetime-local"]:active,
+  input[type="color"]:active,
+  textarea:active {
+    outline: none; }
 
 select {
   border: 1px solid #cccccc; }
@@ -1826,7 +1845,8 @@ ol.children {
     letter-spacing: 0.05em; }
     .comment-respond input[type="submit"]:focus, .comment-respond input[type="submit"]:active {
       outline: none;
-      background-color: #00bff3; }
+      background-color: #00bff3;
+      color: #fff; }
   .comment-respond .comment-subscription-form {
     display: none; }
 
