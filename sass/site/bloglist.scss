@@ -1,14 +1,8 @@
 /* bloglist */
-.list {
-	.section--archive-posts {
-		article {
-			margin-bottom: 80px;
-		}
-	}
-}
-.section--archive-posts {
+.blog-list {
 	article {
 		word-wrap: break-word;
+		margin-bottom: 80px;
 	}
 	.entry-title {
 		text-align: center;
@@ -179,7 +173,7 @@
 .list,
 .archive,
 .blog {
-	.section--archive-posts {
+	.blog-list {
 		.post-thumbnail {
 			height: auto;
 		}
@@ -212,7 +206,7 @@
 	}
 }
 @media (max-width: 767px) {
-	.section--archive-posts {
+	.blog-list {
 		.entry-title {
 			a {
 				@include font-size(2.7);
@@ -227,7 +221,7 @@
 	}
 }
 @media (max-width: 574px) {
-	.section--archive-posts {
+	.blog-list {
 		ul {
 			margin: 0;
 		}

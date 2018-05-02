@@ -9,7 +9,7 @@ $no_sidebar = is_active_sidebar( 'sidebar-1' ) ? '' : 'no-sidebar';
 ?>
 
 <main class="site-main <?php echo esc_attr( $no_sidebar ); ?>" role="main">
-	<div class="section--archive-posts">
+	<div class="blog-list">
 		<div class="list-title">
 			<?php if ( is_home() && ! is_front_page() ) : ?>
 				<h2 class="page-title"><?php single_post_title(); ?></h2>

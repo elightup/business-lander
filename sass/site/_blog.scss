@@ -35,7 +35,7 @@
 .archive-post {
 	border: 1px solid #ebebeb;
 	text-align: center;
-	margin-bottom: 30px;
+	margin-bottom: 24px;
 	position: relative;
 	border-radius: 5px;
 	box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
@@ -69,7 +69,6 @@
 .post-info {
 	padding-left: 20px;
 	padding-right: 20px;
-	min-height: 160px;
 	.post-info-name {
 		margin-bottom: 5px;
 		word-wrap : break-word;
@@ -138,7 +137,7 @@
 		max-width: 792px;
 	}
 	.blog-article {
-		width: 49%;
+		width: 48.5%;
 		/* margin-right: 5%; */
 	}
 	.no-sidebar {
@@ -164,7 +163,7 @@
 	.container .col-3 > * {
 		width: 47%;
 	}
-	.section--archive-posts {
+	.blog-grid {
 		.archive-post {
 			img {
 				width: 100%;

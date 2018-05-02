@@ -26,7 +26,9 @@ if ( $title ) {
 			</div>
 			<?php the_excerpt(); ?>
 			<a href="<?php the_permalink(); ?>" class="featured-page__continue"><?php esc_html_e( 'Learn more', 'business-lander' ); ?></a>
-
 		</div>
+		<?php
+		wp_reset_postdata();
+		?>
 	</div>
 </section>
