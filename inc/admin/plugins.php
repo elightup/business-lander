@@ -23,6 +23,14 @@ function business_lander_register_required_plugins() {
 			'name' => esc_html__( 'One click demo import', 'business-lander' ),
 			'slug' => 'one-click-demo-import',
 		),
+		array(
+			'name' => esc_html__( 'Ultimate Fonts', 'business-lander' ),
+			'slug' => 'ultimate-fonts',
+		),
+		array(
+			'name' => esc_html__( 'Ultimate Colors', 'business-lander' ),
+			'slug' => 'ultimate-colors',
+		),
 	);
 
 	$config = array(
