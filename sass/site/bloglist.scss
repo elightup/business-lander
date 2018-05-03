@@ -193,7 +193,16 @@
 		float: left;
 	}
 }
+.no-sidebar {
+	.blog-list {
+		max-width: 792px;
+		margin: auto;
+	}
+}
 @media (max-width: 991px) {
+	.site-main.site-main {
+		max-width: 100%;
+	}
 	.list,
 	.archive {
 		main {

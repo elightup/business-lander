@@ -1318,6 +1318,10 @@ span.is-toggled {
   .error-404 .search-field {
     width: 100%; }
 
+.not-found .page-content p {
+  font-size: 17px;
+  font-size: 1.0625rem; }
+
 @media (max-width: 575px) {
   .error-404 .go-back-home {
     font-size: 15px;
@@ -3121,7 +3125,7 @@ a:hover {
   .blog main,
   .search main,
   .archive main {
-    width: 100%; }
+    width: 100% !important; }
 
   .blog .no-sidebar .col-2 .blog-article,
   .search .no-sidebar .col-2 .blog-article,
@@ -3340,7 +3344,14 @@ a:hover {
   width: 66%;
   float: left; }
 
+.no-sidebar .blog-list {
+  max-width: 792px;
+  margin: auto; }
+
 @media (max-width: 991px) {
+  .site-main.site-main {
+    max-width: 100%; }
+
   .list main,
   .archive main {
     width: 100%; }

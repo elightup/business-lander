@@ -23,6 +23,13 @@
 		width: 100%;
 	}
 }
+.not-found {
+	.page-content {
+		p {
+			@include font-size(1.7);
+		}
+	}
+}
 @media (max-width: 575px) {
 	.error-404 {
 		.go-back-home {
