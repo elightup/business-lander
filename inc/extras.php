@@ -72,7 +72,7 @@ add_filter( 'pt-ocdi/import_files', 'business_lander_import_files' );
  */
 function business_lander_after_import_setup() {
 	// Assign menus to their locations.
-	$header = get_term_by( 'slug', 'main-menu', 'nav_menu' );
+	$header = get_term_by( 'slug', 'Header', 'nav_menu' );
 	$social = get_term_by( 'slug', 'social-menu', 'nav_menu' );
 
 	set_theme_mod(
@@ -87,9 +87,9 @@ function business_lander_after_import_setup() {
 	$blog       = get_page_by_title( 'Blog' );
 	$contact    = get_page_by_title( 'Contact' );
 
-	$front_page_services1 = get_page_by_title( 'Birthday Gifts' );
-	$front_page_services2 = get_page_by_title( 'Corporate Gifts' );
-	$front_page_services3 = get_page_by_title( 'Flowers Arrangements' );
+	$front_page_services1 = get_page_by_title( 'Web Development' );
+	$front_page_services2 = get_page_by_title( 'Design & Branding' );
+	$front_page_services3 = get_page_by_title( 'Marketing Strategy' );
 	$featured_page_1      = get_page_by_title( 'Difference Is Clear' );
 	$featured_page_2      = get_page_by_title( "We're Proud of Our Work" );
 	$featured_page_3      = get_page_by_title( 'Our Happy Customers' );

@@ -35,6 +35,7 @@ function business_lander_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'header_address', array(
+		'default'           => wp_kses_post( __( '637 SW. Indian Summer Street West Orange, NJ 07052', 'business-lander' ) ),
 		'sanitize_callback' => 'sanitize_text_field',
 		'transport'         => 'postMessage',
 	) );
@@ -45,6 +46,7 @@ function business_lander_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'header_phone', array(
+		'default'           => wp_kses_post( __( '+1-317-290-1883', 'business-lander' ) ),
 		'sanitize_callback' => 'sanitize_text_field',
 		'transport'         => 'postMessage',
 	) );
@@ -55,6 +57,7 @@ function business_lander_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'header_email', array(
+		'default'           => wp_kses_post( __( 'info@company.com', 'business-lander' ) ),
 		'sanitize_callback' => 'sanitize_text_field',
 		'transport'         => 'postMessage',
 	) );
