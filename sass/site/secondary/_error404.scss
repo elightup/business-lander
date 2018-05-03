@@ -30,6 +30,11 @@
 		}
 	}
 }
+@media (max-width: 991px) {
+	.not-found {
+		margin-bottom: 40px;
+	}
+}
 @media (max-width: 575px) {
 	.error-404 {
 		.go-back-home {

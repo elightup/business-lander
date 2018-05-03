@@ -1322,6 +1322,9 @@ span.is-toggled {
   font-size: 17px;
   font-size: 1.0625rem; }
 
+@media (max-width: 991px) {
+  .not-found {
+    margin-bottom: 40px; } }
 @media (max-width: 575px) {
   .error-404 .go-back-home {
     font-size: 15px;
@@ -2815,7 +2818,8 @@ a:hover {
     font-size: 19px;
     font-size: 1.1875rem;
     width: 100%;
-    margin-right: 0; } }
+    margin-right: 0;
+    margin-left: 0; } }
 @media (max-width: 480px) {
   .section--testimonial {
     padding-top: 20px; }
