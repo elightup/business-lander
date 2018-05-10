@@ -1165,8 +1165,8 @@ span.is-toggled {
   font-size: 14px;
   font-size: 0.875rem;
   letter-spacing: 0.05em;
-  padding-top: 11px;
-  padding-bottom: 11px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   background-color: #fff;
   color: #00bff3; }
   .widget_text .contact-form .contact-submit .pushbutton-wide:focus, .widget_text .contact-form .contact-submit .pushbutton-wide:active {
@@ -3072,8 +3072,8 @@ a:hover {
     color: rgba(0, 0, 0, 0.8); }
   .post-info .post-continue {
     position: absolute;
-    bottom: -1px;
-    right: -1px;
+    bottom: 0;
+    right: 0;
     padding: 13px 17px;
     background-color: rgba(0, 191, 243, 0.04);
     text-transform: uppercase;
