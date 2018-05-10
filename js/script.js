@@ -1,8 +1,9 @@
 jQuery( function ( $ ) {
-	var $window = $( window ),
-	$body = $( 'body' );
-	$mobileMenu = $( '.mobile-navigation' );
-	$mainMenu = $( '.main-navigation' );
+	var $window      = $( window ),
+	$mobileMenu      = $( '.mobile-navigation' ),
+	$mainMenu        = $( '.main-navigation' ),
+	$site_navigation = $( '#site-navigation' ),
+	$primary_menu    = $( '#primary-menu' );
 
 	/**
 	 * Collapse
@@ -13,12 +14,12 @@ jQuery( function ( $ ) {
 	 		$( '#site-search' ).slideToggle( 300 ).find( 'input' ).focus();
 	 	} );
 	 	$( '.menu-toggle' ).on( 'click', function () {
-	 		$( '#site-navigation' ).removeClass( 'main-navigation' );
-	 		$( '#site-navigation' ).addClass( 'mobile-navigation' );
-	 		$( '#primary-menu' ).removeClass( 'menu' );
-	 		$( '#primary-menu' ).addClass( 'mobile-menu' );
-	 		$( '#primary-menu' ).addClass( 'clear-fix' );
-	 		$( '.mobile-navigation' ).slideToggle();
+	 		$site_navigation.removeClass( 'main-navigation' );
+	 		$site_navigation.addClass( 'mobile-navigation' );
+	 		$primary_menu.removeClass( 'menu' );
+	 		$primary_menu.addClass( 'mobile-menu' );
+	 		$primary_menu.addClass( 'clear-fix' );
+	 		$( '.mobile-navigation' ).toggle();
 	 	} );
 	 }
 
@@ -28,14 +29,14 @@ jQuery( function ( $ ) {
 	 function menuClick() {
 		//Add arrow icon to the li.
 		var $dropdownToggle = $( '<span class="dropToggle fas fa-caret-down"></span>' );
-		$( '#primary-menu' ).find( 'li' ).has( 'ul' )
+		$primary_menu.find( 'li' ).has( 'ul' )
 										.children( 'a' )
 										.after( $dropdownToggle );
 
 		$( '.dropToggle' ).on( 'click', function( e ) {
 			$( this ).toggleClass( 'is-toggled' )
 			.next( '.sub-menu' )
-			.slideToggle();
+			.toggle();
 			e.stopPropagation();
 		} );
 	}
@@ -52,11 +53,11 @@ jQuery( function ( $ ) {
 			if ( $window.width() > 992 ) {
 				$mobileMenu.hide();
 				$mainMenu.show();
-				$( '#site-navigation' ).removeClass( 'mobile-navigation' );
-				$( '#site-navigation' ).addClass( 'main-navigation' );
-				$( '#primary-menu' ).addClass( 'menu' );
-				$( '#primary-menu' ).removeClass( 'mobile-menu' );
-				$( '#primary-menu' ).removeClass( 'clear-fix' );
+				$site_navigation.removeClass( 'mobile-navigation' );
+				$site_navigation.addClass( 'main-navigation' );
+				$primary_menu.addClass( 'menu' );
+				$primary_menu.removeClass( 'mobile-menu' );
+				$primary_menu.removeClass( 'clear-fix' );
 			}
 			if ( $window.width() < 992 ) {
 				$mainMenu.hide();
@@ -104,8 +105,8 @@ jQuery( function ( $ ) {
 	 }
 
 	toggleCollapse();
-	 menuClick();
-	 hideMobileMenuOnDesktops();
-	 scrollToTop()
+	menuClick();
+	hideMobileMenuOnDesktops();
+	scrollToTop()
 	} );
 

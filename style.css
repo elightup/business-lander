@@ -527,7 +527,7 @@ input[type="submit"] {
   border-radius: 99px;
   white-space: nowrap;
   text-align: center;
-  padding: 10px 30px;
+  padding: 9px 30px;
   transition: all .3s ease 0s;
   text-transform: uppercase; }
 
@@ -1165,8 +1165,8 @@ span.is-toggled {
   font-size: 14px;
   font-size: 0.875rem;
   letter-spacing: 0.05em;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 14px;
+  padding-bottom: 14px;
   background-color: #fff;
   color: #00bff3; }
   .widget_text .contact-form .contact-submit .pushbutton-wide:focus, .widget_text .contact-form .contact-submit .pushbutton-wide:active {
@@ -1219,6 +1219,8 @@ span.is-toggled {
     .aside-post .time .posted-on:hover a {
       text-decoration: none;
       color: #00bff3; }
+  .aside-post .time .entry-date {
+    color: #a3a3a3; }
   .aside-post::after, .aside-post::before {
     content: '';
     display: table;
@@ -1249,6 +1251,9 @@ span.is-toggled {
     text-transform: uppercase;
     margin-top: 0;
     margin-bottom: 30px; }
+  .contact__right .contact-form input[type="text"],
+  .contact__right .contact-form textarea {
+    border-color: transparent; }
 
 .contact-form .contact-submit {
   margin-bottom: 0; }
@@ -1256,7 +1261,7 @@ span.is-toggled {
     text-transform: uppercase;
     font-size: 16px;
     letter-spacing: 0.05em;
-    padding: 14px 33px;
+    padding: 13px 33px;
     border-radius: 100px;
     background-color: #00bff3;
     color: #fff; }
@@ -1380,7 +1385,7 @@ span.is-toggled {
   font-size: 0.875rem; }
 .jetpack_subscription_widget input[type="submit"] {
   border-radius: 100px;
-  padding: 15px 27px;
+  padding: 14px 27px;
   margin-left: 26%;
   text-transform: uppercase;
   margin-top: -10px;
@@ -1623,6 +1628,11 @@ span.is-toggled {
       font-size: 14px;
       font-size: 0.875rem;
       margin-right: 3px; }
+  .entry-meta .posted-on .entry-date {
+    font-size: 14px;
+    font-size: 0.875rem;
+    opacity: 0.6;
+    text-transform: uppercase; }
   .entry-meta .posted-on::before {
     content: '\f017';
     display: inline-block;
@@ -2337,9 +2347,10 @@ a:hover {
   transform: translate(0, 0);
   transition: all 0.3s ease; }
   .scroll-to-top:hover {
-    background: #fff; }
+    background: #000;
+    border-color: #000; }
     .scroll-to-top:hover i {
-      color: #00bff3; }
+      color: #fff; }
   .scroll-to-top:focus {
     color: #fff; }
   .scroll-to-top i {
@@ -3030,18 +3041,23 @@ a:hover {
     transform: translate3d(0, -6px, 0);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 10px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s; }
+  .archive-post:hover .post-info {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; }
 
 .post-info {
   padding-left: 20px;
   padding-right: 20px;
-  border: 1px solid #ebebeb; }
+  border: 1px solid #ebebeb;
+  border-top: none; }
   .post-info .post-info-name {
     margin-bottom: 5px;
     word-wrap: break-word;
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 1.4;
-    margin-top: 30px; }
+    margin-top: 0;
+    padding-top: 30px; }
     .post-info .post-info-name a {
       font-weight: 300;
       text-transform: uppercase;
@@ -3065,6 +3081,10 @@ a:hover {
     .post-info .posted-on:hover a {
       text-decoration: none;
       color: #00bff3; }
+  .post-info .entry-date {
+    font-size: 11px;
+    font-size: 0.6875rem;
+    color: #a3a3a3; }
   .post-info > p {
     font-weight: 400;
     font-size: 14px;
@@ -3086,7 +3106,8 @@ a:hover {
     .post-info .post-continue:hover {
       text-decoration: none;
       color: #fff;
-      background-color: #00bff3; }
+      background-color: #00bff3;
+      border-bottom-right-radius: 5px; }
 
 .blog .row,
 .search .row,
@@ -3241,7 +3262,8 @@ a:hover {
     letter-spacing: 0.05em;
     color: #000; }
     .entry-meta-blog a:hover {
-      color: #00bff3; }
+      color: #00bff3;
+      text-decoration: none; }
   .entry-meta-blog .byline {
     margin-right: 25px; }
     .entry-meta-blog .byline::before {
@@ -3256,6 +3278,14 @@ a:hover {
       font-size: 14px;
       font-size: 0.875rem;
       margin-right: 3px; }
+  .entry-meta-blog .posted-on .entry-date {
+    font-weight: 400;
+    font-size: 14px;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    opacity: 0.6;
+    letter-spacing: 0.05em;
+    color: #000; }
   .entry-meta-blog .posted-on::before {
     content: '\f017';
     display: inline-block;

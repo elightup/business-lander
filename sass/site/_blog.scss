@@ -64,17 +64,23 @@
 		box-shadow: 0 12px 24px rgba(0,0,0,0.3), 0 10px 10px rgba(0,0,0,0.2);
 		transition: all 0.3s;
 	}
+	&:hover .post-info {
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
 }
 .post-info {
 	padding-left: 20px;
 	padding-right: 20px;
 	border: 1px solid #ebebeb;
+	border-top: none;
 	.post-info-name {
 		margin-bottom: 5px;
 		word-wrap : break-word;
 		@include font-size(2);
 		line-height: 1.4;
-		margin-top: 30px;
+		margin-top: 0;
+		padding-top: 30px;
 		a {
 			font-weight: 300;
 			text-transform: uppercase;
@@ -103,6 +109,10 @@
 			color: $color__link-hover;
 		}
 	}
+	.entry-date {
+		@include font-size(1.1);
+		color: #a3a3a3;
+	}
 	> p {
 		font-weight: 400;
 		@include font-size(1.4);
@@ -124,6 +134,7 @@
 			text-decoration: none;
 			color: $color__white;
 			background-color: $color__main;
+			border-bottom-right-radius: 5px;
 		}
 	}
 }

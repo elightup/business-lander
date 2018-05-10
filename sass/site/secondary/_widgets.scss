@@ -106,8 +106,8 @@
 				text-transform: uppercase;
 				@include font-size(1.4);
 				letter-spacing: 0.05em;
-				padding-top: 15px;
-				padding-bottom: 15px;
+				padding-top: 14px;
+				padding-bottom: 14px;
 				background-color: $color__white;
 				color: $color__main;
 				&:focus,
@@ -170,6 +170,9 @@
 				text-decoration: none;
 				color: $color__link-hover;
 			}
+		}
+		.entry-date {
+			color: $color__text-gray;
 		}
 	}
 	&::after,

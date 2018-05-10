@@ -141,9 +141,10 @@
 	transform: translate(0, 0);
 	transition: all 0.3s ease;
 	&:hover {
-		background: $color__white;
+		background: $color__black;
+		border-color: $color__black;
 		i {
-			color: $color__main;
+			color: $color__white;
 		}
 	}
 	&:focus {

@@ -85,6 +85,7 @@
 		color: $color__black;
 		&:hover {
 			color: $color__link-hover;
+			text-decoration: none;
 		}
 	}
 	.byline {
@@ -98,6 +99,14 @@
 		}
 	}
 	.posted-on {
+		.entry-date {
+			font-weight: 400;
+			@include font-size(1.4);
+			text-transform: uppercase;
+			opacity: 0.6;
+			letter-spacing: 0.05em;
+			color: $color__black;
+		}
 		&::before {
 			content: '\f017';
 			@include fa-icon();

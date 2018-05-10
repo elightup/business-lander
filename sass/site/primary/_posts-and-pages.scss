@@ -171,6 +171,11 @@
 		}
 	}
 	.posted-on {
+		.entry-date {
+			@include font-size(1.4);
+			opacity: 0.6;
+			text-transform: uppercase;
+		}
 		&::before {
 			content: '\f017';
 			@include fa-icon();
