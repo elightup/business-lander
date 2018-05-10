@@ -14,19 +14,18 @@
 	}
 	input[type="email"] {
 		width: 88% !important;
-		padding: 6px 60px;
+		padding: 10px 60px;
 		margin-left: 7%;
 		font-weight: 400;
 		@include font-size(1.4);
 	}
 	input[type="submit"] {
 		border-radius: 100px;
-		padding: 11px 27px;
+		padding: 15px 27px;
 		margin-left: 26%;
 		text-transform: uppercase;
 		margin-top: -10px;
 		@include font-size(1.4);
-		box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.1);
 		&:focus,
 		&:active {
 			outline: none;

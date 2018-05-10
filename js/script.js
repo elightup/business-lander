@@ -28,7 +28,7 @@ jQuery( function ( $ ) {
 	 function menuClick() {
 		//Add arrow icon to the li.
 		var $dropdownToggle = $( '<span class="dropToggle fas fa-caret-down"></span>' );
-		$( '.mobile-menu' ).find( 'li' ).has( 'ul' )
+		$( '#primary-menu' ).find( 'li' ).has( 'ul' )
 										.children( 'a' )
 										.after( $dropdownToggle );
 
@@ -103,7 +103,7 @@ jQuery( function ( $ ) {
 
 	 }
 
-	 toggleCollapse();
+	toggleCollapse();
 	 menuClick();
 	 hideMobileMenuOnDesktops();
 	 scrollToTop()

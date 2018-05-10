@@ -94,13 +94,19 @@
 	</div>
 </header><!-- #masthead -->
 
+<?php
+$no_thumbnail = '';
+if ( ! has_post_thumbnail() ) {
+	$no_thumbnail = 'no-thumbnail';
+}
+?>
 <?php if ( is_singular() && ! is_front_page() ) : ?>
-	<div class="page-header">
+	<div class="page-header <?php echo esc_html( $no_thumbnail ); ?>">
 		<?php
 		if ( ! has_post_thumbnail() ) {
-			the_title( '<h2 class="page-title title-black">', '</h2>' );
+			the_title( '<div class="title"><h2 class="page-title title-black">', '</h2></div>' );
 		} else {
-			the_title( '<h2 class="page-title">', '</h2>' );
+			the_title( '<div class="title"><h2 class="page-title">', '</h2></div>' );
 			echo '<div class="post-thumbnail">';
 			the_post_thumbnail( 'full' );
 			echo '</div>';

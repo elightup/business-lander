@@ -33,7 +33,6 @@
 	justify-content: center;
 }
 .archive-post {
-	border: 1px solid #ebebeb;
 	text-align: center;
 	margin-bottom: 24px;
 	position: relative;
@@ -69,6 +68,7 @@
 .post-info {
 	padding-left: 20px;
 	padding-right: 20px;
+	border: 1px solid #ebebeb;
 	.post-info-name {
 		margin-bottom: 5px;
 		word-wrap : break-word;
@@ -112,14 +112,19 @@
 	}
 	.post-continue {
 		position: absolute;
-		bottom: 0;
-		right: 0;
+		bottom: -1px;
+		right: -1px;
 		padding: 13px 17px;
 		background-color: rgba(0,191,243,0.04);
 		text-transform: uppercase;
 		font-weight: 400;
 		@include font-size(1.2);
 		color: $color__main;
+		&:hover {
+			text-decoration: none;
+			color: $color__white;
+			background-color: $color__main;
+		}
 	}
 }
 .blog,
