@@ -287,7 +287,11 @@
 span.is-toggled  {
 	transform: scaleY(-1)
 }
-
+@media (max-width: 991px) {
+	.main-navigation {
+		display: none;
+	}
+}
 @media (max-width: 575px) {
 	.mobile-navigation {
 		width: 100%;

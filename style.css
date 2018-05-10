@@ -908,6 +908,9 @@ a {
 span.is-toggled {
   transform: scaleY(-1); }
 
+@media (max-width: 991px) {
+  .main-navigation {
+    display: none; } }
 @media (max-width: 575px) {
   .mobile-navigation {
     width: 100%; } }
@@ -1261,7 +1264,7 @@ span.is-toggled {
     text-transform: uppercase;
     font-size: 16px;
     letter-spacing: 0.05em;
-    padding: 13px 33px;
+    padding: 13px 30px;
     border-radius: 100px;
     background-color: #00bff3;
     color: #fff; }
@@ -2206,14 +2209,18 @@ a:hover {
 @media (max-width: 480px) {
   .site-header .header-content > .container {
     padding-top: 30px;
-    padding-bottom: 30px; }
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center; }
 
   .site-logo {
     flex-direction: column; }
 
   .menu-toggle {
-    width: 100%;
-    margin-left: 0; }
+    width: 50%;
+    margin-left: 0;
+    margin-top: 35px;
+    padding: 8px; }
 
   .site-branding img {
     margin-left: 25%; } }
