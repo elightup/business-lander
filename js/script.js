@@ -9,10 +9,6 @@ jQuery( function ( $ ) {
 	 * Collapse
 	 */
 	 function toggleCollapse() {
-	 	$( '[data-toggle="collapse"]' ).on( 'click', function ( e ) {
-	 		e.preventDefault();
-	 		$( '#site-search' ).slideToggle( 300 ).find( 'input' ).focus();
-	 	} );
 	 	$( '.menu-toggle' ).on( 'click', function () {
 	 		$site_navigation.removeClass( 'main-navigation' );
 	 		$site_navigation.addClass( 'mobile-navigation' );
@@ -49,7 +45,7 @@ jQuery( function ( $ ) {
 		if ( $window.width() < 992 ) {
 			$mainMenu.hide();
 		}
-		$window.on( 'resize', function () {
+		/*$window.on( 'resize', function () {
 			if ( $window.width() > 992 ) {
 				$mobileMenu.hide();
 				$mainMenu.show();
@@ -62,7 +58,7 @@ jQuery( function ( $ ) {
 			if ( $window.width() < 992 ) {
 				$mainMenu.hide();
 			}
-		} );
+		} );*/
 
 	}
 
@@ -99,10 +95,9 @@ jQuery( function ( $ ) {
 	 	} );
 	 }
 
-	 if ( $().slick ) {
-	 	initTestimonialSlider();
-
-	 }
+	if ( $().slick ) {
+		initTestimonialSlider();
+	}
 
 	toggleCollapse();
 	menuClick();
