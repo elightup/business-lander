@@ -1984,8 +1984,11 @@ ol.children {
 .page-header {
   text-align: center;
   display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  flex-flow: column wrap;
+  flex-flow: -webkit-column;
   align-items: center;
-  flex-flow: column;
   justify-content: center;
   position: relative;
   word-break: break-word;
@@ -2033,17 +2036,12 @@ a:hover {
   color: #fff; }
 
 @media (max-width: 767px) {
-  .page-header {
-    display: flex;
-    display: -webkit-flex;
-    display: -moz-flex;
-    flex-flow: -webkit-column; }
-    .page-header .title .page-title {
-      font-size: 30px;
-      font-size: 1.875rem;
-      box-shadow: inset 0 -20px 0 rgba(255, 255, 255, 0.12) !important; }
-    .page-header .title .title-black {
-      box-shadow: inset 0 -20px 0 rgba(0, 191, 243, 0.12) !important; } }
+  .page-header .title .page-title {
+    font-size: 30px;
+    font-size: 1.875rem;
+    box-shadow: inset 0 -20px 0 rgba(255, 255, 255, 0.12) !important; }
+  .page-header .title .title-black {
+    box-shadow: inset 0 -20px 0 rgba(0, 191, 243, 0.12) !important; } }
 @media (max-width: 320px) {
   .entry-meta a {
     font-size: 11px;

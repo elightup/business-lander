@@ -4,8 +4,11 @@
 .page-header {
 	text-align: center;
 	display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	flex-flow: column wrap;
+	flex-flow: -webkit-column;
 	align-items: center;
-	flex-flow: column;
 	justify-content: center;
 	position: relative;
 	word-break: break-word;
@@ -59,10 +62,6 @@ a:hover {
 
 @media(max-width: 767px) {
 	.page-header {
-		display: flex;
-		display: -webkit-flex;
-		display: -moz-flex;
-		flex-flow: -webkit-column;
 		.title {
 			.page-title {
 				@include font-size(3);
