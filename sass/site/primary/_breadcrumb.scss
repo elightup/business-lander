@@ -5,9 +5,10 @@
 	text-align: center;
 	display: flex;
 	display: -webkit-flex;
-	display: -moz-flex;
-	flex-flow: column wrap;
-	flex-flow: -webkit-column;
+	-webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap:wrap;
+    flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
 	position: relative;
