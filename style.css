@@ -2034,7 +2034,9 @@ a:hover {
 
 @media (max-width: 767px) {
   .page-header {
-    display: flex; }
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex; }
     .page-header .title .page-title {
       font-size: 30px;
       font-size: 1.875rem;
