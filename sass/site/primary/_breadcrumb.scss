@@ -59,6 +59,7 @@ a:hover {
 
 @media(max-width: 767px) {
 	.page-header {
+		display: flex;
 		.title {
 			.page-title {
 				@include font-size(3);
