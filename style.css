@@ -2036,7 +2036,8 @@ a:hover {
   .page-header {
     display: flex;
     display: -webkit-flex;
-    display: -moz-flex; }
+    display: -moz-flex;
+    flex-flow: -webkit-column; }
     .page-header .title .page-title {
       font-size: 30px;
       font-size: 1.875rem;
