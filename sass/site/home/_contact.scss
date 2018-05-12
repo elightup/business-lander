@@ -114,6 +114,11 @@
 	}
 }
 @media (max-width: 574px) {
+	.section--contact {
+		&:before {
+			width: 0;
+		}
+	}
 	.section-contact__left {
 		h2 {
 			@include font-size(2.8);

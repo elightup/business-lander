@@ -282,7 +282,7 @@
 	cursor: pointer;
 	padding: 13px;
 	transition: all 0.3s ease;
-	color: $color__main;
+	color: $color__black;
 }
 span.is-toggled  {
 	transform: scaleY(-1)
@@ -292,7 +292,7 @@ span.is-toggled  {
 		display: none;
 	}
 }
-@media (max-width: 575px) {
+@media (max-width: 767px) {
 	.mobile-navigation {
 		width: 100%;
 	}

@@ -58,6 +58,7 @@
 		display: inline-block;
 		margin-left: 35%;
 		color: rgba(0,0,0,0.8);
+		letter-spacing: 0.05em;
 		&:before {
 			position: absolute;
 			content: '';
@@ -163,6 +164,7 @@
 			font-weight: 400;
 			margin-right: 15px;
 			@include font-size(1.1);
+			letter-spacing: 0.05em;
 			a {
 				color: $color__text-gray;
 			}

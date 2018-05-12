@@ -138,7 +138,6 @@
 }
 
 .entry-meta {
-	border:1px solid #ebebeb;
 	border-radius: 100px;
 	background:  $color__white;
 	padding: 0px 30px;
@@ -175,6 +174,10 @@
 			@include font-size(1.4);
 			opacity: 0.6;
 			text-transform: uppercase;
+			letter-spacing: 0.05em;
+			color: $color__black;
+			line-height: 1.7;
+			font-weight: 400;
 		}
 		&::before {
 			content: '\f017';

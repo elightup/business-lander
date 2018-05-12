@@ -26,8 +26,8 @@ jQuery( function ( $ ) {
 		//Add arrow icon to the li.
 		var $dropdownToggle = $( '<span class="dropToggle fas fa-caret-down"></span>' );
 		$primary_menu.find( 'li' ).has( 'ul' )
-										.children( 'a' )
-										.after( $dropdownToggle );
+		.children( 'a' )
+		.after( $dropdownToggle );
 
 		$( '.dropToggle' ).on( 'click', function( e ) {
 			$( this ).toggleClass( 'is-toggled' )
@@ -38,9 +38,23 @@ jQuery( function ( $ ) {
 	}
 
 	function hideMobileMenuOnDesktops() {
-		if ( $window.width() < 992 ) {
-			$mainMenu.hide();
-		}
+
+		$window.on( 'resize', function () {
+			if ( $window.width() > 992 ) {
+				/*$mobileMenu.hide();*/
+				$mainMenu.show();
+				$site_navigation.removeClass( 'mobile-navigation' );
+				$site_navigation.addClass( 'main-navigation' );
+				$primary_menu.addClass( 'menu' );
+				$primary_menu.removeClass( 'mobile-menu' );
+				$primary_menu.removeClass( 'clear-fix' );
+			}
+			if ( $window.width() < 992 ) {
+				$mainMenu.hide();
+			}
+
+		} );
+
 	}
 
 	/**
@@ -76,13 +90,13 @@ jQuery( function ( $ ) {
 	 	} );
 	 }
 
-	if ( $().slick ) {
-		initTestimonialSlider();
-	}
+	 if ( $().slick ) {
+	 	initTestimonialSlider();
+	 }
 
-	toggleCollapse();
-	menuClick();
-	hideMobileMenuOnDesktops();
-	scrollToTop()
+	 toggleCollapse();
+	 menuClick();
+	 hideMobileMenuOnDesktops();
+	 scrollToTop()
 	} );
 

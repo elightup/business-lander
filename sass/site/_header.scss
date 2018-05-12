@@ -156,9 +156,11 @@
 	.menu-toggle {
 		display: block;
 		border-radius: 100px;
-		padding: 0px 20px;
+		padding: 0px 35px;
 		background-color: $color__main;
 		color: $color__white;
+		height: 46px;
+		margin-top: 20px;
 		&:hover {
 			background-color: $color__main;
 		}
@@ -183,7 +185,7 @@
 	}
 	.menu-toggle {
 		line-height: 1.9;
-		margin-top: 10px;
+		margin-top: 35px;
 		margin-bottom: 10px;
 		padding: 0 12px;
 		width: 25%;

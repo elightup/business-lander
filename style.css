@@ -903,7 +903,7 @@ a {
   cursor: pointer;
   padding: 13px;
   transition: all 0.3s ease;
-  color: #00bff3; }
+  color: #000; }
 
 span.is-toggled {
   transform: scaleY(-1); }
@@ -911,7 +911,7 @@ span.is-toggled {
 @media (max-width: 991px) {
   .main-navigation {
     display: none; } }
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   .mobile-navigation {
     width: 100%; } }
 .pagination {
@@ -1130,7 +1130,8 @@ span.is-toggled {
     position: relative;
     display: inline-block;
     margin-left: 35%;
-    color: rgba(0, 0, 0, 0.8); }
+    color: rgba(0, 0, 0, 0.8);
+    letter-spacing: 0.05em; }
     .widget .widget-title:before {
       position: absolute;
       content: '';
@@ -1214,7 +1215,8 @@ span.is-toggled {
     font-weight: 400;
     margin-right: 15px;
     font-size: 11px;
-    font-size: 0.6875rem; }
+    font-size: 0.6875rem;
+    letter-spacing: 0.05em; }
     .aside-post .time .byline a,
     .aside-post .time .posted-on a {
       color: #a3a3a3; }
@@ -1253,7 +1255,8 @@ span.is-toggled {
     color: #fff;
     text-transform: uppercase;
     margin-top: 0;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    letter-spacing: 0.025em; }
   .contact__right .contact-form input[type="text"],
   .contact__right .contact-form textarea {
     border-color: transparent; }
@@ -1393,7 +1396,8 @@ span.is-toggled {
   text-transform: uppercase;
   margin-top: -10px;
   font-size: 14px;
-  font-size: 0.875rem; }
+  font-size: 0.875rem;
+  letter-spacing: 0.05em; }
   .jetpack_subscription_widget input[type="submit"]:focus, .jetpack_subscription_widget input[type="submit"]:active {
     outline: none;
     background-color: #00bff3; }
@@ -1596,7 +1600,6 @@ span.is-toggled {
     box-shadow: 1px 0 36px rgba(0, 0, 0, 0.15); }
 
 .entry-meta {
-  border: 1px solid #ebebeb;
   border-radius: 100px;
   background: #fff;
   padding: 0px 30px;
@@ -1635,7 +1638,11 @@ span.is-toggled {
     font-size: 14px;
     font-size: 0.875rem;
     opacity: 0.6;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #000;
+    line-height: 1.7;
+    font-weight: 400; }
   .entry-meta .posted-on::before {
     content: '\f017';
     display: inline-block;
@@ -2179,9 +2186,11 @@ a:hover {
   .menu-toggle {
     display: block;
     border-radius: 100px;
-    padding: 0px 20px;
+    padding: 0px 35px;
     background-color: #00bff3;
-    color: #fff; }
+    color: #fff;
+    height: 46px;
+    margin-top: 20px; }
     .menu-toggle:hover {
       background-color: #00bff3; }
     .menu-toggle:focus {
@@ -2198,7 +2207,7 @@ a:hover {
 
   .menu-toggle {
     line-height: 1.9;
-    margin-top: 10px;
+    margin-top: 35px;
     margin-bottom: 10px;
     padding: 0 12px;
     width: 25%;
@@ -2579,6 +2588,9 @@ a:hover {
   .section-contact__right {
     width: 100%; } }
 @media (max-width: 574px) {
+  .section--contact:before {
+    width: 0; }
+
   .section-contact__left h2 {
     font-size: 28px;
     font-size: 1.75rem;
@@ -3029,7 +3041,7 @@ a:hover {
   margin-bottom: 24px;
   position: relative;
   border-radius: 5px;
-  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
   min-height: 200px;
   transition: all 0.3s; }
   .archive-post .image {
@@ -3058,9 +3070,7 @@ a:hover {
 
 .post-info {
   padding-left: 20px;
-  padding-right: 20px;
-  border: 1px solid #ebebeb;
-  border-top: none; }
+  padding-right: 20px; }
   .post-info .post-info-name {
     margin-bottom: 5px;
     word-wrap: break-word;
@@ -3072,7 +3082,8 @@ a:hover {
     .post-info .post-info-name a {
       font-weight: 300;
       text-transform: uppercase;
-      color: #000; }
+      color: #000;
+      letter-spacing: 0.05em; }
       .post-info .post-info-name a:hover {
         text-decoration: none;
         color: #00bff3; }
@@ -3084,7 +3095,8 @@ a:hover {
     font-weight: 400;
     font-size: 11px;
     font-size: 0.6875rem;
-    margin-left: 17px; }
+    margin-left: 17px;
+    letter-spacing: 0.05em; }
     .post-info .byline a,
     .post-info .posted-on a {
       color: #a3a3a3; }
@@ -3100,7 +3112,8 @@ a:hover {
     font-weight: 400;
     font-size: 14px;
     font-size: 0.875rem;
-    margin-bottom: 75px;
+    padding-bottom: 75px;
+    margin-bottom: 0;
     word-wrap: break-word;
     color: rgba(0, 0, 0, 0.8); }
   .post-info .post-continue {
@@ -3113,7 +3126,8 @@ a:hover {
     font-weight: 400;
     font-size: 12px;
     font-size: 0.75rem;
-    color: #00bff3; }
+    color: #00bff3;
+    letter-spacing: 0.05em; }
     .post-info .post-continue:hover {
       text-decoration: none;
       color: #fff;
