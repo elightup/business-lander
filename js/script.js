@@ -57,6 +57,7 @@ jQuery( function ( $ ) {
 			}
 			if ( $window.width() < 992 ) {
 				$mainMenu.hide();
+				$mobileMenu.show();
 			}
 		} );
 	}
