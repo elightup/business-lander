@@ -38,10 +38,10 @@ jQuery( function ( $ ) {
 	}
 
 	function hideMobileMenuOnDesktops() {
-
+	if ( $window.width() > 400 ) {
 		$window.on( 'resize', function () {
 			if ( $window.width() > 992 ) {
-				/*$mobileMenu.hide();*/
+				$mobileMenu.hide();
 				$mainMenu.show();
 				$site_navigation.removeClass( 'mobile-navigation' );
 				$site_navigation.addClass( 'main-navigation' );
@@ -52,8 +52,8 @@ jQuery( function ( $ ) {
 			if ( $window.width() < 992 ) {
 				$mainMenu.hide();
 			}
-
 		} );
+	}
 
 	}
 
