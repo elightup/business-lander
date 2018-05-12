@@ -16,6 +16,7 @@ jQuery( function ( $ ) {
 	 		$primary_menu.addClass( 'mobile-menu' );
 	 		$primary_menu.addClass( 'clear-fix' );
 	 		$( '.mobile-navigation' ).toggle();
+
 	 	} );
 	 }
 
@@ -38,7 +39,12 @@ jQuery( function ( $ ) {
 	}
 
 	function hideMobileMenuOnDesktops() {
-	if ( $window.width() > 400 ) {
+
+
+		if ( $window.width() < 992 ) {
+			$mainMenu.hide();
+		}
+
 		$window.on( 'resize', function () {
 			if ( $window.width() > 992 ) {
 				$mobileMenu.hide();
@@ -55,7 +61,7 @@ jQuery( function ( $ ) {
 		} );
 	}
 
-	}
+
 
 	/**
 	 * Homepage testimonial slider.
