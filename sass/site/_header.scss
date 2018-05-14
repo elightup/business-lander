@@ -146,7 +146,12 @@
 	}
 }
 @media(max-width: 991px) {
-
+	.site-header {
+		.header-content > .container {
+			padding-top: 35px;
+			padding-bottom: 35px;
+		}
+	}
 	.site-address {
 		display: none;
 	}
