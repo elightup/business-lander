@@ -56,7 +56,7 @@ function business_lander_import_files() {
 
 	return array(
 		array(
-			'import_file_name'             => esc_html__( 'Demo 1', 'business_lander' ),
+			'import_file_name'             => esc_html__( 'Demo 1', 'business-lander' ),
 			'import_file_url'              => $business_lander_demo_url . 'content.xml',
 			'import_widget_file_url'       => $business_lander_demo_url . 'widgets.wie',
 			'local_import_customizer_file' => $business_lander_demo_url . 'theme-options.dat',

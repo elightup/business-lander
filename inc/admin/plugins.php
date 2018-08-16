@@ -2,7 +2,7 @@
 /**
  * Add required and recommended plugins.
  *
- * @package Business Lander
+ * @package Digimag
  */
 
 add_action( 'tgmpa_register', 'business_lander_register_required_plugins' );
@@ -13,7 +13,21 @@ add_action( 'tgmpa_register', 'business_lander_register_required_plugins' );
  * @since  1.0
  */
 function business_lander_register_required_plugins() {
-	$plugins = array(
+	$plugins = business_lander_required_plugins();
+
+	$config = array(
+		'id'          => 'business-lander',
+		'has_notices' => false,
+	);
+
+	tgmpa( $plugins, $config );
+}
+
+/**
+ * List of required plugins
+ */
+function business_lander_required_plugins() {
+	return array(
 		array(
 			'name'     => esc_html__( 'Jetpack', 'business-lander' ),
 			'slug'     => 'jetpack',
@@ -32,10 +46,4 @@ function business_lander_register_required_plugins() {
 			'slug' => 'ultimate-colors',
 		),
 	);
-
-	$config = array(
-		'id' => 'business-lander',
-	);
-
-	tgmpa( $plugins, $config );
 }
