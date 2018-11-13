@@ -20,3 +20,46 @@
 		color: rgba(0,0,0,0.5);
 	}
 }
+
+.post-type-archive-jetpack-portfolio {
+	.page-header {
+		background: url(images/header.jpg) no-repeat center;
+		margin-bottom: 80px;
+		.page-title {
+			color: $color__white;
+			font-weight: 700;
+			text-transform: uppercase;
+			z-index: 1;
+		}
+		.archive-description {
+			color: $color__white;
+			p {
+				color: $color__white;
+			}
+		}
+		&:before {
+			content: "";
+			background: rgba(0,0,0,.2);
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+	}
+	.col-2 .blog-article {
+		width: 32%;
+		@media (max-width: 991px) {
+			width: 49%;
+		}
+		@media (max-width: 574px) {
+			width: 100%;
+		}
+	}
+	.site-content main {
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+
