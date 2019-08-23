@@ -45,5 +45,9 @@ function business_lander_required_plugins() {
 			'name' => esc_html__( 'Ultimate Colors', 'business-lander' ),
 			'slug' => 'ultimate-colors',
 		),
+		array(
+			'name' => esc_html__( 'Slim SEO', 'greentech' ),
+			'slug' => 'slim-seo',
+		),
 	);
 }

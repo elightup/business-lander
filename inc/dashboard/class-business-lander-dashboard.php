@@ -49,7 +49,7 @@ class Business_Lander_Dashboard {
 		$this->utm      = '?utm_source=WordPress&utm_medium=link&utm_campaign=' . $this->slug;
 
 		add_action( 'admin_menu', array( $this, 'add_menu' ) );
-		add_action( 'admin_init', array( $this, 'redirect' ) );
+		add_action( 'admin_notices', array( $this, 'notice' ) );
 		add_filter( 'wpforms_shareasale_id', array( $this, 'wpforms_shareasale_id' ) );
 	}
 
@@ -82,10 +82,6 @@ class Business_Lander_Dashboard {
 							<?php include get_template_directory() . '/inc/dashboard/sections/tabs.php'; ?>
 							<?php include get_template_directory() . '/inc/dashboard/sections/getting-started.php'; ?>
 							<?php include get_template_directory() . '/inc/dashboard/sections/actions.php'; ?>
-							<?php include get_template_directory() . '/inc/dashboard/sections/recommendation.php'; ?>
-						</div>
-						<div id="postbox-container-1" class="postbox-container">
-							<?php include get_template_directory() . '/inc/dashboard/sections/newsletter.php'; ?>
 						</div>
 					</div>
 				</div>
@@ -114,17 +110,6 @@ class Business_Lander_Dashboard {
 	}
 
 	/**
-	 * Redirect to dashboard page after theme activation.
-	 */
-	public function redirect() {
-		global $pagenow;
-		if ( is_admin() && isset( $_GET['activated'] ) && 'themes.php' === $pagenow ) {
-			wp_safe_redirect( admin_url( "themes.php?page={$this->slug}" ) );
-			exit;
-		}
-	}
-
-	/**
 	 * Recommended Plugin Action.
 	 */
 	public function recommended_plugins_action() {
@@ -134,7 +119,7 @@ class Business_Lander_Dashboard {
 		$action         = array();
 
 		if ( $plugins_number > 1 ) {
-			$action['title'] = esc_html__( 'Install The Required Plugins', 'business-lander' );
+			$action['title'] = esc_html__( 'Install Recommended Plugins', 'business-lander' );
 			/* translators: theme name. */
 			$action['body']  = sprintf( esc_html__( '%s needs some plugins to working properly. Please install and activate our required plugins.', 'business-lander' ), $this->theme->name );
 			$action['button_text'] = esc_html__( 'Install Plugins', 'business-lander' );
@@ -189,5 +174,32 @@ class Business_Lander_Dashboard {
 		update_option( 'wpforms_shareasale_id', $id );
 
 		return $id;
+	}
+
+	/**
+	 * Add a notice after theme activation.
+	 */
+	public function notice() {
+		global $pagenow;
+		if ( is_admin() && isset( $_GET['activated'] ) && 'themes.php' === $pagenow ) {
+			?>
+			<div class="updated notice notice-success is-dismissible">
+				<p>
+					<?php
+					// Translators: theme name and welcome page.
+					echo wp_kses_post( sprintf( __( 'Welcome! Thank you for choosing %1$s. To get started, visit our <a href="%2$s">welcome page</a>.', 'business-lander' ), $this->theme->name, esc_url( admin_url( 'themes.php?page=' . $this->slug ) ) ) );
+					?>
+				</p>
+				<p>
+					<a class="button" href="<?php echo esc_url( admin_url( 'themes.php?page=' . $this->slug ) ); ?>">
+						<?php
+						// Translators: theme name.
+						echo esc_html( sprintf( __( 'Get started with %s', 'business-lander' ), $this->theme->name ) );
+						?>
+					</a>
+				</p>
+			</div>
+			<?php
+		}
 	}
 }

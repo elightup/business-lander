@@ -27,6 +27,4 @@
 
 <p class="about-buttons">
 	<a target="_blank" class="button" href="<?php echo esc_url( 'https://gretathemes.com/support/' . $this->utm ); ?>"><?php esc_html_e( 'Support', 'business-lander' ); ?></a>
-	<a target="_blank" class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.facebook.com/gretathemes/"><span class="dashicons dashicons-facebook-alt"></span><?php esc_html_e( ' Share', 'business-lander' ); ?></a>
-	<a target="_blank" class="button" href="https://twitter.com/home?status=Free%20and%20Premium%20WordPress%20Themes%20https%3A//gretathemes.com/%20via%20%40gretathemes"><span class="dashicons dashicons-twitter"></span><?php esc_html_e( ' Tweet', 'business-lander' ); ?></a>
 </p>

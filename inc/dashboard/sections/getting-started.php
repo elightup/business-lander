@@ -37,5 +37,4 @@
 			<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/screenshot.png" alt="<?php esc_attr_e( 'screenshot', 'business-lander' ); ?>">
 		</div>
 	</div>
-	<?php include get_stylesheet_directory() . '/inc/dashboard/sections/recommended-themes.php'; ?>
 </div>
