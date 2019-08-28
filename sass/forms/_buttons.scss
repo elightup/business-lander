@@ -70,7 +70,7 @@ input[type="submit"] {
 		background: $color__text-main;
 		color: $color__white;
 	}
-		&.has-pale-pink-background-color {
+	&.has-pale-pink-background-color {
 		border: 2px solid #f78da7;
 		&:hover {
 			background: #fff;
@@ -80,70 +80,70 @@ input[type="submit"] {
 	&.has-vivid-red-background-color {
 		border: 2px solid #cf2e2e;
 		&:hover {
-			background: #fff !important;
+			background: #fff;
 			color: #cf2e2e;
 		}
 	}
 	&.has-luminous-vivid-orange-background-color {
 		border: 2px solid #ff6900;
 		&:hover {
-			background: #fff !important;
+			background: #fff;
 			color: #ff6900;
 		}
 	}
 	&.has-luminous-vivid-amber-background-color {
 		border: 2px solid #fcb900;
 		&:hover {
-			background: #fff !important;
+			background: #fff;
 			color: #fcb900;
 		}
 	}
 	&.has-light-green-cyan-background-color {
 		border: 2px solid #7bdcb5;
 		&:hover {
-			background: #fff !important;
+			background: #fff;
 			color: #7bdcb5;
 		}
 	}
 	&.has-vivid-green-cyan-background-color {
 		border: 2px solid #00d084;
 		&:hover {
-			background: #fff !important;
+			background: #fff;
 			color: #00d084;
 		}
 	}
 	&.has-pale-cyan-blue-background-color {
 		border: 2px solid #8ed1fc;
 		&:hover {
-			background: #fff !important;
+			background: #fff;
 			color: #8ed1fc;
 		}
 	}
 	&.has-vivid-cyan-blue-background-color {
 		border: 2px solid #0693e3;
 		&:hover {
-			background: #fff !important;
+			background: #fff;
 			color: #0693e3;
 		}
 	}
 	&.has-very-light-gray-background-color {
 		border: 2px solid #eee;
 		&:hover {
-			background: #fff !important;
+			background: #fff;
 			color: #eee;
 		}
 	}
 	&.has-cyan-bluish-gray-background-color {
 		border: 2px solid #abb8c3;
 		&:hover {
-			background: #fff !important;
+			background: #fff;
 			color: #abb8c3;
 		}
 	}
 	&.has-very-dark-gray-background-color {
 		border: 2px solid #313131;
 		&:hover {
-			background: #fff !important;
+			background: #fff;
 			color: #313131;
 		}
 	}
