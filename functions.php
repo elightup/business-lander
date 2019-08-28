@@ -185,7 +185,7 @@ function business_lander_fonts_url() {
  */
 function business_lander_style_editor_gutenberg() {
 	// Load the theme styles within Gutenberg.
-	wp_enqueue_style( 'shoutout-fonts', business_lander_fonts_url() );
+	wp_enqueue_style( 'business-lander-fonts', business_lander_fonts_url() );
 	wp_enqueue_style( 'style-editor', get_theme_file_uri( '/style-editor.css' ), false );
 }
 add_action( 'enqueue_block_editor_assets', 'business_lander_style_editor_gutenberg' );
