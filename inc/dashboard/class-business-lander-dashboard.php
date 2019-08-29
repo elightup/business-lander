@@ -71,7 +71,6 @@ class Business_Lander_Dashboard {
 	 * Show dashboard page.
 	 */
 	public function render() {
-		add_action( 'admin_footer_text', array( $this, 'footer_text' ) );
 		?>
 		<div class="wrap">
 			<div id="poststuff">
@@ -98,15 +97,6 @@ class Business_Lander_Dashboard {
 		wp_enqueue_style( "{$this->slug}-dashboard-style", get_template_directory_uri() . '/inc/dashboard/css/dashboard-style.css' );
 		wp_enqueue_script( 'slick', get_template_directory_uri() . '/inc/dashboard/js/slick.js', array( 'jquery' ), '1.8.0', true );
 		wp_enqueue_script( "{$this->slug}-dashboard-script", get_template_directory_uri() . '/inc/dashboard/js/script.js', array( 'slick' ), '', true );
-	}
-
-	/**
-	 *
-	 * Change footer text in admin
-	 */
-	public function footer_text() {
-		// Translators: theme name and theme slug.
-		echo wp_kses_post( sprintf( __( 'Please rate <strong>%1$s</strong> <a href="https://wordpress.org/support/theme/%2$s/reviews/?filter=5" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href="https://wordpress.org/support/theme/%2$s/reviews/?filter=5" target="_blank">WordPress.org</a> to help us spread the word. Thank you from GretaThemes!', 'business-lander' ), $this->theme->name, $this->lite_slug ) );
 	}
 
 	/**
