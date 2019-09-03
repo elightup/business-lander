@@ -15,9 +15,14 @@
 .entry-summary {
 	margin: 1.5em 0 0;
 }
-.post-content.post-content p {
-	color: rgba(0,0,0,0.7);
-	margin-bottom: 35px;
+.post-content.post-content {
+	.wp-block-pullquote p {
+		margin: 0;
+	}
+	p {
+		color: rgba(0,0,0,0.7);
+		margin-bottom: 35px;
+	}
 }
 
 .page-links {

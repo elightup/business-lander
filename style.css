@@ -374,31 +374,57 @@ blockquote cite {
 	color: #00bff3;
 }
 
+.wp-block-pullquote p {
+	margin-bottom: 0;
+}
+
 .wp-block-pullquote.aligncenter blockquote,
 .wp-block-pullquote.aligncenter blockquote cite {
 	text-align: center;
 }
 
-.wp-block-pullquote.alignleft p {
+.wp-block-pullquote.alignleft p, .wp-block-pullquote.alignright p {
 	font-size: 28px;
 }
 
 .wp-block-pullquote.alignleft blockquote,
-.wp-block-pullquote.alignleft blockquote cite {
+.wp-block-pullquote.alignleft blockquote cite, .wp-block-pullquote.alignright blockquote,
+.wp-block-pullquote.alignright blockquote cite {
 	text-align: left;
 }
 
-.wp-block-pullquote.alignright {
-	margin-right: 2em;
+.wp-block-pullquote blockquote:before {
+	display: none;
 }
 
-.wp-block-pullquote.alignright p {
-	font-size: 28px;
+blockquote.wp-block-pullquote:before {
+	display: none;
 }
 
-.wp-block-pullquote.alignright blockquote,
-.wp-block-pullquote.alignright blockquote cite {
-	text-align: right;
+blockquote.wp-block-pullquote.alignleft, blockquote.wp-block-pullquote.alignright {
+	text-align: left;
+	margin: 1em 0;
+}
+
+blockquote.wp-block-pullquote.alignleft {
+	margin-right: 1.5em;
+}
+
+blockquote.wp-block-pullquote.alignright {
+	margin-left: 1.5em;
+}
+
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+	padding: 0;
+}
+
+.wp-block-image.alignleft {
+	margin-right: 1em;
+}
+
+.wp-block-image.alignright {
+	margin-left: 1em;
 }
 
 address {
@@ -715,6 +741,7 @@ input[type="submit"]:focus {
 	border-color: #000000;
 	background: #000000;
 	color: #fff;
+	text-decoration: none;
 }
 
 .wp-block-button__link.has-pale-pink-background-color {
@@ -2157,6 +2184,10 @@ span.is-toggled {
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+}
+
+.post-content.post-content .wp-block-pullquote p {
+	margin: 0;
 }
 
 .post-content.post-content p {

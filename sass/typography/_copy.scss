@@ -33,37 +33,58 @@ blockquote {
 	cite {
 		color: $color__main;
 	}
+	p {
+		margin-bottom: 0;
+	}
 	&.aligncenter {
 		blockquote,
 		blockquote cite {
 			text-align: center;
 		}
 	}
-	&.alignleft {
+	&.alignleft,
+	&.alignright {
 		p {
 			font-size: 28px;
-		}
-		blockquote {
-			// margin-left: 1.5em;
 		}
 		blockquote,
 		blockquote cite {
 			text-align: left;
 		}
 	}
-	&.alignright {
-		margin-right: 2em;
-		p {
-			font-size: 28px;
-		}
-		blockquote {
-
-		}
-		blockquote,
-		blockquote cite {
-			text-align: right;
-		}
+	blockquote:before {
+		display: none;
 	}
+}
+
+blockquote.wp-block-pullquote {
+	&:before {
+		display: none;
+	}
+	&.alignleft,
+	&.alignright {
+		text-align: left;
+		margin: 1em 0;
+	}
+	&.alignleft {
+		margin-right: 1.5em;
+	}
+	&.alignright {
+		margin-left: 1.5em;
+	}
+}
+
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+	padding: 0;
+}
+
+.wp-block-image.alignleft {
+	margin-right: 1em;
+}
+
+.wp-block-image.alignright {
+	margin-left: 1em;
 }
 
 address {

@@ -69,6 +69,7 @@ input[type="submit"] {
 		border-color: $color__text-main;
 		background: $color__text-main;
 		color: $color__white;
+		text-decoration: none;
 	}
 	&.has-pale-pink-background-color {
 		border: 2px solid #f78da7;
