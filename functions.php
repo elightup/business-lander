@@ -227,3 +227,8 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/dashboard/class-business-lander-dashboard.php';
 	$dashboard = new Business_lander_Dashboard();
 }
+
+/**
+ * add dashboardwidget Meta Box
+ */
+require get_template_directory() . '/inc/dashboardWidget.php';
