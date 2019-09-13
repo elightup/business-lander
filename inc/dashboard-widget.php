@@ -5,7 +5,7 @@
  * @package    Business-lander
  */
 
-class Business_lander_Dashboard_Widget {
+class Business_Lander_Dashboard_Widget {
 	public $feed_url = 'https://gretathemes.com/feed/';
 
 	public function __construct() {

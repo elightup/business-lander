@@ -232,4 +232,4 @@ if ( is_admin() ) {
  * Add dashboard widget.
  */
 require get_template_directory() . '/inc/dashboard-widget.php';
-new Business_lander_Dashboard_Widget();
+new Business_Lander_Dashboard_Widget();
