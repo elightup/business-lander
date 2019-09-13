@@ -229,6 +229,7 @@ if ( is_admin() ) {
 }
 
 /**
- * add dashboardwidget Meta Box
+ * Add dashboard widget.
  */
-require get_template_directory() . '/inc/dashboardWidget.php';
+require get_template_directory() . '/inc/dashboard-widget.php';
+new Business_lander_Dashboard_Widget();
