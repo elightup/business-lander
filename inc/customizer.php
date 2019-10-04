@@ -29,7 +29,7 @@ function business_lander_customize_register( $wp_customize ) {
 	/**
 	 * Documentation section.
 	 */
-	$wp_customize->add_section( 
+	$wp_customize->add_section(
 		new Businessld_Customize_Link_Control(
 			$wp_customize,
 			'link',
@@ -37,7 +37,7 @@ function business_lander_customize_register( $wp_customize ) {
 				'label'      => esc_html( 'Need help setting up your site?', 'business-lander' ),
 				'priority'   => 0,
 				'type'       => 'businessld-link',
-				'url'        => esc_url( 'https://gretathemes.com/docs/business-lander/', 'business-lander' ),
+				'url'        => esc_url( 'https://gretathemes.com/docs/business-lander/?utm_source=WordPress&utm_medium=link&utm_campaign=business-lander', 'business-lander' ),
 			)
 		)
 	);
