@@ -13,7 +13,6 @@
 function business_lander_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-	$wp_customize->register_control_type( 'Businessld_Customize_Link_Control' );
 
 	// Remove header image section.
 	$wp_customize->remove_section( 'header_image' );
@@ -25,22 +24,6 @@ function business_lander_customize_register( $wp_customize ) {
 	$wp_customize->add_panel( 'business-lander', array(
 		'title' => esc_html__( 'Theme Options', 'business-lander' ),
 	) );
-
-	/**
-	 * Documentation section.
-	 */
-	$wp_customize->add_section(
-		new Businessld_Customize_Link_Control(
-			$wp_customize,
-			'link',
-			array(
-				'label'      => esc_html( 'Need help setting up your site?', 'business-lander' ),
-				'priority'   => 0,
-				'type'       => 'businessld-link',
-				'url'        => esc_url( 'https://gretathemes.com/docs/business-lander/?utm_source=WordPress&utm_medium=link&utm_campaign=business-lander', 'business-lander' ),
-			)
-		)
-	);
 
 	/**
 	 * Contact Info.

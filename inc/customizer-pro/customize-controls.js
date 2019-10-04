@@ -1,5 +1,7 @@
-( function( $, api ) {
-	api.sectionConstructor['businessld-link'] = api.Section.extend( {
+( function( api ) {
+
+	// Extends our custom "gt-go-pro" section.
+	api.sectionConstructor['gt-go-pro'] = api.Section.extend( {
 
 		// No events for this type of section.
 		attachEvents: function () {},
@@ -9,4 +11,5 @@
 			return true;
 		}
 	} );
-} )( jQuery, wp.customize );
+
+} )( wp.customize );

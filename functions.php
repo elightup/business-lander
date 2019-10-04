@@ -235,10 +235,8 @@ require get_template_directory() . '/inc/dashboard-widget.php';
 new Business_Lander_Dashboard_Widget();
 
 /**
- * Add link documentation customize.
+ * Customizer Pro.
  */
-function bunsinessld_link_scripts() {
-	wp_enqueue_script( 'businessld-link', get_template_directory_uri() . '/js/link.js', array(), '', true );
-	wp_enqueue_style( 'customizer-style', get_template_directory_uri() .'/inc/customize.css','',true );
-}
-add_action( 'customize_controls_enqueue_scripts', 'bunsinessld_link_scripts' );
+require get_template_directory() . '/inc/customizer-pro/class-business-lander-customizer-pro.php';
+$customizer_pro = new Business_Lander_Customizer_Pro();
+$customizer_pro->init();

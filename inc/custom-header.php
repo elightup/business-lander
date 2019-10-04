@@ -41,39 +41,3 @@ function business_lander_header_style() {
 		<?php
 	endif;
 }
-
-/**
- * Add custom link documentation
- */
-if ( class_exists( 'WP_Customize_Section' ) ) {
-	class Businessld_Customize_Link_Control extends WP_Customize_Section {
-		/**
-		 * Control's type.
-		 *
-		 * @var string
-		 */
-		public $type  = 'businessld-link';
-		public $url   = '';
-		public $label = '';
-
-		public function json() {
-			$json          = parent::json();
-			$json['label'] = $this->label;
-			$json['url']   = esc_url( $this->url );
-
-			return $json;
-
-		}
-
-		/**
-		 * Render the control's content.
-		 */
-		public function render_template() {
-			?>
-			<li id="accordion-section-link" class="gt-link-accordion-section control-section-default link-doc accordion-section">
-				<h3 class="accordion-section-title"><a href="{{{ data.url }}}" target="_blank">{{ data.label }}</a></h3>
-			</li>
-			<?php
-		}
-	}
-}
