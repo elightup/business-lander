@@ -4,7 +4,7 @@ Theme URI: https://demo.gretathemes.com/business-lander/
 Author: GretaThemes
 Author URI: https://gretathemes.com
 Description: A beautiful bussiness theme for agency, company and personal business. Business Lander is versatile, flexible, powerful and easy to use. Built on the latest technology of WordPress, Business Lander is lightweight, fast and optimized for all mobile phones.
-Version: 1.1.1
+Version: 1.1.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: business-lander
@@ -590,6 +590,7 @@ th, td {
 
 .slick-slider .slick-track,
 .slick-slider .slick-list {
+	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
 }
 
@@ -983,7 +984,8 @@ a:hover, a:active {
 	display: block;
 	visibility: visible;
 	opacity: 1;
-	transform: translateY(0) !important;
+	-webkit-transform: translateY(0) !important;
+	        transform: translateY(0) !important;
 	-ms-transform: translateY(0);
 	z-index: 10;
 }
@@ -995,7 +997,8 @@ a:hover, a:active {
 	left: 0;
 	background: #fff;
 	box-shadow: -6px 6px 20px rgba(0, 0, 0, 0.15);
-	transform: translateY(10px);
+	-webkit-transform: translateY(10px);
+	        transform: translateY(10px);
 	opacity: 0;
 	visibility: hidden;
 	transition: all 0.3s;
@@ -1321,7 +1324,8 @@ a:hover, a:active {
 }
 
 span.is-toggled {
-	transform: scaleY(-1);
+	-webkit-transform: scaleY(-1);
+	        transform: scaleY(-1);
 }
 
 @media (max-width: 991px) {
@@ -3332,7 +3336,8 @@ a:hover {
 	z-index: 99;
 	background: #00bff3;
 	border: 1px solid #00bff3;
-	transform: translate(0, 0);
+	-webkit-transform: translate(0, 0);
+	        transform: translate(0, 0);
 	transition: all 0.3s ease;
 }
 
@@ -3356,7 +3361,8 @@ a:hover {
 }
 
 .scroll-to-top.hidden {
-	transform: translate(0, 100px);
+	-webkit-transform: translate(0, 100px);
+	        transform: translate(0, 100px);
 }
 
 .jetpack-social-navigation .menu a:before {
@@ -3415,7 +3421,8 @@ a:hover {
 }
 
 .section-service__item:hover {
-	transform: translate3d(0, -6px, 0);
+	-webkit-transform: translate3d(0, -6px, 0);
+	        transform: translate3d(0, -6px, 0);
 	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 10px 10px rgba(0, 0, 0, 0.2);
 	transition: all 0.3s;
 }
@@ -4251,7 +4258,8 @@ a:hover {
 }
 
 .archive-post:hover {
-	transform: translate3d(0, -6px, 0);
+	-webkit-transform: translate3d(0, -6px, 0);
+	        transform: translate3d(0, -6px, 0);
 	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 10px 10px rgba(0, 0, 0, 0.2);
 	transition: all 0.3s;
 }
