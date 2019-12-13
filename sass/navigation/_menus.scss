@@ -14,7 +14,7 @@
 		flex-flow: row wrap;
 		li {
 			&:hover > ul,
-			&:focus > ul {
+			&.focus > ul {
 				display: block;
 				visibility: visible;
 			    opacity: 1;
@@ -58,8 +58,7 @@
 				line-height: 1.5;
 				padding: 12px 15px;
 			}
-			:hover > a,
-			.focus > a {
+			:hover > a {
 				background: $color__white;
 				color: $color__link-hover;
 			}

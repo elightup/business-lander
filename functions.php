@@ -141,7 +141,7 @@ function business_lander_scripts() {
 	wp_enqueue_style( 'business-lander-fonts', business_lander_fonts_url() );
 	wp_enqueue_style( 'business-lander-style', get_stylesheet_uri() );
 
-	/*wp_enqueue_script( 'business-lander-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );*/
+	wp_enqueue_script( 'business-lander-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'business-lander-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -240,3 +240,12 @@ new Business_Lander_Dashboard_Widget();
 require get_template_directory() . '/inc/customizer-pro/class-business-lander-customizer-pro.php';
 $customizer_pro = new Business_Lander_Customizer_Pro();
 $customizer_pro->init();
+
+if ( ! function_exists( 'wp_body_open' ) ) {
+	/**
+	 * Shim for wp_body_open, ensuring backwards compatibility with versions of WordPress older than 5.2.
+	 */
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+}
