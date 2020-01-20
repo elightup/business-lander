@@ -34,10 +34,6 @@ function business_lander_required_plugins() {
 			'required' => true,
 		),
 		array(
-			'name' => esc_html__( 'One click demo import', 'business-lander' ),
-			'slug' => 'one-click-demo-import',
-		),
-		array(
 			'name' => esc_html__( 'Ultimate Fonts', 'business-lander' ),
 			'slug' => 'ultimate-fonts',
 		),
