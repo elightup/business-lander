@@ -52,7 +52,7 @@ $services_image = get_the_post_thumbnail( get_the_ID() );
 						<div class="section-service__info">
 							<h3 class="section-service__title"><a href="<?php the_permalink(); ?>" alt="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 							<?php the_excerpt(); ?>
-							<a class="section-service__continue" href="<?php the_permalink(); ?>"><?php echo esc_html( 'learn more' ); ?></a>
+							<a class="section-service__continue" href="<?php the_permalink(); ?>"><?php echo esc_html__( 'learn more', 'business-lander' ); ?></a>
 						</div>
 					<?php else : ?>
 						<h3 class="section-blog__title"><a href="<?php the_permalink(); ?>" alt="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>

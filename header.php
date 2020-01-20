@@ -61,7 +61,7 @@
 							if ( $description || is_customize_preview() ) :
 							?>
 								<p class="site-description">
-									<?php echo $description; /* WPCS: xss ok. */ ?>
+									<?php echo esc_html( $description ); ?>
 								</p>
 							<?php endif; ?>
 					</div>
@@ -102,7 +102,7 @@ if ( ! has_post_thumbnail() ) {
 }
 ?>
 <?php if ( is_singular() && ! is_front_page() ) : ?>
-	<div class="page-header <?php echo esc_html( $no_thumbnail ); ?>">
+	<div class="page-header <?php echo esc_attr( $no_thumbnail ); ?>">
 		<?php
 		if ( ! has_post_thumbnail() ) {
 			the_title( '<div class="title"><h2 class="page-title title-black">', '</h2></div>' );

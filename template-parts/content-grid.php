@@ -26,7 +26,7 @@
 			business_lander_posted_on();
 			the_excerpt();
 			?>
-			<a class="post-continue" href="<?php the_permalink(); ?>"><?php echo esc_html( 'Continue Reading' ); ?></a>
+			<a class="post-continue" href="<?php the_permalink(); ?>"><?php echo esc_html__( 'Continue Reading', 'business-lander' ); ?></a>
 		</div>
 	</article>
 </div>
