@@ -104,5 +104,5 @@ jQuery( function ( $ ) {
 	toggleCollapse();
 	menuClick();
 	hideMobileMenuOnDesktops();
-	scrollToTop()
+	scrollToTop();
 } );
