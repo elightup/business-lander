@@ -65,14 +65,14 @@ function business_lander_entry_footer() {
 		$categories_list = get_the_category_list( esc_html__( ', ', 'business-lander' ) );
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
-			printf( '<span class="post-category">' . esc_html__( '%1$s', 'business-lander' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="post-category">%1$s</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'business-lander' ) );
 		if ( $tags_list ) {
 			/* translators: 1: list of tags. */
-			printf( '<span class="post-tag">' . esc_html__( '%1$s', 'business-lander' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="post-tag">%1$s</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 }

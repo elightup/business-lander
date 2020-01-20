@@ -59,7 +59,7 @@ $services_image = get_the_post_thumbnail( get_the_ID() );
 						<?php the_excerpt(); ?>
 					<?php endif; ?>
 				</div>
-			<?php endwhile; ?>
+			<?php endwhile; wp_reset_postdata(); ?>
 		</div>
 	</div>
 </section>

@@ -5,9 +5,8 @@
  * @package business-lander
  */
 
-the_post();
-
-$image = get_the_post_thumbnail_url( 'full' );
+$front_page_id = get_option( 'page_on_front' );
+$image         = get_the_post_thumbnail_url( $front_page_id, 'full' );
 if ( $image ) {
 	$image = ' style="background-image: url(' . esc_url( $image ) . ')"';
 }
@@ -17,9 +16,9 @@ if ( $image ) {
 		<div class="section-contact__left">
 			<div class="contact__left">
 				<div class="title">
-					<h2><?php the_title(); ?></h2>
+					<h2><?php echo esc_html( get_the_title( $front_page_id ) ); ?></h2>
 				</div>
-				<?php the_content(); ?>
+				<?php echo apply_filters( 'the_content', get_post_field( 'post_content', $front_page_id ) ); ?>
 			</div>
 		</div>
 		<div class="section-contact__right">
@@ -27,13 +26,10 @@ if ( $image ) {
 				<?php
 				$contact_page = get_theme_mod( 'contact_page' );
 				if ( $contact_page ) {
-					$post = get_post( $contact_page );
-					setup_postdata( $post );
 						?>
-						<h3 class="title"><?php the_title(); ?></h3>
-						<?php the_content(); ?>
+						<h3 class="title"><?php echo esc_html( get_the_title( $contact_page ) ); ?></h3>
+						<?php echo apply_filters( 'the_content', get_post_field( 'post_content', $contact_page ) ); ?>
 					<?php
-					wp_reset_postdata();
 				}
 				?>
 			</div>

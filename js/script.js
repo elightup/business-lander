@@ -8,22 +8,22 @@ jQuery( function ( $ ) {
 	/**
 	 * Collapse
 	 */
-	 function toggleCollapse() {
-	 	$( '.menu-toggle' ).on( 'click', function () {
-	 		$site_navigation.removeClass( 'main-navigation' );
-	 		$site_navigation.addClass( 'mobile-navigation' );
-	 		$primary_menu.removeClass( 'menu' );
-	 		$primary_menu.addClass( 'mobile-menu' );
-	 		$primary_menu.addClass( 'clear-fix' );
-	 		$( '.mobile-navigation' ).toggle();
+	function toggleCollapse() {
+		$( '.menu-toggle' ).on( 'click', function () {
+			$site_navigation.removeClass( 'main-navigation' );
+			$site_navigation.addClass( 'mobile-navigation' );
+			$primary_menu.removeClass( 'menu' );
+			$primary_menu.addClass( 'mobile-menu' );
+			$primary_menu.addClass( 'clear-fix' );
+			$( '.mobile-navigation' ).toggle();
 
-	 	} );
-	 }
+		} );
+	}
 
 	/**
 	 * Site nav
 	 */
-	 function menuClick() {
+	function menuClick() {
 		//Add arrow icon to the li.
 		var $dropdownToggle = $( '<span class="dropToggle fas fa-caret-down"></span>' );
 		$primary_menu.find( 'li' ).has( 'ul' )
@@ -67,43 +67,42 @@ jQuery( function ( $ ) {
 	/**
 	 * Homepage testimonial slider.
 	 */
-	 function initTestimonialSlider() {
-	 	$( '.testimonial' ).slick( {
-	 		speed: 1000,
-	 		fade: true,
-	 		arrows: false,
-	 		dots: true,
-	 		slidesToShow: 1,
-	 		slidesToScroll: 1,
-	 		autoplay: true,
-	 		autoplaySpeed: 3000
-	 	} );
-	 }
+	function initTestimonialSlider() {
+		$( '.testimonial' ).slick( {
+			speed: 1000,
+			fade: true,
+			arrows: false,
+			dots: true,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 3000
+		} );
+	}
 
 	/**
 	 * Scroll to top
 	 */
-	 function scrollToTop() {
-	 	var $window = $( window ),
-	 	$button = $( '.scroll-to-top' );
-	 	$window.on( 'scroll', function () {
-	 		$button[$window.scrollTop() > 100 ? 'removeClass' : 'addClass']( 'hidden' );
-	 	} );
-	 	$button.on( 'click', function ( e ) {
-	 		e.preventDefault();
-	 		$( 'body, html' ).animate( {
-	 			scrollTop: 0
-	 		}, 500 );
-	 	} );
-	 }
+	function scrollToTop() {
+		var $window = $( window ),
+		$button = $( '.scroll-to-top' );
+		$window.on( 'scroll', function () {
+			$button[$window.scrollTop() > 100 ? 'removeClass' : 'addClass']( 'hidden' );
+		} );
+		$button.on( 'click', function ( e ) {
+			e.preventDefault();
+			$( 'body, html' ).animate( {
+				scrollTop: 0
+			}, 500 );
+		} );
+	}
 
-	 if ( $().slick ) {
-	 	initTestimonialSlider();
-	 }
+	if ( $().slick ) {
+		initTestimonialSlider();
+	}
 
-	 toggleCollapse();
-	 menuClick();
-	 hideMobileMenuOnDesktops();
-	 scrollToTop()
-	} );
-
+	toggleCollapse();
+	menuClick();
+	hideMobileMenuOnDesktops();
+	scrollToTop()
+} );
