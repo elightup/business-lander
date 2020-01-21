@@ -3,8 +3,8 @@ Contributors: GretaThemes
 Requires at least: WordPress 4.5
 Tested up to: WordPress 5.0
 Requires PHP: 5.2
-Stable tag: trunk
-Tags: blog, portfolio, education, grid-layout, right-sidebar, custom-menu, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, custom-logo
+Stable tag: 1.1.4
+Tags: blog, education, grid-layout, right-sidebar, two-columns, custom-menu, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, custom-logo
 
 == Description ==
 
@@ -67,6 +67,14 @@ Source:
 - https://www.pexels.com/photo/architectural-design-architecture-building-business-443383/
 - https://www.pexels.com/photo/building-glass-architecture-perspective-136413/
 - https://www.pexels.com/photo/low-angle-view-of-office-building-against-clear-sky-258160/
+- https://www.dreamstime.com/man-women-hand-shake-public-domain-image-free-104806311
+
+Images used in folder images:
+License: CC0 1.0 Universal (CC0 1.0)
+Source:
+- https://www.pexels.com/photo/modern-building-against-sky-323780/
+- https://www.pexels.com/photo/abstract-architectural-design-architecture-building-136419/
+- https://www.dreamstime.com/man-women-hand-shake-public-domain-image-free-104806311
 
 Dashboard Image, Copyright PurePNG
 License: CC0 1.0 Universal (CC0 1.0)
@@ -75,7 +83,3 @@ Source: https://purepng.com/photo/11167/clipart-paper-plane
 
 Business Lander is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-== Changelog ==
-
-See https://gretathemes.com/wordpress-themes/business-lander/

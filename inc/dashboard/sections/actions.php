@@ -27,10 +27,6 @@ $actions = $this->recommended_plugins_action();
 				</p>
 				<a class="button" href="<?php echo esc_url( admin_url( 'themes.php?page=jetpack#/dashboard' ) ); ?>"><?php esc_html_e( 'Connect To Jetpack', 'business-lander' ); ?></a>
 			<?php endif; ?>
-
-			<h3><?php esc_html_e( 'Import Demo Data (Optional)', 'business-lander' ); ?></h3>
-			<p><?php esc_html_e( 'Import demo data if you want your website exactly the same as our demo.', 'business-lander' ); ?></p>
-			<a class="button" href="<?php echo esc_url( admin_url( 'themes.php?page=pt-one-click-demo-import' ) ); ?>">Import Demo Now</a>
 		</div>
 	</div>
 </div>

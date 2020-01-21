@@ -36,7 +36,7 @@ function business_lander_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'header_address', array(
 		'default'           => wp_kses_post( __( '637 SW. Indian Summer Street West Orange, NJ 07052', 'business-lander' ) ),
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'sanitize_textarea_field',
 		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_control( 'header_address', array(
@@ -263,7 +263,7 @@ function business_lander_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'cta_button_url', array(
 		'label'   => esc_html__( 'Call To Action Button URL', 'business-lander' ),
 		'section' => 'homepage',
-		'type'    => 'text',
+		'type'    => 'url',
 	) );
 
 	// Call to action background.

@@ -2044,57 +2044,6 @@ span.is-toggled {
 	color: rgba(0, 0, 0, 0.5);
 }
 
-.post-type-archive-jetpack-portfolio .page-header {
-	background: url(images/header.jpg) no-repeat center;
-	margin-bottom: 80px;
-}
-
-.post-type-archive-jetpack-portfolio .page-header .page-title {
-	color: #fff;
-	font-weight: 700;
-	text-transform: uppercase;
-	z-index: 1;
-}
-
-.post-type-archive-jetpack-portfolio .page-header .archive-description {
-	color: #fff;
-}
-
-.post-type-archive-jetpack-portfolio .page-header .archive-description p {
-	color: #fff;
-}
-
-.post-type-archive-jetpack-portfolio .page-header:before {
-	content: "";
-	background: rgba(0, 0, 0, 0.2);
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-}
-
-.post-type-archive-jetpack-portfolio .col-2 .blog-article {
-	width: 32%;
-}
-
-@media (max-width: 991px) {
-	.post-type-archive-jetpack-portfolio .col-2 .blog-article {
-		width: 49%;
-	}
-}
-
-@media (max-width: 574px) {
-	.post-type-archive-jetpack-portfolio .col-2 .blog-article {
-		width: 100%;
-	}
-}
-
-.post-type-archive-jetpack-portfolio .site-content main {
-	width: 100%;
-	max-width: 100%;
-}
-
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
