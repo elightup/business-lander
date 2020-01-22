@@ -64,17 +64,17 @@ Customizer Pro, Copyright Justin Tadlock
 Images used in the screenshot:
 License: CC0 1.0 Universal (CC0 1.0)
 Source:
-- https://www.pexels.com/photo/architectural-design-architecture-building-business-443383/
-- https://www.pexels.com/photo/building-glass-architecture-perspective-136413/
-- https://www.pexels.com/photo/low-angle-view-of-office-building-against-clear-sky-258160/
-- https://www.dreamstime.com/man-women-hand-shake-public-domain-image-free-104806311
+- https://pxhere.com/vi/photo/9098
+- https://pxhere.com/vi/photo/987708
+- https://pxhere.com/vi/photo/841278
+- https://pxhere.com/vi/photo/1431451
 
 Images used in folder images:
 License: CC0 1.0 Universal (CC0 1.0)
 Source:
-- https://www.pexels.com/photo/modern-building-against-sky-323780/
-- https://www.pexels.com/photo/abstract-architectural-design-architecture-building-136419/
-- https://www.dreamstime.com/man-women-hand-shake-public-domain-image-free-104806311
+- https://pxhere.com/vi/photo/1037258
+- https://pxhere.com/vi/photo/8672
+- https://pxhere.com/vi/photo/1431451
 
 Dashboard Image, Copyright PurePNG
 License: CC0 1.0 Universal (CC0 1.0)
