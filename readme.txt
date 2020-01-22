@@ -3,7 +3,7 @@ Contributors: GretaThemes
 Requires at least: WordPress 4.5
 Tested up to: WordPress 5.0
 Requires PHP: 5.2
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 Tags: blog, education, grid-layout, right-sidebar, two-columns, custom-menu, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, custom-logo
 
 == Description ==
