@@ -20,15 +20,11 @@
 	<div class="bottombar">
 		<div class="container">
 			<span>
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'business-lander' ) ); ?>">
-					<?php
-					/* translators: placeholder replaced with string */
-					printf( esc_html__( 'Proudly powered by %s.', 'business-lander' ), 'WordPress' );
-					?>
-				</a>
 				<?php
-				/* translators: placeholder replaced with string */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'business-lander' ), 'Business Lander', '<a href="https://gretathemes.com/" rel="designer">GretaThemes</a>' );
+					$copyright_default = '<a href="https://wordpress.org/">Proudly powered by WordPress.</a>
+											Theme: Business Lander by <a href="https://gretathemes.com/" rel="designer">GretaThemes</a>.';
+					$copyright = get_theme_mod( 'footer_copyright', $copyright_default );
+					echo wp_kses_post( $copyright );
 				?>
 			</span>
 

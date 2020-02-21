@@ -303,6 +303,32 @@ function business_lander_customize_register( $wp_customize ) {
 			'list' => __( 'List', 'business-lander' ),
 		),
 	) );
+
+	/**
+	 * Footer.
+	 */
+	$wp_customize->add_section( 'footer', array(
+		'title' => esc_html__( 'Footer', 'business-lander' ),
+		'panel' => 'business-lander',
+	) );
+
+	$wp_customize->add_setting(
+		'footer_copyright',
+		array(
+			'default'           => '<a href="https://wordpress.org/">Proudly powered by WordPress.</a>
+									Theme: Business Lander by <a href="https://gretathemes.com/" rel="designer">GretaThemes</a>.',
+			'sanitize_callback' => 'wp_kses_post',
+			'transport'         => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'footer_copyright',
+		array(
+			'label'   => esc_html__( 'Footer Copyright', 'business-lander' ),
+			'section' => 'footer',
+			'type'    => 'textarea',
+		)
+	);
 }
 
 add_action( 'customize_register', 'business_lander_customize_register' );

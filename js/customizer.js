@@ -27,4 +27,10 @@
 			} );
 		} );
 	} );
+
+	wp.customize( 'footer_copyright', function ( value ) {
+		value.bind( function ( to ) {
+			$( '.bottombar .container > span' ).html( to );
+		} );
+	} );
 } )( jQuery );
