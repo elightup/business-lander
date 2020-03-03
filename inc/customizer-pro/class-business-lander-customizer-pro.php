@@ -60,7 +60,7 @@ final class Business_Lander_Customizer_Pro {
 				array(
 					'doc_title' => esc_html__( 'Need Some Help?', 'business-lander' ),
 					'doc_text'  => esc_html__( 'Need help setting up your site?', 'business-lander' ),
-					'doc_url'   => esc_url( "https://gretathemes.com/docs/{$this->slug}/{$this->utm}" ),
+					'doc_url'   => esc_url( "https://gretathemes.com/docs/{$this->slug}" ),
 					'priority'  => 0,
 				)
 			)

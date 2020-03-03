@@ -1,6 +1,6 @@
 /*!
 Theme Name: Business Lander
-Theme URI: https://demo.gretathemes.com/business-lander/
+Theme URI: https://gretathemes.com/wordpress-themes/business-lander/
 Author: GretaThemes
 Author URI: https://gretathemes.com
 Description: A beautiful bussiness theme for agency, company and personal business. Business Lander is versatile, flexible, powerful and easy to use. Built on the latest technology of WordPress, Business Lander is lightweight, fast and optimized for all mobile phones.
@@ -701,7 +701,6 @@ input[type="submit"]:focus {
 	border-color: #00bff3;
 	color: #fff;
 	background-color: #00bff3;
-	outline: none;
 }
 
 .btn {
@@ -2933,7 +2932,6 @@ a:hover {
 
 .site-logo .site-title a:hover, .site-logo .site-title a:focus, .site-logo .site-title a:active {
 	text-decoration: none;
-	outline: none;
 }
 
 .site-logo .site-description {
@@ -3062,7 +3060,6 @@ a:hover {
 	}
 	.menu-toggle:focus {
 		background-color: #00bff3;
-		outline: none;
 		color: #fff;
 	}
 }
@@ -4885,3 +4882,5 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+/*# sourceMappingURL=style.css.map */
