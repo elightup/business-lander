@@ -144,5 +144,7 @@ jQuery( function ( $ ) {
 	menuClick();
 	hideMobileMenuOnDesktops();
 	scrollToTop();
-	handleMenuAccessibility();
+	if ( $window.width() < 992 ) {
+		handleMenuAccessibility();
+	}
 } );
