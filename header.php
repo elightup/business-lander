@@ -26,19 +26,6 @@
 
 		<header id="masthead" class="site-header">
 			<div class="header-content">
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<div class="container">
-						<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'menu-1',
-								'menu_id'        => 'primary-menu',
-							)
-						);
-						?>
-					</div>
-				</nav><!-- #site-navigation -->
-
 				<div class="container">
 					<div class="site-branding">
 						<div class="site-logo">
@@ -52,48 +39,61 @@
 								if ( is_front_page() && is_home() ) :
 								?>
 								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<?php else : ?>
-								<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-							<?php
-							endif;
+								<?php else : ?>
+									<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+								<?php
+								endif;
 
-							$description = get_bloginfo( 'description', 'display' );
-							if ( $description || is_customize_preview() ) :
-							?>
+								$description = get_bloginfo( 'description', 'display' );
+								if ( $description || is_customize_preview() ) :
+								?>
 								<p class="site-description">
 									<?php echo esc_html( $description ); ?>
 								</p>
-							<?php endif; ?>
+								<?php endif; ?>
+							</div>
+						</div>
+					</div><!-- .site-branding -->
+					<button class="menu-toggle" data-close-text="<?php esc_attr_e( 'Close', 'business-lander' ); ?>" data-open-text="<?php esc_attr_e( 'Menu', 'business-lander' ); ?>" aria-controls="primary-menu" aria-expanded="false" ><?php esc_html_e( 'Menu', 'business-lander' ); ?></button>
+
+					<!-- header-address -->
+					<div class="site-address">
+						<i class="fas fa-map-marker-alt"></i>
+						<p class="address"><?php echo esc_html( get_theme_mod( 'header_address', __( '637 SW. Indian Summer Street West Orange, NJ 07052', 'business-lander' ) ) ); ?></p>
 					</div>
-				</div>
-			</div><!-- .site-branding -->
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" ><?php esc_html_e( 'Menu', 'business-lander' ); ?></button>
 
-			<!-- header-address -->
-				<div class="site-address">
-					<i class="fas fa-map-marker-alt"></i>
-					<p class="address"><?php echo esc_html( get_theme_mod( 'header_address', __( '637 SW. Indian Summer Street West Orange, NJ 07052', 'business-lander' ) ) ); ?></p>
-				</div>
+					<!-- header-phone & header-email -->
+					<div class="site-info">
+						<div class="site-phone">
+							<div class="header-info">
+								<i class="fa fa-phone"></i>
+								<p class="address"><?php echo esc_html( get_theme_mod( 'header_phone', __( '+1-317-290-1883', 'business-lander' ) ) ); ?></p>
+							</div>
+						</div>
 
-			<!-- header-phone & header-email -->
-				<div class="site-info">
-					<div class="site-phone">
-						<div class="header-info">
-							<i class="fa fa-phone"></i>
-							<p class="address"><?php echo esc_html( get_theme_mod( 'header_phone', __( '+1-317-290-1883', 'business-lander' ) ) ); ?></p>
+						<div class="site-email">
+							<div class="header-info">
+								<i class="fa fa-envelope"></i>
+								<p class="address"><?php echo esc_html( get_theme_mod( 'header_email', __( 'info@company.com', 'business-lander' ) ) ); ?></p>
+							</div>
 						</div>
 					</div>
-
-					<div class="site-email">
-						<div class="header-info">
-							<i class="fa fa-envelope"></i>
-							<p class="address"><?php echo esc_html( get_theme_mod( 'header_email', __( 'info@company.com', 'business-lander' ) ) ); ?></p>
-						</div>
-					</div>
 				</div>
-		</div>
-	</div>
-</header><!-- #masthead -->
+
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<div class="container">
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-1',
+								'menu_id'        => 'primary-menu',
+							)
+						);
+						?>
+					</div>
+				</nav><!-- #site-navigation -->
+			</div>
+		</header><!-- #masthead -->
 
 <?php
 $no_thumbnail = '';

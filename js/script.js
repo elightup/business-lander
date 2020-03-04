@@ -10,6 +10,13 @@ jQuery( function ( $ ) {
 	 */
 	function toggleCollapse() {
 		$( '.menu-toggle' ).on( 'click', function () {
+			var $this = $( this );
+			$this.toggleClass( 'menu-toggle--close' );
+			if ( $this.hasClass( 'menu-toggle--close' ) ) {
+				$this.text( $this.attr( 'data-close-text' ) );
+			} else {
+				$this.text( $this.attr( 'data-open-text' ) );
+			}
 			$site_navigation.removeClass( 'main-navigation' );
 			$site_navigation.addClass( 'mobile-navigation' );
 			$primary_menu.removeClass( 'menu' );
@@ -20,12 +27,44 @@ jQuery( function ( $ ) {
 		} );
 	}
 
+	function handleMenuAccessibility() {
+		$( document ).on( 'keydown', function( e ) {
+			var activeElement = document.activeElement;
+			var menuItems = $( '#site-navigation .menu-item > a' );
+			var firstEl = $( '.menu-toggle' );
+			var lastEl = menuItems[ menuItems.length - 1 ];
+			var tabKey = event.keyCode === 9;
+			var shiftKey = event.shiftKey;
+			if ( ! shiftKey && tabKey && lastEl === activeElement ) {
+				event.preventDefault();
+				firstEl.focus();
+			}
+			closeSubmenuBeforeGoNext( $( activeElement ) );
+		} );
+	}
+
+	function closeSubmenuBeforeGoNext( $activeLink ) {
+		var attr = $activeLink.attr( 'href' );
+		if ( typeof attr === typeof undefined || attr === false || ! $activeLink.closest( '.menu-item' ).length ) {
+			return;
+		}
+		var li = $activeLink.closest( '.menu-item' );
+		if ( ! li.length ) {
+			return;
+		}
+		var subMenu = li.closest( '.sub-menu' );
+		var subMenuLi = subMenu.children( '.menu-item' );
+		if ( subMenuLi[ subMenuLi.length - 1 ] === li.get( 0 ) ) {
+			subMenu.hide();
+		}
+	}
+
 	/**
 	 * Site nav
 	 */
 	function menuClick() {
 		//Add arrow icon to the li.
-		var $dropdownToggle = $( '<span class="dropToggle fas fa-caret-down"></span>' );
+		var $dropdownToggle = $( '<button class="dropToggle fas fa-caret-down" aria-expanded="true"></button>' );
 		$primary_menu.find( 'li' ).has( 'ul' )
 		.children( 'a' )
 		.after( $dropdownToggle );
@@ -105,4 +144,5 @@ jQuery( function ( $ ) {
 	menuClick();
 	hideMobileMenuOnDesktops();
 	scrollToTop();
+	handleMenuAccessibility();
 } );

@@ -15,6 +15,8 @@
 }
 
 .header-content {
+	display: flex;
+	flex-direction: column-reverse;
 	background: $color__white;
 	top: 0;
 	left: 0;
@@ -146,9 +148,12 @@
 }
 @media(max-width: 991px) {
 	.site-header {
-		.header-content > .container {
-			padding-top: 35px;
-			padding-bottom: 35px;
+		.header-content {
+			flex-direction: column;
+			> .container {
+				padding-top: 35px;
+				padding-bottom: 35px;
+			}
 		}
 	}
 	.site-address {

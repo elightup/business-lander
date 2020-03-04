@@ -160,6 +160,11 @@
 
 .menu-toggle {
 	display: block;
+	&.menu-toggle--close {
+		&:before {
+			content: '\f00d';
+		}
+	}
 }
 
 
@@ -278,10 +283,17 @@
 	position: absolute;
 	top: 6px;
 	right: 0;
-	cursor: pointer;
 	padding: 13px;
 	transition: all 0.3s ease;
 	color: $color__black;
+	background: none;
+	border: none;
+	&:hover,
+	&:focus {
+		background: none;
+		border: none;
+		color: $color__black;
+	}
 }
 span.is-toggled  {
 	transform: scaleY(-1)
