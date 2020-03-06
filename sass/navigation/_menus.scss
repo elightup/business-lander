@@ -1,4 +1,4 @@
-.main-navigation {
+.main-navigation:not(.mobile-navigation) {
 	border-bottom: 1px solid $color__border;
 	box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.1);
 	.container > div {
@@ -153,20 +153,11 @@
 		padding-top: 15px;
 		padding-bottom: 15px;
 	}
-}
 
-
-/* Small menu. */
-
-.menu-toggle {
-	display: block;
-	&.menu-toggle--close {
-		&:before {
-			content: '\f00d';
-		}
+	.dropToggle {
+		display: none;
 	}
 }
-
 
 .posts-navigation,
 .post-navigation {
@@ -185,6 +176,7 @@
 	}
 }
 
+/* Small menu. */
 .menu-toggle {
 	padding: 0 20px;
 	border: none;
@@ -200,6 +192,18 @@
 		@include font-size(2.4);
 		vertical-align: sub;
 	}
+	&:after {
+		content: attr(data-open-text);
+		display: inline;
+	}
+	&.menu-toggle--close {
+		&:after {
+			content: attr(data-close-text);
+		}
+		&:before {
+			content: '\f00d';
+		}
+	}
 }
 
 .mobile-navigation {
@@ -210,6 +214,9 @@
 	width: 50%;
 	z-index: 9;
 	background-color: #f5f5f5;
+	&.mobile-navigation--toggled {
+		display: none;
+	}
 	li {
 		position: relative;
 	}
@@ -274,11 +281,7 @@
 		}
 	}
 }
-.main-navigation {
-	.dropToggle {
-		display: none;
-	}
-}
+
 .dropToggle{
 	position: absolute;
 	top: 6px;
@@ -299,7 +302,7 @@ span.is-toggled  {
 	transform: scaleY(-1)
 }
 @media (max-width: 991px) {
-	.main-navigation {
+	.main-navigation:not(.mobile-navigation) {
 		display: none;
 	}
 }

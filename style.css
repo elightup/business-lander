@@ -955,18 +955,18 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.main-navigation {
+.main-navigation:not(.mobile-navigation) {
 	border-bottom: 1px solid #ebebeb;
 	box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.1);
 }
 
-.main-navigation .container > div {
+.main-navigation:not(.mobile-navigation) .container > div {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
 }
 
-.main-navigation ul {
+.main-navigation:not(.mobile-navigation) ul {
 	display: block;
 	list-style: none;
 	margin: 0;
@@ -974,8 +974,8 @@ a:hover, a:active {
 	flex-flow: row wrap;
 }
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
+.main-navigation:not(.mobile-navigation) ul li:hover > ul,
+.main-navigation:not(.mobile-navigation) ul li.focus > ul {
 	display: block;
 	visibility: visible;
 	opacity: 1;
@@ -985,7 +985,7 @@ a:hover, a:active {
 	z-index: 10;
 }
 
-.main-navigation ul ul {
+.main-navigation:not(.mobile-navigation) ul ul {
 	position: absolute;
 	z-index: 10;
 	top: 100%;
@@ -999,19 +999,19 @@ a:hover, a:active {
 	transition: all 0.3s;
 }
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
+.main-navigation:not(.mobile-navigation) ul ul li:hover > ul,
+.main-navigation:not(.mobile-navigation) ul ul li.focus > ul {
 	display: block;
 	left: 105%;
 	right: unset;
 	top: 0;
 }
 
-.main-navigation ul ul ul {
+.main-navigation:not(.mobile-navigation) ul ul ul {
 	transition: all 0.3s ease;
 }
 
-.main-navigation ul ul a {
+.main-navigation:not(.mobile-navigation) ul ul a {
 	min-width: 200px;
 	font-weight: 600;
 	color: #00bff3;
@@ -1020,17 +1020,17 @@ a:hover, a:active {
 	padding: 12px 15px;
 }
 
-.main-navigation ul ul :hover > a {
+.main-navigation:not(.mobile-navigation) ul ul :hover > a {
 	background: #fff;
 	color: #00bff3;
 }
 
-.main-navigation li {
+.main-navigation:not(.mobile-navigation) li {
 	float: left;
 	position: relative;
 }
 
-.main-navigation li > a {
+.main-navigation:not(.mobile-navigation) li > a {
 	text-transform: uppercase;
 	text-decoration: none;
 	font-size: 14px;
@@ -1045,13 +1045,13 @@ a:hover, a:active {
 	padding: 4px 15px;
 }
 
-.main-navigation li:hover > a,
-.main-navigation li.focus > a {
+.main-navigation:not(.mobile-navigation) li:hover > a,
+.main-navigation:not(.mobile-navigation) li.focus > a {
 	color: #00bff3;
 }
 
-.main-navigation li.menu-item-has-children > a::after,
-.main-navigation li.page_item_has_children > a::after {
+.main-navigation:not(.mobile-navigation) li.menu-item-has-children > a::after,
+.main-navigation:not(.mobile-navigation) li.page_item_has_children > a::after {
 	content: '\f0d7';
 	display: inline-block;
 	font: normal normal normal 14px/1 FontAwesome;
@@ -1066,43 +1066,43 @@ a:hover, a:active {
 	font-size: 0.75rem;
 }
 
-.main-navigation div > ul > .current_page_item > a,
-.main-navigation div > ul > .current-menu-item > a,
-.main-navigation .current_page_ancestor > a,
-.main-navigation .current-menu-ancestor > a {
+.main-navigation:not(.mobile-navigation) div > ul > .current_page_item > a,
+.main-navigation:not(.mobile-navigation) div > ul > .current-menu-item > a,
+.main-navigation:not(.mobile-navigation) .current_page_ancestor > a,
+.main-navigation:not(.mobile-navigation) .current-menu-ancestor > a {
 	color: #00bff3;
 }
 
-.main-navigation ul.menu > li,
-.main-navigation ul > li {
+.main-navigation:not(.mobile-navigation) ul.menu > li,
+.main-navigation:not(.mobile-navigation) ul > li {
 	margin-left: 8px;
 	padding-top: 8px;
 	padding-bottom: 11px;
 }
 
-.main-navigation ul.menu .sub-menu.sub-menu,
-.main-navigation ul.menu .children.children,
-.main-navigation ul .sub-menu.sub-menu,
-.main-navigation ul .children.children {
+.main-navigation:not(.mobile-navigation) ul.menu .sub-menu.sub-menu,
+.main-navigation:not(.mobile-navigation) ul.menu .children.children,
+.main-navigation:not(.mobile-navigation) ul .sub-menu.sub-menu,
+.main-navigation:not(.mobile-navigation) ul .children.children {
 	background: #fff;
 	box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
 	padding-left: 0;
 }
 
-.main-navigation ul.menu .sub-menu.sub-menu li,
-.main-navigation ul.menu .children.children li,
-.main-navigation ul .sub-menu.sub-menu li,
-.main-navigation ul .children.children li {
+.main-navigation:not(.mobile-navigation) ul.menu .sub-menu.sub-menu li,
+.main-navigation:not(.mobile-navigation) ul.menu .children.children li,
+.main-navigation:not(.mobile-navigation) ul .sub-menu.sub-menu li,
+.main-navigation:not(.mobile-navigation) ul .children.children li {
 	width: 100%;
 	display: block;
 	margin-left: 0;
 	padding: 0;
 }
 
-.main-navigation ul.menu .sub-menu.sub-menu li a,
-.main-navigation ul.menu .children.children li a,
-.main-navigation ul .sub-menu.sub-menu li a,
-.main-navigation ul .children.children li a {
+.main-navigation:not(.mobile-navigation) ul.menu .sub-menu.sub-menu li a,
+.main-navigation:not(.mobile-navigation) ul.menu .children.children li a,
+.main-navigation:not(.mobile-navigation) ul .sub-menu.sub-menu li a,
+.main-navigation:not(.mobile-navigation) ul .children.children li a {
 	font-size: 13px;
 	font-size: 0.8125rem;
 	color: #000;
@@ -1112,48 +1112,43 @@ a:hover, a:active {
 	padding: 12px 20px;
 }
 
-.main-navigation ul.menu .sub-menu.sub-menu li:hover > a,
-.main-navigation ul.menu .children.children li:hover > a,
-.main-navigation ul .sub-menu.sub-menu li:hover > a,
-.main-navigation ul .children.children li:hover > a {
+.main-navigation:not(.mobile-navigation) ul.menu .sub-menu.sub-menu li:hover > a,
+.main-navigation:not(.mobile-navigation) ul.menu .children.children li:hover > a,
+.main-navigation:not(.mobile-navigation) ul .sub-menu.sub-menu li:hover > a,
+.main-navigation:not(.mobile-navigation) ul .children.children li:hover > a {
 	color: #00bff3;
 	background: transparent;
 }
 
-.main-navigation ul.menu .sub-menu.sub-menu li + li,
-.main-navigation ul.menu .children.children li + li,
-.main-navigation ul .sub-menu.sub-menu li + li,
-.main-navigation ul .children.children li + li {
+.main-navigation:not(.mobile-navigation) ul.menu .sub-menu.sub-menu li + li,
+.main-navigation:not(.mobile-navigation) ul.menu .children.children li + li,
+.main-navigation:not(.mobile-navigation) ul .sub-menu.sub-menu li + li,
+.main-navigation:not(.mobile-navigation) ul .children.children li + li {
 	border-top: 1px solid #e9e9e9;
 }
 
-.main-navigation ul.menu .sub-menu.sub-menu li.menu-item-has-children > a::after,
-.main-navigation ul.menu .sub-menu.sub-menu li.page_item_has_children > a::after,
-.main-navigation ul.menu .children.children li.menu-item-has-children > a::after,
-.main-navigation ul.menu .children.children li.page_item_has_children > a::after,
-.main-navigation ul .sub-menu.sub-menu li.menu-item-has-children > a::after,
-.main-navigation ul .sub-menu.sub-menu li.page_item_has_children > a::after,
-.main-navigation ul .children.children li.menu-item-has-children > a::after,
-.main-navigation ul .children.children li.page_item_has_children > a::after {
+.main-navigation:not(.mobile-navigation) ul.menu .sub-menu.sub-menu li.menu-item-has-children > a::after,
+.main-navigation:not(.mobile-navigation) ul.menu .sub-menu.sub-menu li.page_item_has_children > a::after,
+.main-navigation:not(.mobile-navigation) ul.menu .children.children li.menu-item-has-children > a::after,
+.main-navigation:not(.mobile-navigation) ul.menu .children.children li.page_item_has_children > a::after,
+.main-navigation:not(.mobile-navigation) ul .sub-menu.sub-menu li.menu-item-has-children > a::after,
+.main-navigation:not(.mobile-navigation) ul .sub-menu.sub-menu li.page_item_has_children > a::after,
+.main-navigation:not(.mobile-navigation) ul .children.children li.menu-item-has-children > a::after,
+.main-navigation:not(.mobile-navigation) ul .children.children li.page_item_has_children > a::after {
 	content: '\f0da';
 	top: calc(50% - 6px);
 	height: 12px;
 	margin-right: 10px;
 }
 
-.main-navigation .menu > ul > li {
+.main-navigation:not(.mobile-navigation) .menu > ul > li {
 	margin-left: 20px;
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
 
-/* Small menu. */
-.menu-toggle {
-	display: block;
-}
-
-.menu-toggle.menu-toggle--close:before {
-	content: '\f00d';
+.main-navigation:not(.mobile-navigation) .dropToggle {
+	display: none;
 }
 
 .site-main .posts-navigation, .site-main
@@ -1175,6 +1170,7 @@ a:hover, a:active {
 	width: 50%;
 }
 
+/* Small menu. */
 .menu-toggle {
 	padding: 0 20px;
 	border: none;
@@ -1199,6 +1195,19 @@ a:hover, a:active {
 	vertical-align: sub;
 }
 
+.menu-toggle:after {
+	content: attr(data-open-text);
+	display: inline;
+}
+
+.menu-toggle.menu-toggle--close:after {
+	content: attr(data-close-text);
+}
+
+.menu-toggle.menu-toggle--close:before {
+	content: '\f00d';
+}
+
 .mobile-navigation {
 	position: absolute;
 	z-index: 1;
@@ -1207,6 +1216,10 @@ a:hover, a:active {
 	width: 50%;
 	z-index: 9;
 	background-color: #f5f5f5;
+}
+
+.mobile-navigation.mobile-navigation--toggled {
+	display: none;
 }
 
 .mobile-navigation li {
@@ -1307,10 +1320,6 @@ a:hover, a:active {
 	padding-bottom: 0;
 }
 
-.main-navigation .dropToggle {
-	display: none;
-}
-
 .dropToggle {
 	position: absolute;
 	top: 6px;
@@ -1334,7 +1343,7 @@ span.is-toggled {
 }
 
 @media (max-width: 991px) {
-	.main-navigation {
+	.main-navigation:not(.mobile-navigation) {
 		display: none;
 	}
 }
@@ -3083,11 +3092,7 @@ a:hover {
 	}
 	.menu-toggle {
 		line-height: 1.9;
-		margin-top: 35px;
-		margin-bottom: 10px;
-		padding: 0 12px;
-		width: 25%;
-		margin-left: 40%;
+		margin: 35px auto 10px;
 	}
 	.menu-toggle:before {
 		font-size: 20px;
@@ -3111,12 +3116,6 @@ a:hover {
 	}
 	.site-logo {
 		flex-direction: column;
-	}
-	.menu-toggle {
-		width: 50%;
-		margin-left: 0;
-		margin-top: 35px;
-		padding: 8px;
 	}
 	.site-branding img {
 		margin-left: 25%;

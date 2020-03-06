@@ -1,34 +1,24 @@
 jQuery( function ( $ ) {
 	var $window      = $( window ),
-	$mobileMenu      = $( '.mobile-navigation' ),
-	$mainMenu        = $( '.main-navigation' ),
 	$site_navigation = $( '#site-navigation' ),
+	$menuToggle      = $( '.menu-toggle' ),
 	$primary_menu    = $( '#primary-menu' );
 
 	/**
 	 * Collapse
 	 */
 	function toggleCollapse() {
-		$( '.menu-toggle' ).on( 'click', function () {
-			var $this = $( this );
-			$this.toggleClass( 'menu-toggle--close' );
-			if ( $this.hasClass( 'menu-toggle--close' ) ) {
-				$this.text( $this.attr( 'data-close-text' ) );
-			} else {
-				$this.text( $this.attr( 'data-open-text' ) );
-			}
-			$site_navigation.removeClass( 'main-navigation' );
-			$site_navigation.addClass( 'mobile-navigation' );
-			$primary_menu.removeClass( 'menu' );
-			$primary_menu.addClass( 'mobile-menu' );
-			$primary_menu.addClass( 'clear-fix' );
-			$( '.mobile-navigation' ).toggle();
-
+		$menuToggle.on( 'click', function () {
+			$menuToggle.toggleClass( 'menu-toggle--close' );
+			$site_navigation.toggleClass( 'mobile-navigation' );
 		} );
 	}
 
 	function handleMenuAccessibility() {
 		$( document ).on( 'keydown', function( e ) {
+			if ( $window.width() > 992 ) {
+				return;
+			}
 			var activeElement = document.activeElement;
 			var menuItems = $( '#site-navigation .menu-item > a' );
 			var firstEl = $( '.menu-toggle' );
@@ -78,25 +68,10 @@ jQuery( function ( $ ) {
 	}
 
 	function hideMobileMenuOnDesktops() {
-
-
-		if ( $window.width() < 992 ) {
-			$mainMenu.hide();
-		}
-
 		$window.on( 'resize', function () {
 			if ( $window.width() > 992 ) {
-				$mobileMenu.hide();
-				$mainMenu.show();
 				$site_navigation.removeClass( 'mobile-navigation' );
-				$site_navigation.addClass( 'main-navigation' );
-				$primary_menu.addClass( 'menu' );
-				$primary_menu.removeClass( 'mobile-menu' );
-				$primary_menu.removeClass( 'clear-fix' );
-			}
-			if ( $window.width() < 992 ) {
-				$mainMenu.hide();
-				$mobileMenu.show();
+				$menuToggle.removeClass( 'menu-toggle--close' );
 			}
 		} );
 	}
@@ -144,7 +119,6 @@ jQuery( function ( $ ) {
 	menuClick();
 	hideMobileMenuOnDesktops();
 	scrollToTop();
-	if ( $window.width() < 992 ) {
-		handleMenuAccessibility();
-	}
+	handleMenuAccessibility();
+	$window.on( 'resize', 'handleMenuAccessibility' );
 } );
