@@ -315,8 +315,7 @@ function business_lander_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_copyright',
 		array(
-			'default'           => '<a href="https://wordpress.org/">Proudly powered by WordPress.</a>
-									Theme: Business Lander by <a href="https://gretathemes.com/" rel="designer">GretaThemes</a>.',
+			'default'           => __( '<a href="https://wordpress.org/">Proudly powered by WordPress.</a>Theme: Business Lander by <a href="https://gretathemes.com/" rel="designer">GretaThemes</a>.', 'business-lander' ),
 			'sanitize_callback' => 'wp_kses_post',
 			'transport'         => 'postMessage',
 		)
