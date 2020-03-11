@@ -4,7 +4,7 @@ Theme URI: https://gretathemes.com/wordpress-themes/business-lander/
 Author: GretaThemes
 Author URI: https://gretathemes.com
 Description: A beautiful bussiness theme for agency, company and personal business. Business Lander is versatile, flexible, powerful and easy to use. Built on the latest technology of WordPress, Business Lander is lightweight, fast and optimized for all mobile phones.
-Version: 1.1.9
+Version: 1.1.10
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: business-lander
@@ -564,11 +564,9 @@ th, td {
 	box-sizing: border-box;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
-	-khtml-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	-ms-touch-action: pan-y;
 	touch-action: pan-y;
 	-webkit-tap-highlight-color: transparent;
 }
@@ -592,10 +590,6 @@ th, td {
 
 .slick-slider .slick-track,
 .slick-slider .slick-list {
-	-webkit-transform: translate3d(0, 0, 0);
-	-moz-transform: translate3d(0, 0, 0);
-	-ms-transform: translate3d(0, 0, 0);
-	-o-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
 }
 
@@ -945,7 +939,6 @@ textarea {
 a {
 	color: #00bff3;
 	text-decoration: none;
-	-webkit-transition: all .3s ease 0s;
 	transition: all .3s ease 0s;
 }
 
@@ -996,9 +989,7 @@ a:hover, a:active {
 	top: 100%;
 	left: 0;
 	background: #fff;
-	-webkit-box-shadow: -6px 6px 20px rgba(0, 0, 0, 0.15);
 	box-shadow: -6px 6px 20px rgba(0, 0, 0, 0.15);
-	-ms-transform: translateY(10px);
 	transform: translateY(10px);
 	opacity: 0;
 	visibility: hidden;
@@ -1091,7 +1082,6 @@ a:hover, a:active {
 .main-navigation:not(.mobile-navigation) ul .sub-menu.sub-menu,
 .main-navigation:not(.mobile-navigation) ul .children.children {
 	background: #fff;
-	-webkit-box-shadow: -6px 6px 20px rgba(0, 0, 0, 0.15);
 	box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
 	padding-left: 0;
 }
@@ -1545,7 +1535,8 @@ span.is-toggled {
 	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
-	clip-path: none;
+	-webkit-clip-path: none;
+	        clip-path: none;
 	color: #21759b;
 	display: block;
 	font-size: 8.75px;
@@ -1773,11 +1764,10 @@ span.is-toggled {
 }
 
 .aside-post .image img {
-	-webkit-transition: all .3s ease;
-	-o-transition: all .3s ease;
 	transition: all .3s ease;
 	height: 65px;
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 	border: 8px solid #fff;
 }
 
@@ -2431,7 +2421,8 @@ span.is-toggled {
 
 .post-thumbnail img {
 	height: 100%;
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 	width: 100%;
 }
 
@@ -2870,9 +2861,7 @@ ol.children {
 	text-align: center;
 	display: flex;
 	display: -webkit-flex;
-	-webkit-flex-direction: column;
 	flex-direction: column;
-	-webkit-flex-wrap: wrap;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
@@ -3429,7 +3418,8 @@ a:hover {
 
 .section-service__thumbnails img {
 	height: 240px;
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 	border-radius: 5px 5px 0px 0px;
 }
 
@@ -3830,7 +3820,8 @@ a:hover {
 
 .featured-page-2 img {
 	width: 49%;
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 	border: 7px solid #fff;
 	box-shadow: 1px 0 36px rgba(0, 0, 0, 0.15);
 	margin-top: -160px;
@@ -3927,16 +3918,12 @@ a:hover {
 	font-size: 0px;
 	font-size: 0rem;
 	color: transparent;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
 	border-radius: 50%;
 	display: block;
 	width: 8px;
 	height: 8px;
 	padding: 0;
 	background-color: #a3a3a3;
-	-webkit-transition: all .3s ease 0s;
-	-moz-transition: all .3s ease 0s;
 	transition: all .3s ease 0s;
 	border: none;
 }
@@ -3980,7 +3967,8 @@ a:hover {
 	border-radius: 100%;
 	width: 65px;
 	height: 65px;
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 }
 
 @media (max-width: 991px) {
@@ -4070,7 +4058,8 @@ a:hover {
 .featured-page-3 img {
 	width: 50%;
 	max-height: 357px;
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 	border: 7px solid #fff;
 	box-shadow: 1px 0 36px rgba(0, 0, 0, 0.15);
 	margin-top: 100px;
@@ -4241,7 +4230,8 @@ a:hover {
 .archive-post .image img {
 	height: 240px;
 	width: 100%;
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 	border-radius: 5px 5px 0px 0px;
 }
 
@@ -4800,7 +4790,6 @@ a:hover {
 	padding: 12px 30px;
 	border-radius: 26px;
 	color: #fff;
-	-moz-transition: all .3s ease 0s;
 	transition: all .3s ease 0s;
 	text-transform: uppercase;
 	line-height: 1.42857;
@@ -4937,5 +4926,3 @@ object {
 .gallery-caption {
 	display: block;
 }
-
-/*# sourceMappingURL=style.css.map */
