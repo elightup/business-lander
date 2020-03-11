@@ -21,8 +21,7 @@
 		<div class="container">
 			<span>
 				<?php
-					$copyright_default = '<a href="https://wordpress.org/">Proudly powered by WordPress.</a>
-											Theme: Business Lander by <a href="https://gretathemes.com/" rel="designer">GretaThemes</a>.';
+					$copyright_default = __( '<a href="https://wordpress.org/">Proudly powered by WordPress.</a> Theme: Business Lander by <a href="https://gretathemes.com/" rel="designer">GretaThemes</a>.', 'business-lander' );
 					$copyright = get_theme_mod( 'footer_copyright', $copyright_default );
 					echo wp_kses_post( $copyright );
 				?>
