@@ -54,7 +54,9 @@
 							</div>
 						</div>
 					</div><!-- .site-branding -->
-					<button class="menu-toggle" data-close-text="<?php esc_attr_e( 'Close', 'business-lander' ); ?>" data-open-text="<?php esc_attr_e( 'Menu', 'business-lander' ); ?>" aria-controls="primary-menu" aria-expanded="false" ></button>
+					<button class="menu-toggle menu-toggle--open" aria-controls="primary-menu" aria-expanded="false" >
+						<?php esc_html_e( 'Menu', 'business-lander' ); ?>
+					</button>
 
 					<!-- header-address -->
 					<div class="site-address">
@@ -81,6 +83,9 @@
 				</div>
 
 				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<button class="menu-toggle menu-toggle--close" aria-controls="primary-menu" aria-expanded="false" >
+						<?php esc_html_e( 'Close', 'business-lander' ); ?>
+					</button>
 					<div class="container">
 						<?php
 						wp_nav_menu(

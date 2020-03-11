@@ -192,17 +192,41 @@
 		@include font-size(2.4);
 		vertical-align: sub;
 	}
-	&:after {
-		content: attr(data-open-text);
-		display: inline;
+	@media(max-width: 991px) {
+		display: block;
+		border-radius: 100px;
+		padding: 0px 35px;
+		background-color: $color__main;
+		color: $color__white;
+		height: 46px;
+		margin-top: 20px;
+		&:hover {
+			background-color: $color__main;
+		}
+		&:focus {
+			background-color: $color__main;
+			color: $color__white;
+		}
 	}
-	&.menu-toggle--close {
-		&:after {
-			content: attr(data-close-text);
+	@media(max-width: 767px) {
+		.menu-toggle {
+			line-height: 1.9;
+			margin: 35px auto 10px;
+			&:before {
+				@include font-size(2);
+			}
 		}
-		&:before {
-			content: '\f00d';
-		}
+	}
+}
+
+.menu-toggle--close {
+	float: none;
+	@media(max-width: 991px) {
+		display: table;
+		margin: 20px 25px 0 auto;
+	}
+	&:before {
+		content: '\f00d';
 	}
 }
 
@@ -309,5 +333,27 @@ span.is-toggled  {
 @media (max-width: 767px) {
 	.mobile-navigation {
 		width: 100%;
+	}
+}
+
+.enable-mobile-menu {
+	overflow-y: hidden;
+	.mobile-navigation {
+		overflow-y: auto;
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+		background: #fff;
+		z-index: 999;
+		padding-bottom: 20px;
+	}
+}
+
+.admin-bar .mobile-navigation {
+	top: 32px;
+}
+@media (max-width: 782px) {
+	.admin-bar .mobile-navigation {
+		top: 46px;
 	}
 }
