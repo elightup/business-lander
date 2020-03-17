@@ -12,7 +12,10 @@
  *
  * @return int Modified excerpt length.
  */
-function business_lander_custom_excerpt_length() {
+function business_lander_custom_excerpt_length( $length ) {
+	if ( is_admin() ) {
+		return $length;
+	}
 	return 24;
 }
 

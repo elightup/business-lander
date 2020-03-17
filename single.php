@@ -7,7 +7,6 @@
  * @package business-lander
  */
 
-the_post();
 get_header();
 ?>
 
@@ -15,7 +14,6 @@ get_header();
 	<main id="main" class="site-main">
 
 		<?php
-		rewind_posts();
 		while ( have_posts() ) :
 			the_post();
 

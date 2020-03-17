@@ -15,6 +15,7 @@
 get_header();
 
 $style = get_theme_mod( 'blog_style', 'grid' );
+$style = sanitize_key( $style );
 get_template_part( 'template-parts/blog/' . $style );
 
 get_footer();

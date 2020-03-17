@@ -80,6 +80,7 @@ function business_lander_setup() {
 		)
 	);
 	add_theme_support( 'custom-header' );
+
 }
 
 add_action( 'after_setup_theme', 'business_lander_setup' );
@@ -227,12 +228,6 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/dashboard/class-business-lander-dashboard.php';
 	$dashboard = new Business_lander_Dashboard();
 }
-
-/**
- * Add dashboard widget.
- */
-require get_template_directory() . '/inc/dashboard-widget.php';
-new Business_Lander_Dashboard_Widget();
 
 /**
  * Customizer Pro.

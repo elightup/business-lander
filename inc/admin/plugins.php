@@ -2,7 +2,7 @@
 /**
  * Add required and recommended plugins.
  *
- * @package Digimag
+ * @package business-lander
  */
 
 add_action( 'tgmpa_register', 'business_lander_register_required_plugins' );
@@ -31,7 +31,6 @@ function business_lander_required_plugins() {
 		array(
 			'name'     => esc_html__( 'Jetpack', 'business-lander' ),
 			'slug'     => 'jetpack',
-			'required' => true,
 		),
 		array(
 			'name' => esc_html__( 'Ultimate Fonts', 'business-lander' ),

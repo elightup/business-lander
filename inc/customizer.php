@@ -14,12 +14,6 @@ function business_lander_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-	// Remove header image section.
-	$wp_customize->remove_section( 'header_image' );
-
-	// Remove the core header textcolor control, as it shares the main text color.
-	$wp_customize->remove_control( 'header_textcolor' );
-
 	// Add theme options panel.
 	$wp_customize->add_panel( 'business-lander', array(
 		'title' => esc_html__( 'Theme Options', 'business-lander' ),
@@ -58,7 +52,7 @@ function business_lander_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'header_email', array(
 		'default'           => wp_kses_post( __( 'info@company.com', 'business-lander' ) ),
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'sanitize_email',
 		'transport'         => 'postMessage',
 	) );
 	$wp_customize->add_control( 'header_email', array(
