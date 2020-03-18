@@ -61,7 +61,7 @@ Customizer Pro, Copyright Justin Tadlock
 - License: GNU General Public License v2.0
 - Source : https://github.com/justintadlock/trt-customizer-pro/blob/master/license.md
 
-Images used in the screenshot:
+Images used in the screenshots, Copyright Pxhere
 License: CC0 1.0 Universal (CC0 1.0)
 Source:
 - https://pxhere.com/vi/photo/9098
@@ -69,16 +69,15 @@ Source:
 - https://pxhere.com/vi/photo/841278
 - https://pxhere.com/vi/photo/1431451
 
-Images used in folder images:
+Images used in folder images, Copyright Pxhere
 License: CC0 1.0 Universal (CC0 1.0)
 Source:
 - https://pxhere.com/vi/photo/1037258
 - https://pxhere.com/vi/photo/8672
 - https://pxhere.com/vi/photo/1431451
 
-Dashboard Image, Copyright PurePNG
+Image for Dashboard Image, Copyright PurePNG
 License: CC0 1.0 Universal (CC0 1.0)
-License URL: https://purepng.com/page/terms-of-service
 Source: https://purepng.com/photo/11167/clipart-paper-plane
 
 Business Lander is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
