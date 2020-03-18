@@ -24,6 +24,7 @@ function business_lander_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_section( 'header_contact', array(
 		'title'       => esc_html__( 'Contact Info', 'business-lander' ),
+		'capability'  => 'edit_theme_options',
 		'panel'       => 'business-lander',
 		'description' => esc_html__( 'Display your location, phone and email.', 'business-lander' ),
 	) );
@@ -65,8 +66,9 @@ function business_lander_customize_register( $wp_customize ) {
 	 * Homepage.
 	 */
 	$wp_customize->add_section( 'homepage', array(
-		'title' => esc_html__( 'Homepage', 'business-lander' ),
-		'panel' => 'business-lander',
+		'title'      => esc_html__( 'Homepage', 'business-lander' ),
+		'capability' => 'edit_theme_options',
+		'panel'      => 'business-lander',
 	) );
 
 	/**
