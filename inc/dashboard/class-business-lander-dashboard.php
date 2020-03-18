@@ -50,7 +50,6 @@ class Business_Lander_Dashboard {
 
 		add_action( 'admin_menu', array( $this, 'add_menu' ) );
 		add_action( 'admin_notices', array( $this, 'notice' ) );
-		add_filter( 'wpforms_shareasale_id', array( $this, 'wpforms_shareasale_id' ) );
 	}
 
 	/**
@@ -145,25 +144,6 @@ class Business_Lander_Dashboard {
 				return true;
 			}
 		}
-	}
-
-	/**
-	 * Set the WPForms ShareASale ID.
-	 *
-	 * @param string $shareasale_id The the default ShareASale ID.
-	 *
-	 * @return string $shareasale_id
-	 */
-	public function wpforms_shareasale_id( $shareasale_id ) {
-		$id = '424629';
-
-		if ( ! empty( $shareasale_id ) && $shareasale_id == $id ) {
-			return $shareasale_id;
-		}
-
-		update_option( 'wpforms_shareasale_id', $id );
-
-		return $id;
 	}
 
 	/**
