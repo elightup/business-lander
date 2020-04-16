@@ -339,6 +339,7 @@ span.is-toggled  {
 .enable-mobile-menu {
 	overflow-y: hidden;
 	.mobile-navigation {
+		top: 0;
 		overflow-y: auto;
 		position: fixed;
 		width: 100%;
