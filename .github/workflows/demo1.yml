@@ -13,6 +13,5 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
     - uses: actions/checkout@master
-    - name: Install PHP dependencies
     - name: Upload
       run: rsync -razhe "ssh -o StrictHostKeyChecking=no" --exclude={'.git','.github','.gitignore','composer.json'} . ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.PLUGIN_DIR }}
