@@ -1,4 +1,4 @@
-name: Deploy to production site.
+name: Deploy to demo.gretathemes.com site.
 on:
   push:
     branches:
@@ -7,11 +7,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Install SSH key
-      uses: shimataro/ssh-key-action@v2
-      with:
-        key: ${{ secrets.SSH_KEY }}
-        known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
     - uses: actions/checkout@master
-    - name: Upload
-      run: rsync -razhe "ssh -o StrictHostKeyChecking=no" --exclude={'.git','.github','.gitignore','composer.json'} . ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.PLUGIN_DIR }}
+    - uses: SamKirkland/FTP-Deploy-Action@3.0.0
+      with:
+        ftp-server: ${{ secrets.DEMO_URL }}
+        ftp-username: ${{ secrets.DEMO_USER }}
+        ftp-password: ${{ secrets.DEMO_PASSWORD }}
+        git-ftp-args: --insecure
