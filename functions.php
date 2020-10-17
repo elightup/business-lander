@@ -236,7 +236,6 @@ require get_template_directory() . '/inc/customizer-pro/class-business-lander-cu
 $customizer_pro = new Business_Lander_Customizer_Pro();
 $customizer_pro->init();
 
-/* Backwards compatibility */
 if ( ! function_exists( 'wp_body_open' ) ) {
 	/**
 	 * Shim for wp_body_open, ensuring backwards compatibility with versions of WordPress older than 5.2.
