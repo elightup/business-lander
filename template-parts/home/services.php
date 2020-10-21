@@ -43,7 +43,7 @@ $services_image = get_the_post_thumbnail( get_the_ID() );
 			<?php
 			while ( $query->have_posts() ) :
 				$query->the_post();
-?>
+			?>
 				<div class="section-service__item">
 					<?php if ( has_post_thumbnail() ) : ?>
 						<div class="section-service__thumbnails">
