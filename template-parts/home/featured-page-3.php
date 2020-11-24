@@ -10,6 +10,12 @@ if ( ! $featured_page_3 ) {
 	return;
 }
 
+$char = '';
+$get_title = get_the_title( $featured_page_3 );
+if ( $get_title ) {
+	$char = $get_title[0];
+}
+
 $query = new WP_Query(
 	array(
 		'post_type'      => 'page',
@@ -27,7 +33,7 @@ $thumbnail = get_the_post_thumbnail( $featured_page_3, 'full' );
 	<div class="container">
 		<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 			<?php echo wp_kses_post( $thumbnail ); ?>
-			<div class="featured-page" data-line="<?php echo esc_attr( $char );?>">
+			<div class="featured-page" data-line="<?php echo esc_attr( $char ); ?>">
 				<div class="featured-page__title">
 					<h3><?php the_title(); ?></h3>
 				</div>
