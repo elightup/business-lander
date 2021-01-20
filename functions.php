@@ -135,10 +135,7 @@ add_action( 'widgets_init', 'business_lander_widgets_init' );
  * Enqueue scripts and styles.
  */
 function business_lander_scripts() {
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/fontawesome.css', '', '5.0.0' );
-	wp_enqueue_style( 'font-awesome-solid', get_template_directory_uri() . '/css/fa-solid.css', '', '5.0.0' );
-	wp_enqueue_style( 'font-awesome-solid', get_template_directory_uri() . '/css/fa-brands.css', '', '5.0.0' );
-	wp_enqueue_style( 'font-awesome-solid', get_template_directory_uri() . '/css/fa-regular.css', '', '5.0.0' );
+	wp_enqueue_style( 'business-lander-font-awesome', get_template_directory_uri() . '/css/fontawesome.css', '', '5.0.0' );
 	wp_enqueue_style( 'business-lander-fonts', business_lander_fonts_url() );
 	wp_enqueue_style( 'business-lander-style', get_stylesheet_uri() );
 
