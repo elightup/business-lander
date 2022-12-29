@@ -1,17 +1,15 @@
-name: Deploy to production site.
+name: Release
 on:
   push:
     branches:
       - master
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Install SSH key
-      uses: shimataro/ssh-key-action@v2
-      with:
-        key: ${{ secrets.SSH_KEY }}
-        known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
-    - uses: actions/checkout@master
-    - name: Upload
-      run: rsync -razhe "ssh -o StrictHostKeyChecking=no" --exclude={'.git','.github','.gitignore','composer.json'} . ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.PLUGIN_DIR }}
+  call-workflow:
+    uses: elightup/estar/.github/workflows/release.yml@master
+    secrets:
+      SSH_KEY: ${{ secrets.SSH_KEY }}
+      SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
+      SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+      SERVER_IP: ${{ secrets.SERVER_IP }}
+      DOWNLOADS_DIR: ${{ secrets.DOWNLOADS_DIR }}
+      THEME_DIR: ${{ secrets.THEME_DIR }}
